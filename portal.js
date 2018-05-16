@@ -22,9 +22,15 @@ function Portal(sites)
       var site = this.sites[id]
       html += `${id}) <a href='${site}'>${site}</a>\n`
     }
-    html += `\n<a href='#random' onClick="window.location.reload()">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
+    html += `\n<a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
   
     return html
+  }
+
+  this.reload = function()
+  {
+    console.log("!!")
+    setTimeout(()=>{ window.location.reload() },500)
   }
   
   this.location = function()

@@ -3,10 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="scripts/portal.js"></script>
-  <link rel="stylesheet" type="text/css" href="links/reset.css"/>
-  <link rel="stylesheet" type="text/css" href="links/fonts.css"/>
-  <link rel="stylesheet" type="text/css" href="links/main.css"/>
+  <script src="portal.js"></script>
   <title>Webring</title>
 </head>
 <body>
@@ -19,5 +16,10 @@
     var portal = new Portal(sites);
     portal.start();
   </script>
+  <style>
+    body { background:#eee; padding:30px; }
+    body a { color:#000; display: inline-block; padding:0px 5px; line-height: 20px}
+    body a:hover { color:#eee; background:#000; text-decoration: none; }
+  </style>
 </body>
 </html>
