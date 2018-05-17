@@ -14,7 +14,7 @@ Add your website url to the [index.html](https://github.com/XXIIVV/webring/edit/
 
 ### Circular Linking
 
-Instead of linking to the directory, you can also link to the next link in the ring with(notice the hash in the link url):
+Instead of linking to the directory, you can also link to the next link in the ring by adding parts of your site or domain in the hash of the request url:
 
 ```
 <a href='http://webring.xxiivv.com/#wiki.xxiivv' target='_blank'><img src='http://webring.xxiivv.com/icon.black.svg'/></a>
@@ -22,7 +22,7 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 ### Random Linking
 
-Instead of linking to the directory, or to the next link, you can also decide to link to a random link from the directory with: 
+Instead of linking to the directory, or to the next link, you can also decide to link to a random link from the directory by adding the hash `#random`: to the request url: 
 
 ```
 <a href='http://webring.xxiivv.com/#random' target='_blank'><img src='http://webring.xxiivv.com/icon.black.svg'/></a>
