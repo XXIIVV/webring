@@ -29,7 +29,6 @@ function Portal(sites)
 
   this.reload = function()
   {
-    console.log("!!")
     setTimeout(()=>{ window.location.reload() },500)
   }
   
@@ -69,7 +68,7 @@ function Portal(sites)
     
     html = `Redirecting to ${target}
     <meta http-equiv="refresh" content="30; url=${target}">
-<a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="window.location.reload()">Skip</a> | <a href='#random' onClick="window.location.reload()">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
+<a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
     return html
   }
 }

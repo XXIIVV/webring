@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](http://wiki.xxiivv.com/webring) is an attempt to inspire artists and developers friends to create and maintain their own website and share traffic among each other.
+This [webring](http://wiki.xxiivv.com/webring) is an attempt to inspire artists and developers to create and maintain their own website and share traffic among each other.
 
 The webring's aim is to share personal websites such as diaries, wikis, bookmark lists, portfolios. To add yourself to the ring, submit a pull request to this repository. 
 
