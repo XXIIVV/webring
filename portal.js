@@ -66,8 +66,8 @@ function Portal(sites)
 
     var html = ""
     
-    html = `Redirecting to ${target}
-    <meta http-equiv="refresh" content="30; url=${target}">
+    html = `Redirecting to ${target}(3 seconds)
+    <meta http-equiv="refresh" content="3; url=${target}">
 <a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
     return html
   }
