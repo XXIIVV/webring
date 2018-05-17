@@ -12,6 +12,22 @@ Add your website url to the [index.html](https://github.com/XXIIVV/webring/edit/
 <a href='http://webring.xxiivv.com/' target='_blank'><img src='http://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
+### Circular Linking
+
+Instead of linking to the directory, you can also link to the next link in the ring with(notice the hash in the link url):
+
+```
+<a href='http://webring.xxiivv.com/#wiki.xxiivv' target='_blank'><img src='http://webring.xxiivv.com/icon.black.svg'/></a>
+```
+
+### Random Linking
+
+Instead of linking to the directory, or to the next link, you can also decide to link to a random link from the directory with: 
+
+```
+<a href='http://webring.xxiivv.com/#random' target='_blank'><img src='http://webring.xxiivv.com/icon.black.svg'/></a>
+```
+
 ## Need Help?
 
 The ring master is [@neauoire](http://twitter.com/neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more [here](http://wiki.xxiivv.com/webring).
