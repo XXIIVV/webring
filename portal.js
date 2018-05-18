@@ -20,11 +20,9 @@ function Portal(sites)
     
     for(id in this.sites){
       var site = this.sites[id]
-      html += `${id}) <a href='${site}'>${site}</a>\n`
+      html += `<ln>${id}) <a href='${site}'>${site.split("//")[1]}</a></ln>`
     }
-    html += `\n<a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
-  
-    return html
+    return `<list>${html}</list>\n<a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a></ln>`
   }
 
   this.reload = function()
