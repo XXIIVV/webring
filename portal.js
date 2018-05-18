@@ -22,7 +22,7 @@ function Portal(sites)
       var site = this.sites[id]
       html += `<ln>${id}) <a href='${site}'>${site.split("//")[1]}</a></ln>`
     }
-    return `<list>${html}</list>\n<a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a></ln>`
+    return `<list>${html}</list>\n<a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></ln>`
   }
 
   this.reload = function()
@@ -69,10 +69,6 @@ function Portal(sites)
     var location = this.locate();
     var target = this.next(location);
     this.navigate(target)
-
-    var html = ""
-    
-    html = `<p>Redirecting to <b>${target}</b></p><meta http-equiv="refresh" content="3; url=${target}"><a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
-    return html
+    return `<p>Redirecting to <b>${target}</b></p><meta http-equiv="refresh" content="3; url=${target}"><a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a>`
   }
 }
