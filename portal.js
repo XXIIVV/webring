@@ -31,6 +31,13 @@ function Portal(sites)
   {
     setTimeout(()=>{ window.location.reload() },500)
   }
+
+  this.navigate = function(target)
+  {
+    setTimeout(() => {
+      window.location.href = target
+    },3000)
+  }
   
   this.location = function()
   {
@@ -63,12 +70,14 @@ function Portal(sites)
   {
     var location = this.locate();
     var target = this.next(location);
+    this.navigate(target)
 
     var html = ""
     
     html = `Redirecting to ${target}
-    <meta http-equiv="refresh" content="3; url=${target}">
-<a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
+<meta http-equiv="refresh" content="3; url=${target}">
+<a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>
+`
     return html
   }
 }
