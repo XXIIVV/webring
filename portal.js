@@ -18,7 +18,7 @@ function Portal(sites)
   {
     var html = ""
     
-    for(id in this.sites){
+    for(var id in this.sites){
       var site = this.sites[id]
       html += `<ln>${id}) <a href='${site}'>${site.split("//")[1]}</a></ln>`
     }
@@ -72,10 +72,7 @@ function Portal(sites)
 
     var html = ""
     
-    html = `Redirecting to ${target}
-<meta http-equiv="refresh" content="3; url=${target}">
-<a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>
-`
+    html = `<p>Redirecting to ${target}</p><meta http-equiv="refresh" content="3; url=${target}"><a href='' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a>`
     return html
   }
 }
