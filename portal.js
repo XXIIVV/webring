@@ -11,7 +11,7 @@ function Portal(sites)
   this.start = function()
   {
     this.install();
-    this.el.innerHTML = window.location.hash ? this.redirect() : this.directory();
+    this.el.innerHTML = window.location.hash && window.location.hash.length > 4 ? this.redirect() : this.directory();
   }
   
   this.directory = function()
@@ -69,6 +69,6 @@ function Portal(sites)
     var location = this.locate();
     var target = this.next(location);
     this.navigate(target)
-    return `<p>Redirecting to <b>${target}</b></p><meta http-equiv="refresh" content="3; url=${target}"><a href='#' onClick="window.location.reload()">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a>`
+    return `<p>Redirecting to <b>${target}</b></p><meta http-equiv="refresh" content="3; url=${target}"><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a>`
   }
 }
