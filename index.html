@@ -1,71 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="portal.js"></script>
-  <title>Webring</title>
-</head>
-<body>
-  <script>
-    // protocole://url.domain.ext
-    var sites = [
-      "https://wiki.xxiivv.com"
-      , "http://estevancarlos.com"
-      , "https://electro.pizza"
-      , "http://xla.wiki"
-      , "https://monochromatic.co"
-      , "https://joshavanier.github.io"
-      , "http://kaemura.com"
-      , "https://liamcooke.com"
-      , "https://electricgecko.de"
-      , "https://wichniow.ski"
-      , "https://hraew.autophagy.io"
-      , "https://evenunto.net"
-      , "https://anxl.faith"
-      , "https://xvw.github.io"
-      , "https://heracl.es"
-      , "https://felipecortez.net"
-      , "http://rukial.tk"
-      , "http://luminghao.com"
-      , "http://silane.io"
-      , "https://theiceshelf.com"
-      , "https://turelio.github.io"
-      , "https://spaceshipsin.space"
-      , "http://log.lectronice.com"
-      , "https://craze.co.uk"
-      , "https://shaneckel.com"
-      , "https://cblgh.org"
-      , "https://ellugar.co"
-      , "http://hur.bet"
-      , "http://chigby.org"
-      , "https://0101.solar"
-      , "https://longest.voyage"
-      , "https://palomakop.tv"
-      , "https://travisshears.com"
-      , "https://v-os.ca"
-      , "http://secretinternet.club"
-      , "https://jmandel.xyz"
-      , "https://systems.ws"
-      , "https://jamesin.space"
-      , "https://nathanwentworth.co"
-      , "https://eswat.ca"
-      // Don't forget the comma!
-    ]
-    var portal = new Portal(sites);
-    portal.start();
-  </script>
-  <style>
-    body { background:#f4f4f4; padding:0px; margin:0px; }
-    body pre { background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #555;padding: 15px;font-family: 'Courier New',courier;font-size:12px; position: relative; border-radius: 2px }
-    body pre a { color:#fff; padding:0px 5px; line-height: 20px}
-    body pre a:hover { color:#eee; background:#000; text-decoration: none; }
-    body pre #icon { display: block;width: 30px;height: 30px;background-image: url(icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 10px;right:10px;background-position: center;padding:0px }
-    body pre p { display:block; padding:0px 5px}
-    body pre p b { font-weight: normal; color:#ccc; }
-    body pre list { display:flex; flex-wrap: wrap; max-width: 800px}
-    body pre list ln { width: 16em; display:block; padding-left:5px; overflow: hidden; text-overflow: ellipsis; }
-    body pre list ln a:visited { color:#ccc;}
-  </style>
-</body>
-</html>
+<title>Webring</title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<main></main>
+
+<script src='portal.js'></script>
+<script>
+// protocole://url.domain.ext
+const sites =
+  [ 'https://wiki.xxiivv.com'
+  , 'http://estevancarlos.com'
+  , 'https://electro.pizza'
+  , 'http://xla.wiki'
+  , 'https://monochromatic.co'
+  , 'https://joshavanier.github.io'
+  , 'http://kaemura.com'
+  , 'https://liamcooke.com'
+  , 'https://electricgecko.de'
+  , 'https://wichniow.ski'
+  , 'https://hraew.autophagy.io'
+  , 'https://evenunto.net'
+  , 'https://anxl.faith'
+  , 'https://xvw.github.io'
+  , 'https://heracl.es'
+  , 'https://felipecortez.net'
+  , 'http://rukial.tk'
+  , 'http://luminghao.com'
+  , 'http://silane.io'
+  , 'https://theiceshelf.com'
+  , 'https://turelio.github.io'
+  , 'https://spaceshipsin.space'
+  , 'http://log.lectronice.com'
+  , 'https://craze.co.uk'
+  , 'https://shaneckel.com'
+  , 'https://cblgh.org'
+  , 'https://ellugar.co'
+  , 'http://hur.bet'
+  , 'http://chigby.org'
+  , 'https://0101.solar'
+  , 'https://longest.voyage'
+  , 'https://palomakop.tv'
+  , 'https://travisshears.com'
+  , 'https://v-os.ca'
+  , 'http://secretinternet.club'
+  , 'https://jmandel.xyz'
+  , 'https://systems.ws'
+  , 'https://jamesin.space'
+  , 'https://nathanwentworth.co'
+  , 'https://eswat.ca'
+  // Don't forget the comma!
+  ]
+
+const portal = new Portal(sites)
+portal.start()
+</script>
+
+<style>
+body
+  { background: #f4f4f4
+  ; padding: 0
+  ; margin: 0
+  }
+
+main
+  { background: #111
+  ; min-height: calc(100vh - 60px)
+  ; width: calc(100vw - 60px)
+  ; margin: 15px
+  ; color: #555
+  ; padding: 15px
+  ; font-family: 'Courier New', Courier, monospace
+  ; font-size: 12px
+  ; line-height: 1.75em
+  ; position: relative
+  ; border-radius: 2px
+  ; display: block
+  }
+
+main a
+  { color: #fff
+  ; padding: 0 5px
+  ; line-height: 20px
+  }
+
+main a:hover
+  { color: #eee
+  ; background: #000
+  ; text-decoration: none
+  }
+
+main #icon
+  { display: block
+  ; width: 30px
+  ; height: 30px
+  ; background-image: url('./icon.white.svg')
+  ; background-size: cover
+  ; background-repeat: no-repeat
+  ; position: absolute
+  ; bottom: 10px
+  ; right: 10px
+  ; background-position: center
+  ; padding: 0
+  }
+
+main p
+  { display: block
+  ; padding: 0 5px
+  }
+
+main p b
+  { font-weight: normal
+  ; color: #ccc
+  }
+
+main list
+  { display: flex
+  ; flex-wrap: wrap
+  ; max-width: 800px
+  ; margin-bottom: 1rem
+  }
+
+main list ln
+  { width: 16em
+  ; display: block
+  ; padding-left: 5px
+  ; overflow: hidden
+  ; text-overflow: ellipsis
+  }
+
+main list ln a:visited
+  { color: #ccc }
+
+</style>
