@@ -1,0 +1,13 @@
+body { background:#f4f4f4; padding:0px; margin:0px; }
+body div { display:block; background: #ccc;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #555;padding: 15px;font-family: 'Monospaced','Courier New',courier;font-size:12px; position: relative; border-radius: 2px }
+body div #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 10px;right:10px;background-position: center;padding:0px }
+body div p { display:block; padding:0px 5px}
+body div p a { color:black; text-decoration: none; }
+body div p a:hover { text-decoration: underline; }
+body div p b { font-weight: normal; color:#000; text-decoration: underline; }
+body div p.readme { max-width:500px; }
+body div list { display:block; max-width: 800px; columns:3; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
+body div list ln { width: 16em; display:block; padding-left:5px; overflow: hidden; text-overflow: ellipsis; }
+body div list ln a { line-height: 20px; display: inline-block; color:#000; padding:0px 5px;}
+body div list ln a:visited { color:#777; text-decoration: none;}
+body div list ln a:hover { background:black; color:#fff; text-decoration: none; }

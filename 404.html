@@ -1,0 +1,18 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Loading..</title>
+</head>
+<body style='background:black'>
+  <script>
+    var parts = window.location.pathname.split("/")
+    var target = parts.slice(-1);
+    parts.splice(-1)
+    document.location.href = parts.join("/")+"/#"+target
+  </script>
+</body>
+</html>
