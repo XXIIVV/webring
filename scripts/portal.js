@@ -1,3 +1,5 @@
+'use strict';
+
 function Portal(sites)
 {
   this.el = document.createElement("div");
@@ -26,10 +28,10 @@ function Portal(sites)
   
   this.directory = function()
   {
-    var html = ""
+    let html = ""
     
-    for(var id in this.sites){
-      var site = this.sites[id]
+    for(let id in this.sites){
+      let site = this.sites[id]
       html += `<ln>${id}) <a href='${site}'>${site.split("//")[1]}</a></ln>`
     }
     return `<list>${html}</list>\n${this.readme()}${this.buttons()}`
@@ -54,14 +56,14 @@ function Portal(sites)
   
   this.locate = function()
   {
-    var hash = this.location();
+    let hash = this.location();
     
     if(hash == "random"){
       return Math.floor(Math.random()*this.sites.length)
     }
     
-    for(var id in this.sites){
-      var site = this.sites[id];
+    for(let id in this.sites){
+      let site = this.sites[id];
       if(site.indexOf(hash) >-1){
         return parseInt(id)
       }
@@ -76,8 +78,8 @@ function Portal(sites)
   
   this.redirect = function()
   {
-    var location = this.locate();
-    var target = this.next(location);
+    let location = this.locate();
+    let target = this.next(location);
     this.navigate(target)
     return `<p>Redirecting to <b>${target}</b></p><meta http-equiv="refresh" content="3; url=${target}">
     <p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
