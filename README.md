@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share personal websites such as *diaries, wikis & portfolios*. To add yourself to the ring, submit an [edit](https://github.com/XXIIVV/webring/edit/master/index.html) to this repository. 
+This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share personal websites such as *diaries, wikis & portfolios*. To add yourself to the ring, submit an [edit](https://github.com/XXIIVV/webring/edit/master/index.html) to this repository.
 
 ## Join the webring
 
@@ -21,6 +21,13 @@ Instead of linking to the directory, you can also link to the next link in the r
 ```
 <a href='https://webring.xxiivv.com/#wiki.xxiivv' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
+
+## API
+
+This repository does not contain mature API capabilities, but there is one way to request list of sites currently in the webring.
+
+- Request [sites.js on xxiivv](https://webring.xxiivv.com/scripts/sites.js) or [sites.js on github](https://raw.githubusercontent.com/XXIIVV/webring/master/scripts/sites.js)
+- Parse it as text from `[` to `]`, split by `,` and then trim all whitespace and `"` in resulting array.
 
 ## Need Help?
 
