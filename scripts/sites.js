@@ -56,6 +56,6 @@ let sites = [
       , "https://simbolo.xyz"
       , "https://ricky.codes"
       , "https://maxdeviant.com"
-      , "https://www.tynandebold.com"
+      , "https://tynandebold.com"
     ];
     // Don't forget the comma! No trailing slashes
