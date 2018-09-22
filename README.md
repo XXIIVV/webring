@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share personal websites such as *diaries, wikis & portfolios*. To add yourself to the ring, submit an [edit](https://github.com/XXIIVV/webring/edit/master/index.html) to this repository.
+This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share personal websites such as *diaries, wikis & portfolios*. To add yourself to the ring, submit an [edit](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) to this repository.
 
 ## Join the webring
 
@@ -9,7 +9,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 - Add the webring icon to your website html.
-- Add your website url to the [index.html](https://github.com/XXIIVV/webring/edit/master/index.html)
+- Add your website url to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file.
 - Submit a Pull Request with the location of the webring icon on your site.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaning about *https*, go ahead and host the icon yourself.
