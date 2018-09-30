@@ -1,5 +1,5 @@
 // protocole://url.domain.ext
-let sites = [
+const sites = [
         "https://wiki.xxiivv.com"
       , "http://estevancarlos.com"
       , "https://electro.pizza"

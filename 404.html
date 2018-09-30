@@ -9,8 +9,8 @@ permalink: /404.html
 </head>
 <body style='background:black'>
   <script>
-    let parts = window.location.pathname.split("/")
-    let target = parts.slice(-1);
+    const parts = window.location.pathname.split("/")
+    const target = parts.slice(-1);
     parts.splice(-1)
     document.location.href = parts.join("/")+"/#"+target
   </script>
