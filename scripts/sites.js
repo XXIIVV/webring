@@ -58,5 +58,6 @@ const sites = [
       , "https://maxdeviant.com"
       , "https://tynandebold.com"
       , "http://gytis.co"
+      , "https://nomand.co"
     ];
     // Don't forget the comma! No trailing slashes
