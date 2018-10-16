@@ -63,4 +63,5 @@ const sites = [
   , "https://tynandebold.com"
   , "http://gytis.co"
   , "https://nomand.co"
+  , "http://memoriata.com"
 ];
