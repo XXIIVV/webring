@@ -15,5 +15,5 @@ body div ul li a:visited { color:#999; text-decoration: none;}
 body div ul li a:hover { background:#ccc; color:#000; text-decoration: none; border-radius: 2px }
 
 @media (max-width: 950px){
-  body div list { columns: 2 }
+  body div ul { columns: 2 }
 }
