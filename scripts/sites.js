@@ -64,4 +64,5 @@ const sites = [
   , "http://gytis.co"
   , "https://nomand.co"
   , "http://memoriata.com"
+  , "http://richard-yang-chen.com"
 ];
