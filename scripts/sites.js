@@ -64,4 +64,5 @@ const sites = [
   , "http://gytis.co"
   , "https://nomand.co"
   , "http://memoriata.com"
+  , "http://freepages.rootsweb.com/~craigsplace/genealogy/01/place/craig1/index.html"
 ];
