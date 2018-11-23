@@ -66,4 +66,5 @@ const sites = [
   , "http://memoriata.com"
   , "https://mmm.s-ol.nu"
   , "https://chad.is"    
+  , "https://danielgivens.com"
 ];
