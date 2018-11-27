@@ -67,4 +67,5 @@ const sites = [
   , "https://mmm.s-ol.nu"
   , "https://chad.is"
   , "https://smidgeo.com/bots"
+  , "https://iko.soy"
 ];
