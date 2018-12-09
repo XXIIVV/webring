@@ -68,4 +68,5 @@ const sites = [
   , "https://chad.is"
   , "https://smidgeo.com/bots"
   , "https://iko.soy"
+  , "http://atelieroilandsugar.com"
 ];
