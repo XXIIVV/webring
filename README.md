@@ -10,7 +10,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 
 - Add the webring icon to your website html.
 - Add your website url to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file.
-- Submit a Pull Request with the location of the webring icon on your site.
+- Submit a Pull Request with **the location of the webring icon** on your site.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaning about *https*, go ahead and host the icon yourself.
 
