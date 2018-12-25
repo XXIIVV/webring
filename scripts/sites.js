@@ -70,4 +70,5 @@ const sites = [
   , "https://iko.soy"
   , "http://atelieroilandsugar.com"
   , "https://magoz.is"
+  , "https://foobar123.xyz"
 ];
