@@ -71,4 +71,5 @@ const sites = [
   , "http://atelieroilandsugar.com"
   , "https://magoz.is"
   , "https://szymonkaliski.com"
+  , "https://phse.net"  
 ];
