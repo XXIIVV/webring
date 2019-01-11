@@ -8,7 +8,7 @@ const sites = [
   , "http://estevancarlos.com"
   , "https://electro.pizza"
   , "https://monochromatic.co"
-  , "https://joshavanier.github.io"
+  , "https://joshavanier.github.io/wiki"
   , "http://kaemura.com"
   , "https://liamcooke.com"
   , "https://electricgecko.de"
@@ -71,5 +71,5 @@ const sites = [
   , "http://atelieroilandsugar.com"
   , "https://magoz.is"
   , "https://szymonkaliski.com"
-  , "https://phse.net"  
+  , "https://phse.net"
 ];
