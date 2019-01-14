@@ -72,4 +72,5 @@ const sites = [
   , "https://magoz.is"
   , "https://szymonkaliski.com"
   , "https://phse.net"
+  , "https://rosano.ca"
 ];
