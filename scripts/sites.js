@@ -8,7 +8,7 @@ const sites = [
   , "http://estevancarlos.com"
   , "https://electro.pizza"
   , "https://monochromatic.co"
-  , "https://joshavanier.github.io/wiki"
+  , "https://avanier.now.sh/wiki"
   , "http://kaemura.com"
   , "https://liamcooke.com"
   , "https://electricgecko.de"
