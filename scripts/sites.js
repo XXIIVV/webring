@@ -7,7 +7,7 @@ const sites = [
     "https://wiki.xxiivv.com"
   , "http://estevancarlos.com"
   , "https://electro.pizza"
-  , "https://monochromatic.co"
+  , "https://ianjbattaglia.co"
   , "https://avanier.now.sh/wiki"
   , "http://kaemura.com"
   , "https://liamcooke.com"
