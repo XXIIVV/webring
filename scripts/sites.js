@@ -75,5 +75,6 @@ const sites = [
   , "https://rosano.ca"
   , "https://soyboysky.github.io/"
   , "https://gndclouds.cc/"
-  , "https://xuv.be""
+  , "https://xuv.be"
+  , "https://dsdshcym.github.io"
 ];
