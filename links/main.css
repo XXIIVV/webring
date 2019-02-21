@@ -1,18 +1,18 @@
 * { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 
 body { background:#f4f4f4; padding:0px; margin:0px; }
-body div { display:block; background: #ddd;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #555;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px }
-body div #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 10px;right:10px;background-position: center;padding:0px }
+body div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white;}
+body div #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
 body div p { display:block; padding:0px 5px; line-height: 20px}
-body div p a { color:black; text-decoration: none; text-decoration: underline;}
+body div p a { text-decoration: underline;}
 body div p a:hover { text-decoration: underline; }
-body div p b { font-weight: normal; color:#000; font-family: 'input_mono_medium' }
+body div p b { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
 body div ul { display:block; max-width: 800px; columns:3; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
 body div ul li { width: 22em; display:block; padding-left:5px; overflow: hidden; text-overflow: ellipsis; }
-body div ul li a { line-height: 20px; display: inline-block; color:#000; padding:0px 5px; text-decoration: none;}
-body div ul li a:visited { color:#999; text-decoration: none;}
-body div ul li a:hover { background:#ccc; color:#000; text-decoration: none; border-radius: 2px }
+body div ul li a { line-height: 20px; display: inline-block; padding:0px 5px; text-decoration: none;}
+body div ul li a:visited { color:#ccc; text-decoration: none;}
+body div ul li a:hover { text-decoration: underline; }
 
 @media (max-width: 950px){
   body div ul { columns: 2 }

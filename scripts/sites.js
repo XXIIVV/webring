@@ -71,8 +71,8 @@ const sites = [
   , "https://szymonkaliski.com"
   , "https://phse.net"
   , "https://rosano.ca"
-  , "https://soyboysky.github.io/"
-  , "https://gndclouds.cc/"
+  , "https://soyboysky.github.io"
+  , "https://gndclouds.cc"
   , "https://xuv.be"
   , "https://dsdshcym.github.io"
 ];
