@@ -75,4 +75,5 @@ const sites = [
   , "https://gndclouds.cc"
   , "https://xuv.be"
   , "https://dsdshcym.github.io"
+  , "https://wiki.chronica.xyz"
 ];
