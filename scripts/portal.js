@@ -20,7 +20,7 @@ function Portal (sites) {
   }
 
   function _redirect (target) {
-    return `<p>Redirecting to <b>${target}</b></p><meta http-equiv="refresh" content="3; url=${target}">
+    return `<p>Redirecting to <a href="${target}">${target}</a></p><meta http-equiv="refresh" content="3; url=${target}">
     <p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
