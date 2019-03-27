@@ -76,4 +76,5 @@ const sites = [
   , "https://xuv.be"
   , "https://dsdshcym.github.io"
   , "https://wiki.chronica.xyz"
+  , "https://boffosocko.com"
 ];
