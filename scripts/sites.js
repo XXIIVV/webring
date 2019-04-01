@@ -78,4 +78,5 @@ const sites = [
   , "https://wiki.chronica.xyz"
   , "https://boffosocko.com"
   , "https://hex22.org"
+  , "https://patrikarvidsson.com"
 ];
