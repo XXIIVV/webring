@@ -79,4 +79,5 @@ const sites = [
   , "https://boffosocko.com"
   , "https://hex22.org"
   , "https://patrikarvidsson.com"
+  , "https://hardcodepunk.be"
 ];
