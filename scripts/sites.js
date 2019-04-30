@@ -80,4 +80,5 @@ const sites = [
   , "https://hex22.org"
   , "https://patrikarvidsson.com"
   , "https://sophieleetmaa.com"
+  , "https://xinniw.github.io"
 ];
