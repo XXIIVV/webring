@@ -8,12 +8,8 @@ body div p a { text-decoration: underline;}
 body div p a:hover { text-decoration: underline; }
 body div p b { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
-body div ul { display:block; max-width: 800px; columns:3; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
+body div ul { display:flex; flex-wrap:wrap; max-width: 800px; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
 body div ul li { width: 22em; display:block; padding-left:5px; overflow: hidden; text-overflow: ellipsis; }
-body div ul li a { line-height: 20px; display: inline-block; padding:0px 5px; text-decoration: none;}
+body div ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
 body div ul li a:visited { color:#ccc; text-decoration: none;}
 body div ul li a:hover { text-decoration: underline; }
-
-@media (max-width: 950px){
-  body div ul { columns: 2 }
-}
