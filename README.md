@@ -24,10 +24,11 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 ## API
 
-This repository does not contain mature API capabilities, but there is one way to request list of sites currently in the webring.
+This repository does not contain mature API capabilities, but there are a couple ways to request a list of sites currently in the webring.
 
 - Request [sites.js on xxiivv](https://webring.xxiivv.com/scripts/sites.js) or [sites.js on github](https://raw.githubusercontent.com/XXIIVV/webring/master/scripts/sites.js)
-- Parse it as text from `[` to `]`, split by `,` and then trim all whitespace and `"` in resulting array.
+- Then parse it as text from `[` to `]`, split by `,` and then trim all whitespace and `"` in resulting array.
+- If you'd like a already parsed list, [webring-checker.now.sh/sites](https://webring-checker.now.sh/sites) will return an json array of the sites in the webring. See [webring-checker.now.sh](https://webring-checker.now.sh) for more info.
 
 ## Need Help?
 
