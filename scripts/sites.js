@@ -14,7 +14,7 @@ const sites = [
   , "https://electricgecko.de"
   , "https://wichniow.ski"
   , "https://hraew.autophagy.io"
-  , "https://evenunto.net"
+  , "http://evenunto.net"
   , "https://anxl.faith"
   , "https://xvw.github.io"
   , "https://heracl.es"
