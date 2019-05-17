@@ -19,7 +19,7 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 Instead of linking to the directory, you can also link to the next link in the ring by adding parts of your site or domain in the hash of the request url:
 
 ```
-<a href='https://webring.xxiivv.com/#wiki.xxiivv' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
+<a href='https://webring.xxiivv.com/#wiki.xxiivv' target='_blank' rel="noopener noreferrer"><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
 ## API
