@@ -14,7 +14,7 @@ const sites = [
   , "https://electricgecko.de"
   , "https://wichniow.ski"
   , "https://hraew.autophagy.io"
-  , "https://evenunto.net"
+  , "http://evenunto.net"
   , "https://anxl.faith"
   , "https://xvw.github.io"
   , "https://heracl.es"
@@ -82,4 +82,6 @@ const sites = [
   , "https://sophieleetmaa.com"
   , "https://xinniw.github.io"
   , "https://mboxed.github.io/forida"
+  , "https://letters.vexingworkshop.com"
+  , "https://tom.org.nz/about"
 ];
