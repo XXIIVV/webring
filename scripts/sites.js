@@ -81,6 +81,7 @@ const sites = [
   , "https://patrikarvidsson.com"
   , "https://sophieleetmaa.com"
   , "https://xinniw.github.io"
+  , "https://mboxed.github.io/forida"
   , "https://letters.vexingworkshop.com"
   , "https://tom.org.nz/about"
 ];
