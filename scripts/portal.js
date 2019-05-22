@@ -16,12 +16,16 @@ function Portal (sites) {
 
   function _directory (sites) {
     return `
-    <ul>${sites.reduce((acc, val, id) => { return `${acc}<li>${id}) <a href='${val}'>${val.split('//')[1]}</a></li>` }, '')}</ul>\n${_readme()}${_buttons()}`
+    <ul>${sites.reduce((acc, site, id) => { return `${acc}<li>${id}) <a href='${site.url}'>${_name(site)}</a></li>` }, '')}</ul>\n${_readme()}${_buttons()}`
   }
 
-  function _redirect (target) {
-    return `<p>Redirecting to <a href="${target}">${target}</a></p><meta http-equiv="refresh" content="3; url=${target}">
-    <p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${target}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+  function _name(site) {
+    return site.title ? site.title : `${site.url.split('//')[1]}`
+  }
+
+  function _redirect (site) {
+    return `<p>Redirecting to <a href="${site.url}">${site.url}</a></p><meta http-equiv="refresh" content="3; url=${site.url}">
+    <p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${site.url}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   //
@@ -50,7 +54,8 @@ function Portal (sites) {
     }
 
     for (const id in this.sites) {
-      if (this.sites[id].indexOf(hash) > -1) {
+      const site = this.sites[id]
+      if (site.url.indexOf(hash) > -1) {
         return parseInt(id)
       }
     }
