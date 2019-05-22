@@ -9,10 +9,10 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 - Add the webring icon to your website html.
-- Add your website url to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file.
+- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` key is required, but you can also include `title`, `type`, `author`, `contact`, and `rss`.
 - Submit a Pull Request with **the location of the webring icon** on your site.
 
-Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaning about *https*, go ahead and host the icon yourself. **Single page websites, and websites acting only as portals to other social platforms, will be rejected**.
+Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself. **Single page websites, and websites acting only as portals to other social platforms, will be rejected**.
 
 ### Circular Linking
 
@@ -24,11 +24,10 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 ## API
 
-This repository does not contain mature API capabilities, but there are a couple ways to request a list of sites currently in the webring.
+This repository does not contain mature API capabilities, but there are a couple ways to request a list of sites and other information currently in the webring.
 
-- Request [sites.js on xxiivv](https://webring.xxiivv.com/scripts/sites.js) or [sites.js on github](https://raw.githubusercontent.com/XXIIVV/webring/master/scripts/sites.js)
-- Then parse it as text from `[` to `]`, split by `,` and then trim all whitespace and `"` in resulting array.
-- If you'd like a already parsed list, [webring-checker.now.sh/sites](https://webring-checker.now.sh/sites) will return an json array of the sites in the webring. See [webring-checker.now.sh](https://webring-checker.now.sh) for more info.
+- Request [sites.js on xxiivv](https://webring.xxiivv.com/scripts/sites.js) or [sites.js on github](https://raw.githubusercontent.com/XXIIVV/webring/master/scripts/sites.js) and parse it. An example can be seen [here](https://gist.github.com/ckipp01/2ab7ac42e2837b4359efeb76eb49bb54).
+- If you'd like a already parsed list, [webring-checker.now.sh/sites](https://webring-checker.now.sh/sites) will return an json array of the site objects in the webring. See [webring-checker.now.sh](https://webring-checker.now.sh) for more info on what else is available.
 
 ## Need Help?
 
