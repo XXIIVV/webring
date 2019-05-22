@@ -84,4 +84,5 @@ const sites = [
   , "https://mboxed.github.io/forida"
   , "https://letters.vexingworkshop.com"
   , "https://tom.org.nz/about"
+  , "https://teknari.com"
 ];
