@@ -4,7 +4,7 @@
 // protocole://url.domain.ext
 
 const sites = [
-    {url:"https://wiki.xxiivv.com", title:"xxiivv", type:"wiki", author:"Devine Lu Linvega", contact:"aliceffekt@gmail.com"}
+    {url:"https://wiki.xxiivv.com", title:"XXIIVV", type:"wiki", author:"Devine Lu Linvega", contact:"aliceffekt@gmail.com", rss:"https://wiki.xxiivv.com/links/rss.xml"}
   , {url:"http://estevancarlos.com"}
   , {url:"https://electro.pizza"}
   , {url:"https://ianjbattaglia.co"}
