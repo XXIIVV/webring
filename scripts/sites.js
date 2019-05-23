@@ -21,7 +21,7 @@ const sites = [
   , {url:"https://felipecortez.net"}
   , {url:"http://luminghao.com"}
   , {url:"https://turelio.github.io"}
-  , {url:"https://spaceshipsin.space"}
+  , {url:"https://spaceshipsin.space", title:"spaceshipsin.space", type:"hybrid", author:"Gaeel Bradshaw-Rodriguez", contact:"gaeel@spaceshipsin.space"}
   , {url:"http://log.lectronice.com"}
   , {url:"https://craze.co.uk"}
   , {url:"https://shaneckel.com"}
