@@ -8,7 +8,7 @@ const sites = [
   , {url:"http://estevancarlos.com"}
   , {url:"https://electro.pizza", title:"electro pizza", type:"blog", rss:"https://electro.pizza/feed.xml"}
   , {url:"https://ianjbattaglia.co"}
-  , {url:"https://joshavanier.github.io/wiki"}
+  , {url:"https://avanier.now.sh/wiki", title:"Ath", type:"wiki", author:"Josh Avanier", contact:"joshavanier@protonmail.com"}
   , {url:"http://kaemura.com"}
   , {url:"https://liamcooke.com"}
   , {url:"https://electricgecko.de"}
