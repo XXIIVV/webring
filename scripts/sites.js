@@ -75,7 +75,7 @@ const sites = [
   , {url:"https://gndclouds.cc"}
   , {url:"https://xuv.be"}
   , {url:"https://dsdshcym.github.io"}
-  , {url:"https://wiki.chronica.xyz"}
+  , {url:"https://wiki.chronica.xyz", title:"chronica", type:"wiki", author:"Chris Kipp", contact:"ckipp@pm.me"}
   , {url:"https://boffosocko.com"}
   , {url:"https://hex22.org"}
   , {url:"https://patrikarvidsson.com"}
