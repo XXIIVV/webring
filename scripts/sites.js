@@ -69,7 +69,7 @@ const sites = [
   , {url:"http://atelieroilandsugar.com"}
   , {url:"https://magoz.is"}
   , {url:"https://szymonkaliski.com"}
-  , {url:"https://phse.net"}
+  , {url:"https://phse.net", title:"phse.net", type:"blog", author:"Stephen Lindberg"}
   , {url:"https://rosano.ca"}
   , {url:"https://soyboysky.github.io"}
   , {url:"https://gndclouds.cc"}
