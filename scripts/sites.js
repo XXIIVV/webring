@@ -1,7 +1,7 @@
 'use strict';
 
 // Don't forget the comma! No trailing slashes
-// protocole://url.domain.ext
+// protocol://url.domain.ext
 
 const sites = [
     {url:"https://wiki.xxiivv.com", title:"xxiivv", type:"wiki", author:"Devine Lu Linvega", contact:"aliceffekt@gmail.com", rss:"https://wiki.xxiivv.com/links/rss.xml"}
