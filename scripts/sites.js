@@ -6,7 +6,7 @@
 const sites = [
     {url:"https://wiki.xxiivv.com", title:"XXIIVV", type:"wiki", author:"Devine Lu Linvega", contact:"aliceffekt@gmail.com", rss:"https://wiki.xxiivv.com/links/rss.xml"}
   , {url:"http://estevancarlos.com"}
-  , {url:"https://electro.pizza"}
+  , {url:"https://electro.pizza", title:"electro·pizza", type:"blog", rss:"https://electro.pizza/feed.xml"}
   , {url:"https://ianjbattaglia.co"}
   , {url:"https://joshavanier.github.io/wiki"}
   , {url:"http://kaemura.com"}
