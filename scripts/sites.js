@@ -52,7 +52,7 @@ const sites = [
   , {url:"https://jakofranko.github.com"}
   , {url:"https://aeriform.io"}
   , {url:"http://blog.lucasdidthis.com"}
-  , {url:"http://npisanti.com"}
+  , {url:"http://npisanti.com", title:"npisanti.com", author:"Nicola Pisanti", contact:"nicola@npisanti.com", rss:"http://npisanti.com/journal/rss.xml"}
   , {url:"https://underscorediscovery.ca"}
   , {url:"https://drisc.io"}
   , {url:"https://neufv.website"}
