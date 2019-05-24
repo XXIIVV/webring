@@ -85,4 +85,5 @@ const sites = [
   , {url:"https://letters.vexingworkshop.com"}
   , {url:"https://tom.org.nz/about"}
   , {url:"https://teknari.com"}
+  , {url:"https://colectivo-de-livecoders.gitlab.io/", title:"Colectivo de Livecoders", type:"blog", author:"CLiC", contact: "https://t.me/clic_laplata"}
 ];
