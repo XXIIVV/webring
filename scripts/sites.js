@@ -16,7 +16,7 @@ const sites = [
   , {url:"https://hraew.autophagy.io"}
   , {url:"http://evenunto.net"}
   , {url:"https://anxl.faith"}
-  , {url:"https://xvw.github.io"}
+  , {url:"https://xvw.github.io", title:"xvw.github.io", type:"blog", author:"Xavier Van de Woestyne", contact:"xaviervdw@gmail.com", rss:"https://xvw.github.io/atom.xml"}
   , {url:"https://heracl.es"}
   , {url:"https://felipecortez.net"}
   , {url:"http://luminghao.com"}
