@@ -44,7 +44,7 @@ const sites = [
   , {url:"https://wasin.io"}
   , {url:"https://inns.studio"}
   , {url:"http://kokorobot.ca"}
-  , {url:"https://ameyama.com"}
+  , {url:"https://ameyama.com", title:"雨山", type:"blog", author:"jrc03c", contact:"josh@ameyama.com", rss:"https://ameyama.com/blog/rss.xml"}
   , {url:"https://wake.st"}
   , {url:"https://xarene.la"}
   , {url:"https://alex.zyzhang.me"}
