@@ -26,7 +26,7 @@ const sites = [
   , {url:"https://craze.co.uk"}
   , {url:"https://shaneckel.com"}
   , {url:"https://cblgh.org"}
-  , {url:"https://ellugar.co"}
+  , {url:"https://ellugar.co", title:"ellugar", type:"wiki", author"afk", contact:"afk@ellugar.co"}
   , {url:"http://hur.bet"}
   , {url:"http://chigby.org"}
   , {url:"https://longest.voyage"}
