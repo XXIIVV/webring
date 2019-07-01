@@ -2,6 +2,7 @@
 
 function Portal (sites) {
   this.el = document.createElement('div')
+  this.el.id = 'portal'
   this.sites = sites
 
   // Templates
@@ -11,7 +12,7 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a> | <a id="opml">OPML</a></p>`
+    return `<p class='buttons'><a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a> | <a href="hallway.html">The Hallway</a> | <a id="opml">OPML</a></p>`
   }
 
   function _directory (sites) {

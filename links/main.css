@@ -2,28 +2,41 @@
 
 body { background:#f4f4f4; padding:0px; margin:0px; }
 body div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white;}
-body div #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
+body div ul { max-width: 800px; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
 body div p { display:block; padding:0px 5px; line-height: 20px}
 body div p a { text-decoration: underline;}
 body div p a:hover { text-decoration: underline; }
 body div p b { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
-body div ul { max-width: 800px; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden; columns:3;}
-body div ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
-body div ul li.wiki::after { content:"<wiki>"; color:#555; }
-body div ul li.blog::after { content:"<blog>"; color:#555; }
-body div ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
-body div ul li a:visited { color:#ccc; text-decoration: none;}
-body div ul li a:hover { text-decoration: underline; }
+
+/* Hallway */
+
+body #hallway .entry { line-height: 16px; display: block }
+body #hallway .entry .date { color:#555; }
+body #hallway .entry .date:after { content: ")" }
+body #hallway .entry .author { font-family: 'input_mono_medium' }
+body #hallway .entry .author:after { content:":"; }
+body #hallway .entry .body {  }
+
+/* Portal */
+
+body #portal #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
+body #portal ul { columns:3;  }
+body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
+body #portal ul li.wiki::after { content:"<wiki>"; color:#555; }
+body #portal ul li.blog::after { content:"<blog>"; color:#555; }
+body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
+body #portal ul li a:visited { color:#ccc; text-decoration: none;}
+body #portal ul li a:hover { text-decoration: underline; }
 
 @media (max-width: 730px) {
-  body div ul li span.counter { display: none }
+  body #portal ul li span.counter { display: none }
 }
 @media (max-width: 630px) {
-  body div ul { columns: 2 !important; }
-  body div ul li span.counter { display: none }
+  body #portal ul { columns: 2 !important; }
+  body #portal ul li span.counter { display: none }
 }
 @media (max-width: 530px) {
-  body div ul { columns: 1 !important; }
-  body div ul li span.counter { display: inline }
+  body #portal ul { columns: 1 !important; }
+  body #portal ul li span.counter { display: inline }
 }
