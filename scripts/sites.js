@@ -4,7 +4,7 @@
 // protocol://url.domain.ext
 
 const sites = [
-    {url:"https://wiki.xxiivv.com", title:"xxiivv", type:"wiki", author:"Devine Lu Linvega", contact:"aliceffekt@gmail.com", rss:"https://wiki.xxiivv.com/links/rss.xml"}
+    {url:"https://wiki.xxiivv.com", title:"xxiivv", type:"wiki", author:"Devine Lu Linvega", contact:"aliceffekt@gmail.com", rss:"https://wiki.xxiivv.com/links/rss.xml", feed:"https://wiki.xxiivv.com/twtxt.txt"}
   , {url:"http://estevancarlos.com"}
   , {url:"https://electro.pizza", title:"electro pizza", type:"blog", rss:"https://electro.pizza/feed.xml"}
   , {url:"https://ianjbattaglia.co"}
@@ -26,7 +26,7 @@ const sites = [
   , {url:"https://craze.co.uk"}
   , {url:"https://shaneckel.com"}
   , {url:"https://cblgh.org"}
-  , {url:"https://ellugar.co", title:"ellugar", type:"wiki", author"afk", contact:"afk@ellugar.co", rss:"http://feeds.ellugar.co/ellugar-logs"}
+  , {url:"https://ellugar.co", title:"ellugar", type:"wiki", author:"afk", contact:"afk@ellugar.co", rss:"http://feeds.ellugar.co/ellugar-logs"}
   , {url:"http://hur.bet"}
   , {url:"http://chigby.org"}
   , {url:"https://longest.voyage"}

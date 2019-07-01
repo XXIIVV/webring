@@ -19,7 +19,7 @@ function Portal (sites) {
     <ul>${sites.reduce((acc, site, id) => { return `${acc}<li class='${site.type}'><span class='counter'>${id})</span><a href='${site.url}'>${_name(site)}</a></li>` }, '')}</ul>\n${_readme()}${_buttons()}`
   }
 
-  function _name(site) {
+  function _name (site) {
     return site.title ? site.title : `${site.url.split('//')[1]}`
   }
 
