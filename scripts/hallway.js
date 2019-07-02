@@ -47,7 +47,7 @@ function Hallway (sites) {
     const diff = (now - then)
     const date = Math.floor(diff / 86400000)
 
-    return `<li class='entry'><span class='date'>${date}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
+    return `<li class='entry'><span class='date'>${ago(date)}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
   }
 
   // Feeds
@@ -72,7 +72,7 @@ function Hallway (sites) {
 
   this.fetchFeed = function (id, feed) {
     console.log(`Fetching ${id}(${feed.path})..`)
-    Promise.all([ fetch(feed.path).then(x => x.text()) ]).then(([content]) => {
+    Promise.all([ fetch(feed.path, { cache: 'no-store' }).then(x => x.text()) ]).then(([content]) => {
       feeds[id].content = parseFeed(id, content)
       this.refresh()
     })
@@ -96,5 +96,15 @@ function Hallway (sites) {
       entries.push({ date, body, author })
     }
     return entries
+  }
+
+  function ago (days, cap = 9999) {
+    if (-days > cap) { return `${this.toString(true)}` }
+    if (days === -1) { return `yesterday` }
+    if (days === 1) { return 'tomorrow' }
+    if (days === 0) { return 'today' }
+    if (days < -365) { return `${Math.floor(days / -365)} years ago` }
+    if (days < 1) { return `${days * -1} days ago` }
+    return `in ${days} days`
   }
 }
