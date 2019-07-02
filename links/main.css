@@ -17,6 +17,7 @@ body #hallway .entry .date:after { content: ")" }
 body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 60px;  }
 body #hallway .entry .author:after { content:":"; }
 body #hallway .entry .body { max-width: 400px }
+body #hallway .entry .body a { text-decoration: underline; }
 
 /* Portal */
 

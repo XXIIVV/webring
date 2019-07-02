@@ -47,6 +47,15 @@ function Hallway (sites) {
     const diff = (now - then)
     const date = Math.floor(diff / 86400000)
 
+    // Find mention
+    if (entry.body.indexOf('@<') > -1) {
+      const data = entry.body.split('@<').pop().split('>')[0]
+      const mention = data.split(' ')
+      const name = mention[0]
+      const path = mention[1]
+      entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>${name}</a>`)
+    }
+
     return `<li class='entry'><span class='date'>${ago(date)}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
   }
 
