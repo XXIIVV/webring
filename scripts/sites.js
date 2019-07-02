@@ -69,7 +69,7 @@ const sites = [
   { url: 'http://atelieroilandsugar.com' },
   { url: 'https://magoz.is' },
   { url: 'https://szymonkaliski.com' },
-  { url: 'https://phse.net', title: 'phse.net', type: 'blog', author: 'Stephen Lindberg', rss: 'https://phse.net/post/index.xml' },
+  { url: 'https://phse.net', title: 'phse.net', type: 'blog', author: 'Stephen Lindberg', rss: 'https://phse.net/post/index.xml', feed: 'https://gist.githubusercontent.com/setphen/55a1865f90d8c3f918d4217dbd3bd490/raw/3399acc89fa20449cadd4597ca3fe043afcea719/feed.txt' },
   { url: 'https://rosano.ca' },
   { url: 'https://soyboysky.github.io' },
   { url: 'https://gndclouds.cc' },
