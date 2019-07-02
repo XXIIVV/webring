@@ -11,15 +11,19 @@ body div p.readme { max-width:500px; }
 
 /* Hallway */
 
-body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; margin-bottom: 5px }
+body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; margin-bottom: 5px;border-bottom: 1px solid #333;padding-bottom: 5px; }
 body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px;}
 body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }
 body #hallway .entry .author:after { content:":"; }
-body #hallway .entry .body { max-width: 400px }
+body #hallway .entry .body { max-width: 400px;  }
 body #hallway .entry .body a { text-decoration: underline; }
 body #hallway .entry.highlight .author { color:#555; }
+body #hallway .entry:hover .author { color:#ccc; }
+body #hallway .entry:hover .date { color:#ccc; }
+body #hallway .entry:hover .body { color:#ccc; }
 body #hallway p { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 0px; }
 body #hallway ul { max-width: 100%; }
+body #hallway ul li:last-child { border-bottom:0px; }
 
 /* Portal */
 
