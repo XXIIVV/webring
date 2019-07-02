@@ -11,13 +11,13 @@ body div p.readme { max-width:500px; }
 
 /* Hallway */
 
-body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:200px; }
-body #hallway .entry .date { color: #555;display: block;position: absolute;left: 0px; }
-body #hallway .entry .date:after { content: ")" }
-body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 60px;  }
+body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; }
+body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px;}
+body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }
 body #hallway .entry .author:after { content:":"; }
 body #hallway .entry .body { max-width: 400px }
 body #hallway .entry .body a { text-decoration: underline; }
+body #hallway p { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 0px; }
 
 /* Portal */
 

@@ -42,11 +42,6 @@ function Hallway (sites) {
   }
 
   this.templateEntry = function (entry) {
-    const now = new Date()
-    const then = Date.parse(entry.date)
-    const diff = (now - then)
-    const date = Math.floor(diff / 86400000)
-
     // Find mention
     if (entry.body.indexOf('@<') > -1) {
       const data = entry.body.split('@<').pop().split('>')[0]
@@ -56,7 +51,7 @@ function Hallway (sites) {
       entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>${name}</a>`)
     }
 
-    return `<li class='entry'><span class='date'>${ago(date)}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
+    return `<li class='entry'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
   }
 
   // Feeds
@@ -81,7 +76,7 @@ function Hallway (sites) {
 
   this.fetchFeed = function (id, feed) {
     console.log(`Fetching ${id}(${feed.path})..`)
-    Promise.all([ fetch(feed.path, { cache: 'no-store' }).then(x => x.text()) ]).then(([content]) => {
+    Promise.all([ fetch(feed.path + '?v=1', { cache: 'no-store' }).then(x => x.text()) ]).then(([content]) => {
       feeds[id].content = parseFeed(id, content)
       this.refresh()
     })
@@ -107,13 +102,33 @@ function Hallway (sites) {
     return entries
   }
 
-  function ago (days, cap = 9999) {
-    if (-days > cap) { return `${this.toString(true)}` }
-    if (days === -1) { return `yesterday` }
-    if (days === 1) { return 'tomorrow' }
-    if (days === 0) { return 'today' }
-    if (days < -365) { return `${Math.floor(days / -365)} years ago` }
-    if (days < 1) { return `${days * -1} days ago` }
-    return `in ${days} days`
+  function timeAgo (dateParam) {
+    if (!dateParam) {
+      return null
+    }
+
+    const date = typeof dateParam === 'object' ? dateParam : new Date(dateParam)
+    const DAY_IN_MS = 86400000 // 24 * 60 * 60 * 1000
+    const today = new Date()
+    const yesterday = new Date(today - DAY_IN_MS)
+    const seconds = Math.round((today - date) / 1000)
+    const minutes = Math.round(seconds / 60)
+    const isToday = today.toDateString() === date.toDateString()
+    const isYesterday = yesterday.toDateString() === date.toDateString()
+
+    if (seconds < 5) {
+      return 'now'
+    } else if (seconds < 60) {
+      return `${seconds} seconds ago`
+    } else if (seconds < 90) {
+      return 'about a minute ago'
+    } else if (minutes < 60) {
+      return `${minutes} minutes ago`
+    } else if (isToday) {
+      return `${Math.floor(minutes / 60)} hours ago`
+    } else if (isYesterday) {
+      return 'yesterday'
+    }
+    return `${Math.floor(minutes / 1440)} days ago`
   }
 }
