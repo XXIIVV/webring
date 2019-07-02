@@ -11,7 +11,7 @@ body div p.readme { max-width:500px; }
 
 /* Hallway */
 
-body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; margin-bottom: 10px }
+body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; margin-bottom: 5px }
 body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px;}
 body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }
 body #hallway .entry .author:after { content:":"; }
