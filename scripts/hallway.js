@@ -74,7 +74,7 @@ function Hallway (sites) {
 
   this.fetchFeed = function (id, feed) {
     console.log(`Fetching ${id}(${feed.path})..`)
-    Promise.all([ fetch(feed.path + '?v=1', { cache: 'no-store' }).then(x => x.text()) ]).then(([content]) => {
+    Promise.all([ fetch(feed.path, { cache: 'no-store' }).then(x => x.text()) ]).then(([content]) => {
       feeds[id].content = parseFeed(id, content)
       this.refresh()
     })
@@ -98,8 +98,9 @@ function Hallway (sites) {
     for (const id in lines) {
       const line = lines[id].trim()
       if (line === '') { continue }
-      const date = line.substr(0, 25).trim()
-      const body = line.substr(26).trim()
+      const parts = line.replace('   ', '\t').split('\t')
+      const date = parts[0].trim()
+      const body = parts[1].trim()
       entries.push({ date, body, author })
     }
     return entries
