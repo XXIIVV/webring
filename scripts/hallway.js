@@ -49,7 +49,10 @@ function Hallway (sites) {
       entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>@${name}</a>`)
     }
 
-    return `<li class='entry'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
+    const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
+    const highlight = filter == entry.author.toLowerCase()
+
+    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
   }
 
   // Feeds
