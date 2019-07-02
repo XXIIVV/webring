@@ -6,7 +6,7 @@
 const sites = [
   { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'Devine Lu Linvega', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt' },
   { url: 'http://estevancarlos.com' },
-  { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', rss: 'https://electro.pizza/feed.xml' },
+  { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', author: 'rho', rss: 'https://electro.pizza/feed.xml', feed: 'https://electro.pizza/twtxt.txt' },
   { url: 'https://ianjbattaglia.co' },
   { url: 'https://avanier.now.sh/wiki', title: 'Ath', type: 'wiki', author: 'Josh Avanier', contact: 'joshavanier@protonmail.com' },
   { url: 'http://kaemura.com' },
