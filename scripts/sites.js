@@ -22,7 +22,7 @@ const sites = [
   { url: 'http://luminghao.com' },
   { url: 'https://turelio.github.io' },
   { url: 'https://spaceshipsin.space', title: 'spaceshipsin.space', type: 'hybrid', author: 'Gaeel Bradshaw-Rodriguez', contact: 'gaeel@spaceshipsin.space' },
-  { url: 'https://log.lectronice.com', title: 'lectrolog.', type: 'blog', author: 'lectronice', contact: 'i.love.spam@lectronice.com' },
+  { url: 'https://log.lectronice.com', title: 'lectrolog.', type: 'blog', author: 'lectronice', contact: 'i.love.spam@lectronice.com', feed: 'https://lectronice.com/hallway/twtxt.txt' },
   { url: 'https://craze.co.uk' },
   { url: 'https://shaneckel.com' },
   { url: 'https://cblgh.org' },
