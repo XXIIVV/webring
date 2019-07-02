@@ -8,14 +8,12 @@ function Hallway (sites) {
 
   this.install = function (host) {
     host.appendChild(this.el)
-    // Find feeds
     this.findFeeds()
   }
 
   this.start = function () {
     this.el.innerHTML = 'hello'
     this.fetchFeeds()
-    // this.fetch('https://wiki.xxiivv.com/twtxt.txt')
   }
 
   this.refresh = function () {
@@ -48,7 +46,7 @@ function Hallway (sites) {
       const mention = data.split(' ')
       const name = mention[0]
       const path = mention[1]
-      entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>${name}</a>`)
+      entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>@${name}</a>`)
     }
 
     return `<li class='entry'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
