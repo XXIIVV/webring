@@ -27,16 +27,6 @@ function Hallway (sites) {
 
   // Entries
 
-  function compare (a, b) {
-    if (a.date < b.date) {
-      return -1
-    }
-    if (a.date > b.date) {
-      return 1
-    }
-    return 0
-  }
-
   this.sortEntries = function () {
     const a = []
     for (const id in feeds) {
@@ -46,7 +36,7 @@ function Hallway (sites) {
         a.push(entry)
       }
     }
-    return a.sort(compare)
+    return a.sort(compare).reverse()
   }
 
   this.templateEntry = function (entry) {
@@ -98,6 +88,10 @@ function Hallway (sites) {
 
   // Utils
 
+  function compare (a, b) {
+    return a.date < b.date ? -1 : a.date > b.date ? 1 : 0
+  }
+
   function parseFeed (author, feed) {
     const lines = feed.split('\n')
     const entries = []
@@ -138,6 +132,7 @@ function Hallway (sites) {
     } else if (isYesterday) {
       return 'yesterday'
     }
+
     return `${Math.floor(minutes / 1440)} days ago`
   }
 }
