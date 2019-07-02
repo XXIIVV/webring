@@ -17,6 +17,7 @@ body #hallway .entry .author { font-family: 'input_mono_medium'; position: absol
 body #hallway .entry .author:after { content:":"; }
 body #hallway .entry .body { max-width: 400px;  }
 body #hallway .entry .body a { text-decoration: underline; }
+body #hallway .entry .body .channel { background: white;color: black;display: inline-block;padding: 0px 5px;line-height: 20px;border-radius: 2px; font-family: 'input_mono_medium'; }
 body #hallway .entry.highlight .author { color:#555; }
 body #hallway .entry:hover .author { color:#ccc; }
 body #hallway .entry:hover .date { color:#ccc; }

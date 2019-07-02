@@ -49,6 +49,11 @@ function Hallway (sites) {
       entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>@${name}</a>`)
     }
 
+    if (entry.body.substr(0, 1) === '/') {
+      const channel = entry.body.split(' ')[0]
+      entry.body = entry.body.replace(channel, `<span class='channel'>${channel}</span>`)
+    }
+
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter == entry.author.toLowerCase()
 
