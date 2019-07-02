@@ -36,7 +36,7 @@ function Hallway (sites) {
         a.push(entry)
       }
     }
-    return a.sort(compare).reverse()
+    return a.sort(compare)
   }
 
   this.templateEntry = function (entry) {
@@ -89,7 +89,7 @@ function Hallway (sites) {
   // Utils
 
   function compare (a, b) {
-    return a.date < b.date ? -1 : a.date > b.date ? 1 : 0
+    return a.offset < b.offset ? -1 : a.offset > b.offset ? 1 : 0
   }
 
   function parseFeed (author, feed) {
@@ -101,16 +101,13 @@ function Hallway (sites) {
       const parts = line.replace('   ', '\t').split('\t')
       const date = parts[0].trim()
       const body = parts[1].trim()
-      entries.push({ date, body, author })
+      const offset = new Date() - new Date(date)
+      entries.push({ date, body, author, offset })
     }
     return entries
   }
 
   function timeAgo (dateParam) {
-    if (!dateParam) {
-      return null
-    }
-
     const date = typeof dateParam === 'object' ? dateParam : new Date(dateParam)
     const DAY_IN_MS = 86400000 // 24 * 60 * 60 * 1000
     const today = new Date()
