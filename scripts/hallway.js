@@ -27,14 +27,14 @@ function Hallway (sites) {
 
   // Entries
 
-  function compare( a, b ) {
-    if ( a.date < b.date ){
-      return -1;
+  function compare (a, b) {
+    if (a.date < b.date) {
+      return -1
     }
-    if ( a.date > b.date ){
-      return 1;
+    if (a.date > b.date) {
+      return 1
     }
-    return 0;
+    return 0
   }
 
   this.sortEntries = function () {
@@ -46,7 +46,7 @@ function Hallway (sites) {
         a.push(entry)
       }
     }
-    return a.sort( compare );
+    return a.sort(compare)
   }
 
   this.templateEntry = function (entry) {
@@ -103,7 +103,7 @@ function Hallway (sites) {
     const entries = []
     for (const id in lines) {
       const line = lines[id].trim()
-      if(line === ''){ continue }
+      if (line === '') { continue }
       const date = line.substr(0, 25).trim()
       const body = line.substr(26).trim()
       entries.push({ date, body, author })
