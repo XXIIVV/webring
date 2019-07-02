@@ -81,7 +81,7 @@ function Hallway (sites) {
   // Extras
 
   this._footer = function () {
-    return '<p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and add it to your entry in the webring.</p>'
+    return '<p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the webring.</p>'
   }
 
   // Utils
