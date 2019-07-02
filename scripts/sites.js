@@ -55,7 +55,7 @@ const sites = [
   { url: 'http://npisanti.com', title: 'npisanti.com', author: 'Nicola Pisanti', contact: 'nicola@npisanti.com', rss: 'http://npisanti.com/journal/rss.xml' },
   { url: 'https://underscorediscovery.ca' },
   { url: 'https://drisc.io', title: 'drisc.io', type: 'wiki', author: 'Cory Driscoll', contact: 'cory@drisc.io', feed: 'https://drisc.io/hallway/twtxt.txt' },
-  { url: 'https://neufv.systems', author: 'Nuel van Gelder de Neufville', feed: 'https://neufv.systems/twtxt.txt'},
+  { url: 'https://neufv.systems', author: 'Nuel van Gelder de Neufville', feed: 'https://neufv.systems/twtxt.txt' },
   { url: 'https://ricky.codes' },
   { url: 'https://maxdeviant.com' },
   { url: 'https://tynandebold.com' },

@@ -57,7 +57,7 @@ function Hallway (sites) {
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter == entry.author.toLowerCase()
 
-    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <span class='author'>${entry.author}</span> <span class='body'>${entry.body}</span></li>`
+    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href=''>${entry.author}</a> <span class='body'>${entry.body}</span></li>`
   }
 
   // Feeds
@@ -82,9 +82,12 @@ function Hallway (sites) {
 
   this.fetchFeed = function (id, feed) {
     console.log(`Fetching ${id}(${feed.path})..`)
-    Promise.all([ fetch(feed.path, { cache: 'no-store' }).then(x => x.text()) ]).then(([content]) => {
+
+    fetch(feed.path, { cache: 'no-store' }).then(x => x.text()).then((content) => {
       feeds[id].content = parseFeed(id, content)
       this.refresh()
+    }).catch((err) => {
+      console.warn(`${id}`, err)
     })
   }
 
