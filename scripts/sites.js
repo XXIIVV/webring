@@ -25,7 +25,7 @@ const sites = [
   { url: 'https://log.lectronice.com', title: 'lectrolog.', type: 'blog', author: 'lectronice', contact: 'i.love.spam@lectronice.com', feed: 'https://lectronice.com/hallway/twtxt.txt' },
   { url: 'https://craze.co.uk' },
   { url: 'https://shaneckel.com' },
-  { url: 'https://cblgh.org', title: 'cblgh.org', author: 'cobleigh', contact: 'cabal://cblgh.org', feed: 'https://cblgh.org/twtxt.txt' },
+  { url: 'https://cblgh.org', title: 'cblgh.org', author: 'cblgh', contact: 'cabal://cblgh.org', feed: 'https://cblgh.org/twtxt.txt' },
   { url: 'https://ellugar.co', title: 'ellugar', type: 'wiki', author: 'afk', contact: 'afk@ellugar.co', rss: 'http://feeds.ellugar.co/ellugar-logs' },
   { url: 'http://hur.bet' },
   { url: 'http://chigby.org' },
