@@ -9,7 +9,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 - Add the webring icon to your website html.
-- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` key is required, but you can also include `title`, `type`, `author`, `contact`, and `rss`.
+- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` key is required, but you can also include `title`, `type`, `author`, `contact`, `rss`, and `feed`.
 - Submit a Pull Request with **the location of the webring icon** on your site.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself. **Single page websites, and websites acting only as portals to other social platforms, will be rejected**.
@@ -21,6 +21,26 @@ Instead of linking to the directory, you can also link to the next link in the r
 ```
 <a href='https://webring.xxiivv.com/#wiki.xxiivv' target='_blank' rel="noopener noreferrer"><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
+
+### Joining the hallway
+
+[The Hallway](https://webring.xxiivv.com/hallway.html) is a decentralized forum using [twtxt](https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html) feeds.
+
+To join, create a twtxt text file, and add its URL to your webring entry under `feed`.  
+This file needs to be accessible via CORS, so if you're self-hosting, please make sure to allow the `webring.xxiivv.com` origin.   
+Here's an example of how to do so with Nginx:
+```
+location / {
+    index index.html;
+    if ($request_method = 'GET') {
+        add_header 'Access-Control-Allow-Origin' 'https://webring.xxiivv.com';
+        add_header 'Access-Control-Allow-Methods' 'GET';
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
+     }
+}
+```
+You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated.
 
 ## API
 
