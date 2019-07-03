@@ -72,12 +72,14 @@ function Hallway (sites) {
     const users = []
     const channels = []
     const tags = []
+    const links = []
 
     // Channels
     for (const id in words) {
       if (words[id].substr(0, 1) === '@') { users.push(words[id]) }
       if (words[id].substr(0, 1) === '/') { channels.push(words[id]) }
       if (words[id].substr(0, 1) === '#') { tags.push(words[id]) }
+      if (words[id].substr(0, 4) === 'http') { links.push(words[id]) }
     }
 
     for (const id in users) {
@@ -88,6 +90,9 @@ function Hallway (sites) {
     }
     for (const id in tags) {
       entry.body = entry.body.replace(tags[id], `<span class='tag'>${tags[id]}</span>`)
+    }
+    for (const id in links) {
+      entry.body = entry.body.replace(links[id], `<a href='${links[id]}'>${links[id].replace('https://', '').replace('http://', '')}</a>`)
     }
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
@@ -176,7 +181,7 @@ function Hallway (sites) {
     return `${Math.floor(minutes / 1440)} days ago`
   }
 
-  function escapeHtml(unsafe) {
-    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  function escapeHtml (unsafe) {
+    return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
   }
 }
