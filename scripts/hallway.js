@@ -92,8 +92,9 @@ function Hallway (sites) {
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter === entry.author.toLowerCase()
+    const origin = feeds[entry.author].path
 
-    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href=''>${entry.author}</a> <span class='body'>${entry.body}</span></li>`
+    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href='${origin}' target='_blank'>${entry.author}</a> <span class='body'>${entry.body}</span></li>`
   }
 
   // Feeds
