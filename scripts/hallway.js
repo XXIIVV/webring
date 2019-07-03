@@ -21,9 +21,9 @@ function Hallway (sites) {
     const channels = this.findChannels(entries)
     const users = this.findUsers(entries)
 
-    let _entries = entries.reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')
-    let _channels = Object.keys(channels).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${channels[val]}</span></li>\n` }, '')
-    let _users = Object.keys(users).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${users[val]}</span></li>\n` }, '')
+    const _entries = entries.filter((val,id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')
+    const _channels = Object.keys(channels).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${channels[val]}</span></li>\n` }, '')
+    const _users = Object.keys(users).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${users[val]}</span></li>\n` }, '')
 
     this.el.innerHTML = `
     <ul id='entries'>
@@ -64,28 +64,22 @@ function Hallway (sites) {
   this.findEntries = function (feeds) {
     const a = []
     for (const id in feeds) {
-      const feed = feeds[id]
-      for (const i in feed.content) {
-        const entry = feed.content[i]
-        a.push(entry)
+      for (const i in feeds[id].content) {
+        a.push(feeds[id].content[i])
       }
     }
     return a.sort(compare)
   }
 
   this.templateEntry = function (entry) {
-    // Find mention
-    if (entry.body.indexOf('@<') > -1) {
-      const data = entry.body.split('@<').pop().split('>')[0]
-      const mention = data.split(' ')
-      const name = mention[0]
-      const path = mention[1]
-      entry.body = entry.body.replace(`@<${data}>`, `<a href='${path}'>@${name}</a>`)
+    if (entry.body.substr(0, 1) === '@') {
+      const user = entry.body.split(' ')[0]
+      entry.body = entry.body.replace(user, `<span class='user'>${user.toLowerCase()}</span>`)
     }
 
     if (entry.body.substr(0, 1) === '/') {
       const channel = entry.body.split(' ')[0]
-      entry.body = entry.body.replace(channel, `<span class='channel'>${channel}</span>`)
+      entry.body = entry.body.replace(channel, `<span class='channel'>${channel.toLowerCase()}</span>`)
     }
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
@@ -116,7 +110,6 @@ function Hallway (sites) {
 
   this.fetchFeed = function (id, feed) {
     console.log(`Fetching ${id}(${feed.path})..`)
-
     fetch(feed.path, { cache: 'no-store' }).then(x => x.text()).then((content) => {
       feeds[id].content = parseFeed(id, content)
       this.refresh(feeds)
