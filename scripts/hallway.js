@@ -29,6 +29,7 @@ function Hallway (sites) {
     </ul>
     <div id='sidebar'>
       <ul id='channels'>
+        <li onclick='filter("")' class='${hallway.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
         ${Object.keys(channels).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n` }, '')}
       </ul>
       <ul id='users'>
@@ -88,18 +89,10 @@ function Hallway (sites) {
       if (words[id].substr(0, 4) === 'http') { links.push(words[id]) }
     }
 
-    for (const id in users) {
-      entry.body = entry.body.replace(users[id], `<span class='user'>${users[id]}</span>`)
-    }
-    for (const id in channels) {
-      entry.body = entry.body.replace(channels[id], `<span class='channel'>${channels[id]}</span>`)
-    }
-    for (const id in tags) {
-      entry.body = entry.body.replace(tags[id], `<span class='tag'>${tags[id]}</span>`)
-    }
-    for (const id in links) {
-      entry.body = entry.body.replace(links[id], `<a href='${links[id]}'>${links[id].replace('https://', '').replace('http://', '')}</a>`)
-    }
+    for (const id in users) { entry.body = entry.body.replace(users[id], `<span class='user'>${users[id]}</span>`) }
+    for (const id in channels) { entry.body = entry.body.replace(channels[id], `<span class='channel'>${channels[id]}</span>`) }
+    for (const id in tags) { entry.body = entry.body.replace(tags[id], `<span class='tag'>${tags[id]}</span>`) }
+    for (const id in links) { entry.body = entry.body.replace(links[id], `<a href='${links[id]}'>${links[id].replace('https://', '').replace('http://', '')}</a>`) }
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter === entry.author.toLowerCase()
@@ -171,7 +164,7 @@ function Hallway (sites) {
     const isYesterday = yesterday.toDateString() === date.toDateString()
 
     if (seconds < 5) {
-      return 'now'
+      return 'just now'
     } else if (seconds < 60) {
       return `${seconds} seconds ago`
     } else if (seconds < 90) {
