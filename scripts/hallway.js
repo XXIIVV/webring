@@ -16,18 +16,64 @@ function Hallway (sites) {
     this.fetchFeeds()
   }
 
-  this.refresh = function () {
-    const entries = this.sortEntries()
-    let html = ''
+  this.refresh = function (feeds) {
+    const entries = this.findEntries(feeds)
+    const channels = this.findChannels(entries)
+    const users = this.findUsers(entries)
+
+    let _entries = ''
     for (const id in entries) {
-      html += `${this.templateEntry(entries[id])}\n`
+      const entry = entries[id]
+      _entries += `${this.templateEntry(entry)}\n`
     }
-    this.el.innerHTML = `<ul>${html}</ul>${this._footer()}`
+
+    let _channels = ''
+    for (const id in channels) {
+      _channels += `<li>${id} ${channels[id]}</li>\n`
+    }
+
+    let _users = ''
+    for (const id in users) {
+      _users += `<li>${id} ${users[id]}</li>\n`
+    }
+
+    this.el.innerHTML = `
+    <ul id='entries'>
+      ${_entries}
+    </ul>
+    <div id='sidebar'>
+      <ul id='channels'>
+        ${_channels}
+      </ul>
+      <ul id='users'>
+        ${_users}
+      </ul>
+    </div>
+    ${this._footer()}`
   }
 
   // Entries
 
-  this.sortEntries = function () {
+  this.findChannels = function (entries) {
+    const channels = {}
+    for (const id in entries) {
+      const entry = entries[id]
+      if (!entry.channel) { continue }
+      channels[entry.channel] = channels[entry.channel] ? channels[entry.channel] + 1 : 1
+    }
+    return channels
+  }
+
+  this.findUsers = function (entries) {
+    const users = {}
+    for (const id in entries) {
+      const entry = entries[id]
+      users[entry.author] = users[entry.author] ? users[entry.author] + 1 : 1
+    }
+    return users
+  }
+
+  this.findEntries = function (feeds) {
     const a = []
     for (const id in feeds) {
       const feed = feeds[id]
@@ -85,7 +131,7 @@ function Hallway (sites) {
 
     fetch(feed.path, { cache: 'no-store' }).then(x => x.text()).then((content) => {
       feeds[id].content = parseFeed(id, content)
-      this.refresh()
+      this.refresh(feeds)
     }).catch((err) => {
       console.warn(`${id}`, err)
     })
@@ -112,8 +158,9 @@ function Hallway (sites) {
       const parts = line.replace('   ', '\t').split('\t')
       const date = parts[0].trim()
       const body = parts[1].trim()
+      const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : null
       const offset = new Date() - new Date(date)
-      entries.push({ date, body, author, offset })
+      entries.push({ date, body, author, offset, channel })
     }
     return entries
   }
