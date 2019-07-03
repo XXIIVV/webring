@@ -26,9 +26,18 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 [The Hallway](https://webring.xxiivv.com/hallway.html) is a decentralized forum using [twtxt](https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html) feeds.
 
-To join, create a twtxt text file, and add its URL to your webring entry under `feed`.  
+To join, create a `.txt` file on your site, and add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `feed:`. The content of the file should be a dateISO string, a tab(or 3 spaces) and a message:
+
+```
+2016-02-04T13:30:00+01:00   You can really go crazy here! ┐(ﾟ∀ﾟ)┌
+2016-02-03T23:05:00+01:00   @<example http://example.org/twtxt.txt> welcome to twtxt!
+2016-02-01T11:00:00+01:00   This is just another example.
+2015-12-12T12:00:00+01:00   Fiat lux!
+```
+
 This file needs to be accessible via CORS, so if you're self-hosting, please make sure to allow the `webring.xxiivv.com` origin.   
 Here's an example of how to do so with Nginx:
+
 ```
 location / {
     index index.html;
@@ -40,6 +49,7 @@ location / {
      }
 }
 ```
+
 You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated.
 
 ## API
