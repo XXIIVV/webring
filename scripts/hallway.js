@@ -146,7 +146,7 @@ function Hallway (sites) {
       const parts = line.replace('   ', '\t').split('\t')
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
-      const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : null
+      const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
       const offset = new Date() - new Date(date)
       entries.push({ date, body, author, offset, channel })
     }
