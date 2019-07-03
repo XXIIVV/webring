@@ -14,6 +14,11 @@ body div p.readme { max-width:500px; }
 body #hallway #entries { width: calc(100vw - 300px) !important; }
 body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 0px 15px;width: 200px; }
 
+body #hallway #sidebar > * { border-bottom: 0px; line-height: 15px; padding-bottom: 0px }
+body #hallway #sidebar > * li { text-transform: lowercase; }
+body #hallway #sidebar > * li span.right { color:#555; float:right; }
+body #hallway #sidebar > * li span.right:after { content: " msgs"; }
+
 body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; margin-bottom: 5px;border-bottom: 1px solid #333;padding-bottom: 5px; }
 body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px;}
 body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }

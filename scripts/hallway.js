@@ -21,21 +21,9 @@ function Hallway (sites) {
     const channels = this.findChannels(entries)
     const users = this.findUsers(entries)
 
-    let _entries = ''
-    for (const id in entries) {
-      const entry = entries[id]
-      _entries += `${this.templateEntry(entry)}\n`
-    }
-
-    let _channels = ''
-    for (const id in channels) {
-      _channels += `<li>${id} ${channels[id]}</li>\n`
-    }
-
-    let _users = ''
-    for (const id in users) {
-      _users += `<li>${id} ${users[id]}</li>\n`
-    }
+    let _entries = entries.reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')
+    let _channels = Object.keys(channels).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${channels[val]}</span></li>\n` }, '')
+    let _users = Object.keys(users).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${users[val]}</span></li>\n` }, '')
 
     this.el.innerHTML = `
     <ul id='entries'>
