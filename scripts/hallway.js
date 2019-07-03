@@ -140,7 +140,7 @@ function Hallway (sites) {
       if (line === '') { continue }
       const parts = line.replace('   ', '\t').split('\t')
       const date = parts[0].trim()
-      const body = parts[1].trim()
+      const body = escapeHtml(parts[1].trim()).trim()
       const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : null
       const offset = new Date() - new Date(date)
       entries.push({ date, body, author, offset, channel })
@@ -173,5 +173,9 @@ function Hallway (sites) {
     }
 
     return `${Math.floor(minutes / 1440)} days ago`
+  }
+
+  function escapeHtml(unsafe) {
+    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
   }
 }
