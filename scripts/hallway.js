@@ -12,7 +12,7 @@ function Hallway (sites) {
   }
 
   this.start = function () {
-    this.el.innerHTML = 'hello'
+    this.el.innerHTML = 'hello.'
     this.fetchFeeds()
   }
 
