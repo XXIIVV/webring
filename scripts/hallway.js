@@ -5,6 +5,8 @@ function Hallway (sites) {
   this.sites = sites
   this.el = document.createElement('div')
   this.el.id = 'hallway'
+  this.filter = window.location.hash.replace('#', '').trim()
+  this.cache = null
 
   this.install = function (host) {
     host.appendChild(this.el)
@@ -16,24 +18,28 @@ function Hallway (sites) {
     this.fetchFeeds()
   }
 
-  this.refresh = function (feeds) {
+  this.refresh = function (feeds = this.cache) {
     const entries = this.findEntries(feeds)
     const channels = this.findChannels(entries)
     const users = this.findUsers(entries)
 
     this.el.innerHTML = `
     <ul id='entries'>
-      ${entries.filter((val, id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')}
+      ${entries.filter((val, id) => { return !(this.filter && val.author !== this.filter && val.channel !== this.filter) }).filter((val, id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')}
     </ul>
     <div id='sidebar'>
       <ul id='channels'>
-        ${Object.keys(channels).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${channels[val]}</span></li>\n` }, '')}
+        ${Object.keys(channels).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n` }, '')}
       </ul>
       <ul id='users'>
-        ${Object.keys(users).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${users[val]}</span></li>\n` }, '')}
+        ${Object.keys(users).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n` }, '')}
       </ul>
     </div>
     <p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
+
+    if (feeds) {
+      this.cache = feeds
+    }
   }
 
   // Entries
@@ -86,7 +92,7 @@ function Hallway (sites) {
       entry.body = entry.body.replace(users[id], `<span class='user'>${users[id]}</span>`)
     }
     for (const id in channels) {
-      entry.body = entry.body.replace(channels[id], `<span class='user'>${channels[id]}</span>`)
+      entry.body = entry.body.replace(channels[id], `<span class='channel'>${channels[id]}</span>`)
     }
     for (const id in tags) {
       entry.body = entry.body.replace(tags[id], `<span class='tag'>${tags[id]}</span>`)
@@ -169,7 +175,7 @@ function Hallway (sites) {
     } else if (seconds < 60) {
       return `${seconds} seconds ago`
     } else if (seconds < 90) {
-      return 'about a minute ago'
+      return 'a minute ago'
     } else if (minutes < 60) {
       return `${minutes} minutes ago`
     } else if (isToday) {
@@ -184,4 +190,10 @@ function Hallway (sites) {
   function escapeHtml (unsafe) {
     return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
   }
+}
+
+function filter (name) {
+  window.location.hash = name
+  hallway.filter = window.location.hash.replace('#', '').trim()
+  hallway.refresh()
 }
