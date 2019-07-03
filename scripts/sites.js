@@ -45,7 +45,7 @@ const sites = [
   { url: 'https://inns.studio' },
   { url: 'http://kokorobot.ca' },
   { url: 'https://ameyama.com', title: '雨山', type: 'blog', author: 'jrc03c', contact: 'josh@ameyama.com', rss: 'https://ameyama.com/blog/rss.xml' },
-  { url: 'https://wake.st', title: 'wake.st', author: '@wakest', contact: '@liaizon@wake.st', feed: 'https://wake.st/twtxt.txt' },
+  { url: 'https://wake.st', title: 'wake.st', author: 'wakest', contact: '@liaizon@wake.st', feed: 'https://wake.st/twtxt.txt' },
   { url: 'https://xarene.la' },
   { url: 'https://alex.zyzhang.me' },
   { url: 'http://bildwissenschaft.vortok.info' },
