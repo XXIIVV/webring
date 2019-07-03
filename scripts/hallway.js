@@ -21,23 +21,19 @@ function Hallway (sites) {
     const channels = this.findChannels(entries)
     const users = this.findUsers(entries)
 
-    const _entries = entries.filter((val,id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')
-    const _channels = Object.keys(channels).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${channels[val]}</span></li>\n` }, '')
-    const _users = Object.keys(users).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${users[val]}</span></li>\n` }, '')
-
     this.el.innerHTML = `
     <ul id='entries'>
-      ${_entries}
+      ${entries.filter((val, id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')}
     </ul>
     <div id='sidebar'>
       <ul id='channels'>
-        ${_channels}
+        ${Object.keys(channels).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${channels[val]}</span></li>\n` }, '')}
       </ul>
       <ul id='users'>
-        ${_users}
+        ${Object.keys(users).reduce((acc, val, id) => { return acc + `<li>${val} <span class='right'>${users[val]}</span></li>\n` }, '')}
       </ul>
     </div>
-    ${this._footer()}`
+    <p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
   }
 
   // Entries
@@ -72,18 +68,30 @@ function Hallway (sites) {
   }
 
   this.templateEntry = function (entry) {
-    if (entry.body.substr(0, 1) === '@') {
-      const user = entry.body.split(' ')[0]
-      entry.body = entry.body.replace(user, `<span class='user'>${user.toLowerCase()}</span>`)
+    const words = entry.body.split(' ')
+    const users = []
+    const channels = []
+    const tags = []
+
+    // Channels
+    for (const id in words) {
+      if (words[id].substr(0, 1) === '@') { users.push(words[id]) }
+      if (words[id].substr(0, 1) === '/') { channels.push(words[id]) }
+      if (words[id].substr(0, 1) === '#') { tags.push(words[id]) }
     }
 
-    if (entry.body.substr(0, 1) === '/') {
-      const channel = entry.body.split(' ')[0]
-      entry.body = entry.body.replace(channel, `<span class='channel'>${channel.toLowerCase()}</span>`)
+    for (const id in users) {
+      entry.body = entry.body.replace(users[id], `<span class='user'>${users[id]}</span>`)
+    }
+    for (const id in channels) {
+      entry.body = entry.body.replace(channels[id], `<span class='user'>${channels[id]}</span>`)
+    }
+    for (const id in tags) {
+      entry.body = entry.body.replace(tags[id], `<span class='tag'>${tags[id]}</span>`)
     }
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
-    const highlight = filter == entry.author.toLowerCase()
+    const highlight = filter === entry.author.toLowerCase()
 
     return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href=''>${entry.author}</a> <span class='body'>${entry.body}</span></li>`
   }
@@ -116,12 +124,6 @@ function Hallway (sites) {
     }).catch((err) => {
       console.warn(`${id}`, err)
     })
-  }
-
-  // Extras
-
-  this._footer = function () {
-    return '<p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>'
   }
 
   // Utils
