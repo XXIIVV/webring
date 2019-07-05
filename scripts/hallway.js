@@ -1,5 +1,10 @@
 'use strict'
 
+const re_channel = /(\s|^)\/([a-zA-Z0-9]+)/g
+const re_user = /(\s|^)\@([a-zA-Z0-9]+)/g
+const re_tag = /([^&]|^)\#([a-zA-Z0-9]+)/g
+const re_url = /((https?):\/\/(([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_\+.~#?&//=]*)))/g
+
 function Hallway (sites) {
   const feeds = {}
   this.sites = sites
@@ -22,10 +27,11 @@ function Hallway (sites) {
     const entries = this.findEntries(feeds)
     const channels = this.findChannels(entries)
     const users = this.findUsers(entries)
+    const tags = this.findTags(entries)
 
     this.el.innerHTML = `
     <ul id='entries'>
-      ${entries.filter((val, id) => { return !(this.filter && val.author !== this.filter && val.channel !== this.filter) }).filter((val, id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')}
+      ${entries.filter((val, id) => { return !this.filter || (val.author === this.filter || val.channel === this.filter || val.tags.includes(this.filter)) }).filter((val, id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')}
     </ul>
     <div id='sidebar'>
       <ul id='channels'>
@@ -34,6 +40,9 @@ function Hallway (sites) {
       </ul>
       <ul id='users'>
         ${Object.keys(users).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n` }, '')}
+      </ul>
+      <ul id='tags'>
+        ${Object.keys(tags).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n` }, '')}
       </ul>
     </div>
     <p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
@@ -63,6 +72,17 @@ function Hallway (sites) {
     }
     return users
   }
+  
+  this.findTags = function (entries){
+    const tags = {}
+    for (const id in entries) {
+      const entry = entries[id]
+      entry.tags.map(tag => {
+        tags[tag] = tags[tag] ? tags[tag] + 1 : 1
+      })
+    }
+    return tags
+  }
 
   this.findEntries = function (feeds) {
     const a = []
@@ -71,36 +91,23 @@ function Hallway (sites) {
         a.push(feeds[id].content[i])
       }
     }
-    return a.sort(compare)
+    return a.sort( (a, b) => a.offset - b.offset )
   }
 
   this.templateEntry = function (entry) {
-    const words = entry.body.split(' ')
-    const users = []
-    const channels = []
-    const tags = []
-    const links = []
-
-    // Channels
-    for (const id in words) {
-      if (words[id].substr(0, 1) === '@') { users.push(words[id]) }
-      if (words[id].substr(0, 1) === '/') { channels.push(words[id]) }
-      if (words[id].substr(0, 1) === '#') { tags.push(words[id]) }
-      if (words[id].substr(0, 4) === 'http') { links.push(words[id]) }
-    }
-
-    for (const id in users) { entry.body = entry.body.replace(users[id], `<span class='user'>${users[id]}</span>`) }
-    for (const id in channels) { entry.body = entry.body.replace(channels[id], `<span class='channel'>${channels[id]}</span>`) }
-    for (const id in tags) { entry.body = entry.body.replace(tags[id], `<span class='tag'>${tags[id]}</span>`) }
-    for (const id in links) { entry.body = entry.body.replace(links[id], `<a href='${links[id]}'>${links[id].replace('https://', '').replace('http://', '')}</a>`) }
-
+    entry.html = entry.body
+      .replace(re_channel, `$1<span class='channel'>/$2</span>`)
+      .replace(re_user, `$1<span class='user'>@$2</span>`)
+      .replace(re_tag, `$1<span class='tag'>#$2</span>`)
+      .replace(re_url, `<a target="_blank" href='$1'>$1</a>`)
+    
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter === entry.author.toLowerCase()
     const origin = feeds[entry.author].path
 
-    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href='${origin}' target='_blank'>${entry.author}</a> <span class='body'>${entry.body}</span></li>`
+    return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href='${origin}' target='_blank'>${entry.author}</a> <span class='body'>${entry.html}</span></li>`
   }
-
+  
   // Feeds
 
   this.findFeeds = function () {
@@ -133,10 +140,6 @@ function Hallway (sites) {
 
   // Utils
 
-  function compare (a, b) {
-    return a.offset < b.offset ? -1 : a.offset > b.offset ? 1 : 0
-  }
-
   function parseFeed (author, feed) {
     const lines = feed.split('\n')
     const entries = []
@@ -147,8 +150,9 @@ function Hallway (sites) {
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
       const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
+      const tags = (body.match(re_tag)||[]).map(a => a.substr(a.indexOf('#')+1).toLowerCase())
       const offset = new Date() - new Date(date)
-      entries.push({ date, body, author, offset, channel })
+      entries.push({ date, body, author, offset, channel, tags })
     }
     return entries
   }
