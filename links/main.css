@@ -1,0 +1,62 @@
+* { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+
+body { background:#f4f4f4; padding:0px; margin:0px; }
+body div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white;}
+body div ul { max-width: 800px; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
+body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
+body div p a { text-decoration: underline;}
+body div p a:hover { text-decoration: underline; }
+body div p b { font-weight: normal; font-family: 'input_mono_medium' }
+body div p.readme { max-width:500px; }
+
+/* Hallway */
+
+body #hallway #entries { width: calc(100vw - 300px) !important; }
+body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 0px 15px;width: 200px; }
+
+body #hallway #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
+body #hallway #sidebar > * li { text-transform: lowercase; }
+body #hallway #sidebar > * li.selected { background: white; color:black; }
+body #hallway #sidebar > * li:hover { cursor: pointer; }
+body #hallway #sidebar > * li span.right { color:#555; float:right; }
+body #hallway #sidebar > * li span.right:after { content: " msgs"; }
+body #hallway #sidebar #channels li:before { content:'/'; }
+body #hallway #sidebar #users li:before { content:'@'; }
+
+body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:100px; }
+body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px; padding-bottom: 16px;}
+body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }
+body #hallway .entry .body { display: block;border-bottom: 1px solid #333;padding-bottom: 10px;margin-bottom: 10px; }
+body #hallway .entry .body a { text-decoration: underline; }
+body #hallway .entry .body .channel { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
+body #hallway .entry .body .user { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
+body #hallway .entry.highlight .author { color:#555; }
+body #hallway .entry:hover .author { color:#ccc; }
+body #hallway .entry:hover .date { color:#ccc; }
+body #hallway .entry:hover .body { color:#ccc; border-bottom-color: #555 }
+body #hallway p { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 0px; }
+body #hallway ul { max-width: 100%; }
+body #hallway ul li:last-child { border-bottom:0px; }
+
+/* Portal */
+
+body #portal #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
+body #portal ul { columns:3;  }
+body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
+body #portal ul li.wiki::after { content:"<wiki>"; color:#555; }
+body #portal ul li.blog::after { content:"<blog>"; color:#555; }
+body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
+body #portal ul li a:visited { color:#ccc; text-decoration: none;}
+body #portal ul li a:hover { text-decoration: underline; }
+
+@media (max-width: 730px) {
+  body #portal ul li span.counter { display: none }
+}
+@media (max-width: 630px) {
+  body #portal ul { columns: 2 !important; }
+  body #portal ul li span.counter { display: none }
+}
+@media (max-width: 530px) {
+  body #portal ul { columns: 1 !important; }
+  body #portal ul li span.counter { display: inline }
+}
