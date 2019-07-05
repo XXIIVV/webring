@@ -87,5 +87,6 @@ const sites = [
   { url: 'https://teknari.com' },
   { url: 'https://colectivo-de-livecoders.gitlab.io/', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
-  { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt' }
+  { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt' },
+  { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'Portfolio' }
 ]
