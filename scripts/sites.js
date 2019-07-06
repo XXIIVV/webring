@@ -68,7 +68,7 @@ const sites = [
   { url: 'https://iko.soy' },
   { url: 'http://atelieroilandsugar.com' },
   { url: 'https://magoz.is' },
-  { url: 'https://szymonkaliski.com' },
+  { url: 'https://szymonkaliski.com', author: 'Szymon Kaliski', type: 'hybrid', rss: 'https://szymonkaliski.com/feed.xml' },
   { url: 'https://phse.net', title: 'phse.net', type: 'blog', author: 'setphen', rss: 'https://phse.net/post/index.xml', feed: 'https://phse.net/twtxt/merv.txt' },
   { url: 'https://rosano.ca' },
   { url: 'https://soyboysky.github.io' },
