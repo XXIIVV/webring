@@ -89,5 +89,6 @@ const sites = [
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
   { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt' },
   { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'Portfolio' },
-  { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' }
+  { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
+  { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' }
 ]
