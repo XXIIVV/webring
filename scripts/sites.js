@@ -93,4 +93,5 @@ const sites = [
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
   { url: 'http://xxiii.co', title: 'xxiii', type: 'wiki', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml' },
   { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz' },
+  { url: 'https://lublin.se', author: 'quite', feed: 'https://lublin.se/twtxt.txt' },
 ]
