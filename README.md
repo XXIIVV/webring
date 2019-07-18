@@ -9,10 +9,10 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 - Add the webring icon to your website html.
-- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` key is required, but you can also include `title`, `type`, `author`, `contact`, `rss`, and `feed`.
+- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` and `contact` keys are required, but you can also include `title`, `type`, `author`, `rss`, and `feed`.
 - Submit a Pull Request with **the location of the webring icon** on your site.
 
-Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself. **Single page websites, and websites acting only as portals to other social platforms, will be rejected**.
+Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself. **Single page websites, websites acting only as portals to other social platforms and websites with content involving violence, racism, sexism or speciesism, will be rejected**.
 
 ### Circular Linking
 
