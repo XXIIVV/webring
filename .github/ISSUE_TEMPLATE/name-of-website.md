@@ -1,6 +1,9 @@
 ---
 name: name.of.website
-about: Describe this issue template's purpose here.
+about: Submitting a new site to the webring
+title: ''
+labels: ''
+assignees: neauoire, kodedninja, joshavanier, ckipp01
 
 ---
 
