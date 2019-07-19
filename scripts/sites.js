@@ -94,5 +94,5 @@ const sites = [
   { url: 'http://xxiii.co', title: 'xxiii', type: 'wiki', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml' },
   { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz' },
   { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
-  { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' },
+  { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' }
 ]
