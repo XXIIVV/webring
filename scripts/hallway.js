@@ -141,7 +141,7 @@ function Hallway (sites) {
   // Utils
 
   function parseFeed (author, feed) {
-    const lines = feed.split('\n')
+    const lines = feed.split('\n').filter((line) => { return line.substr(0,1) !== '#' })
     const entries = []
     for (const id in lines) {
       const line = lines[id].trim()
