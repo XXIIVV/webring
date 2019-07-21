@@ -33,7 +33,6 @@ const sites = [
   { url: 'https://palomakop.tv' },
   { url: 'https://travisshears.com' },
   { url: 'https://v-os.ca' },
-  { url: 'http://secretinternet.club' },
   { url: 'https://jmandel.xyz' },
   { url: 'https://systems.ws' },
   { url: 'https://jamesin.space' },
