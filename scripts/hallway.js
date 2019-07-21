@@ -94,10 +94,17 @@ function Hallway (sites) {
     return a.sort( (a, b) => a.offset - b.offset )
   }
 
+  this.findMention = function (found) {
+    const mention = Object.keys(feeds).filter(user => found.indexOf(feeds[user].path) > -1)
+    return mention.length === 1
+      ? ` <span class='user'>@${mention[0]}</span>`
+      : ` <span class='user'>${found}</span>`
+  }
+
   this.templateEntry = function (entry) {
     entry.html = entry.body
       .replace(re_channel, `$1<span class='channel'>/$2</span>`)
-      .replace(re_user, ` <span class='user'>$1</span>`)
+      .replace(re_user, this.findMention)
       .replace(re_tag, `$1<span class='tag'>#$2</span>`)
       .replace(re_url, `<a target="_blank" href='$1'>$1</a>`)
 
