@@ -1,7 +1,7 @@
 'use strict'
 
 const re_channel = /(\s|^)\/([a-zA-Z0-9]+)/g
-const re_user = /((\s|^)@&lt;[a-zA-Z0-9./: ]*&gt;)/g
+const re_user = /((\s|^)@&lt;[a-zA-Z0-9./:\-_\+~#= ]*&gt;)/g
 const re_tag = /([^&]|^)\#([a-zA-Z0-9]+)/g
 const re_url = /((https?):\/\/(([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_\+.~#?&//=]*)))/g
 
