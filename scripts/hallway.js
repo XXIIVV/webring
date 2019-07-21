@@ -1,7 +1,7 @@
 'use strict'
 
 const re_channel = /(\s|^)\/([a-zA-Z0-9]+)/g
-const re_user = /(\s|^)\@([a-zA-Z0-9]+)/g
+const re_user = /((\s|^)@&lt;[a-zA-Z0-9./: ]*&gt;)/g
 const re_tag = /([^&]|^)\#([a-zA-Z0-9]+)/g
 const re_url = /((https?):\/\/(([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_\+.~#?&//=]*)))/g
 
@@ -31,18 +31,18 @@ function Hallway (sites) {
 
     this.el.innerHTML = `
     <ul id='entries'>
-      ${entries.filter((val, id) => { return !this.filter || (val.author === this.filter || val.channel === this.filter || val.tags.includes(this.filter)) }).filter((val, id) => { return id < 50 }).reduce((acc, val, id) => { return acc + this.templateEntry(val) + '\n' }, '')}
+      ${entries.filter((val) => { return !this.filter || (val.author === this.filter || val.channel === this.filter || val.tags.includes(this.filter)) }).filter((_, id) => { return id < 50 }).reduce((acc, val) => { return acc + this.templateEntry(val) + '\n' }, '')}
     </ul>
     <div id='sidebar'>
       <ul id='channels'>
         <li onclick='filter("")' class='${hallway.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
-        ${Object.keys(channels).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n` }, '')}
+        ${Object.keys(channels).reduce((acc, val) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n` }, '')}
       </ul>
       <ul id='users'>
-        ${Object.keys(users).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n` }, '')}
+        ${Object.keys(users).reduce((acc, val) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n` }, '')}
       </ul>
       <ul id='tags'>
-        ${Object.keys(tags).reduce((acc, val, id) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n` }, '')}
+        ${Object.keys(tags).reduce((acc, val) => { return acc + `<li onclick='filter("${val}")' class='${hallway.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n` }, '')}
       </ul>
     </div>
     <p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
@@ -72,7 +72,7 @@ function Hallway (sites) {
     }
     return users
   }
-  
+
   this.findTags = function (entries){
     const tags = {}
     for (const id in entries) {
@@ -97,17 +97,17 @@ function Hallway (sites) {
   this.templateEntry = function (entry) {
     entry.html = entry.body
       .replace(re_channel, `$1<span class='channel'>/$2</span>`)
-      .replace(re_user, `$1<span class='user'>@$2</span>`)
+      .replace(re_user, ` <span class='user'>$1</span>`)
       .replace(re_tag, `$1<span class='tag'>#$2</span>`)
       .replace(re_url, `<a target="_blank" href='$1'>$1</a>`)
-    
+
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter === entry.author.toLowerCase()
     const origin = feeds[entry.author].path
 
     return `<li class='entry ${highlight ? 'highlight' : ''}'><span class='date'>${timeAgo(Date.parse(entry.date))}</span> <a class='author' href='${origin}' target='_blank'>${entry.author}</a> <span class='body'>${entry.html}</span></li>`
   }
-  
+
   // Feeds
 
   this.findFeeds = function () {
