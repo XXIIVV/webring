@@ -37,7 +37,6 @@ const sites = [
   { url: 'https://systems.ws' },
   { url: 'https://jamesin.space' },
   { url: 'https://nathanwentworth.co' },
-  { url: 'https://eswat.ca' },
   { url: 'https://uonai.space' },
   { url: 'http://controls.ee' },
   { url: 'https://wasin.io' },
