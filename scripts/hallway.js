@@ -11,7 +11,7 @@ function Hallway (sites) {
   this.el = document.createElement('div')
   this.el.id = 'hallway'
   const filterAndPage = window.location.hash.split('^')
-  this.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1  }
+  this.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1 }
   this.cache = null
 
   this.install = function (host) {
@@ -34,22 +34,22 @@ function Hallway (sites) {
     this.el.innerHTML = `
     <div id='entries'>
       <ul>
-        ${entries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) -1) * 20).reduce((acc, val) =>  acc + this.templateEntry(val) + '\n', '')}
+        ${entries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
       </ul>
       <div id='pagination'>
-        ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? "selected" : ""}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
+        ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
       </div>
     </div>
     <div id='sidebar'>
       <ul id='channels'>
         <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
-        ${Object.keys(channels).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
+        ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
       </ul>
       <ul id='users'>
-        ${Object.keys(users).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n`, '')}
+        ${Object.keys(users).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n`, '')}
       </ul>
       <ul id='tags'>
-        ${Object.keys(tags).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
+        ${Object.keys(tags).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
       </ul>
     </div>
     <p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
@@ -80,7 +80,7 @@ function Hallway (sites) {
     return users
   }
 
-  this.findTags = function (entries){
+  this.findTags = function (entries) {
     const tags = {}
     for (const id in entries) {
       const entry = entries[id]
@@ -98,7 +98,7 @@ function Hallway (sites) {
         a.push(feeds[id].content[i])
       }
     }
-    return a.sort( (a, b) => a.offset - b.offset )
+    return a.sort((a, b) => a.offset - b.offset)
   }
 
   this.findMention = function (found) {
@@ -154,7 +154,7 @@ function Hallway (sites) {
   // Utils
 
   function parseFeed (author, feed) {
-    const lines = feed.split('\n').filter((line) => line.substr(0,1) !== '#')
+    const lines = feed.split('\n').filter((line) => line.substr(0, 1) !== '#')
     const entries = []
     for (const id in lines) {
       const line = lines[id].trim()
@@ -163,7 +163,7 @@ function Hallway (sites) {
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
       const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
-      const tags = (body.match(re_tag)||[]).map(a => a.substr(a.indexOf('#')+1).toLowerCase())
+      const tags = (body.match(re_tag) || []).map(a => a.substr(a.indexOf('#') + 1).toLowerCase())
       const offset = new Date() - new Date(date)
       entries.push({ date, body, author, offset, channel, tags })
     }
@@ -205,6 +205,6 @@ function Hallway (sites) {
 function filter (name) {
   window.location.hash = name
   const filterAndPage = window.location.hash.split('^')
-  hallway.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1  }
+  hallway.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1 }
   hallway.refresh()
 }
