@@ -26,8 +26,8 @@ function Hallway (sites) {
 
   this.refresh = function (feeds = this.cache) {
     const entries = this.findEntries(feeds)
-    const channels = this.findChannels(entries)
-    const users = this.findUsers(entries)
+    const channels = this.find(entries, 'channel')
+    const users = this.find(entries, 'author')
     const tags = this.findTags(entries)
     const relevantEntries = entries.filter(val => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter)))
 
@@ -61,23 +61,12 @@ function Hallway (sites) {
 
   // Entries
 
-  this.findChannels = function (entries) {
-    const channels = {}
+  this.find = function (entries, p) {
+    const h = {}
     for (const id in entries) {
-      const entry = entries[id]
-      if (!entry.channel) { continue }
-      channels[entry.channel] = channels[entry.channel] ? channels[entry.channel] + 1 : 1
+      if (entries[id] && entries[id][p]) { h[entries[id][p]] = h[entries[id][p]] ? h[entries[id][p]] + 1 : 1 }
     }
-    return channels
-  }
-
-  this.findUsers = function (entries) {
-    const users = {}
-    for (const id in entries) {
-      const entry = entries[id]
-      users[entry.author] = users[entry.author] ? users[entry.author] + 1 : 1
-    }
-    return users
+    return h
   }
 
   this.findTags = function (entries) {
