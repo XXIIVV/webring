@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share hand-crafted websites such as **diaries, wikis & portfolios**. To add yourself to the ring, submit an [edit](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) to this repository.
+This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share hand-crafted websites such as **diaries, wikis & portfolios**.
 
 ## Join the webring
 
@@ -9,10 +9,18 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 - Add the webring icon to your website html.
-- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` key is required, but you can also include `title`, `type`, `author`, `contact`, `rss`, and `feed`.
+- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` and `contact` keys are required, but you can also include `title`, `type`, `author`, `rss`, and `feed`.
 - Submit a Pull Request with **the location of the webring icon** on your site.
 
-Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself. **Single page websites, and websites acting only as portals to other social platforms, will be rejected**.
+Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
+
+### Webring criteria
+
+**Single page websites, websites acting only as portals to other social platforms and websites with content involving violence, racism, sexism or speciesism, will be rejected**.
+
+The aim of the webring is to dipslay **hand-crafted personal** websites. Your business site is probably not the best fit for the webring, and will be rejected.
+
+If it's seen that your website is in violation to any of these rules your site will be removed from the webring. If you fix the issues, feel free to submit another PR to join back in.
 
 ### Circular Linking
 
@@ -35,7 +43,7 @@ To join, create a `.txt` file on your site, and add its URL to [your webring ent
 2015-12-12T12:00:00+01:00   Fiat lux!
 ```
 
-This file needs to be accessible via CORS, so if you're self-hosting, please make sure to allow the `webring.xxiivv.com` origin.   
+This file needs to be accessible via CORS, so if you're self-hosting, please make sure to allow the `webring.xxiivv.com` origin.
 Here's an example of how to do so with Nginx:
 
 ```
@@ -61,4 +69,4 @@ This repository does not contain mature API capabilities, but there are a couple
 
 ## Need Help?
 
-The ring is managed by [@neauoire](https://twitter.com/neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more [here](https://wiki.xxiivv.com/webring).
+The ring is managed by [@neauoire](https://twitter.com/neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more about the webring [here](https://wiki.xxiivv.com/webring).

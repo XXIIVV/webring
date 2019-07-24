@@ -8,8 +8,8 @@ const sites = [
   { url: 'http://estevancarlos.com' },
   { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', author: 'rho', rss: 'https://electro.pizza/feed.xml', feed: 'https://electro.pizza/twtxt.txt' },
   { url: 'https://ianjbattaglia.co' },
-  { url: 'https://avanier.now.sh/wiki', title: 'Ath', type: 'wiki', author: 'Joshavanier', contact: 'joshavanier@protonmail.com' },
-  { url: 'http://kaemura.com', title: 'kaemura.com', type: 'blog', author: 'kaemura', contact: 'chimera1190@gmail.com', feed: 'https://kaemura.com/twttxt.txt'},
+  { url: 'https://avanier.now.sh', title: 'Arachne', type: 'wiki', author: 'joshavanier', contact: 'joshavanier@protonmail.com' },
+  { url: 'http://kaemura.com', title: 'kaemura.com', type: 'blog', author: 'kaemura', contact: 'chimera1190@gmail.com', feed: 'https://kaemura.com/twttxt.txt' },
   { url: 'https://liamcooke.com' },
   { url: 'https://electricgecko.de' },
   { url: 'https://wichniow.ski' },
@@ -33,12 +33,10 @@ const sites = [
   { url: 'https://palomakop.tv' },
   { url: 'https://travisshears.com' },
   { url: 'https://v-os.ca' },
-  { url: 'http://secretinternet.club' },
   { url: 'https://jmandel.xyz' },
   { url: 'https://systems.ws' },
   { url: 'https://jamesin.space' },
   { url: 'https://nathanwentworth.co' },
-  { url: 'https://eswat.ca' },
   { url: 'https://uonai.space' },
   { url: 'http://controls.ee' },
   { url: 'https://wasin.io' },
@@ -93,5 +91,6 @@ const sites = [
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
   { url: 'http://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml', feed: 'http://xxiii.co/twtxt.txt' },
   { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt' },
-  { url: 'http://xxiii.co', title: 'xxiii', type: 'wiki', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml' }
+  { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
+  { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' }
 ]
