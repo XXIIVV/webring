@@ -4,7 +4,7 @@
 // protocol://url.domain.ext
 
 const sites = [
-  { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'neauoire', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt' },
+  { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'neauoire', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt', wiki: 'https://wiki.xxiivv.com/scripts/database/glossary.ndtl' },
   { url: 'http://estevancarlos.com' },
   { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', author: 'rho', rss: 'https://electro.pizza/feed.xml', feed: 'https://electro.pizza/twtxt.txt' },
   { url: 'https://ianjbattaglia.co' },
@@ -85,7 +85,7 @@ const sites = [
   { url: 'https://teknari.com' },
   { url: 'https://colectivo-de-livecoders.gitlab.io/', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
-  { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt' },
+  { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt', wiki: 'https://wiki.amorris.ca' },
   { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'Portfolio' },
   { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
