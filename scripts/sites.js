@@ -92,6 +92,6 @@ const sites = [
   { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
   { url: 'http://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml', feed: 'http://xxiii.co/twtxt.txt' },
-  { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz' },
+  { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt' },
   { url: 'http://xxiii.co', title: 'xxiii', type: 'wiki', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml' }
 ]
