@@ -40,7 +40,9 @@ function Hallway (sites) {
         ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
       </div>
     </div>
+    <a id='showbar' onclick="toggleVisibility('sidebar');"></a>
     <div id='sidebar'>
+      <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
       <ul id='channels'>
         <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
         ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
@@ -183,6 +185,14 @@ function Hallway (sites) {
     return `${Math.floor(minutes / 1440)} days ago`
   }
 }
+
+function toggleVisibility (id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
 
 function escapeHtml (unsafe) {
   return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
