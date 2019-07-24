@@ -92,9 +92,7 @@ function Hallway (sites) {
 
   this.findMention = function (found) {
     const mention = Object.keys(feeds).filter(user => found.indexOf(feeds[user].path) > -1)
-    return mention.length === 1
-      ? ` <span class='user'>@${mention[0]}</span>`
-      : ` <span class='user'>${found}</span>`
+    return mention.length === 1 ? ` <span class='user'>@${mention[0]}</span>` : ` <span class='user'>${found}</span>`
   }
 
   this.templateEntry = function (entry) {
@@ -161,9 +159,8 @@ function Hallway (sites) {
 
   function timeAgo (dateParam) {
     const date = typeof dateParam === 'object' ? dateParam : new Date(dateParam)
-    const DAY_IN_MS = 86400000 // 24 * 60 * 60 * 1000
     const today = new Date()
-    const yesterday = new Date(today - DAY_IN_MS)
+    const yesterday = new Date(today - 86400000)
     const seconds = Math.round((today - date) / 1000)
     const minutes = Math.round(seconds / 60)
     const isToday = today.toDateString() === date.toDateString()
@@ -185,10 +182,10 @@ function Hallway (sites) {
 
     return `${Math.floor(minutes / 1440)} days ago`
   }
+}
 
-  function escapeHtml (unsafe) {
-    return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
-  }
+function escapeHtml (unsafe) {
+  return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
 }
 
 function filter (name) {
