@@ -4,7 +4,7 @@
 // protocol://url.domain.ext
 
 const sites = [
-  { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'neauoire', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt' },
+  { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'neauoire', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt', feed: 'https://wiki.xxiivv.com/twtxt.txt', glossary: 'https://wiki.xxiivv.com/scripts/database/glossary.ndtl' },
   { url: 'http://estevancarlos.com' },
   { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', author: 'rho', rss: 'https://electro.pizza/feed.xml', feed: 'https://electro.pizza/twtxt.txt' },
   { url: 'https://ianjbattaglia.co' },
@@ -42,7 +42,7 @@ const sites = [
   { url: 'https://wasin.io' },
   { url: 'https://inns.studio' },
   { url: 'http://kokorobot.ca' },
-  { url: 'https://ameyama.com', title: '雨山', type: 'blog', author: 'jrc03c', contact: 'josh@ameyama.com', rss: 'https://ameyama.com/blog/rss.xml' },
+  { url: 'https://ameyama.com', title: 'ameyama', type: 'blog', author: 'jrc03c', contact: 'josh@ameyama.com', rss: 'https://ameyama.com/blog/rss.xml' },
   { url: 'https://wake.st', title: 'wake.st', author: 'wakest', contact: '@liaizon@wake.st', feed: 'https://wake.st/twtxt.txt' },
   { url: 'https://xarene.la' },
   { url: 'https://alex.zyzhang.me' },
@@ -83,7 +83,7 @@ const sites = [
   { url: 'https://letters.vexingworkshop.com' },
   { url: 'https://tom.org.nz/about' },
   { url: 'https://teknari.com' },
-  { url: 'https://colectivo-de-livecoders.gitlab.io/', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
+  { url: 'https://colectivo-de-livecoders.gitlab.io', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
   { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt' },
   { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'Portfolio' },
