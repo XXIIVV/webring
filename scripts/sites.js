@@ -81,7 +81,7 @@ const sites = [
   { url: 'https://xinniw.github.io' },
   { url: 'https://mboxed.github.io/forida' },
   { url: 'https://letters.vexingworkshop.com' },
-  { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'Portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', glossary: 'https://tom.org.nz/scripts/database/glossary.ndtl' },
+  { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'Portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', feed: 'https://tom.org.nz/scripts/twtxt.txt', glossary: 'https://tom.org.nz/scripts/database/glossary.ndtl' },
   { url: 'https://teknari.com' },
   { url: 'https://colectivo-de-livecoders.gitlab.io', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
