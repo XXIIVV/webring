@@ -89,7 +89,7 @@ const sites = [
   { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'Portfolio' },
   { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
-  { url: 'http://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'http://serocell.com/feeds/serocell.xml' },
+  { url: 'https://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'https://serocell.com/feeds/serocell.xml', feed: 'https://xxiii.co/twtxt.txt' },
   { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt' },
   { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
   { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' }
