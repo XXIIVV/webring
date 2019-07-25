@@ -18,7 +18,7 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 
 **Single page websites, websites acting only as portals to other social platforms and websites with content involving violence, racism, sexism or speciesism, will be rejected**.
 
-The aim of the webring is to dipslay **hand-crafted personal** websites. Your business site is probably not the best fit for the webring, and will be rejected.
+The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual or written work. Your business site, your tumblr, your instagram, your templated wordpress site, are probably not the best fit for the webring, and will be rejected.
 
 If it's seen that your website is in violation to any of these rules your site will be removed from the webring. If you fix the issues, feel free to submit another PR to join back in.
 
