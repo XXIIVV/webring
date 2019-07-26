@@ -60,6 +60,10 @@ location / {
 
 You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated.
 
+## Webring CLI
+
+If you'd prefer to interact with the webring through your terminal, you can clone or install the [webring-cli](https://github.com/ckipp01/webring-cli).
+
 ## API
 
 This repository does not contain mature API capabilities, but there are a couple ways to request a list of sites and other information currently in the webring.
