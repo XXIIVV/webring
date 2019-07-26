@@ -90,7 +90,7 @@ const sites = [
   { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
   { url: 'https://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'https://serocell.com/feeds/serocell.xml', feed: 'https://xxiii.co/twtxt.txt' },
-  { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt' },
+  { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt', glossary: 'https://kor.nz/db/glossary.ndtl' },
   { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
   { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' },
   { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://tilde.town/~eli_oat/twtxt/twtxt.txt' }
