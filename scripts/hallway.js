@@ -187,12 +187,9 @@ function Hallway (sites) {
 }
 
 function toggleVisibility (id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
+  var e = document.getElementById(id)
+  if (e.style.display == 'block') { e.style.display = 'none' } else { e.style.display = 'block' }
+}
 
 function escapeHtml (unsafe) {
   return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
