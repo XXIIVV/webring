@@ -9,8 +9,8 @@ function Wiki (sites) {
   this._sidebar.id = 'sidebar'
   this._categories = document.createElement('ul')
   this._categories.id = 'categories'
-  this._names = document.createElement('div')
-  this._names.id = 'names'
+  this._entry = document.createElement('div')
+  this._entry.id = 'entry'
 
   this.loc = ''
   this.index = {}
@@ -19,7 +19,7 @@ function Wiki (sites) {
   this.install = (host) => {
     console.log('Wiki', 'Installing..')
     this.fetch()
-    this._el.appendChild(this._names)
+    this._el.appendChild(this._entry)
     this._sidebar.appendChild(this._categories)
     this._el.appendChild(this._sidebar)
     host.appendChild(this._el)
@@ -32,12 +32,23 @@ function Wiki (sites) {
 
   this.refresh = () => {
     console.log(Object.keys(this.index).length + ' terms')
-    // Sidebar
-    let html = ''
-    for (const id in this.categories) {
-      html += `<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id} <span class='right'>${this.categories[id].length}</span></li>`
+    // Main
+    if (this.loc) {
+      if (this.categories[this.index]) {
+        let html = `term: ${this.loc}`
+        this._entry.innerHTML = html
+      } else if (this.categories[this.loc]) {
+        let html = `category: ${this.loc}`
+        this._entry.innerHTML = html
+      } else {
+        let html = `Unknown: ${this.loc}`
+        this._entry.innerHTML = html
+      }
+    } else {
+      this._entry.innerHTML = 'Click a /topic to get started.'
     }
-    this._categories.innerHTML = `${html}`
+    // Sidebar
+    this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id} <span class='right'>${this.categories[id].length}</span></li>` }, '')
   }
 
   this.go = (q) => {
@@ -46,7 +57,7 @@ function Wiki (sites) {
   }
 
   this.at = (q = '') => {
-    return this.loc.toLowerCase() === q.toLowerCase()
+    return this.loc.toUpperCase() === q.toUpperCase()
   }
 
   this.fetch = () => {
