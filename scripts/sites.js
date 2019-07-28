@@ -4,7 +4,7 @@
 // protocol://url.domain.ext
 
 const sites = [
-  { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'neauoire', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt', feed: 'https://wiki.xxiivv.com/twtxt.txt', glossary: 'https://wiki.xxiivv.com/scripts/database/glossary.ndtl' },
+  { url: 'https://wiki.xxiivv.com', title: 'xxiivv', type: 'wiki', author: 'neauoire', contact: 'aliceffekt@gmail.com', rss: 'https://wiki.xxiivv.com/links/rss.xml', feed: 'https://wiki.xxiivv.com/twtxt.txt', feed: 'https://wiki.xxiivv.com/twtxt.txt', wiki: 'https://wiki.xxiivv.com/scripts/database/glossary.ndtl' },
   { url: 'http://estevancarlos.com' },
   { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', author: 'rho', rss: 'https://electro.pizza/feed.xml', feed: 'https://electro.pizza/twtxt.txt' },
   { url: 'https://ianjbattaglia.co' },
@@ -42,7 +42,7 @@ const sites = [
   { url: 'https://wasin.io' },
   { url: 'https://inns.studio' },
   { url: 'http://kokorobot.ca' },
-  { url: 'https://ameyama.com', title: 'ameyama', type: 'blog', author: 'jrc03c', contact: 'josh@ameyama.com', rss: 'https://ameyama.com/blog/rss.xml', glossary: 'https://ameyama.com/data/wiki.ndtl' },
+  { url: 'https://ameyama.com', title: 'ameyama', type: 'blog', author: 'jrc03c', contact: 'josh@ameyama.com', rss: 'https://ameyama.com/blog/rss.xml', wiki: 'https://ameyama.com/data/wiki.ndtl' },
   { url: 'https://wake.st', title: 'wake.st', author: 'wakest', contact: '@liaizon@wake.st', feed: 'https://wake.st/twtxt.txt' },
   { url: 'https://xarene.la' },
   { url: 'https://alex.zyzhang.me' },
@@ -81,7 +81,7 @@ const sites = [
   { url: 'https://xinniw.github.io' },
   { url: 'https://mboxed.github.io/forida' },
   { url: 'https://letters.vexingworkshop.com' },
-  { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'Portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', feed: 'https://tom.org.nz/scripts/twtxt.txt', glossary: 'https://tom.org.nz/scripts/database/glossary.ndtl' },
+  { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'Portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', feed: 'https://tom.org.nz/scripts/twtxt.txt', wiki: 'https://tom.org.nz/scripts/database/glossary.ndtl' },
   { url: 'https://teknari.com' },
   { url: 'https://colectivo-de-livecoders.gitlab.io', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
@@ -90,7 +90,7 @@ const sites = [
   { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
   { url: 'https://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'https://serocell.com/feeds/serocell.xml', feed: 'https://xxiii.co/twtxt.txt' },
-  { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt', glossary: 'https://kor.nz/db/glossary.ndtl' },
+  { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt', wiki: 'https://kor.nz/db/glossary.ndtl' },
   { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
   { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' },
   { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://txt.eli.li/twtxt/twtxt.txt' }
