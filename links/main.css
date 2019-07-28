@@ -9,23 +9,28 @@ body div p a:hover { text-decoration: underline; }
 body div p b { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
 
+body #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; overflow: hidden; height: calc(100vh - 75px);}
+body #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
+body #sidebar > * li { text-transform: lowercase; }
+body #sidebar > * li.selected { background: white; color:black; }
+body #sidebar > * li:hover { cursor: pointer; }
+body #sidebar > * li span.right { color:#555; float:right; }
+body #sidebar > * li span.right:after { content: " msgs"; }
+body #sidebar #channels li:before, body #sidebar #categories li:before { content:'/'; }
+body #sidebar #users li:before { content:'@'; }
+
+@media only screen and (min-width:200px) and (max-width: 800px) {
+  body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px;display: none;background-color: #000; }
+  body #hallway #sidebar #channels { margin-top: 30px; }
+}
+
 /* Hallway */
 
 body #hallway #entries { width: calc(100vw - 300px) !important; }
-body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; }
 
 body #hallway #pagination { margin: 10px; text-align: center; }
 body #hallway #pagination span { padding: 3px; margin: 2px; cursor: pointer; }
 body #hallway #pagination span.selected { background: white; color:black; }
-
-body #hallway #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
-body #hallway #sidebar > * li { text-transform: lowercase; }
-body #hallway #sidebar > * li.selected { background: white; color:black; }
-body #hallway #sidebar > * li:hover { cursor: pointer; }
-body #hallway #sidebar > * li span.right { color:#555; float:right; }
-body #hallway #sidebar > * li span.right:after { content: " msgs"; }
-body #hallway #sidebar #channels li:before { content:'/'; }
-body #hallway #sidebar #users li:before { content:'@'; }
 
 body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:100px; }
 body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px; padding-bottom: 16px;}
@@ -45,10 +50,8 @@ body #hallway ul li:last-child { border-bottom:0px; }
 
 @media only screen and (min-width:200px) and (max-width: 800px) {
   body #hallway #entries { width: 100% !important;margin-top: 30px; }
-  body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px;display: none;background-color: #000; }
   body #hallway #showbar { position: absolute;top: 0px;width: 92%;height: 50px;  background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M11,4 L11,18 M4,4 L 4,18 M18,4 L18,18' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");background-repeat: no-repeat;background-position: right;background-size: 25px; }
   body #hallway #hidebar { position: absolute;top: 0px;width: 100%;height: 50px;background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M5,5 L17,17 M17,5 L5,17' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat: no-repeat;background-position: left;background-size: 25px; }
-  body #hallway #sidebar #channels { margin-top: 30px; }
 }
 
 /* Portal */
@@ -73,3 +76,7 @@ body #portal ul li a:hover { text-decoration: underline; }
   body #portal ul { columns: 1 !important; }
   body #portal ul li span.counter { display: inline }
 }
+
+/* Wiki */
+
+
