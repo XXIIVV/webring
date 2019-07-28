@@ -12,6 +12,7 @@ function Wiki (sites) {
   this._names = document.createElement('div')
   this._names.id = 'names'
 
+  this.loc = ''
   this.index = {}
   this.categories = {}
 
@@ -31,14 +32,21 @@ function Wiki (sites) {
 
   this.refresh = () => {
     console.log(Object.keys(this.index).length + ' terms')
-
-    // Cats
-
+    // Sidebar
     let html = ''
     for (const id in this.categories) {
-      html += `<li>${id} <span class='right'>${this.categories[id].length}</span></li>`
+      html += `<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id} <span class='right'>${this.categories[id].length}</span></li>`
     }
     this._categories.innerHTML = `${html}`
+  }
+
+  this.go = (q) => {
+    this.loc = q
+    this.refresh()
+  }
+
+  this.at = (q = '') => {
+    return this.loc.toLowerCase() === q.toLowerCase()
   }
 
   this.fetch = () => {
