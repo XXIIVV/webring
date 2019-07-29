@@ -57,6 +57,7 @@ function Wiki (sites) {
 
   this.go = (q) => {
     this.loc = q
+    window.location.hash = q.toUrl()
     this.refresh()
   }
 
@@ -106,4 +107,5 @@ function Wiki (sites) {
   this.filter = (lines) => {
     return lines.split('\n').filter((line) => { return line.indexOf(' = `') < 0 && line.trim().length > 1 }).join('\n')
   }
+  String.prototype.toUrl = function () { return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z\+\:\-\.\/\~]/gi, '').trim() }
 }
