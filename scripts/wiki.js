@@ -13,8 +13,9 @@ function Wiki (sites) {
   this._entry.id = 'entry'
 
   this.loc = ''
-  this.index = {}
-  this.categories = {}
+  this.byName = {}
+  this.byCat = {}
+  this.byAuthor = {}
 
   this.install = (host) => {
     console.log('Wiki', 'Installing..')
@@ -32,17 +33,16 @@ function Wiki (sites) {
   }
 
   this.refresh = () => {
-    console.log(Object.keys(this.index).length + ' terms')
     // Main
     if (this.loc) {
-      if (this.categories[this.index]) {
+      if (this.byCat[this.byName]) {
         let html = `term: ${this.loc}`
         this._entry.innerHTML = html
-      } else if (this.categories[this.loc]) {
+      } else if (this.byCat[this.loc]) {
         let html = ''
-        for (const id in this.categories[this.loc]) {
-          const name = this.categories[this.loc][id].name
-          html += `${this.templateTerm(name, this.index[name])}<br />`
+        for (const id in this.byCat[this.loc]) {
+          const name = this.byCat[this.loc][id].name
+          html += `${this.templateTerm(name, this.byName[name])}<br />`
         }
         this._entry.innerHTML = html
       } else {
@@ -51,10 +51,10 @@ function Wiki (sites) {
       }
     } else {
       const random = this.random()
-      this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${random.toUrl()}' onclick='wiki.go("${random}")'>random page</a>.<br />The wiki contains ${Object.keys(this.index).length} terms, in ${Object.keys(this.categories).length} categories.`
+      this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${random.toUrl()}' onclick='wiki.go("${random}")'>random page</a>.<br />The wiki contains ${Object.keys(this.byName).length} terms, in ${Object.keys(this.byCat).length} categories, by ${Object.keys(this.byAuthor).length} authors.`
     }
     // Sidebar
-    this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return this.categories[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.categories[id].length}</span></li>` : acc }, '')
+    this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) => { return this.byCat[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.byCat[id].length}</span></li>` : acc }, '')
     this._entry.innerHTML += `<p id='footer'>The <b>Wiki</b> is a decentralized encyclopedia, to join the conversation, simply create yourself an <a href="https://wiki.xxiivv.com/Indental">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
   }
 
@@ -69,7 +69,7 @@ function Wiki (sites) {
   }
 
   this.random = () => {
-    const keys = Object.keys(this.categories)
+    const keys = Object.keys(this.byCat)
     const target = Math.floor(Math.random() * keys.length)
     return keys[target]
   }
@@ -92,14 +92,21 @@ function Wiki (sites) {
   }
 
   this.add = (name, value, cat, origin) => {
-    if (!this.index[name]) {
-      this.index[name] = []
+    //
+    if (!this.byName[name]) {
+      this.byName[name] = []
     }
-    this.index[name].push({ name, value, cat, origin })
-    if (!this.categories[cat]) {
-      this.categories[cat] = []
+    this.byName[name].push({ name, value, cat, origin })
+    //
+    if (!this.byCat[cat]) {
+      this.byCat[cat] = []
     }
-    this.categories[cat].push({ name, value, cat, origin })
+    this.byCat[cat].push({ name, value, cat, origin })
+    //
+    if (!this.byAuthor[origin.author]) {
+      this.byAuthor[origin.author] = []
+    }
+    this.byAuthor[origin.author].push({ name, value, cat, origin })
   }
 
   this.parse = (site, content) => {
