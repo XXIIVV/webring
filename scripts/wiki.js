@@ -65,7 +65,7 @@ function Wiki (sites) {
   }
 
   this.at = (q = '') => {
-    return this.loc.toUpperCase() === q.toUpperCase()
+    return this.loc.toUpperCase() === q.toUpperCase() || this.cat(this.loc).toUpperCase() === q.toUpperCase()
   }
 
   this.random = () => {
@@ -75,8 +75,11 @@ function Wiki (sites) {
   }
 
   this.related = (name) => {
-    const cat = this.byName[name][0].cat
-    return this.byCat[cat]
+    return this.byCat[this.cat(name)]
+  }
+
+  this.cat = (name) => {
+    return this.byName[name] ? this.byName[name][0].cat : ''
   }
 
   this.templateRelated = (name, entry) => {
