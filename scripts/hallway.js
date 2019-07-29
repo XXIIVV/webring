@@ -8,19 +8,30 @@ const re_url = /((https?):\/\/(([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)([-a
 function Hallway (sites) {
   const feeds = {}
   this.sites = sites
-  this.el = document.createElement('div')
-  this.el.id = 'hallway'
+  this._el = document.createElement('div')
+  this._el.id = 'hallway'
   const filterAndPage = window.location.hash.split('^')
   this.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1 }
   this.cache = null
 
+  this._entries = document.createElement('div')
+  this._entries.id = 'entries'
+  this._sidebar = document.createElement('div')
+  this._sidebar.id = 'sidebar'
+  this._footer = document.createElement('p')
+  this._footer.id = 'footer'
+  this._footer.innerHTML = `The <b>Wiki</b> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
+
   this.install = function (host) {
-    host.appendChild(this.el)
+    this._el.appendChild(this._entries)
+    this._el.appendChild(this._sidebar)
+    this._el.appendChild(this._footer)
+    host.appendChild(this._el)
     this.findFeeds()
   }
 
   this.start = function () {
-    this.el.innerHTML = 'Loading..'
+    this._entries.innerHTML = 'Loading..'
     this.fetchFeeds()
   }
 
@@ -31,30 +42,26 @@ function Hallway (sites) {
     const tags = this.findTags(entries)
     const relevantEntries = entries.filter(val => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter)))
 
-    this.el.innerHTML = `
-    <div id='entries'>
-      <ul>
-        ${entries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
-      </ul>
-      <div id='pagination'>
-        ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
-      </div>
-    </div>
-    <a id='showbar' onclick="toggleVisibility('sidebar');"></a>
-    <div id='sidebar'>
-      <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
-      <ul id='channels'>
-        <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
-        ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
-      </ul>
-      <ul id='users'>
-        ${Object.keys(users).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n`, '')}
-      </ul>
-      <ul id='tags'>
-        ${Object.keys(tags).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
-      </ul>
-    </div>
-    <p id='footer'>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
+    this._entries.innerHTML = `
+    <ul>
+      ${entries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
+    </ul>
+    <div id='pagination'>
+      ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
+    </div>`
+
+    this._sidebar.innerHTML = `
+    <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
+    <ul id='channels'>
+      <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
+      ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
+    </ul>
+    <ul id='users'>
+      ${Object.keys(users).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n`, '')}
+    </ul>
+    <ul id='tags'>
+      ${Object.keys(tags).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
+    </ul>`
 
     if (feeds) {
       this.cache = feeds

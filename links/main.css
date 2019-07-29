@@ -19,7 +19,7 @@ body #sidebar > * li span.right { color:#555; float:right; }
 body #sidebar > * li span.right:after { content: " msgs"; }
 body #sidebar #channels li:before, body #sidebar #categories li:before { content:'/'; }
 body #sidebar #users li:before { content:'@'; }
-body #footer { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 15px;border-top: 2px solid white;padding-top: 15px; margin-top:15px; max-width: 100%}
+body #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 15px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
 
 @media only screen and (min-width:200px) and (max-width: 800px) {
   body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px;display: none;background-color: #000; }

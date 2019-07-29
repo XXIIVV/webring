@@ -12,23 +12,25 @@ function Wiki (sites) {
   this._entry = document.createElement('div')
   this._entry.id = 'entry'
 
+  this._footer = document.createElement('p')
+  this._footer.id = 'footer'
+  this._footer.innerHTML = `The <b>Wiki</b> is a decentralized encyclopedia, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-wiki">wiki:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
+
   this.loc = ''
   this.byName = {}
   this.byCat = {}
   this.byAuthor = {}
 
   this.install = (host) => {
-    console.log('Wiki', 'Installing..')
-    this.fetch()
     this._el.appendChild(this._entry)
     this._sidebar.appendChild(this._categories)
     this._el.appendChild(this._sidebar)
+    this._el.appendChild(this._footer)
     host.appendChild(this._el)
+    this.fetch()
   }
 
   this.start = () => {
-    console.log('Wiki', 'Starting..')
-    this.loc = window.location.hash.substr(1).replace(/\+/g, ' ').toUpperCase()
     this._entry.innerHTML = 'Loading..'
   }
 
@@ -55,10 +57,9 @@ function Wiki (sites) {
     }
     // Sidebar
     this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) => { return this.byCat[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.byCat[id].length}</span></li>` : acc }, '')
-    this._entry.innerHTML += `<p id='footer'>The <b>Wiki</b> is a decentralized encyclopedia, to join the conversation, simply create yourself an <a href="https://wiki.xxiivv.com/Indental">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
   }
 
-  this.go = (q = this.loc) => {
+  this.go = (q = window.location.hash.substr(1).replace(/\+/g, ' ').toUpperCase()) => {
     this.loc = q
     window.location.hash = q.toUrl()
     this.refresh()
@@ -70,8 +71,7 @@ function Wiki (sites) {
 
   this.random = () => {
     const keys = Object.keys(this.byCat)
-    const target = Math.floor(Math.random() * keys.length)
-    return keys[target]
+    return keys[Math.floor(Math.random() * keys.length)]
   }
 
   this.related = (name) => {
