@@ -56,7 +56,7 @@ function Wiki (sites) {
       this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${random.toUrl()}' onclick='wiki.go("${random}")'>random page</a>.<br />The wiki contains ${Object.keys(this.byName).length} terms, in ${Object.keys(this.byCat).length} categories, by ${Object.keys(this.byAuthor).length} authors.`
     }
     // Sidebar
-    this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) => { return this.byCat[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.byCat[id].length}</span></li>` : acc }, '')
+    this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) => { return this.byCat[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.byCat[id].length}</span></li>` : acc }, `<li onclick='wiki.go("")' class='${wiki.at() ? 'selected' : ''}'>home <span class='right'>${Object.keys(this.byName).length}</span></li>`)
   }
 
   this.go = (q = window.location.hash.substr(1).replace(/\+/g, ' ').toUpperCase()) => {
@@ -66,7 +66,7 @@ function Wiki (sites) {
   }
 
   this.at = (q = '') => {
-    return this.loc.toUpperCase() === q.toUpperCase() || this.cat(this.loc).toUpperCase() === q.toUpperCase()
+    return this.loc.toUpperCase() === q.toUpperCase() || (this.cat(this.loc).toUpperCase() === q.toUpperCase() && q !== '')
   }
 
   this.random = () => {
