@@ -92,5 +92,6 @@ const sites = [
   { url: 'https://kor.nz', title: 'kor', type: 'wiki', author: 'kormyen', contact: 'h@kor.nz', feed: 'https://kor.nz/twtxt.txt', wiki: 'https://kor.nz/db/glossary.ndtl' },
   { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
   { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' },
-  { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://txt.eli.li/twtxt/twtxt.txt' }
+  { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://txt.eli.li/twtxt/twtxt.txt' },
+  { url: 'https://opinionatedguide.github.io/', title: 'OpGuides', contact: 'vegac@protonmail.com', feed: 'https://opinionatedguide.github.io/twtxt.txt' }
 ]
