@@ -12,7 +12,7 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a> | <a href="hallway.html">The Hallway</a> | <a id="opml">OPML</a></p>`
+    return `<p class='buttons'><a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a> | <a href="hallway.html">The Hallway</a>  | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>`
   }
 
   function _directory (sites) {
@@ -25,7 +25,7 @@ function Portal (sites) {
   }
 
   function _redirect (site) {
-    return `<p>Redirecting to <a href="${site.url}">${site.url}</a></p><meta http-equiv="refresh" content="3; url=${site.url}">
+    return `<p id='footer'>Redirecting to <a href="${site.url}">${site.url}</a></p><meta http-equiv="refresh" content="3; url=${site.url}">
     <p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${site.url}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 

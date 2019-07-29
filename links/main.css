@@ -1,7 +1,7 @@
 * { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 
 body { background:#f4f4f4; padding:0px; margin:0px; }
-body > div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white;}
+body > div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white; overflow: hidden;}
 body div ul { max-width: 800px; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
 body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
 body div p a { text-decoration: underline;}
@@ -18,6 +18,7 @@ body #sidebar > * li span.right { color:#555; float:right; }
 body #sidebar > * li span.right:after { content: " msgs"; }
 body #sidebar #channels li:before, body #sidebar #categories li:before { content:'/'; }
 body #sidebar #users li:before { content:'@'; }
+body #footer { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 15px;border-top: 2px solid white;padding-top: 15px; margin-top:15px;}
 
 @media only screen and (min-width:200px) and (max-width: 800px) {
   body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px;display: none;background-color: #000; }
@@ -44,7 +45,6 @@ body #hallway .entry.highlight .author { color:#555; }
 body #hallway .entry:hover .author { color:#ccc; }
 body #hallway .entry:hover .date { color:#ccc; }
 body #hallway .entry:hover .body { color:#ccc; border-bottom-color: #555 }
-body #hallway p { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 0px; }
 body #hallway ul { max-width: 100%; }
 body #hallway ul li:last-child { border-bottom:0px; }
 
@@ -79,7 +79,7 @@ body #portal ul li a:hover { text-decoration: underline; }
 
 /* Wiki */
 
-body #wiki #entry { max-width: calc(100% - 230px); }
+body #wiki #entry { max-width: calc(100% - 230px); margin-bottom: 30px }
 body #wiki ul.term { border-bottom: 0px; margin-bottom: 0px; padding-bottom: 0px}
 body #wiki ul.term li.name { margin-bottom: 5px }
 body #wiki ul.term li a.author { color:#555; }

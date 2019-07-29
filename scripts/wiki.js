@@ -28,7 +28,7 @@ function Wiki (sites) {
   this.start = () => {
     console.log('Wiki', 'Starting..')
     this.loc = window.location.hash.substr(1).replace(/\+/g, ' ').toUpperCase()
-    // this.el.innerHTML = 'hello.'
+    this._entry.innerHTML = 'Loading..'
   }
 
   this.refresh = () => {
@@ -46,17 +46,18 @@ function Wiki (sites) {
         }
         this._entry.innerHTML = html
       } else {
-        let html = `Unknown: ${this.loc}`
+        let html = `Unknown: ${this.loc}. Retun <a onclick='wiki.go("")'>home</a>, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
         this._entry.innerHTML = html
       }
     } else {
-      this._entry.innerHTML = 'Click a /topic to get started.'
+      this._entry.innerHTML = `Click a /topic to get started, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
     }
     // Sidebar
-    this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.categories[id].length}</span></li>` }, '')
+    this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return this.categories[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.categories[id].length}</span></li>` : acc }, '')
+    this._entry.innerHTML += `<p id='footer'>The <b>Wiki</b> is a decentralized encyclopedia, to join the conversation, simply create yourself an <a href="https://wiki.xxiivv.com/Indental">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
   }
 
-  this.go = (q) => {
+  this.go = (q = this.loc) => {
     this.loc = q
     window.location.hash = q.toUrl()
     this.refresh()
@@ -66,8 +67,14 @@ function Wiki (sites) {
     return this.loc.toUpperCase() === q.toUpperCase()
   }
 
+  this.random = () => {
+    const keys = Object.keys(this.categories)
+    const target = Math.floor(Math.random() * keys.length)
+    return keys[target]
+  }
+
   this.templateTerm = (name, entry) => {
-    return '<ul class="term"><li class="name"><b>' + name.toLowerCase() + '</b></li>' + entry.reduce((acc, item) => { return `${acc}<li>${item.value} <a class='author' href='${item.origin.url}'> — @${item.origin.author}</a></li>` }, '') + '</ul>'
+    return '<ul class="term"><li class="name"><b>' + name.toLowerCase() + '</b></li>' + entry.reduce((acc, item) => { return `${acc}<li>${item.value} <a class='author' target='_blank' href='${item.origin.url}'> — @${item.origin.author}</a></li>` }, '') + '</ul>'
   }
 
   this.fetch = () => {

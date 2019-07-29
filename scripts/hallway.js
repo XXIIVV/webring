@@ -20,7 +20,7 @@ function Hallway (sites) {
   }
 
   this.start = function () {
-    this.el.innerHTML = 'hello.'
+    this.el.innerHTML = 'Loading..'
     this.fetchFeeds()
   }
 
@@ -54,7 +54,7 @@ function Hallway (sites) {
         ${Object.keys(tags).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
       </ul>
     </div>
-    <p>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
+    <p id='footer'>The <b>Hallway</b> is a decentralized forum, to join the conversation, simply create yourself a <a href="https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html">twtxt</a> feed and <a href="https://github.com/XXIIVV/Webring/">add it</a> to your entry in the <a href="index.html">webring</a>.</p>`
 
     if (feeds) {
       this.cache = feeds
