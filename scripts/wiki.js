@@ -37,15 +37,15 @@ function Wiki (sites) {
   this.refresh = () => {
     // Main
     if (this.loc) {
-      if (this.byName[this.loc]) {
-        let html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc, this.byName[this.loc])}`
-        this._entry.innerHTML = html
-      } else if (this.byCat[this.loc]) {
+      if (this.byCat[this.loc]) {
         let html = ''
         for (const id in this.byCat[this.loc]) {
           const name = this.byCat[this.loc][id].name
           html += `${this.templateTerm(name, this.byName[name])}<br />`
         }
+        this._entry.innerHTML = html
+      } else if (this.byName[this.loc]) {
+        let html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc, this.byName[this.loc])}`
         this._entry.innerHTML = html
       } else {
         let html = `Unknown: ${this.loc}. Retun <a onclick='wiki.go("")'>home</a>, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
