@@ -60,6 +60,12 @@ location / {
 
 You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated.
 
+### Joining the wiki
+
+[The Wiki](https://webring.xxiivv.com/wiki.html) is a decentralized encyclopedia using [ndtl](https://wiki.xxiivv.com/Indental) feeds.
+
+To join, create a `.ndtl` file on your site, and add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `wiki:`.
+
 ## Webring CLI
 
 If you'd prefer to interact with the webring through your terminal, you can clone or install the [webring-cli](https://github.com/ckipp01/webring-cli).
