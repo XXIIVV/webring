@@ -4,8 +4,7 @@ function indental (data, Type) {
   function formatLine (line) {
     const a = []
     const h = {}
-    for (const id in line.children) {
-      const child = line.children[id]
+    for (const child of line.children) {
       if (child.key) {
         if (h[child.key]) { console.warn(`Redefined key: ${child.key}.`) }
         h[child.key] = child.value
@@ -32,15 +31,14 @@ function indental (data, Type) {
   }
 
   function skipLine (line) {
-    return line.trim() !== '' && line.substr(0, 1) !== ';'
+    return line.trim() !== '' && line.substr(0, 1) !== ';' && line.trim().slice(-1) !== '`'
   }
 
   const lines = data.split('\n').filter(skipLine).map(makeLine)
 
   // Assoc
   const stack = {}
-  for (const id in lines) {
-    const line = lines[id]
+  for (const line of lines) {
     const target = stack[line.indent - 2]
     if (target) { target.children.push(line) }
     stack[line.indent] = line
@@ -57,3 +55,5 @@ function indental (data, Type) {
   }
   return h
 }
+
+module.exports = indental
