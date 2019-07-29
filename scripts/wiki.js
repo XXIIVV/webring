@@ -38,7 +38,11 @@ function Wiki (sites) {
         let html = `term: ${this.loc}`
         this._entry.innerHTML = html
       } else if (this.categories[this.loc]) {
-        let html = `category: ${this.loc}`
+        let html = ''
+        for (const id in this.categories[this.loc]) {
+          const name = this.categories[this.loc][id].name
+          html += `${this.templateTerm(name, this.index[name])}<br />`
+        }
         this._entry.innerHTML = html
       } else {
         let html = `Unknown: ${this.loc}`
@@ -48,7 +52,7 @@ function Wiki (sites) {
       this._entry.innerHTML = 'Click a /topic to get started.'
     }
     // Sidebar
-    this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id} <span class='right'>${this.categories[id].length}</span></li>` }, '')
+    this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.categories[id].length}</span></li>` }, '')
   }
 
   this.go = (q) => {
@@ -58,6 +62,10 @@ function Wiki (sites) {
 
   this.at = (q = '') => {
     return this.loc.toUpperCase() === q.toUpperCase()
+  }
+
+  this.templateTerm = (name, entry) => {
+    return '<ul class="term"><li class="name"><b>' + name.toLowerCase() + '</b></li>' + entry.reduce((acc, item) => { return `${acc}<li>${item.value} <a class='author' href='${item.origin.url}'> — @${item.origin.author}</a></li>` }, '') + '</ul>'
   }
 
   this.fetch = () => {
@@ -77,11 +85,11 @@ function Wiki (sites) {
     if (!this.index[name]) {
       this.index[name] = []
     }
-    this.index[name].push({ value, cat, origin })
+    this.index[name].push({ name, value, cat, origin })
     if (!this.categories[cat]) {
       this.categories[cat] = []
     }
-    this.categories[cat].push({ value, cat, origin })
+    this.categories[cat].push({ name, value, cat, origin })
   }
 
   this.parse = (site, content) => {

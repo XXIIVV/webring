@@ -6,10 +6,10 @@ body div ul { max-width: 800px; border-bottom: 2px solid white;padding-bottom: 1
 body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
 body div p a { text-decoration: underline;}
 body div p a:hover { text-decoration: underline; }
-body div p b { font-weight: normal; font-family: 'input_mono_medium' }
+body b { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
 
-body #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; overflow: hidden; height: calc(100vh - 75px);}
+body #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; overflow: hidden;}
 body #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
 body #sidebar > * li { text-transform: lowercase; }
 body #sidebar > * li.selected { background: white; color:black; }
@@ -78,5 +78,12 @@ body #portal ul li a:hover { text-decoration: underline; }
 }
 
 /* Wiki */
+
+body #wiki #entry { max-width: calc(100% - 230px); }
+body #wiki ul.term { border-bottom: 0px; margin-bottom: 0px; padding-bottom: 0px}
+body #wiki ul.term li.name { margin-bottom: 5px }
+body #wiki ul.term li a.author { color:#555; }
+
+
 
 
