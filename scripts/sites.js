@@ -27,7 +27,6 @@ const sites = [
   { url: 'https://shaneckel.com' },
   { url: 'https://cblgh.org', title: 'cblgh.org', author: 'cblgh', contact: 'cabal://cblgh.org', feed: 'https://cblgh.org/twtxt.txt' },
   { url: 'https://ellugar.co', title: 'ellugar', type: 'wiki', author: 'afk', contact: 'afk@ellugar.co', rss: 'http://feeds.ellugar.co/ellugar-logs' },
-  { url: 'http://hur.bet' },
   { url: 'http://chigby.org' },
   { url: 'https://longest.voyage' },
   { url: 'https://palomakop.tv' },
