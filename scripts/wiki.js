@@ -50,7 +50,8 @@ function Wiki (sites) {
         this._entry.innerHTML = html
       }
     } else {
-      this._entry.innerHTML = `Click a /topic to get started, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
+      const random = this.random()
+      this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${random.toUrl()}' onclick='wiki.go("${random}")'>random page</a>.`
     }
     // Sidebar
     this._categories.innerHTML = Object.keys(this.categories).reduce((acc, id) => { return this.categories[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.categories[id].length}</span></li>` : acc }, '')
