@@ -48,7 +48,8 @@ function Hallway (sites) {
     </ul>
     <div id='pagination'>
       ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
-    </div>`
+    </div>
+    <a id='showbar' onclick="toggleVisibility('sidebar');"></a>`
 
     this._sidebar.innerHTML = `
     <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
