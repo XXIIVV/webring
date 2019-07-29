@@ -35,8 +35,8 @@ function Wiki (sites) {
   this.refresh = () => {
     // Main
     if (this.loc) {
-      if (this.byCat[this.byName]) {
-        let html = `term: ${this.loc}`
+      if (this.byName[this.loc]) {
+        let html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc, this.byName[this.loc])}`
         this._entry.innerHTML = html
       } else if (this.byCat[this.loc]) {
         let html = ''
@@ -72,6 +72,19 @@ function Wiki (sites) {
     const keys = Object.keys(this.byCat)
     const target = Math.floor(Math.random() * keys.length)
     return keys[target]
+  }
+
+  this.related = (name) => {
+    const cat = this.byName[name][0].cat
+    return this.byCat[cat]
+  }
+
+  this.templateRelated = (name, entry) => {
+    let html = ''
+    const cat = entry.cat
+    const relatedWords = this.related(name)
+    html += `<ul class='col3'>${relatedWords.reduce((acc, item, id) => { return `${acc}<li onclick='wiki.go("${item.name}")' class='${wiki.at(item.name) ? 'selected' : ''}'>${item.name.toLowerCase()}</li>` }, '')}</ul>`
+    return html
   }
 
   this.templateTerm = (name, entry) => {
