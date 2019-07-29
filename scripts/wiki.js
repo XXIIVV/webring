@@ -127,7 +127,7 @@ function Wiki (sites) {
 
   this.parse = (site, content) => {
     console.log('Wiki', 'Parsing ' + site.wiki)
-    const cats = indental(this.filter(content))
+    const cats = indental(content)
     for (const cat in cats) {
       const terms = cats[cat]
       for (const name in terms) {
@@ -136,8 +136,5 @@ function Wiki (sites) {
     }
   }
 
-  this.filter = (lines) => {
-    return lines.split('\n').filter((line) => { return line.indexOf(' = `') < 0 && line.trim().length > 1 }).join('\n')
-  }
   String.prototype.toUrl = function () { return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z\+\:\-\.\/\~]/gi, '').trim() }
 }
