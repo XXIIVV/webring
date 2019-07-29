@@ -27,6 +27,7 @@ function Wiki (sites) {
 
   this.start = () => {
     console.log('Wiki', 'Starting..')
+    this.loc = window.location.hash.substr(1).replace(/\+/g, ' ').toUpperCase()
     // this.el.innerHTML = 'hello.'
   }
 
