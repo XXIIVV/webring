@@ -92,5 +92,6 @@ const sites = [
   { url: 'https://lublin.se', author: 'quite', contact: 'quite@hack.org', feed: 'https://lublin.se/twtxt.txt' },
   { url: 'https://zanneth.com', title: 'zanneth.com', author: 'zanneth', type: 'blog', contact: 'root@zanneth.com' },
   { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://txt.eli.li/twtxt/twtxt.txt' },
-  { url: 'https://gueorgui.net', title: 'Gueorgui Tcherednitchenko', author: 'gueorgui', type: 'portfolio', contact: 'hello@gueorgui.net' }
+  { url: 'https://gueorgui.net', title: 'Gueorgui Tcherednitchenko', author: 'gueorgui', type: 'portfolio', contact: 'hello@gueorgui.net' },
+  { url: 'https://www.gkbrk.com', title: 'Leo', author: 'Leo', type: 'blog', contact: 'webring@gkbrk.com', rss: 'https://www.gkbrk.com/feed.xml', feed: 'https://www.gkbrk.com/twtxt.txt' }
 ]
