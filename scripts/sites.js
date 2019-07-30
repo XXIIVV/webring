@@ -21,7 +21,6 @@ const sites = [
   { url: 'https://felipecortez.net' },
   { url: 'http://luminghao.com' },
   { url: 'https://turelio.github.io' },
-  { url: 'https://spaceshipsin.space', title: 'spaceshipsin.space', type: 'hybrid', author: 'gaeel', contact: 'gaeel@spaceshipsin.space', feed: 'https://spaceshipsin.space/twtxts/hallway.txt' },
   { url: 'https://log.lectronice.com', title: 'lectrolog.', type: 'blog', author: 'lectronice', contact: 'i.love.spam@lectronice.com', feed: 'https://lectronice.com/hallway/twtxt.txt' },
   { url: 'https://craze.co.uk' },
   { url: 'https://shaneckel.com' },
