@@ -11,7 +11,7 @@ const sites = [
   { url: 'https://avanier.now.sh', title: 'Arachne', type: 'wiki', author: 'joshavanier', contact: 'joshavanier@protonmail.com', feed: 'https://avanier.now.sh/tw.txt' },
   { url: 'http://kaemura.com', title: 'kaemura.com', type: 'blog', author: 'kaemura', contact: 'chimera1190@gmail.com', feed: 'https://kaemura.com/twttxt.txt' },
   { url: 'https://liamcooke.com' },
-  { url: 'https://electricgecko.de' },
+  { url: 'https://electricgecko.de', title: 'electricgecko', type: 'blog', author: 'electricgecko', contact: 'desk@electricgecko.de', rss: 'https://electricgecko.de/feed' },
   { url: 'https://wichniow.ski' },
   { url: 'https://hraew.autophagy.io' },
   { url: 'http://evenunto.net' },
