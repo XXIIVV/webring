@@ -70,7 +70,7 @@ const sites = [
   { url: 'https://gndclouds.cc' },
   { url: 'https://xuv.be' },
   { url: 'https://dsdshcym.github.io' },
-  { url: 'https://wiki.chronica.xyz', title: 'chronica', type: 'wiki', author: 'ckipp', contact: 'ckipp@pm.me', feed: 'https://chronica.xyz/hallway.txt' },
+  { url: 'https://wiki.chronica.xyz', title: 'chronica', type: 'wiki', author: 'ckipp', contact: 'ckipp@pm.me', feed: 'https://chronica.xyz/hallway.txt', wiki: 'https://chronica.xyz/glossary.ndtl' },
   { url: 'https://boffosocko.com' },
   { url: 'https://hex22.org', title: 'hex22', author: 'kodedninja', contact: 'karamanhunor@pm.me', feed: 'https://t.seed.hex22.org/twtxt.txt' },
   { url: 'https://patrikarvidsson.com' },
