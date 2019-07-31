@@ -102,7 +102,7 @@ function Hallway (sites) {
 
   this.findMention = function (found) {
     const mention = Object.keys(feeds).filter(user => found.indexOf(feeds[user].path) > -1)
-    return mention.length === 1 ? ` <span class='user'>@${mention[0]}</span>` : ` <span class='user'>${found}</span>`
+    return mention.length === 1 ? ` <span class='user local'>${mention[0]}</span>` : ` <span class='user external'>${found.substr(5).split(' ')[0]}</span>`
   }
 
   this.templateEntry = function (entry) {
