@@ -11,7 +11,7 @@ const sites = [
   { url: 'https://avanier.now.sh', title: 'Arachne', type: 'wiki', author: 'joshavanier', contact: 'joshavanier@protonmail.com', feed: 'https://avanier.now.sh/tw.txt' },
   { url: 'http://kaemura.com', title: 'kaemura.com', type: 'blog', author: 'kaemura', contact: 'chimera1190@gmail.com', feed: 'https://kaemura.com/twttxt.txt' },
   { url: 'https://liamcooke.com' },
-  { url: 'https://electricgecko.de' },
+  { url: 'https://electricgecko.de', title: 'electricgecko', type: 'blog', author: 'electricgecko', contact: 'desk@electricgecko.de', rss: 'https://electricgecko.de/feed' },
   { url: 'https://wichniow.ski' },
   { url: 'https://hraew.autophagy.io' },
   { url: 'http://evenunto.net' },
@@ -94,5 +94,6 @@ const sites = [
   { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://txt.eli.li/twtxt/twtxt.txt' },
   { url: 'https://gueorgui.net', title: 'Gueorgui Tcherednitchenko', author: 'gueorgui', type: 'portfolio', contact: 'hello@gueorgui.net' },
   { url: 'https://www.gkbrk.com', title: 'Leo', author: 'Leo', type: 'blog', contact: 'webring@gkbrk.com', rss: 'https://www.gkbrk.com/feed.xml', feed: 'https://www.gkbrk.com/twtxt.txt' },
+  { url: 'https://www.tatecarson.com', title: 'Tate Carson', type: 'Portfolio', author: 'Tate Carson', contact: 'tatecarson@gmail.com'},
   { url: 'https://azlen.me', title: 'azlen.me', author: 'azlen', type: 'wiki', contact: 'webring@azlen.me', feed: 'https://azlen.me/twtxt.txt', wiki: 'https://azlen.me/glossary.ndtl' }
 ]
