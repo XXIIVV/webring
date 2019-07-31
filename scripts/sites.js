@@ -78,12 +78,12 @@ const sites = [
   { url: 'https://xinniw.github.io' },
   { url: 'https://mboxed.github.io/forida' },
   { url: 'https://letters.vexingworkshop.com' },
-  { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'Portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', wiki: 'https://a.tom.org.nz/glossary.ndtl' },
+  { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', wiki: 'https://a.tom.org.nz/glossary.ndtl' },
   { url: 'https://teknari.com' },
   { url: 'https://colectivo-de-livecoders.gitlab.io', title: 'Colectivo de Livecoders', type: 'blog', author: 'clic', contact: 'https://t.me/clic_laplata' },
   { url: 'https://www.madewithtea.com', title: 'madewithtea.com', type: 'blog' },
   { url: 'https://amorris.ca', title: 'amorris', author: 'amorris', type: 'blog', feed: 'https://feed.amorris.ca/hallway.txt' },
-  { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'Portfolio' },
+  { url: 'http://www.miha-co.ca', title: 'miha-co', type: 'portfolio' },
   { url: 'https://buzzert.net', title: 'buzzert.net', author: 'buzzert', type: 'blog' },
   { url: 'https://notes.stuartpb.com/', title: 'notes.stuartpb.com', type: 'wiki', author: 'stuartpb', contact: 's@stuartpb.com', feed: 'https://twtxt.stuartpb.com/xxiivv.txt' },
   { url: 'https://xxiii.co', title: 'xxiii', type: 'portfolio', author: 'serocell', contact: 'psignal@s900.net', rss: 'https://serocell.com/feeds/serocell.xml', feed: 'https://xxiii.co/twtxt.txt' },
@@ -93,6 +93,6 @@ const sites = [
   { url: 'https://eli.li', title: 'eli.li', author: 'eli_oat', type: 'blog', contact: 'hi@eli.li', rss: 'https://eli.li/feed.rss', feed: 'https://txt.eli.li/twtxt/twtxt.txt' },
   { url: 'https://gueorgui.net', title: 'Gueorgui Tcherednitchenko', author: 'gueorgui', type: 'portfolio', contact: 'hello@gueorgui.net' },
   { url: 'https://www.gkbrk.com', title: 'Leo', author: 'Leo', type: 'blog', contact: 'webring@gkbrk.com', rss: 'https://www.gkbrk.com/feed.xml', feed: 'https://www.gkbrk.com/twtxt.txt' },
-  { url: 'https://www.tatecarson.com', title: 'Tate Carson', type: 'Portfolio', author: 'Tate Carson', contact: 'tatecarson@gmail.com'},
+  { url: 'https://www.tatecarson.com', title: 'Tate Carson', type: 'portfolio', author: 'Tate Carson', contact: 'tatecarson@gmail.com'},
   { url: 'https://azlen.me', title: 'azlen.me', author: 'azlen', type: 'wiki', contact: 'webring@azlen.me', feed: 'https://azlen.me/twtxt.txt', wiki: 'https://azlen.me/glossary.ndtl' }
 ]
