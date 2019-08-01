@@ -156,7 +156,7 @@ function Hallway (sites) {
     for (const id in lines) {
       const line = lines[id].trim()
       if (line === '') { continue }
-      const parts = line.replace('   ', '\t').split('\t')
+      const parts = line.replace('  ', '\t').split('\t')
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
       const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
