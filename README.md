@@ -34,7 +34,7 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 [The Hallway](https://webring.xxiivv.com/hallway.html) is a decentralized forum using [twtxt](https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html) feeds.
 
-To join, create a `.txt` file on your site, and add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `feed:`. The content of the file should be a dateISO string, a tab(or 3 spaces) and a message:
+To join, create a `.txt` file on your site, add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `feed:`, and fill in your desired name for `author:`. The content of the file should be a dateISO string, a tab(or 3 spaces) and a message:
 
 ```
 2016-02-04T13:30:00+01:00   You can really go crazy here! ┐(ﾟ∀ﾟ)┌
