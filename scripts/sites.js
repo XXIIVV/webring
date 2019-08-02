@@ -95,5 +95,5 @@ const sites = [
   { url: 'https://www.gkbrk.com', title: 'Leo', author: 'Leo', type: 'blog', contact: 'webring@gkbrk.com', rss: 'https://www.gkbrk.com/feed.xml', feed: 'https://www.gkbrk.com/twtxt.txt' },
   { url: 'https://www.tatecarson.com', title: 'Tate Carson', type: 'portfolio', author: 'Tate Carson', contact: 'tatecarson@gmail.com' },
   { url: 'https://azlen.me', title: 'azlen.me', author: 'azlen', type: 'wiki', contact: 'webring@azlen.me', feed: 'https://azlen.me/twtxt.txt', wiki: 'https://azlen.me/glossary.ndtl' },
-  { url: 'https://opinionatedguide.github.io/', title: 'OpGuides', contact: 'vegac@protonmail.com', feed: 'https://opinionatedguide.github.io/twtxt.txt' }
+  { url: 'https://opinionatedguide.github.io/', title: 'OpGuides', author: 'vega', contact: 'vegac@protonmail.com', feed: 'https://opinionatedguide.github.io/twtxt.txt' }
 ]
