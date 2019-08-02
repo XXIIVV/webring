@@ -48,7 +48,8 @@ function Hallway (sites) {
     </ul>
     <div id='pagination'>
       ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
-    </div>`
+    </div>
+    <a id='showbar' onclick="toggleVisibility('sidebar');"></a>`
 
     this._sidebar.innerHTML = `
     <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
@@ -101,7 +102,7 @@ function Hallway (sites) {
 
   this.findMention = function (found) {
     const mention = Object.keys(feeds).filter(user => found.indexOf(feeds[user].path) > -1)
-    return mention.length === 1 ? ` <span class='user'>@${mention[0]}</span>` : ` <span class='user'>${found}</span>`
+    return mention.length === 1 ? ` <span class='user local'>${mention[0]}</span>` : ` <span class='user external'>${found.substr(5).split(' ')[0]}</span>`
   }
 
   this.templateEntry = function (entry) {
@@ -155,7 +156,7 @@ function Hallway (sites) {
     for (const id in lines) {
       const line = lines[id].trim()
       if (line === '') { continue }
-      const parts = line.replace('   ', '\t').split('\t')
+      const parts = line.replace('  ', '\t').split('\t')
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
       const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'

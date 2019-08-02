@@ -40,6 +40,8 @@ body #hallway .entry .body { display: block;border-bottom: 1px solid #333;paddin
 body #hallway .entry .body a { text-decoration: underline; }
 body #hallway .entry .body .channel { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
 body #hallway .entry .body .user { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
+body #hallway .entry .body .user.local::before { content:'@';color: #777; }
+body #hallway .entry .body .user.external::before { content:'^';color: #777; }
 body #hallway .entry .body .tag { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
 body #hallway .entry.highlight .author { color:#555; }
 body #hallway .entry:hover .author { color:#ccc; }
