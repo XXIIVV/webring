@@ -32,7 +32,7 @@ const sites = [
   { url: 'https://v-os.ca' },
   { url: 'https://jmandel.xyz' },
   { url: 'https://systems.ws' },
-  { url: 'https://jamesin.space' },
+  { url: 'https://2d4.dev', title: '2d4.dev', author: 'jda0', contact: 'hi@2d4.dev', feed: 'https://2d4.dev/tw.txt', wiki: 'https://2d4.dev/wiki.ndtl' },
   { url: 'https://nathanwentworth.co' },
   { url: 'https://uonai.space' },
   { url: 'http://controls.ee' },
