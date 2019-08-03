@@ -55,5 +55,3 @@ function indental (data, Type) {
   }
   return h
 }
-
-module.exports = indental

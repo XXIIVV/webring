@@ -6,7 +6,7 @@ body div ul { max-width: 800px; padding-bottom: 15px;margin-bottom:15px; overflo
 body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
 body div p a { text-decoration: underline; cursor: pointer;}
 body div p a:hover { text-decoration: underline; }
-body b { font-weight: normal; font-family: 'input_mono_medium' }
+body strong { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
 body .col3 { columns:3; }
 body .selected { background: white; color:black; }

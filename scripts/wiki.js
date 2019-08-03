@@ -14,7 +14,7 @@ function Wiki (sites) {
 
   this._footer = document.createElement('p')
   this._footer.id = 'footer'
-  this._footer.innerHTML = `The <b>Wiki</b> is a decentralized encyclopedia, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-wiki">wiki:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
+  this._footer.innerHTML = `The <strong>Wiki</strong> is a decentralized encyclopedia, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-wiki">wiki:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
 
   this.loc = ''
   this.byName = {}
@@ -38,17 +38,14 @@ function Wiki (sites) {
     // Main
     if (this.loc) {
       if (this.byCat[this.loc]) {
-        let html = ''
-        for (const id in this.byCat[this.loc]) {
-          const name = this.byCat[this.loc][id].name
-          html += `${this.templateTerm(name, this.byName[name])}<br />`
-        }
+        const formatHtml = (entries, entry) => `${entries} ${this.templateTerm(entry.name, this.byName[entry.name])}<br />`
+        const html = this.byCat[this.loc].reduce(formatHtml, '')
         this._entry.innerHTML = html
       } else if (this.byName[this.loc]) {
-        let html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc, this.byName[this.loc])}`
+        const html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc)}`
         this._entry.innerHTML = html
       } else {
-        let html = `Unknown: ${this.loc}. Retun <a onclick='wiki.go("")'>home</a>, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
+        const html = `Unknown: ${this.loc}. Retun <a onclick='wiki.go("")'>home</a>, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
         this._entry.innerHTML = html
       }
     } else {
@@ -82,16 +79,14 @@ function Wiki (sites) {
     return this.byName[name] ? this.byName[name][0].cat : ''
   }
 
-  this.templateRelated = (name, entry) => {
-    let html = ''
-    const cat = entry.cat
+  this.templateRelated = (name) => {
     const relatedWords = this.related(name)
-    html += `<ul class='col3'>${relatedWords.reduce((acc, item, id) => { return `${acc}<li onclick='wiki.go("${item.name}")' class='${wiki.at(item.name) ? 'selected' : ''}'>${item.name.toLowerCase()}</li>` }, '')}</ul>`
+    const html = `<ul class='col3'>${relatedWords.reduce((acc, item, id) => { return `${acc}<li onclick='wiki.go("${item.name}")' class='${wiki.at(item.name) ? 'selected' : ''}'>${item.name.toLowerCase()}</li>` }, '')}</ul>`
     return html
   }
 
   this.templateTerm = (name, entry) => {
-    return '<ul class="term"><li class="name"><b>' + name.toLowerCase() + '</b></li>' + entry.reduce((acc, item) => { return `${acc}<li>${item.value} <a class='author' target='_blank' href='${item.origin.url}'> — @${item.origin.author}</a></li>` }, '') + '</ul>'
+    return '<ul class="term"><li class="name"><strong>' + name.toLowerCase() + '</strong></li>' + entry.reduce((acc, item) => { return `${acc}<li>${item.value} <a class='author' target='_blank' href='${item.origin.url}'> — @${item.origin.author}</a></li>` }, '') + '</ul>'
   }
 
   this.fetch = () => {
@@ -108,20 +103,13 @@ function Wiki (sites) {
   }
 
   this.add = (name, value, cat, origin) => {
-    //
-    if (!this.byName[name]) {
-      this.byName[name] = []
-    }
+    this.byName[name] = this.byName[name] || []
     this.byName[name].push({ name, value, cat, origin })
-    //
-    if (!this.byCat[cat]) {
-      this.byCat[cat] = []
-    }
+
+    this.byCat[cat] = this.byCat[cat] || []
     this.byCat[cat].push({ name, value, cat, origin })
-    //
-    if (!this.byAuthor[origin.author]) {
-      this.byAuthor[origin.author] = []
-    }
+
+    this.byAuthor[origin.author] = this.byAuthor[origin.author] || []
     this.byAuthor[origin.author].push({ name, value, cat, origin })
   }
 
@@ -136,5 +124,5 @@ function Wiki (sites) {
     }
   }
 
-  String.prototype.toUrl = function () { return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z\+\:\-\.\/\~]/gi, '').trim() }
+  String.prototype.toUrl = function () { return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z+:\-./~]/gi, '').trim() }
 }
