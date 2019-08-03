@@ -1,9 +1,9 @@
 'use strict'
 
-const re_channel = /(\s|^)\/([a-zA-Z0-9]+)/g
-const re_user = /((\s|^)@&lt;[a-zA-Z0-9./:\-_\+~#= ]*&gt;)/g
-const re_tag = /([^&]|^)\#([a-zA-Z0-9]+)/g
-const re_url = /((https?):\/\/(([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_\+.~#?&//=]*)))/g
+const reChannel = /(\s|^)\/([a-zA-Z0-9]+)/g
+const reUser = /((\s|^)@&lt;[a-zA-Z0-9./:\-_+~#= ]*&gt;)/g
+const reTag = /([^&]|^)#([a-zA-Z0-9]+)/g
+const reUrl = /((https?):\/\/(([-a-zA-Z0-9j:%._+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_+.~#?&//=]*)))/g
 
 function Hallway (sites) {
   const feeds = {}
@@ -37,14 +37,15 @@ function Hallway (sites) {
 
   this.refresh = function (feeds = this.cache) {
     const entries = this.findEntries(feeds)
-    const channels = this.find(entries, 'channel')
-    const users = this.find(entries, 'author')
-    const tags = this.findTags(entries)
-    const relevantEntries = entries.filter(val => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter)))
+    const localEntries = entries.filter(entry => this.filterExternals(entry))
+    const channels = this.find(localEntries, 'channel')
+    const users = this.find(localEntries, 'author')
+    const tags = this.findTags(localEntries)
+    const relevantEntries = localEntries.filter(val => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter)))
 
     this._entries.innerHTML = `
     <ul>
-      ${entries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
+      ${localEntries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
     </ul>
     <div id='pagination'>
       ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
@@ -54,7 +55,7 @@ function Hallway (sites) {
     this._sidebar.innerHTML = `
     <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
     <ul id='channels'>
-      <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${entries.length}</span></a></li>
+      <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${localEntries.length}</span></a></li>
       ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
     </ul>
     <ul id='users'>
@@ -71,18 +72,25 @@ function Hallway (sites) {
 
   // Entries
 
-  this.find = function (entries, p) {
+  this.filterExternals = function (entry) {
+    const matches = entry.body.match(reUser)
+    const locals = Object.keys(feeds)
+    return matches ? matches.some(match => locals.some(local => match.indexOf(feeds[local].path) !== -1)) : true
+  }
+
+  this.find = function (entries, key) {
     const h = {}
-    for (const id in entries) {
-      if (entries[id] && entries[id][p]) { h[entries[id][p]] = h[entries[id][p]] ? h[entries[id][p]] + 1 : 1 }
+    for (const entry of entries) {
+      if (entry && entry[key]) {
+        h[entry[key]] = h[entry[key]] ? h[entry[key]] + 1 : 1
+      }
     }
     return h
   }
 
   this.findTags = function (entries) {
     const tags = {}
-    for (const id in entries) {
-      const entry = entries[id]
+    for (const entry of entries) {
       entry.tags.map(tag => {
         tags[tag] = tags[tag] ? tags[tag] + 1 : 1
       })
@@ -102,15 +110,15 @@ function Hallway (sites) {
 
   this.findMention = function (found) {
     const mention = Object.keys(feeds).filter(user => found.indexOf(feeds[user].path) > -1)
-    return mention.length === 1 ? ` <span class='user local'>${mention[0]}</span>` : ` <span class='user external'>${found.substr(5).split(' ')[0]}</span>`
+    return ` <span class='user local'>${mention[0]}</span>`
   }
 
   this.templateEntry = function (entry) {
     entry.html = entry.body
-      .replace(re_channel, `$1<span class='channel'>/$2</span>`)
-      .replace(re_user, this.findMention)
-      .replace(re_tag, `$1<span class='tag'>#$2</span>`)
-      .replace(re_url, `<a target="_blank" href='$1'>$1</a>`)
+      .replace(reChannel, `$1<span class='channel'>/$2</span>`)
+      .replace(reUser, this.findMention)
+      .replace(reTag, `$1<span class='tag'>#$2</span>`)
+      .replace(reUrl, `<a target="_blank" href='$1'>$1</a>`)
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter === entry.author.toLowerCase()
@@ -160,7 +168,7 @@ function Hallway (sites) {
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
       const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
-      const tags = (body.match(re_tag) || []).map(a => a.substr(a.indexOf('#') + 1).toLowerCase())
+      const tags = (body.match(reTag) || []).map(a => a.substr(a.indexOf('#') + 1).toLowerCase())
       const offset = new Date() - new Date(date)
       entries.push({ date, body, author, offset, channel, tags })
     }
@@ -195,8 +203,8 @@ function Hallway (sites) {
 }
 
 function toggleVisibility (id) {
-  var e = document.getElementById(id)
-  if (e.style.display == 'block') { e.style.display = 'none' } else { e.style.display = 'block' }
+  const e = document.getElementById(id)
+  if (e.style.display === 'block') { e.style.display = 'none' } else { e.style.display = 'block' }
 }
 
 function escapeHtml (unsafe) {
