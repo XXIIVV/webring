@@ -2,7 +2,7 @@
 
 const reChannel = /(\s|^)\/([a-zA-Z0-9]+)/g
 const reUser = /((\s|^)@&lt;[a-zA-Z0-9./:\-_+~#= ]*&gt;)/g
-const reTag = /([^&]|^)#([a-zA-Z0-9]+)/g
+const reTag = /(^|\s)(#[a-z\d-]+)/ig
 const reUrl = /((https?):\/\/(([-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_+.~#?&//=]*)))/g
 
 function Hallway (sites) {
@@ -117,7 +117,7 @@ function Hallway (sites) {
     entry.html = entry.body
       .replace(reChannel, `$1<span class='channel'>/$2</span>`)
       .replace(reUser, this.findMention)
-      .replace(reTag, `$1<span class='tag'>#$2</span>`)
+      .replace(reTag, '$1<span class="tag">$2</span>')
       .replace(reUrl, `<a target="_blank" href='$1'>$1</a>`)
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
