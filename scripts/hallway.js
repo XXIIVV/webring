@@ -3,7 +3,7 @@
 const reChannel = /(\s|^)\/([a-zA-Z0-9]+)/g
 const reUser = /((\s|^)@&lt;[a-zA-Z0-9./:\-_+~#= ]*&gt;)/g
 const reTag = /([^&]|^)#([a-zA-Z0-9]+)/g
-const reUrl = /((https?):\/\/(([-a-zA-Z0-9j:%._+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_+.~#?&//=]*)))/g
+const reUrl = /((https?):\/\/(([-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_+.~#?&//=]*)))/g
 
 function Hallway (sites) {
   const feeds = {}
