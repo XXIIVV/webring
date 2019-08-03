@@ -13,6 +13,7 @@ body .selected { background: white; color:black; }
 
 body #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; overflow: hidden;}
 body #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
+body #sidebar ul { margin-bottom: 15px }
 body #sidebar > * li { text-transform: lowercase; }
 body #sidebar > * li:hover { cursor: pointer; }
 body #sidebar > * li span.right { color:#555; float:right; }
