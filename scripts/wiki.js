@@ -85,8 +85,18 @@ function Wiki (sites) {
     return html
   }
 
-  this.templateTerm = (name, entry) => {
-    return '<ul class="term"><li class="name"><strong>' + name.toLowerCase() + '</strong></li>' + entry.reduce((acc, item) => { return `${acc}<li>${item.value} <a class='author' target='_blank' href='${item.origin.url}'> — @${item.origin.author}</a></li>` }, '') + '</ul>'
+  this.templateTerm = (name, entries) => {
+    const formatEntry = (acc, entry) => {
+      if (typeof entry.value === 'string') {
+        return `${acc}<li>${entry.value}<a class='author' target='_blank' href='${entry.origin.url}'> — @${entry.origin.author}</a></li>`
+      } else {
+        const listItems = entry.value.reduce((items, item) => `${items}<li>${item}</li>`)
+        return `${acc}<li><ul>${listItems}<a class='author' target='_blank' href='${entry.origin.url}'> — @${entry.origin.author}</a></ul></li>`
+      }
+    }
+
+    const htmlEntries = entries.reduce(formatEntry, '')
+    return `<ul class="term"><li class="name"><strong>${name.toLowerCase()}</strong></li>${htmlEntries}</ul>`
   }
 
   this.fetch = () => {
