@@ -20,7 +20,7 @@ function Hallway (sites) {
   this._sidebar.id = 'sidebar'
   this._footer = document.createElement('p')
   this._footer.id = 'footer'
-  this._footer.innerHTML = `The <b>Wiki</b> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
+  this._footer.innerHTML = `The <b>Hallway</b> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
 
   this.install = function (host) {
     this._el.appendChild(this._entries)
