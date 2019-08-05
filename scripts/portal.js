@@ -18,7 +18,7 @@ function Portal (sites) {
   function _directory (sites) {
     return `
     <ul>${sites.reduce( (acc, site, id) =>
-          `${acc}<li data-type='${site.type || ''}' id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`
+          `${acc}<li ${site.type ? `data-type="${site.type}"` : ''} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`
     , '')}</ul>\n${_readme()}${_buttons()}`
   }
 
