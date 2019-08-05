@@ -74,7 +74,7 @@ const sites = [
   { url: 'https://patrikarvidsson.com' },
   { url: 'https://sophieleetmaa.com' },
   { url: 'https://xinniw.github.io' },
-  { url: 'https://mboxed.github.io/forida', title: 'Forida', type: 'wiki', author: 'm', feed: 'https://mboxed.github.io/forida/tw.txt' },
+  { url: 'https://mboxed.github.io/forida', title: 'Forida', type: 'wiki', author: 'm', contact: 'mboxxed@gmail.com', feed: 'https://mboxed.github.io/forida/tw.txt' },
   { url: 'https://letters.vexingworkshop.com' },
   { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', wiki: 'https://a.tom.org.nz/glossary.ndtl' },
   { url: 'https://teknari.com' },
