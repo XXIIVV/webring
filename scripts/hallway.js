@@ -2,7 +2,7 @@
 
 const reChannel = /(\s|^)\/([a-zA-Z0-9]+)/g
 const reUser = /((\s|^)@&lt;[a-zA-Z0-9./:\-_+~#= ]*&gt;)/g
-const reTag = /([^&]|^)#([a-zA-Z0-9]+)/g
+const reTag = /(^|\s)(#[a-z\d-]+)/ig
 const reUrl = /((https?):\/\/(([-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_+.~#?&//=]*)))/g
 
 function Hallway (sites) {
@@ -20,7 +20,7 @@ function Hallway (sites) {
   this._sidebar.id = 'sidebar'
   this._footer = document.createElement('p')
   this._footer.id = 'footer'
-  this._footer.innerHTML = `The <b>Hallway</b> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
+  this._footer.innerHTML = `The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
 
   this.install = function (host) {
     this._el.appendChild(this._entries)
@@ -117,7 +117,7 @@ function Hallway (sites) {
     entry.html = entry.body
       .replace(reChannel, `$1<span class='channel'>/$2</span>`)
       .replace(reUser, this.findMention)
-      .replace(reTag, `$1<span class='tag'>#$2</span>`)
+      .replace(reTag, '$1<span class="tag">$2</span>')
       .replace(reUrl, `<a target="_blank" href='$1'>$1</a>`)
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()

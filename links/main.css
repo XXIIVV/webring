@@ -2,17 +2,18 @@
 
 body { background:#f4f4f4; padding:0px; margin:0px; }
 body > div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white; overflow: hidden;}
-body div ul { max-width: 800px; padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
+body > div > ul { max-width: 800px; padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
 body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
 body div p a { text-decoration: underline; cursor: pointer;}
 body div p a:hover { text-decoration: underline; }
-body b { font-weight: normal; font-family: 'input_mono_medium' }
+body strong { font-weight: normal; font-family: 'input_mono_medium' }
 body div p.readme { max-width:500px; }
 body .col3 { columns:3; }
 body .selected { background: white; color:black; }
 
 body #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; overflow: hidden;}
 body #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
+body #sidebar ul { margin-bottom: 15px }
 body #sidebar > * li { text-transform: lowercase; }
 body #sidebar > * li:hover { cursor: pointer; }
 body #sidebar > * li span.right { color:#555; float:right; }
