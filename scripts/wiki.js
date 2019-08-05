@@ -90,7 +90,7 @@ function Wiki (sites) {
       if (typeof entry.value === 'string') {
         return `${acc}<li>${entry.value}<a class='author' target='_blank' href='${entry.origin.url}'> — @${entry.origin.author}</a></li>`
       } else {
-        const listItems = entry.value.reduce((items, item) => `${items}<li>${item}</li>`)
+        const listItems = entry.value.reduce((items, item) => `${items}<li>${item}</li>`, '')
         return `${acc}<li><ul>${listItems}<a class='author' target='_blank' href='${entry.origin.url}'> — @${entry.origin.author}</a></ul></li>`
       }
     }
