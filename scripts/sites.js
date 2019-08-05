@@ -95,4 +95,5 @@ const sites = [
   { url: 'https://azlen.me', title: 'azlen.me', author: 'azlen', type: 'wiki', contact: 'webring@azlen.me', feed: 'https://azlen.me/twtxt.txt', wiki: 'https://azlen.me/glossary.ndtl' },
   { url: 'https://opinionatedguide.github.io/', title: 'OpGuides', author: 'vega', contact: 'vegac@protonmail.com', feed: 'https://opinionatedguide.github.io/twtxt.txt' },
   { url: 'https://chrismaughan.com/', title: 'CMaughan', author: 'cmaughan', contact: 'mornymorny@gmail.com', feed: 'https://chrismaughan.com/twtxt.txt' }
+  { url: 'https://zen-joliot-f24aa6.netlify.com/', title: 'Photos and Pothos', contact: 'shivansh.gour90@gmail.com', type: 'portfolio'}
 ]
