@@ -61,21 +61,22 @@ body #hallway ul li:last-child { border-bottom:0px; }
 body #portal #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
 body #portal ul { columns:3;  }
 body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
+body #portal ul li:before { content: attr(id) ")"; }
 body #portal ul li:not([data-type=''])::after { content:"<" attr(data-type) ">"; color:#555; }
 body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
 body #portal ul li a:visited { color:#ccc; text-decoration: none;}
 body #portal ul li a:hover { text-decoration: underline; }
 
 @media (max-width: 730px) {
-  body #portal ul li span.counter { display: none }
+  body #portal ul li:before { display: none }
 }
 @media (max-width: 630px) {
   body #portal ul { columns: 2 !important; }
-  body #portal ul li span.counter { display: none }
+  body #portal ul li:before { display: none }
 }
 @media (max-width: 530px) {
   body #portal ul { columns: 1 !important; }
-  body #portal ul li span.counter { display: inline }
+  body #portal ul li:before { display: inline }
 }
 
 /* Wiki */
