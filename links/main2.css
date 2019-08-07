@@ -1,0 +1,25 @@
+* { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+
+body { background:#f4f4f4; padding:0px; margin:0px; }
+body > div { background: #111; min-height: calc(100vh - 60px); width: calc(100vw - 60px); margin: 15px; padding: 15px; font-family:'input_mono_regular', 'Monospaced','Courier New',courier; font-size:11px; color:white; position: relative; }
+body > div > ul { padding-bottom: 15px; margin-bottom:15px; }
+body div p { display:block; padding:0px 5px; line-height: 20px;}
+body footer { border-top: 2px solid white; padding-top: 15px; margin-top: 15px;}
+body footer a { text-decoration: underline; }
+
+/* portal */
+body #portal main,
+body #portal footer { max-width: 800px; }
+body #portal #icon { display: block; width: 30px; height: 30px; background-image: url(../icon.white.svg); background-size: cover; background-repeat: no-repeat; position: absolute; bottom: 15px; right:15px; background-position: center; padding:0px }
+body #portal ul { columns:1;  }
+body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
+body #portal ul li:before { content: attr(id) ")"; }
+body #portal ul li[data-type]::after { content:"<" attr(data-type) ">"; color:#555; }
+body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
+body #portal ul li a:visited { color:#ccc; text-decoration: none;}
+body #portal ul li a:hover { text-decoration: underline; }
+
+@media (min-width: 630px) {
+  body #portal ul { columns: 3;}
+}
+
