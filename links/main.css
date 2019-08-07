@@ -85,8 +85,8 @@ body #portal ul li a:hover { text-decoration: underline; }
 body #wiki { background: #ccc; color:#333; }
 body #wiki #entry { max-width: calc(100% - 230px); margin-bottom: 30px; line-height: 15px }
 body #wiki #entry a { text-decoration: underline; }
+body #wiki #sidebar { overflow-y: scroll; height: calc(100% - 15px); }
 body #wiki ul.term { border-bottom: 0px; margin-bottom: 0px; padding-bottom: 0px}
 body #wiki ul.term li { margin-bottom: 5px }
 body #wiki ul.term li.name { margin-bottom: 5px }
 body #wiki ul.term li a.author { color:#555; text-decoration: none !important; }
-
