@@ -86,6 +86,11 @@ body #wiki { background: #ccc; color:#333; }
 body #wiki #entry { max-width: calc(100% - 230px); margin-bottom: 30px; line-height: 15px }
 body #wiki #entry a { text-decoration: underline; }
 body #wiki #sidebar { overflow-y: scroll; height: calc(100% - 15px); }
+body #wiki #sidebar a { display: inline-block; width: 120px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding: 7px; }
+body #wiki #sidebar li { line-height: 7px; }
+body #wiki #sidebar li:before { display: none; }
+body #wiki #sidebar a:before { content: '/'; }
+body #wiki #sidebar a:after { content: attr(data-msgs) " msgs"; position: absolute; right: 20px; color:#555; }
 body #wiki ul.term { border-bottom: 0px; margin-bottom: 0px; padding-bottom: 0px}
 body #wiki ul.term li { margin-bottom: 5px }
 body #wiki ul.term li.name { margin-bottom: 5px }
