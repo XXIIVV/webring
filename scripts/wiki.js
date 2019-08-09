@@ -45,7 +45,7 @@ function Wiki (sites) {
         const html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc)}`
         this._entry.innerHTML = html
       } else {
-        const html = `Unknown: ${this.loc}. Retun <a href='#'>home</a>, or try a <a href='${this.random()}'>random page</a>.`
+        const html = `Unknown: ${this.loc}. Return <a href='#'>home</a>, or try a <a href='${this.random()}'>random page</a>.`
         this._entry.innerHTML = html
       }
     } else {
