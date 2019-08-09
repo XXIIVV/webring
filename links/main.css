@@ -83,6 +83,7 @@ body #portal ul li a:hover { text-decoration: underline; }
 /* Wiki */
 
 body #wiki { background: #ccc; color:#333; }
+body #wiki #header h1 { font-weight: 700; margin-bottom: 15px; line-height: 15px; }
 body #wiki #entry { max-width: calc(100% - 230px); margin-bottom: 30px; line-height: 15px }
 body #wiki #entry a { text-decoration: underline; }
 body #wiki #sidebar { overflow-y: scroll; height: calc(100% - 15px); }

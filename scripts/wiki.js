@@ -12,6 +12,10 @@ function Wiki (sites) {
   this._entry = document.createElement('div')
   this._entry.id = 'entry'
 
+  this._header = document.createElement('header')
+  this._header.id = 'header'
+  this._title = document.createElement('h1')
+
   this._footer = document.createElement('p')
   this._footer.id = 'footer'
   this._footer.innerHTML = `The <strong>Wiki</strong> is a decentralized encyclopedia, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-wiki">wiki:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
@@ -22,6 +26,8 @@ function Wiki (sites) {
   this.byAuthor = {}
 
   this.install = (host) => {
+    this._el.appendChild(this._header)
+    this._header.appendChild(this._title)
     this._el.appendChild(this._entry)
     this._sidebar.appendChild(this._categories)
     this._el.appendChild(this._sidebar)
@@ -31,12 +37,14 @@ function Wiki (sites) {
   }
 
   this.start = () => {
-    this._entry.innerHTML = 'Loading..'
+    this._title.innerHTML = 'LOADING...'
+    this._entry.innerHTML = ''
   }
 
   this.refresh = () => {
     // Main
     if (this.loc) {
+      this._title.innerHTML = this.loc
       if (this.byCat[this.loc]) {
         const formatHtml = (entries, entry) => `${entries} ${this.templateTerm(entry.name, this.byName[entry.name])}<br />`
         const html = this.byCat[this.loc].reduce(formatHtml, '')
@@ -49,6 +57,7 @@ function Wiki (sites) {
         this._entry.innerHTML = html
       }
     } else {
+      this._title.innerHTML = 'WIKI'
       this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${this.random()}'>random page</a>.<br />The wiki contains ${Object.keys(this.byName).length} terms, in ${Object.keys(this.byCat).length} categories, by ${Object.keys(this.byAuthor).length} authors.`
     }
     // Sidebar
