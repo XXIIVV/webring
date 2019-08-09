@@ -16,7 +16,7 @@ function Wiki (sites) {
   this._header.id = 'header'
   this._title = document.createElement('h1')
 
-  this._footer = document.createElement('p')
+  this._footer = document.createElement('footer')
   this._footer.id = 'footer'
   this._footer.innerHTML = `The <strong>Wiki</strong> is a decentralized encyclopedia, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-wiki">wiki:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
 
