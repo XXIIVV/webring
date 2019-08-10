@@ -1,154 +1,141 @@
 'use strict'
 
-function Wiki (sites) {
-  const feeds = {}
-  this.sites = sites
-  this._el = document.createElement('div')
-  this._el.id = 'wiki'
-  this._sidebar = document.createElement('div')
-  this._sidebar.id = 'sidebar'
-  this._categories = document.createElement('ul')
-  this._categories.id = 'categories'
-  this._entry = document.createElement('div')
-  this._entry.id = 'entry'
+const Wiki = sites => {
+  const entries = {}
+  const main = document.getElementById('main')
+  const aside = document.getElementById('aside')
+  const authors = new Set()
+  const terms = new Set()
 
-  this._footer = document.createElement('p')
-  this._footer.id = 'footer'
-  this._footer.innerHTML = `The <strong>Wiki</strong> is a decentralized encyclopedia, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-wiki">wiki:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
-
-  this.loc = ''
-  this.byName = {}
-  this.byCat = {}
-  this.byAuthor = {}
-
-  this.install = (host) => {
-    this._el.appendChild(this._entry)
-    this._sidebar.appendChild(this._categories)
-    this._el.appendChild(this._sidebar)
-    this._el.appendChild(this._footer)
-    host.appendChild(this._el)
-    this.fetch()
-  }
-
-  this.start = () => {
-    this._entry.innerHTML = 'Loading..'
-  }
-
-  this.refresh = () => {
-    // Main
-    if (this.loc) {
-      if (this.byCat[this.loc]) {
-        const formatHtml = (entries, entry) => `${entries} ${this.templateTerm(entry.name, this.byName[entry.name])}<br />`
-        const html = this.byCat[this.loc].reduce(formatHtml, '')
-        this._entry.innerHTML = html
-      } else if (this.byName[this.loc]) {
-        const html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc)}`
-        this._entry.innerHTML = html
-      } else {
-        const html = `Unknown: ${this.loc}. Return <a href='#'>home</a>, or try a <a href='${this.random()}'>random page</a>.`
-        this._entry.innerHTML = html
-      }
+  const storeEntry = (author, url, parent, cat, entry) => {
+    if (!(parent in entries)) {
+      entries[parent] = {}
+      entries[parent][cat] = [{ entry, author, url }]
+    } else if (!(cat in entries[parent])) {
+      entries[parent][cat] = [{ entry, author, url }]
     } else {
-      this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${this.random()}'>random page</a>.<br />The wiki contains ${Object.keys(this.byName).length} terms, in ${Object.keys(this.byCat).length} categories, by ${Object.keys(this.byAuthor).length} authors.`
+      entries[parent][cat].push({ entry, author, url })
     }
-    // Sidebar
-    this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) =>
-      { return this.byCat[id].length > 5
-          ? `${acc}<li ${wiki.at(id) ? 'class="selected"' : ''}>
-            <a href='#${id}' data-msgs='${this.byCat[id].length}'>${id}</a>
-            </li>`
-          : acc
-      } , `<li ${wiki.at() ? 'class="selected"' : ''}>
-           <a href='#' data-msgs='${Object.keys(this.byName).length}'>home</a>
-           </li>`
-    )
+    terms.add(cat)
+    authors.add(author)
   }
 
-  this.go = () => {
-    this.loc = decodeURIComponent( window.location.hash.substr(1) ).toUpperCase()
-    this.refresh()
+  const storeEntries = (author, url, parent, entries) => {
+    Array.isArray(entries)
+      ? storeEntry(author, url, parent, 'list-definitions', entries)
+      : Object.keys(entries).forEach(entry => storeEntry(author, url, parent, entry, entries[entry]))
   }
 
-  this.at = (q = '') => {
-    return this.loc.toUpperCase() === q.toUpperCase() || (this.cat(this.loc).toUpperCase() === q.toUpperCase() && q !== '')
+  const transform = (author, url, ndtl) => {
+    Object.keys(ndtl).forEach(cat => storeEntries(author, url, cat, ndtl[cat]))
   }
 
-  this.random = () => {
-    const keys = Object.keys(this.byCat)
+  const parse = (site, content) => {
+    console.log('Wiki', 'Parsing ' + site.wiki)
+    const ndtl = indental(content)
+    transform(site.author, site.url, ndtl)
+  }
+
+  const selected = (key, category) => key.toLowerCase() === category.toLowerCase()
+    ? 'selected'
+    : ''
+
+  const randomTerm = () => {
+    const keys = Object.keys(entries)
     return keys[Math.floor(Math.random() * keys.length)]
   }
 
-  this.related = (name) => {
-    return this.byCat[this.cat(name)]
+  const formatSideBarCat = (key, entries) => (currentHtml, cat) => {
+    const catLength = Object.keys(entries[cat]).length
+    const newHtml = `<li class='${selected(key, cat)}'}'>
+                      <a href='#${cat}' data-msgs='${catLength}'>${cat.toLowerCase()}</a>
+                     </li>`
+    return `${currentHtml}${newHtml}`
   }
 
-  this.cat = (name) => {
-    return this.byName[name] ? this.byName[name][0].cat : ''
-  }
+  const formatEntry = (definitions, definition) => {
+    const formatEntryList = entryList => entryList.reduce((items, item) => `${items}<li>${item}</li>`, '')
 
-  this.templateRelated = (name) => {
-    const relatedWords = this.related(name)
-    const html = `<ul class='col3'>${relatedWords.reduce( (acc, item, id) =>
-      { return `${acc}<li ${wiki.at(item.name) ? 'class="selected"' : ''}>
-        <a href='#${item.name.toLowerCase()}'>${item.name.toLowerCase()}</a>
+    const newHtml = typeof definition.entry === 'string'
+      ? `<li>${definition.entry}
+          - <a class='author' target='_blank' href='${definition.url}'> @${definition.author}</a>
         </li>`
-      }, '') }
-      </ul>`
-    return html
+      : `<li><ul>${formatEntryList(definition.entry)}
+          <a class='author' target='_blank' href='${definition.url}'> — @${definition.author}</a>
+        </ul></li>`
+
+    return `${definitions}${newHtml}`
   }
 
-  this.templateTerm = (name, entries) => {
-    const formatEntry = (acc, entry) => {
-      if (typeof entry.value === 'string') {
-        return `${acc}<li>${entry.value}<a class='author' target='_blank' href='${entry.origin.url}'> — @${entry.origin.author}</a></li>`
-      } else {
-        const listItems = entry.value.reduce((items, item) => `${items}<li>${item}</li>`, '')
-        return `${acc}<li><ul>${listItems}<a class='author' target='_blank' href='${entry.origin.url}'> — @${entry.origin.author}</a></ul></li>`
-      }
+  const formatEntries = entries => (currentHtml, category) => {
+    const definitions = entries[category].reduce(formatEntry, '')
+    const title = category === 'list-definitions'
+      ? ''
+      : `<li class='name'><strong>${category.toLowerCase()}</strong></li>`
+    return `${currentHtml}<ul class='term'>${title}${definitions}</ul>`
+  }
+
+  const findRelated = key => {
+    const searchOtherCategories = entry => {
+      return Object.keys(entries)
+        .filter(category => Object.keys(entries[category]).some(otherCat => otherCat === entry))
     }
 
-    const htmlEntries = entries.reduce(formatEntry, '')
-    return `<ul class="term"><li class="name"><strong>${name.toLowerCase()}</strong></li>${htmlEntries}</ul>`
+    const foundMatches = Object.keys(entries[key])
+      .filter(entry => entry !== 'list-definitions')
+      .map(searchOtherCategories)
+    const flattened = [].concat.apply([], foundMatches)
+    return Array.from(new Set(flattened)).filter(related => related !== key)
   }
 
-  this.fetch = () => {
-    console.log('Wiki', 'Fetching..')
-    for (const site of sites) {
-      if (!site.wiki || !site.author) { continue }
-      fetch(site.wiki, { cache: 'no-store' }).then(x => x.text()).then((content) => {
-        this.parse(site, content)
-        this.refresh(feeds)
-      }).catch((err) => {
-        console.warn(`${site.wiki}`, err)
+  const formatRelated = (allRelated, relatedCategory) => {
+    const newHtml = `<span><a href='#${relatedCategory}'>/${relatedCategory.toLowerCase()}</a> </span>`
+    return `${allRelated}${newHtml}`
+  }
+
+  const refresh = key => {
+    if (key) {
+      if (entries[key] === undefined) return
+      const items = Object.keys(entries[key]).sort().reduce(formatEntries(entries[key]), '')
+      const relatedCategories = findRelated(key)
+      const relatedHtml = relatedCategories.length > 0
+        ? relatedCategories.reduce(formatRelated, 'Related categories: ')
+        : ''
+      main.innerHTML = `<div class='related'><h1>${key}</h1>${relatedHtml}</div>${items}`
+    } else {
+      const html = `Click a /topic to get started, or try a <a href='#${randomTerm()}'>random page</a>`
+      const stats = `The wiki contains ${terms.size} terms in ${Object.keys(entries).length} categories, from ${authors.size} authors.`
+      main.innerHTML = `<h1>WIKI</h1>${html}<br />${stats}`
+    }
+
+    const homeCat = `<li class='${selected(key, '')}'>
+                      <a href='#' data-msgs='${terms.size}'>home</a>
+                    </li>`
+    const cats = Object.keys(entries).sort().reduce(formatSideBarCat(key, entries), homeCat)
+    aside.innerHTML = `<ul>${cats}</ul>`
+  }
+
+  return {
+    initialize: hash => {
+      console.log('Wiki', 'Fetching...')
+      sites.filter(site => site.wiki && site.author).forEach(site => {
+        fetch(site.wiki, { cache: 'no-store' }).then(x => x.text()).then(content => {
+          parse(site, content)
+          refresh(stripHash(hash))
+        }).catch((err) => {
+          console.warn(`${site.wiki}`, err)
+        })
       })
-    }
+    },
+    refresh: key => { refresh(key) }
   }
-
-  this.add = (name, value, cat, origin) => {
-    this.byName[name] = this.byName[name] || []
-    this.byName[name].push({ name, value, cat, origin })
-
-    this.byCat[cat] = this.byCat[cat] || []
-    this.byCat[cat].push({ name, value, cat, origin })
-
-    this.byAuthor[origin.author] = this.byAuthor[origin.author] || []
-    this.byAuthor[origin.author].push({ name, value, cat, origin })
-  }
-
-  this.parse = (site, content) => {
-    console.log('Wiki', 'Parsing ' + site.wiki)
-    const cats = indental(content)
-    for (const cat in cats) {
-      const terms = cats[cat]
-      for (const name in terms) {
-        this.add(name, terms[name], cat, site)
-      }
-    }
-  }
-
-  String.prototype.toUrl = function () { return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z+:\-./~]/gi, '').trim() }
-
-  window.onload = this.go
-  window.onhashchange = this.go
 }
 
+const stripHash = hash => {
+  const decoded = decodeURIComponent(hash)
+  return decoded.charAt(0) === '#' ? decoded.substring(1) : decoded
+}
+
+window.addEventListener('hashchange', () => {
+  wiki.refresh(stripHash(window.location.hash).toUpperCase())
+})
