@@ -1,5 +1,4 @@
 'use strict'
-
 function Wiki (sites) {
   const feeds = {}
   this.sites = sites
@@ -45,20 +44,27 @@ function Wiki (sites) {
         const html = `${this.templateTerm(this.loc, this.byName[this.loc])}<br />${this.templateRelated(this.loc)}`
         this._entry.innerHTML = html
       } else {
-        const html = `Unknown: ${this.loc}. Retun <a onclick='wiki.go("")'>home</a>, or try a <a onclick='wiki.go("${this.random()}")'>random page</a>.`
+        const html = `Unknown: ${this.loc}. Return <a href='#'>home</a>, or try a <a href='${this.random()}'>random page</a>.`
         this._entry.innerHTML = html
       }
     } else {
-      const random = this.random()
-      this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${random.toUrl()}' onclick='wiki.go("${random}")'>random page</a>.<br />The wiki contains ${Object.keys(this.byName).length} terms, in ${Object.keys(this.byCat).length} categories, by ${Object.keys(this.byAuthor).length} authors.`
+      this._entry.innerHTML = `Click a /topic to get started, or try a <a href='#${this.random()}'>random page</a>.<br />The wiki contains ${Object.keys(this.byName).length} terms, in ${Object.keys(this.byCat).length} categories, by ${Object.keys(this.byAuthor).length} authors.`
     }
     // Sidebar
-    this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) => { return this.byCat[id].length > 5 ? `${acc}<li onclick='wiki.go("${id}")' class='${wiki.at(id) ? 'selected' : ''}'>${id.substr(0, 20)} <span class='right'>${this.byCat[id].length}</span></li>` : acc }, `<li onclick='wiki.go("")' class='${wiki.at() ? 'selected' : ''}'>home <span class='right'>${Object.keys(this.byName).length}</span></li>`)
+    this._categories.innerHTML = Object.keys(this.byCat).reduce((acc, id) =>
+      { return this.byCat[id].length > 5
+          ? `${acc}<li ${wiki.at(id) ? 'class="selected"' : ''}>
+            <a href='#${id}' data-msgs='${this.byCat[id].length}'>${id}</a>
+            </li>`
+          : acc
+      } , `<li ${wiki.at() ? 'class="selected"' : ''}>
+           <a href='#' data-msgs='${Object.keys(this.byName).length}'>home</a>
+           </li>`
+    )
   }
 
-  this.go = (q = window.location.hash.substr(1).replace(/\+/g, ' ').toUpperCase()) => {
-    this.loc = q
-    window.location.hash = q.toUrl()
+  this.go = () => {
+    this.loc = decodeURIComponent( window.location.hash.substr(1) ).toUpperCase()
     this.refresh()
   }
 
@@ -81,7 +87,12 @@ function Wiki (sites) {
 
   this.templateRelated = (name) => {
     const relatedWords = this.related(name)
-    const html = `<ul class='col3'>${relatedWords.reduce((acc, item, id) => { return `${acc}<li onclick='wiki.go("${item.name}")' class='${wiki.at(item.name) ? 'selected' : ''}'>${item.name.toLowerCase()}</li>` }, '')}</ul>`
+    const html = `<ul class='col3'>${relatedWords.reduce( (acc, item, id) =>
+      { return `${acc}<li ${wiki.at(item.name) ? 'class="selected"' : ''}>
+        <a href='#${item.name.toLowerCase()}'>${item.name.toLowerCase()}</a>
+        </li>`
+      }, '') }
+      </ul>`
     return html
   }
 
@@ -135,4 +146,7 @@ function Wiki (sites) {
   }
 
   String.prototype.toUrl = function () { return this.toLowerCase().replace(/ /g, '+').replace(/[^0-9a-z+:\-./~]/gi, '').trim() }
+
+  window.onload = this.go
+  window.onhashchange = this.go
 }
