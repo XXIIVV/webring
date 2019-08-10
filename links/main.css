@@ -58,6 +58,7 @@ body #wiki { background: #ccc; color:#333; }
 body #wiki main { display: flex; }
 body #wiki main { flex: 1; }
 body #wiki main { max-width: calc(100% - 230px); }
+body #wiki main a { text-decoration: underline; }
 body #wiki main h1 { font-size: 1.3em; margin: 5px 0; font-weight: bold; }
 body #wiki main div.related { border-bottom: 1px solid white; margin-bottom: 10px; }
 body #wiki #main { width: 100%; }

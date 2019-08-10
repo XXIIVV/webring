@@ -40,6 +40,11 @@ const Wiki = sites => {
     ? 'selected'
     : ''
 
+  const randomTerm = () => {
+    const keys = Object.keys(entries)
+    return keys[Math.floor(Math.random() * keys.length)]
+  }
+
   const formatSideBarCat = (key, entries) => (currentHtml, cat) => {
     const catLength = Object.keys(entries[cat]).length
     const newHtml = `<li class='${selected(key, cat)}'}'>
@@ -98,7 +103,7 @@ const Wiki = sites => {
         : ''
       main.innerHTML = `<div class='related'><h1>${key}</h1>${relatedHtml}</div>${items}`
     } else {
-      const html = `Click a /topic to get started, or try a random page`
+      const html = `Click a /topic to get started, or try a <a href='#${randomTerm()}'>random page</a>`
       const stats = `The wiki contains ${terms.size} terms in ${Object.keys(entries).length} categories, from ${authors.size} authors.`
       main.innerHTML = `${html}<br />${stats}`
     }
