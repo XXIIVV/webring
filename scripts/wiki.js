@@ -58,7 +58,7 @@ const Wiki = sites => {
 
     const newHtml = typeof definition.entry === 'string'
       ? `<li>${definition.entry}
-          <a class='author' target='_blank' href='${definition.url}'> - @${definition.author}</a>
+          - <a class='author' target='_blank' href='${definition.url}'> @${definition.author}</a>
         </li>`
       : `<li><ul>${formatEntryList(definition.entry)}
           <a class='author' target='_blank' href='${definition.url}'> — @${definition.author}</a>
