@@ -105,7 +105,7 @@ const Wiki = sites => {
     } else {
       const html = `Click a /topic to get started, or try a <a href='#${randomTerm()}'>random page</a>`
       const stats = `The wiki contains ${terms.size} terms in ${Object.keys(entries).length} categories, from ${authors.size} authors.`
-      main.innerHTML = `${html}<br />${stats}`
+      main.innerHTML = `<h1>WIKI</h1>${html}<br />${stats}`
     }
 
     const homeCat = `<li class='${selected(key, '')}'>
