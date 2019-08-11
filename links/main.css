@@ -72,7 +72,7 @@ body #wiki aside a:before { content: '/'; }
 body #wiki aside a:after { content: attr(data-msgs) " msgs"; position: absolute; right: 20px; color:#555; }
 body #wiki ul.term { margin-bottom: 15px; }
 body #wiki ul.term li.name { margin-bottom: 5px; }
-body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 22px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
+body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 12px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
 
 /* progress indicator */
 body #progress { color: #777; }
