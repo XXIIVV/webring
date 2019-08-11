@@ -1,8 +1,8 @@
 ---
-name: broken.link
+name: Broken link
 about: Report a broken link in the webring
 title: ''
-labels: ''
+labels: broken link
 assignees: neauoire, kodedninja, joshavanier, ckipp01
 
 ---
