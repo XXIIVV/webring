@@ -1,5 +1,5 @@
 ---
-name: inappropriate.content
+name: Inappropriate content
 about: Report inappropriate content in the webring
 title: ''
 labels: ''
