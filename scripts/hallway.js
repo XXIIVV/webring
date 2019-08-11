@@ -18,7 +18,9 @@ function Hallway (sites) {
   this._main.id = 'entries'
   this._footer = document.createElement('footer')
   this._footer.id = 'footer'
-  this._footer.innerHTML = `<p>The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.</p>`
+  this.readme = `<p>The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.</p>`
+  this.nav = `<p class='buttons'><a href='https://github.com/XXIIVV/webring'>Information</a> | <a href="index.html">The Portal</a>  | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>`
+  this._footer.innerHTML = `${this.readme}${this.nav}`
 
   this.install = function (host) {
     this._el.appendChild(this._main)
