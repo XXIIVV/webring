@@ -4,6 +4,8 @@ const Wiki = sites => {
   const entries = {}
   const main = document.getElementById('main')
   const aside = document.getElementById('aside')
+  const progress = document.getElementById('progress')
+  const progressCounter = Progress(sites.map(site => site.wiki))
   const authors = new Set()
   const terms = new Set()
 
@@ -115,15 +117,22 @@ const Wiki = sites => {
     aside.innerHTML = `<ul>${cats}</ul>`
   }
 
+  const refreshProgress = () => {
+    progress.innerHTML = progressCounter.render()
+  }
+
   return {
     initialize: hash => {
       console.log('Wiki', 'Fetching...')
+      refreshProgress()
       sites.filter(site => site.wiki && site.author).forEach(site => {
         fetch(site.wiki, { cache: 'no-store' }).then(x => x.text()).then(content => {
           parse(site, content)
           refresh(stripHash(hash))
+          progressCounter.success(site.wiki).then(refreshProgress)
         }).catch((err) => {
           console.warn(`${site.wiki}`, err)
+          progressCounter.failure(site.wiki).then(refreshProgress)
         })
       })
     },

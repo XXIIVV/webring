@@ -74,6 +74,14 @@ body #wiki ul.term { margin-bottom: 15px; }
 body #wiki ul.term li.name { margin-bottom: 5px; }
 body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 22px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
 
+/* progress indicator */
+body #progress { color: #777; }
+body #progress .busy { cursor: wait; }
+body #progress progress { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: #ccc; color: #777; width: 100px; height: 5px; border: 1px solid #777; box-sizing: border-box; }
+body #progress progress::-webkit-progress-bar { background: #ccc; }
+body #progress progress::-webkit-progress-value { background: #777; } /* warning: don't merge this with -moz-progress-bar below, it will break in webkit! */
+body #progress progress::-moz-progress-bar { background: #777; }
+
 @media (min-width: 630px) {
   body aside { display: block; }
   body #portal ul { columns: 3;}
