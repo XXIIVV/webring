@@ -29,7 +29,6 @@ body aside span.right { color: #555; float: right; }
 body aside li { text-transform: lowercase; cursor: pointer; }
 
 /* hallway */
-
 body #hallway #entries { display: flex; margin-top: 35px; }
 body #hallway #entries > div { flex-grow: 1; }
 body #hallway #showbar { position: absolute;top: 0px;width: 92%;height: 50px;  background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M11,4 L11,18 M4,4 L 4,18 M18,4 L18,18' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");background-repeat: no-repeat;background-position: right;background-size: 25px; }
@@ -48,7 +47,7 @@ body #hallway .entry.highlight .author { color:#555; }
 body #hallway .entry:hover .author { color:#ccc; }
 body #hallway .entry:hover .date { color:#ccc; }
 body #hallway .entry:hover .body { color:#ccc; border-bottom-color: #555 }
-body #hallway #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 20px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
+body #hallway #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 20px; border-top: 2px solid white; padding-top: 20px; margin-top: 15px; min-height: 45px; line-height: 15px;}
 
 body #hallway #pagination { margin: 10px; text-align: center; }
 body #hallway #pagination span { padding: 3px; margin: 2px; cursor: pointer; }
@@ -57,10 +56,10 @@ body #hallway #pagination span { padding: 3px; margin: 2px; cursor: pointer; }
 body #wiki { background: #ccc; color:#333; }
 body #wiki main { display: flex; }
 body #wiki main { flex: 1; }
-body #wiki main { max-width: calc(100% - 230px); }
 body #wiki main h1 { font-size: 1.3em; margin: 5px 0; font-weight: bold; }
 body #wiki main div.related { border-bottom: 1px solid white; margin-bottom: 10px; }
 body #wiki #main { width: 100%; }
+body #wiki #main > a { text-decoration: underline; }
 body #wiki #main a:hover { text-decoration: underline; }
 body #wiki #main ul li { line-height: 15px; }
 body #wiki aside { min-width: 220px; }
@@ -72,7 +71,7 @@ body #wiki aside a:before { content: '/'; }
 body #wiki aside a:after { content: attr(data-msgs) " msgs"; position: absolute; right: 20px; color:#555; }
 body #wiki ul.term { margin-bottom: 15px; }
 body #wiki ul.term li.name { margin-bottom: 5px; }
-body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 12px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
+body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 18px; border-top: 2px solid white; padding-top: 12px; margin-top: 15px; min-height: 45px; line-height: 15px;}
 
 /* progress indicator */
 body #progress { color: #777; }
@@ -88,6 +87,8 @@ body #progress progress::-moz-progress-bar { background: #777; }
   body #hallway #entries { margin-top: 0; }
   body #hallway #showbar { display: none; }
   body #hallway #hidebar { display: none; }
-  body #wiki footer { margin-right: 225px; }
+  body #hallway #footer { max-width: calc(100% - 300px); }
+  body #wiki main { max-width: calc(100% - 230px); }
+  body #wiki footer { margin-right: 225px; max-width: calc(100% - 300px); }
 }
 
