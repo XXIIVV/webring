@@ -1,37 +1,33 @@
 'use strict'
 
 const Progress = keys => {
-  const allKeys = new Set(keys.filter(key => key))
-  const loadedKeys = new Set()
-  const failedKeys = new Set()
+  const stack = new Set(keys.filter(key => key))
+  const loaded = new Set()
+  const failed = new Set()
 
-  const done = () => loadedKeys.size === allKeys.size
+  this.ratio = () => {
+    return loaded.size / stack.size
+  }
 
-  const className = () => done() ? 'done' : 'busy'
-
-  const formatPercentLoaded = () => `
-    ${Math.round(100 * loadedKeys.size / Math.max(allKeys.size, 1))}% loaded
-  `
-
-  const formatFailureCount = () => failedKeys.size === 0
-    ? ''
-    : `(${failedKeys.size} failed)`
-
-  const formatProgress = () => done()
-    ? ''
-    : `<p><progress value='${loadedKeys.size}' max='${allKeys.size}'></progress></p>`
+  this.percentage = () => {
+    return (100 * this.ratio()).toFixed(2)
+  }
 
   const render = () => `
-    <div class='${className()}'>
-      <p>${formatPercentLoaded()} ${formatFailureCount()}</p>
-      ${formatProgress()}
-    </div>
-  `
+    <div class='${loaded.size !== stack.size ? 'busy' : 'done'}'>
+      <p>
+        ${'|'.repeat(this.ratio() * 10)}
+        ${loaded.size !== stack.size ? this.percentage() + '% ' : ''}
+        ${loaded.size === stack.size ? 'Complete' : 'Loading'}
+        ${failed.size !== 0 ? `(${failed.size} failed)` : ''}
+      </p>
+      
+    </div>`
 
   const didLoad = (key, success) => new Promise((resolve, reject) => {
-    if (allKeys.has(key)) {
-      loadedKeys.add(key)
-      if (!success) failedKeys.add(key)
+    if (stack.has(key)) {
+      loaded.add(key)
+      if (!success) failed.add(key)
       return resolve()
     } else {
       return reject()
@@ -41,7 +37,6 @@ const Progress = keys => {
   return {
     success: key => didLoad(key, true),
     failure: key => didLoad(key, false),
-    done,
-    render,
+    toString: render
   }
 }

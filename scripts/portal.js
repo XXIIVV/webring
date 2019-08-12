@@ -16,7 +16,7 @@ function Portal (sites) {
   }
 
   function _directory (sites) {
-    const listItems= sites.reduce((acc, site, id) => `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
+    const listItems = sites.reduce((acc, site, id) => `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
     return `<main><ul>${listItems}</ul></main><footer>${_readme()}${_buttons()}</footer>`
   }
 
@@ -25,7 +25,7 @@ function Portal (sites) {
   }
 
   function _type (site) {
-     return site.type ? `data-type="${site.type}"` : ''
+    return site.type ? `data-type="${site.type}"` : ''
   }
 
   function _redirect (site) {

@@ -75,11 +75,6 @@ body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg
 
 /* progress indicator */
 body #progress { color: #777; }
-body #progress .busy { cursor: wait; }
-body #progress progress { -webkit-appearance: none; -moz-appearance: none; appearance: none; background: #ccc; color: #777; width: 100px; height: 5px; border: 1px solid #777; box-sizing: border-box; }
-body #progress progress::-webkit-progress-bar { background: #ccc; }
-body #progress progress::-webkit-progress-value { background: #777; } /* warning: don't merge this with -moz-progress-bar below, it will break in webkit! */
-body #progress progress::-moz-progress-bar { background: #777; }
 
 @media (min-width: 630px) {
   body aside { display: block; }

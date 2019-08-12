@@ -130,7 +130,7 @@ const Wiki = sites => {
   }
 
   const refreshProgress = () => {
-    progress.innerHTML = progressCounter.render()
+    progress.innerHTML = `${progressCounter}`
   }
 
   return {
