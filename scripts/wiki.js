@@ -9,27 +9,27 @@ const Wiki = sites => {
   const authors = new Set()
   const terms = new Set()
 
-  const storeEntry = (author, url, parent, cat, entry) => {
-    if (!(parent in entries)) {
-      entries[parent] = {}
-      entries[parent][cat] = [{ entry, author, url }]
-    } else if (!(cat in entries[parent])) {
-      entries[parent][cat] = [{ entry, author, url }]
+  const storeEntry = (author, url, category, term, entry) => {
+    if (!(category in entries)) {
+      entries[category] = {}
+      entries[category][term] = [{ entry, author, url }]
+    } else if (!(term in entries[category])) {
+      entries[category][term] = [{ entry, author, url }]
     } else {
-      entries[parent][cat].push({ entry, author, url })
+      entries[category][term].push({ entry, author, url })
     }
-    terms.add(cat)
+    terms.add(term)
     authors.add(author)
   }
 
-  const storeEntries = (author, url, parent, entries) => {
+  const storeEntries = (author, url, category, entries) => {
     Array.isArray(entries)
-      ? storeEntry(author, url, parent, 'list-definitions', entries)
-      : Object.keys(entries).forEach(entry => storeEntry(author, url, parent, entry, entries[entry]))
+      ? storeEntry(author, url, category, 'list-definitions', entries)
+      : Object.keys(entries).forEach(entry => storeEntry(author, url, category, entry, entries[entry]))
   }
 
   const transform = (author, url, ndtl) => {
-    Object.keys(ndtl).forEach(cat => storeEntries(author, url, cat, ndtl[cat]))
+    Object.keys(ndtl).forEach(category => storeEntries(author, url, category, ndtl[category]))
   }
 
   const parse = (site, content) => {
