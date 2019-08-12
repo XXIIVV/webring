@@ -12,11 +12,14 @@ const Wiki = sites => {
   const storeEntry = (author, url, category, term, entry) => {
     if (!(category in entries)) {
       entries[category] = {}
-      entries[category][term] = [{ entry, author, url }]
+      entries[category][term] = [{ entry, authors: [{ author, url }] }]
     } else if (!(term in entries[category])) {
-      entries[category][term] = [{ entry, author, url }]
+      entries[category][term] = [{ entry, authors: [{ author, url }] }]
     } else {
-      entries[category][term].push({ entry, author, url })
+      const possibleIndex = entries[category][term].findIndex(existing => existing.entry === entry)
+      possibleIndex > -1
+        ? entries[category][term][possibleIndex].authors.push({ author, url })
+        : entries[category][term].push({ entry, authors: [{ author, url }] })
     }
     terms.add(term)
     authors.add(author)
@@ -60,15 +63,19 @@ const Wiki = sites => {
     '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
   )
 
+  const formatAuthor = (authors, author) => {
+    return `${authors}<a class='author' target='_blank' href='${author.url}'> @${author.author}</a>`
+  }
+
   const formatEntry = (definitions, definition) => {
     const formatEntryList = entryList => entryList.reduce((items, item) => `${items}<li>${formatLinks(item)}</li>`, '')
 
     const newHtml = typeof definition.entry === 'string'
       ? `<li>${formatLinks(definition.entry)}
-          - <a class='author' target='_blank' href='${definition.url}'> @${definition.author}</a>
+          - ${definition.authors.reduce(formatAuthor, '')}
         </li>`
       : `<li><ul>${formatEntryList(definition.entry)}
-          <a class='author' target='_blank' href='${definition.url}'> — @${definition.author}</a>
+          - ${definition.authors.reduce(formatAuthor, '')}
         </ul></li>`
 
     return `${definitions}${newHtml}`
