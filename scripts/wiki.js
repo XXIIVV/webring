@@ -9,27 +9,30 @@ const Wiki = sites => {
   const authors = new Set()
   const terms = new Set()
 
-  const storeEntry = (author, url, parent, cat, entry) => {
-    if (!(parent in entries)) {
-      entries[parent] = {}
-      entries[parent][cat] = [{ entry, author, url }]
-    } else if (!(cat in entries[parent])) {
-      entries[parent][cat] = [{ entry, author, url }]
+  const storeEntry = (author, url, category, term, entry) => {
+    if (!(category in entries)) {
+      entries[category] = {}
+      entries[category][term] = [{ entry, authors: [{ author, url }] }]
+    } else if (!(term in entries[category])) {
+      entries[category][term] = [{ entry, authors: [{ author, url }] }]
     } else {
-      entries[parent][cat].push({ entry, author, url })
+      const possibleIndex = entries[category][term].findIndex(existing => existing.entry === entry)
+      possibleIndex > -1
+        ? entries[category][term][possibleIndex].authors.push({ author, url })
+        : entries[category][term].push({ entry, authors: [{ author, url }] })
     }
-    terms.add(cat)
+    terms.add(term)
     authors.add(author)
   }
 
-  const storeEntries = (author, url, parent, entries) => {
+  const storeEntries = (author, url, category, entries) => {
     Array.isArray(entries)
-      ? storeEntry(author, url, parent, 'list-definitions', entries)
-      : Object.keys(entries).forEach(entry => storeEntry(author, url, parent, entry, entries[entry]))
+      ? storeEntry(author, url, category, 'list-definitions', entries)
+      : Object.keys(entries).forEach(entry => storeEntry(author, url, category, entry, entries[entry]))
   }
 
   const transform = (author, url, ndtl) => {
-    Object.keys(ndtl).forEach(cat => storeEntries(author, url, cat, ndtl[cat]))
+    Object.keys(ndtl).forEach(category => storeEntries(author, url, category, ndtl[category]))
   }
 
   const parse = (site, content) => {
@@ -60,15 +63,19 @@ const Wiki = sites => {
     '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
   )
 
+  const formatAuthor = (authors, author) => {
+    return `${authors}<a class='author' target='_blank' href='${author.url}'> @${author.author}</a>`
+  }
+
   const formatEntry = (definitions, definition) => {
     const formatEntryList = entryList => entryList.reduce((items, item) => `${items}<li>${formatLinks(item)}</li>`, '')
 
     const newHtml = typeof definition.entry === 'string'
       ? `<li>${formatLinks(definition.entry)}
-          - <a class='author' target='_blank' href='${definition.url}'> @${definition.author}</a>
+          - ${definition.authors.reduce(formatAuthor, '')}
         </li>`
       : `<li><ul>${formatEntryList(definition.entry)}
-          <a class='author' target='_blank' href='${definition.url}'> — @${definition.author}</a>
+          - ${definition.authors.reduce(formatAuthor, '')}
         </ul></li>`
 
     return `${definitions}${newHtml}`
