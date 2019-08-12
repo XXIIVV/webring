@@ -74,7 +74,7 @@ const sites = [
   { url: 'https://patrikarvidsson.com' },
   { url: 'https://sophieleetmaa.com' },
   { url: 'https://xinniw.github.io' },
-  { url: 'https://mboxed.github.io/forida', title: 'Forida', type: 'wiki', author: 'm', contact: 'mboxxed@gmail.com', feed: 'https://mboxed.github.io/forida/tw.txt' },
+  { url: 'https://mboxed.github.io/sodatsu', title: 'sodatsu', type: 'wiki', author: 'm', contact: 'mboxxed@gmail.com', feed: 'https://mboxed.github.io/sodatsu/tw.txt' },
   { url: 'https://letters.vexingworkshop.com' },
   { url: 'https://tom.org.nz', title: 'Tom Hackshaw', type: 'portfolio', author: 'tomupom', contact: 'tom@tomhackshaw.com', wiki: 'https://a.tom.org.nz/glossary.ndtl' },
   { url: 'https://teknari.com' },
@@ -96,5 +96,6 @@ const sites = [
   { url: 'https://opinionatedguide.github.io/', title: 'OpGuides', author: 'vega', contact: 'vegac@protonmail.com', feed: 'https://opinionatedguide.github.io/twtxt.txt' },
   { url: 'https://chrismaughan.com/', title: 'CMaughan', author: 'cmaughan', contact: 'mornymorny@gmail.com', feed: 'https://chrismaughan.com/twtxt.txt' },
   { url: 'https://oddworlds.org/', title: 'oddworlds soliloquy', type: 'blog', author: 'RaelZero', contact: 'gaz.gong@gmail.com' },
-  { url: 'https://fundor333.com/', title: 'Fundor333', type: 'blog', author: 'Fundor 333', contact: 'blog@fundor333.com' , feed: "https://fundor333.com/twtxt.txt" }
+  { url: 'https://fundor333.com/', title: 'Fundor333', type: 'blog', author: 'Fundor 333', contact: 'blog@fundor333.com' , feed: "https://fundor333.com/twtxt.txt" },
+  { url: 'https://cass.si/', contact: 'm@cass.si' }
 ]
