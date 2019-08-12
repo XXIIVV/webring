@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share hand-crafted websites such as **diaries, wikis & portfolios**.
+This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share rich hand-crafted websites such as **diaries, wikis & portfolios**.
 
 ## Join the webring
 
@@ -8,15 +8,15 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 <a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
-- Add the webring icon to your website html.
-- Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` and `contact` keys are required, but you can also include `title`, `type`, `author`, `rss`, and `feed`. The title must be alphanumeric.
-- Submit a Pull Request with **the location of the webring icon** on your site.
+1) Add the webring icon to your website html.
+2) Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` and `contact` keys are required, but you can also include `title`, `type`, `author`, `rss`, and `feed`. The title must be alphanumeric.
+3) Submit a Pull Request with **the location of the webring icon** on your site. Pull requests with blank descriptions will be rejected.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
 
 ### Webring criteria
 
-**Single page websites, websites acting only as portals to other social platforms and websites with content involving violence, racism, sexism or speciesism, will be rejected**.
+**Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected**.
 
 The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual or written work. Your business site is probably not the best fit for the webring, and will be rejected.
 
@@ -41,21 +41,6 @@ To join, create a `.txt` file on your site, add its URL to [your webring entry](
 2016-02-03T23:05:00+01:00   @<example http://example.org/twtxt.txt> welcome to twtxt!
 2016-02-01T11:00:00+01:00   This is just another example.
 2015-12-12T12:00:00+01:00   Fiat lux!
-```
-
-This file needs to be accessible via CORS, so if you're self-hosting, please make sure to allow the `webring.xxiivv.com` origin.
-Here's an example of how to do so with Nginx:
-
-```
-location / {
-    index index.html;
-    if ($request_method = 'GET') {
-        add_header 'Access-Control-Allow-Origin' 'https://webring.xxiivv.com';
-        add_header 'Access-Control-Allow-Methods' 'GET';
-        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
-        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
-     }
-}
 ```
 
 You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated.
