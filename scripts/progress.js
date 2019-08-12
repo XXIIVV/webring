@@ -21,7 +21,6 @@ const Progress = keys => {
         ${loaded.size === stack.size ? 'Complete' : 'Loading'}
         ${failed.size !== 0 ? `(${failed.size} failed)` : ''}
       </p>
-      
     </div>`
 
   const didLoad = (key, success) => new Promise((resolve, reject) => {
