@@ -55,11 +55,16 @@ const Wiki = sites => {
     return `${currentHtml}${newHtml}`
   }
 
+  const formatLinks = text => text.replace(
+    /\b((https?|dat):\/\/[^"\s]+)/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+  )
+
   const formatEntry = (definitions, definition) => {
-    const formatEntryList = entryList => entryList.reduce((items, item) => `${items}<li>${item}</li>`, '')
+    const formatEntryList = entryList => entryList.reduce((items, item) => `${items}<li>${formatLinks(item)}</li>`, '')
 
     const newHtml = typeof definition.entry === 'string'
-      ? `<li>${definition.entry}
+      ? `<li>${formatLinks(definition.entry)}
           - <a class='author' target='_blank' href='${definition.url}'> @${definition.author}</a>
         </li>`
       : `<li><ul>${formatEntryList(definition.entry)}
