@@ -96,6 +96,6 @@ const sites = [
   { url: 'https://opinionatedguide.github.io/', title: 'OpGuides', author: 'vega', contact: 'vegac@protonmail.com', feed: 'https://opinionatedguide.github.io/twtxt.txt' },
   { url: 'https://chrismaughan.com/', title: 'CMaughan', author: 'cmaughan', contact: 'mornymorny@gmail.com', feed: 'https://chrismaughan.com/twtxt.txt' },
   { url: 'https://oddworlds.org/', title: 'oddworlds soliloquy', type: 'blog', author: 'RaelZero', contact: 'gaz.gong@gmail.com' },
-  { url: 'https://fundor333.com/', title: 'Fundor333', type: 'blog', author: 'Fundor 333', contact: 'blog@fundor333.com' , feed: 'https://fundor333.com/twtxt.txt' },
+  { url: 'https://fundor333.com/', title: 'Fundor333', type: 'blog', author: 'Fundor 333', contact: 'blog@fundor333.com', feed: 'https://fundor333.com/twtxt.txt' },
   { url: 'https://cass.si/', contact: 'm@cass.si' }
 ]
