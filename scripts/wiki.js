@@ -9,7 +9,17 @@ const Wiki = sites => {
   const authors = new Set()
   const terms = new Set()
 
-  const storeEntry = (author, url, category, term, entry) => {
+  const cleanEntry = entry => {
+    const temp = document.createElement('div')
+    temp.textContent = entry
+    return temp.innerHTML
+  }
+
+  const storeEntry = (author, url, category, term, unCleanEntry) => {
+    const entry = Array.isArray(unCleanEntry)
+      ? unCleanEntry.map(x => cleanEntry(x))
+      : cleanEntry(unCleanEntry)
+
     if (!(category in entries)) {
       entries[category] = {}
       entries[category][term] = [{ entry, authors: [{ author, url }] }]
