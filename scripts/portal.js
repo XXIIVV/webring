@@ -16,19 +16,22 @@ function Portal (sites) {
   }
 
   function _directory (sites) {
-    return `
-    <ul>${sites.reduce( (acc, site, id) =>
-          `${acc}<li ${site.type ? `data-type="${site.type}"` : ''} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`
-    , '')}</ul>\n${_readme()}${_buttons()}`
+    const listItems = sites.reduce((acc, site, id) => `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
+    return `<main><ul>${listItems}</ul></main><footer>${_readme()}${_buttons()}</footer>`
   }
 
   function _name (site) {
     return site.title || `${site.url.split('//')[1]}`
   }
 
+  function _type (site) {
+    return site.type ? `data-type="${site.type}"` : ''
+  }
+
   function _redirect (site) {
-    return `<p id='footer'>Redirecting to <a href="${site.url}">${site.url}</a></p><meta http-equiv="refresh" content="3; url=${site.url}">
-    <p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${site.url}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
+    return `<main><p>Redirecting to <a href="${site.url}">${site.url}</a></p></main>
+      <meta http-equiv="refresh" content="3; url=${site.url}">
+      <footer><p class='buttons'><a href='#' onClick="portal.reload('')">Directory</a> | <a href='#${site.url}' onClick="portal.reload('random')">Skip</a> | <a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a></p>`
   }
 
   //
@@ -52,17 +55,12 @@ function Portal (sites) {
   this.locate = function () {
     const hash = window.location.hash.replace('#', '').trim()
 
-    if (hash == 'random') {
+    if (hash === 'random') {
       return Math.floor(Math.random() * this.sites.length)
+    } else {
+      const id = sites.findIndex(site => site.url.indexOf(hash) > -1)
+      return id > -1 ? parseInt(id) : -1
     }
-
-    for (const id in this.sites) {
-      const site = this.sites[id]
-      if (site.url.indexOf(hash) > -1) {
-        return parseInt(id)
-      }
-    }
-    return -1
   }
 
   this.next = function (loc = this.locate()) {

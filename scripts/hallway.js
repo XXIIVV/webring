@@ -14,24 +14,23 @@ function Hallway (sites) {
   this.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1 }
   this.cache = null
 
-  this._entries = document.createElement('div')
-  this._entries.id = 'entries'
-  this._sidebar = document.createElement('div')
-  this._sidebar.id = 'sidebar'
-  this._footer = document.createElement('p')
+  this._main = document.createElement('main')
+  this._main.id = 'entries'
+  this._footer = document.createElement('footer')
   this._footer.id = 'footer'
-  this._footer.innerHTML = `The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.`
+  this.readme = `<p>The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.</p>`
+  this.nav = `<p class='buttons'><a href='https://github.com/XXIIVV/webring'>Information</a> | <a href="index.html">The Portal</a>  | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>`
+  this._footer.innerHTML = `${this.readme}${this.nav}`
 
   this.install = function (host) {
-    this._el.appendChild(this._entries)
-    this._el.appendChild(this._sidebar)
+    this._el.appendChild(this._main)
     this._el.appendChild(this._footer)
     host.appendChild(this._el)
     this.findFeeds()
   }
 
   this.start = function () {
-    this._entries.innerHTML = 'Loading..'
+    this._main.innerHTML = 'Loading..'
     this.fetchFeeds()
   }
 
@@ -43,27 +42,31 @@ function Hallway (sites) {
     const tags = this.findTags(localEntries)
     const relevantEntries = localEntries.filter(val => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter)))
 
-    this._entries.innerHTML = `
-    <ul>
-      ${localEntries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
-    </ul>
-    <div id='pagination'>
-      ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
-    </div>
-    <a id='showbar' onclick="toggleVisibility('sidebar');"></a>`
+    const mainHtml = `
+    <div><ul>
+        ${localEntries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
+      </ul>
+      <div id='pagination'>
+        ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
+      </div>
+      <a id='showbar' onclick="toggleVisibility('aside');"></a></div>`
 
-    this._sidebar.innerHTML = `
-    <a id='hidebar' onclick="toggleVisibility('sidebar');"></a>
-    <ul id='channels'>
-      <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${localEntries.length}</span></a></li>
-      ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
-    </ul>
-    <ul id='users'>
-      ${Object.keys(users).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n`, '')}
-    </ul>
-    <ul id='tags'>
-      ${Object.keys(tags).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
-    </ul>`
+    const aside = `
+    <aside id='aside'>
+      <a id='hidebar' onclick="toggleVisibility('aside');"></a>
+      <ul id='channels'>
+        <li onclick='filter("")' class='${hallway.finder.filter === '' ? 'selected' : ''}'><a href='#'>hallway <span class='right'>${localEntries.length}</span></a></li>
+        ${Object.keys(channels).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}'><a href='#${val}'>${val} <span class='right'>${channels[val]}</span></a></li>\n`, '')}
+      </ul>
+      <ul id='users'>
+        ${Object.keys(users).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>${val} <span class='right'>${users[val]}</span></li>\n`, '')}
+      </ul>
+      <ul id='tags'>
+        ${Object.keys(tags).slice(0, 15).reduce((acc, val) => acc + `<li onclick='filter("${val}")' class='${hallway.finder.filter === val ? 'selected' : ''}' href='#${val}'>#${val} <span class='right'>${tags[val]}</span></li>\n`, '')}
+        </ul>
+    </aside>`
+
+    this._main.innerHTML = `${mainHtml}${aside}`
 
     if (feeds) {
       this.cache = feeds

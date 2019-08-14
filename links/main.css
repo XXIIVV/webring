@@ -1,66 +1,19 @@
 * { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 
-body { background:#f4f4f4; padding:0px; margin:0px; }
-body > div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white; overflow: hidden;}
-body > div > ul { max-width: 800px; padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
-body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
-body div p a { text-decoration: underline; cursor: pointer;}
-body div p a:hover { text-decoration: underline; }
-body strong { font-weight: normal; font-family: 'input_mono_medium' }
-body div p.readme { max-width:500px; }
-body .col3 { columns:3; }
+body { background: #f4f4f4; padding: 0px; margin: 0px; font-family: 'input_mono', 'Monospaced', 'Courier New', 'Courier', monospace; }
+body > div { background: #111; min-height: calc(100vh - 60px); width: calc(100vw - 60px); margin: 15px; padding: 15px; font-size:11px; color:white; position: relative; }
+body > div > ul { padding-bottom: 15px; margin-bottom:15px; }
+body div p { display:block; padding:0px 5px; line-height: 20px;}
+body footer { border-top: 2px solid white; padding-top: 15px; margin-top: 15px;}
+body footer a { text-decoration: underline; }
+body strong { font-weight: bold; }
 body .selected { background: white; color:black; }
 
-body #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px; overflow: hidden;}
-body #sidebar > * { border-bottom: 0px; line-height: 16px; padding-bottom: 0px }
-body #sidebar ul { margin-bottom: 15px }
-body #sidebar > * li { text-transform: lowercase; }
-body #sidebar > * li:hover { cursor: pointer; }
-body #sidebar > * li span.right { color:#555; float:right; }
-body #sidebar > * li span.right:after { content: " msgs"; }
-body #sidebar #channels li:before, body #sidebar #categories li:before { content:'/'; }
-body #sidebar #users li:before { content:'@'; }
-body #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 10px; border-top: 2px solid white; padding-top: 15px; margin-top: 15px; max-width: calc(100% - 300px); min-height: 45px; line-height: 15px;}
-
-@media only screen and (min-width:200px) and (max-width: 800px) {
-  body #hallway #sidebar { position: absolute;top: 0px;right: 0px;padding: 15px;width: 200px;display: none;background-color: #000; }
-  body #hallway #sidebar #channels { margin-top: 30px; }
-}
-
-/* Hallway */
-
-body #hallway #entries { width: calc(100vw - 300px) !important; }
-
-body #hallway #pagination { margin: 10px; text-align: center; }
-body #hallway #pagination span { padding: 3px; margin: 2px; cursor: pointer; }
-
-body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:100px; }
-body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px; padding-bottom: 16px;}
-body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }
-body #hallway .entry .body { display: block;border-bottom: 1px solid #333;padding-bottom: 10px;margin-bottom: 10px; }
-body #hallway .entry .body a { text-decoration: underline; }
-body #hallway .entry .body .channel { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
-body #hallway .entry .body .user { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
-body #hallway .entry .body .user.local::before { content:'@';color: #777; }
-body #hallway .entry .body .user.external::before { content:'^';color: #777; }
-body #hallway .entry .body .tag { display: inline-block;border-radius: 1px;font-family: 'input_mono_medium';color: #777; }
-body #hallway .entry.highlight .author { color:#555; }
-body #hallway .entry:hover .author { color:#ccc; }
-body #hallway .entry:hover .date { color:#ccc; }
-body #hallway .entry:hover .body { color:#ccc; border-bottom-color: #555 }
-body #hallway ul { max-width: 100%; }
-body #hallway ul li:last-child { border-bottom:0px; }
-
-@media only screen and (min-width:200px) and (max-width: 800px) {
-  body #hallway #entries { width: 100% !important;margin-top: 30px; }
-  body #hallway #showbar { position: absolute;top: 0px;width: 92%;height: 50px;  background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M11,4 L11,18 M4,4 L 4,18 M18,4 L18,18' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");background-repeat: no-repeat;background-position: right;background-size: 25px; }
-  body #hallway #hidebar { position: absolute;top: 0px;width: 100%;height: 50px;background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M5,5 L17,17 M17,5 L5,17' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat: no-repeat;background-position: left;background-size: 25px; }
-}
-
-/* Portal */
-
-body #portal #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
-body #portal ul { columns:3;  }
+/* portal */
+body #portal main,
+body #portal footer { max-width: 800px; }
+body #portal #icon { display: block; width: 30px; height: 30px; background-image: url(../icon.white.svg); background-size: cover; background-repeat: no-repeat; position: absolute; bottom: 15px; right:15px; background-position: center; padding:0px }
+body #portal ul { columns:1;  }
 body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
 body #portal ul li:before { content: attr(id) ")"; }
 body #portal ul li[data-type]::after { content:"<" attr(data-type) ">"; color:#555; }
@@ -68,30 +21,69 @@ body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none
 body #portal ul li a:visited { color:#ccc; text-decoration: none;}
 body #portal ul li a:hover { text-decoration: underline; }
 
-@media (max-width: 730px) {
-  body #portal ul li:before { display: none }
-}
-@media (max-width: 630px) {
-  body #portal ul { columns: 2 !important; }
-  body #portal ul li:before { display: none }
-}
-@media (max-width: 530px) {
-  body #portal ul { columns: 1 !important; }
-  body #portal ul li:before { display: inline }
-}
+body aside { min-width: 200px; padding: 0 15px; line-height: 16px; display: none; }
+body aside ul { margin-bottom: 15px; }
+body aside #channels li:before, body #sidebar #categories li:before { content:'/'; }
+body aside #users li:before { content:'@'; }
+body aside span.right { color: #555; float: right; }
+body aside li { text-transform: lowercase; cursor: pointer; }
 
-/* Wiki */
+/* hallway */
+body #hallway #entries { display: flex; margin-top: 35px; }
+body #hallway #entries > div { flex-grow: 1; }
+body #hallway #showbar { position: absolute;top: 0px;width: 92%;height: 50px;  background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M11,4 L11,18 M4,4 L 4,18 M18,4 L18,18' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");background-repeat: no-repeat;background-position: right;background-size: 25px; }
+body #hallway #hidebar { position: absolute;top: 0px;width: 100%;height: 50px;background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M5,5 L17,17 M17,5 L5,17' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat: no-repeat;background-position: left;background-size: 25px; }
+body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:100px; }
+body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px; padding-bottom: 16px;}
+body #hallway .entry .author { font-weight: bold; position: absolute; left: 0px; }
+body #hallway .entry .body { display: block;border-bottom: 1px solid #333;padding-bottom: 10px;margin-bottom: 10px; }
+body #hallway .entry .body a { text-decoration: underline; }
+body #hallway .entry .body .channel { display: inline-block; border-radius: 1px; font-weight: bold; color: #777; }
+body #hallway .entry .body .user { display: inline-block; border-radius: 1px; font-weight: bold; color: #777; }
+body #hallway .entry .body .user.local::before { content:'@';color: #777; }
+body #hallway .entry .body .user.external::before { content:'^';color: #777; }
+body #hallway .entry .body .tag { display: inline-block; border-radius: 1px; font-weight: bold; color: #777; }
+body #hallway .entry.highlight .author { color:#555; }
+body #hallway .entry:hover .author { color:#ccc; }
+body #hallway .entry:hover .date { color:#ccc; }
+body #hallway .entry:hover .body { color:#ccc; border-bottom-color: #555 }
+body #hallway #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 20px; border-top: 2px solid white; padding-top: 20px; margin-top: 15px; min-height: 45px; line-height: 15px;}
 
+body #hallway #pagination { margin: 10px; text-align: center; }
+body #hallway #pagination span { padding: 3px; margin: 2px; cursor: pointer; }
+
+/* wiki */
 body #wiki { background: #ccc; color:#333; }
-body #wiki #entry { max-width: calc(100% - 230px); margin-bottom: 30px; line-height: 15px }
-body #wiki #entry a { text-decoration: underline; }
-body #wiki #sidebar { overflow-y: scroll; height: calc(100% - 15px); }
-body #wiki #sidebar a { display: inline-block; width: 120px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding: 7px; }
-body #wiki #sidebar li { line-height: 7px; }
-body #wiki #sidebar li:before { display: none; }
-body #wiki #sidebar a:before { content: '/'; }
-body #wiki #sidebar a:after { content: attr(data-msgs) " msgs"; position: absolute; right: 20px; color:#555; }
-body #wiki ul.term { border-bottom: 0px; margin-bottom: 0px; padding-bottom: 0px}
-body #wiki ul.term li { margin-bottom: 5px }
-body #wiki ul.term li.name { margin-bottom: 5px }
-body #wiki ul.term li a.author { color:#555; text-decoration: none !important; }
+body #wiki main { display: flex; }
+body #wiki main { flex: 1; }
+body #wiki main h1 { font-size: 1.3em; margin: 5px 0; font-weight: bold; }
+body #wiki main div.related { border-bottom: 1px solid white; margin-bottom: 10px; }
+body #wiki #main { width: 100%; }
+body #wiki #main > a { text-decoration: underline; }
+body #wiki #main a:hover { text-decoration: underline; }
+body #wiki #main ul li { line-height: 15px; }
+body #wiki aside { min-width: 220px; }
+body #wiki aside  { overflow-y: scroll; height: calc(100% - 15px); position: absolute; right: 0;}
+body #wiki aside a { display: inline-block; width: 135px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding: 7px; }
+body #wiki aside li { line-height: 7px; }
+body #wiki aside li:before { display: none; }
+body #wiki aside a:before { content: '/'; }
+body #wiki aside a:after { content: attr(data-msgs) " msgs"; position: absolute; right: 20px; color:#555; }
+body #wiki ul.term { margin-bottom: 15px; }
+body #wiki ul.term li.name { margin-bottom: 5px; }
+body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 18px; border-top: 2px solid white; padding-top: 12px; margin-top: 15px; min-height: 45px; line-height: 15px;}
+
+/* progress indicator */
+body #progress { color: #777; }
+
+@media (min-width: 630px) {
+  body aside { display: block; }
+  body #portal ul { columns: 3;}
+  body #hallway #entries { margin-top: 0; }
+  body #hallway #showbar { display: none; }
+  body #hallway #hidebar { display: none; }
+  body #hallway #footer { max-width: calc(100% - 300px); }
+  body #wiki main { max-width: calc(100% - 230px); }
+  body #wiki footer { margin-right: 225px; max-width: calc(100% - 300px); }
+}
+
