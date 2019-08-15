@@ -11,7 +11,7 @@ function Hallway (sites) {
   this._el = document.createElement('div')
   this._el.id = 'hallway'
   const filterAndPage = window.location.hash.split('^')
-  this.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1 }
+  this.finder = { filter: stripHash(filterAndPage[0]), page: filterAndPage[1] || 1 }
   this.cache = null
 
   this._main = document.createElement('main')
@@ -214,9 +214,14 @@ function escapeHtml (unsafe) {
   return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
 }
 
+function stripHash (hash) {
+  const decoded = decodeURIComponent(hash)
+  return decoded.charAt(0) === '#' ? decoded.substring(1) : decoded
+}
+
 function filter (name) {
   window.location.hash = name
   const filterAndPage = window.location.hash.split('^')
-  hallway.finder = { filter: filterAndPage[0].trim().replace('#', ''), page: filterAndPage[1] || 1 }
+  hallway.finder = { filter: stripHash(filterAndPage[0]), page: filterAndPage[1] || 1 }
   hallway.refresh()
 }
