@@ -6,6 +6,8 @@ const reTag = /(^|\s)(#[a-z\d-]+)/ig
 const reUrl = /((https?):\/\/(([-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b)([-a-zA-Z0-9@:%_+.~#?&//=]*)))/g
 
 function Hallway (sites) {
+  const self = this
+
   const feeds = {}
   this.sites = sites
   this._el = document.createElement('div')
@@ -71,6 +73,8 @@ function Hallway (sites) {
     if (feeds) {
       this.cache = feeds
     }
+
+    this.injectPostForm()
   }
 
   // Entries
@@ -159,6 +163,63 @@ function Hallway (sites) {
     })
   }
 
+  this.injectPostForm = debounce(function () {
+    console.log('Injecting post form...')
+
+    try {
+      if (require){
+        const form = document.createElement('form')
+        form.id = 'post-submit-form'
+
+        form.innerHTML = `
+          <textarea id="post-submit-textarea"></textarea>
+
+          <div id="post-submit-footer">
+            <div id="post-submit-message"></div>
+            <input type="submit" value="Post" id="post-submit-button">
+          </div>
+
+          <hr>
+        `
+
+        const entries = document.getElementById('entries').children[0]
+        entries.insertBefore(form, entries.children[0])
+        form.addEventListener('submit', self.submitPost)
+      }
+    } catch (e) {}
+  }, 1000)
+
+  this.submitPost = function (event) {
+    event.preventDefault()
+
+    console.log("Posting...")
+
+    let message = document.getElementById('post-submit-message')
+    message.innerText = 'Posting...'
+    
+    const fs = require('fs')
+    const exec = require('child_process').exec
+
+    const textarea = document.getElementById('post-submit-textarea')
+    const text = textarea.value
+    let posts = fs.existsSync('hallway.txt') 
+      ? fs.readFileSync('hallway.txt', 'utf8').split('\n') 
+      : []
+
+    const date = (new Date()).toJSON()
+    posts.push(date + '\t' + text)
+    fs.writeFileSync('hallway.txt', posts.join('\n'), 'utf8')
+
+    exec('git add hallway.txt', function(){
+      exec('git commit -m "Added new post."', function(){
+        exec('git push origin master', function(){
+          message.innerText = 'Posted!'
+          setTimeout(window.location.reload, 2000)
+        })
+      })
+    })
+  }
+
   // Utils
 
   function parseFeed (author, feed) {
@@ -224,4 +285,13 @@ function filter (name) {
   const filterAndPage = window.location.hash.split('^')
   hallway.finder = { filter: stripHash(filterAndPage[0]), page: filterAndPage[1] || 1 }
   hallway.refresh()
+}
+
+function debounce (fn, time) {
+  let timeout
+
+  return function (args) {
+    if (timeout) clearTimeout(timeout)
+    timeout = setTimeout(fn, time)
+  }
 }

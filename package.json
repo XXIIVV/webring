@@ -1,0 +1,10 @@
+{
+  "name": "webring",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^6.0.2"
+  },
+  "scripts": {
+    "start": "electron ."
+  }
+}

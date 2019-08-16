@@ -8,6 +8,7 @@ body footer { border-top: 2px solid white; padding-top: 15px; margin-top: 15px;}
 body footer a { text-decoration: underline; }
 body strong { font-weight: bold; }
 body .selected { background: white; color:black; }
+body hr { margin: 1em 0; padding: 0; border: 0; height: 1px; background-color: white; }
 
 /* portal */
 body #portal main,
@@ -31,6 +32,12 @@ body aside li { text-transform: lowercase; cursor: pointer; }
 /* hallway */
 body #hallway #entries { display: flex; margin-top: 35px; }
 body #hallway #entries > div { flex-grow: 1; }
+body #hallway #entries #post-submit-form { margin-bottom: 1em; text-align: right; }
+body #hallway #entries #post-submit-form #post-submit-textarea { display: block; width: calc(100% - 2em); background-color: black; color: white; border: 1px solid white; border-radius: 0.5em; height: 6em; padding: 1em; margin-bottom: 1em; }
+body #hallway #entries #post-submit-form #post-submit-footer { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-content: center; align-items: center; }
+body #hallway #entries #post-submit-form #post-submit-message { color: #777; }
+body #hallway #entries #post-submit-form #post-submit-button { background-color: black; color: white; border: 1px solid white; border-radius: 0.5em; padding: 0.5em; cursor: pointer; }
+body #hallway #entries #post-submit-form #post-submit-button:hover { background-color: white; color: black; }
 body #hallway #showbar { position: absolute;top: 0px;width: 92%;height: 50px;  background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M11,4 L11,18 M4,4 L 4,18 M18,4 L18,18' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");background-repeat: no-repeat;background-position: right;background-size: 25px; }
 body #hallway #hidebar { position: absolute;top: 0px;width: 100%;height: 50px;background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M5,5 L17,17 M17,5 L5,17' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat: no-repeat;background-position: left;background-size: 25px; }
 body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:100px; }
