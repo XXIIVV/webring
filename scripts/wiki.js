@@ -120,7 +120,6 @@ const Wiki = sites => {
   }
 
   const refresh = key => {
-    console.log(key)
     if (key) {
       if (entries[key] === undefined) return
       const items = Object.keys(entries[key]).sort().reduce(formatEntries(entries[key]), '')
