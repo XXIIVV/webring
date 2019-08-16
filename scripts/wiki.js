@@ -9,6 +9,8 @@ const Wiki = sites => {
   const authors = new Set()
   const terms = new Set()
 
+  const encodeUrl = text => text.replace(/ /g, '+').trim().toLowerCase()
+
   const cleanEntry = entry => {
     const temp = document.createElement('div')
     temp.textContent = entry
@@ -63,7 +65,7 @@ const Wiki = sites => {
   const formatSideBarCat = (key, entries) => (currentHtml, cat) => {
     const catLength = Object.keys(entries[cat]).length
     const newHtml = `<li class='${selected(key, cat)}'}'>
-                      <a href='#${cat}' data-msgs='${catLength}'>${cat.toLowerCase()}</a>
+                      <a href='#${encodeUrl(cat)}' data-msgs='${catLength}'>${cat.toLowerCase()}</a>
                      </li>`
     return `${currentHtml}${newHtml}`
   }
@@ -162,11 +164,13 @@ const Wiki = sites => {
   }
 }
 
+const decodeUrl = text => text.replace(/\+/g, ' ').trim().toUpperCase()
+
 const stripHash = hash => {
   const decoded = decodeURIComponent(hash)
-  return decoded.charAt(0) === '#' ? decoded.substring(1) : decoded
+  return decoded.charAt(0) === '#' ? decodeUrl(decoded.substring(1)) : decoded
 }
 
 window.addEventListener('hashchange', () => {
-  wiki.refresh(stripHash(window.location.hash).toUpperCase())
+  wiki.refresh(stripHash(window.location.hash))
 })
