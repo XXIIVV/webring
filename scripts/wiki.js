@@ -115,7 +115,7 @@ const Wiki = sites => {
   }
 
   const formatRelated = (allRelated, relatedCategory) => {
-    const newHtml = `<span><a href='#${relatedCategory}'>/${relatedCategory.toLowerCase()}</a> </span>`
+    const newHtml = `<span><a href='#${encodeUrl(relatedCategory)}'>/${relatedCategory.toLowerCase()}</a> </span>`
     return `${allRelated}${newHtml}`
   }
 
