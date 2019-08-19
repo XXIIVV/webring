@@ -39,7 +39,7 @@ const Wiki = sites => {
 
   const storeEntries = (author, url, category, entries) => {
     Array.isArray(entries)
-      ? storeEntry(author, url, category, 'list-definitions', entries)
+      ? storeEntry(author, url, category, `${category}-list-definition`, entries)
       : Object.keys(entries).forEach(entry => storeEntry(author, url, category, entry, entries[entry]))
   }
 
@@ -95,7 +95,7 @@ const Wiki = sites => {
 
   const formatEntries = entries => (currentHtml, category) => {
     const definitions = entries[category].reduce(formatEntry, '')
-    const title = category === 'list-definitions'
+    const title = category.endsWith('list-definition')
       ? ''
       : `<li class='name'><strong>${category.toLowerCase()}</strong></li>`
     return `${currentHtml}<ul class='term'>${title}${definitions}</ul>`
@@ -108,7 +108,7 @@ const Wiki = sites => {
     }
 
     const foundMatches = Object.keys(entries[key])
-      .filter(entry => entry !== 'list-definitions')
+      .filter(entry => !entry.endsWith('list-definition'))
       .map(searchOtherCategories)
     const flattened = [].concat.apply([], foundMatches)
     return Array.from(new Set(flattened)).filter(related => related !== key)
