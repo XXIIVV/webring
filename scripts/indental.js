@@ -31,7 +31,7 @@ function indental (data, Type) {
   }
 
   function skipLine (line) {
-    return line.trim() !== '' && line.substr(0, 1) !== ';' && line.trim().slice(-1) !== '`'
+    return line.trim() !== '' && line.trim().substr(0, 1) !== ';' && line.trim().slice(-1) !== '`'
   }
 
   const lines = data.split('\n').filter(skipLine).map(makeLine)
