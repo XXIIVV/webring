@@ -98,5 +98,6 @@ const sites = [
   { url: 'https://oddworlds.org/', title: 'oddworlds soliloquy', type: 'blog', author: 'RaelZero', contact: 'gaz.gong@gmail.com' },
   { url: 'https://fundor333.com/', title: 'Fundor333', type: 'blog', author: 'Fundor 333', contact: 'blog@fundor333.com', feed: 'https://fundor333.com/twtxt.txt' },
   { url: 'https://cass.si/', contact: 'm@cass.si' },
-  { url: 'https://dotcomboom.somnolescent.net/', title: 'dotcomboom.somnolescent.net', author: 'dcb', contact: 'dotcomboom@somnolescent.net', feed: 'https://dotcomboom.somnolescent.net/twtxt.txt' }
+  { url: 'https://dotcomboom.somnolescent.net/', title: 'dotcomboom.somnolescent.net', author: 'dcb', contact: 'dotcomboom@somnolescent.net', feed: 'https://dotcomboom.somnolescent.net/twtxt.txt' },
+  { url: 'https://cadmican.neocities.org/', title: 'cadmican', contact: 'arachi@airmail.cc', author: 'Nihiltarier' }
 ]
