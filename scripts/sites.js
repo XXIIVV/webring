@@ -9,7 +9,7 @@ const sites = [
   { url: 'https://electro.pizza', title: 'electro pizza', type: 'blog', author: 'rho', rss: 'https://electro.pizza/feed.xml', feed: 'https://electro.pizza/twtxt.txt' },
   { url: 'https://avanier.now.sh', title: 'Arachne', type: 'wiki', author: 'joshavanier', contact: 'joshavanier@protonmail.com', feed: 'https://avanier.now.sh/tw.txt' },
   { url: 'http://kaemura.com', title: 'kaemura.com', type: 'blog', author: 'kaemura', contact: 'chimera1190@gmail.com', feed: 'https://kaemura.com/twttxt.txt' },
-  { url: 'https://liamcooke.com', title: 'liamcooke.com', author: 'slisne', contact: '@slisne@merveilles.town', wiki: 'https://liamcooke.com/merveilles/wiki.ndtl', feed: 'https://liamcooke.com/merveilles/tw.txt' },
+  { url: 'https://liamcooke.com', title: 'liamcooke.com', author: 'slisne', contact: '@slisne@merveilles.town', rss: 'https://liamcooke.com/feed.xml', wiki: 'https://liamcooke.com/merveilles/wiki.ndtl', feed: 'https://liamcooke.com/merveilles/tw.txt' },
   { url: 'https://electricgecko.de', title: 'electricgecko', type: 'blog', author: 'electricgecko', contact: 'desk@electricgecko.de', rss: 'https://electricgecko.de/feed' },
   { url: 'https://wichniow.ski' },
   { url: 'https://hraew.autophagy.io' },
