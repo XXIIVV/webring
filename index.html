@@ -21,8 +21,8 @@
       const selectedType = navLink.dataset.type
       document.querySelector(`nav a.current`).classList.remove('current')
       navLink.classList.add('current')
-      document.querySelectorAll(`main li`).forEach(el => el.style.visibility = 'visible')
-      if(selectedType) { document.querySelectorAll(`main li:not([data-type='${selectedType}'])`).forEach(el => el.style.visibility = 'hidden') }
+      document.querySelectorAll(`main li`).forEach(el => el.style.display = 'block')
+      if(selectedType) { document.querySelectorAll(`main li:not([data-type='${selectedType}'])`).forEach(el => el.style.display = 'none') }
     }
   </script>
 </body>
