@@ -19,7 +19,13 @@ body #portal ul li:before { content: attr(id) ")"; }
 body #portal ul li[data-type]::after { content:"<" attr(data-type) ">"; color:#555; }
 body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
 body #portal ul li a:visited { color:#ccc; text-decoration: none;}
-body #portal ul li a:hover { text-decoration: underline; }
+body #portal a:active,
+body #portal a:focus,
+body #portal a:hover { text-decoration: underline; }
+
+body #portal nav { display: flex; flex-direction: row; margin-bottom: 15px }
+body #portal nav a { margin: 0 5px; color: gray }
+body #portal nav a.current { color: white }
 
 body aside { min-width: 200px; padding: 0 15px; line-height: 16px; display: none; }
 body aside ul { margin-bottom: 15px; }

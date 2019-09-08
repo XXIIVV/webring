@@ -16,8 +16,20 @@ function Portal (sites) {
   }
 
   function _directory (sites) {
-    const listItems = sites.reduce((acc, site, id) => `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
-    return `<main><ul>${listItems}</ul></main><footer>${_readme()}${_buttons()}</footer>`
+    const siteTypesArray = [ ...new Set( sites.map( site => site.type ).filter(Boolean) ) ]
+    const siteTypes = siteTypesArray.reduce( (output, siteType) => `${output}
+         <a data-type='${siteType}' href='#' onclick='event.preventDefault(); toggleType(event)'>&lt;${siteType}&gt;</a>`
+      , `<a class='current' href='#' onclick='event.preventDefault(); toggleType(event)'>&lt;all&gt;</a>` )
+
+    const listItems = sites.reduce( (acc, site, id) =>
+        `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`
+      , '' )
+
+    return `<nav>${siteTypes}</nav>
+    <main>
+      <ul>${listItems}</ul>
+    </main>
+    <footer>${_readme()}${_buttons()}</footer>`
   }
 
   function _name (site) {
