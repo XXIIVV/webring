@@ -617,6 +617,14 @@ const sites = [
     contact: 'henderson.j@protonmail.com',
     author: 'James',
     rss: 'https://jameschip.io/index.xml'   
+  },
+
+  { 
+    url: 'https://dym.sh',
+    type: 'hybrid',
+    author: 'DYM',
+    contact: 're@dym.sh',
+    rss: 'https://dym.sh/rss.xml' 
   }
 
 ]
