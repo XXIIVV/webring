@@ -601,6 +601,14 @@ const sites = [
     contact: 'elmusho@gmail.com',
     author: 'sixeyes',
     type: 'portfolio'
+  },
+
+  {
+    url: 'https://tilde.town/~dustin/',
+    title: '0xdstn',
+    contact: '0xdstn@protonmail.com',
+    author: '0xdstn',
+    type: 'wiki'
   }
 
 ]
