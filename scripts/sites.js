@@ -609,6 +609,14 @@ const sites = [
     contact: '0xdstn@protonmail.com',
     author: '0xdstn',
     type: 'wiki'
+  },
+  
+   {
+    url: 'https://jameschip.io/',
+    title: 'James Chip',
+    contact: 'henderson.j@protonmail.com',
+    author: 'James',
+    rss: 'https://jameschip.io/index.xml'   
   }
 
 ]
