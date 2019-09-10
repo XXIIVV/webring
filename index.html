@@ -15,15 +15,6 @@
     const portal = new Portal(sites);
     portal.install(document.body);
     portal.start();
-
-    function toggleType(e) {
-      const navLink = e.target
-      const selectedType = navLink.dataset.type
-      document.querySelector(`nav a.current`).classList.remove('current')
-      navLink.classList.add('current')
-      document.querySelectorAll(`main li`).forEach(el => el.style.display = 'block')
-      if(selectedType) { document.querySelectorAll(`main li:not([data-type='${selectedType}'])`).forEach(el => el.style.display = 'none') }
-    }
   </script>
 </body>
 </html>

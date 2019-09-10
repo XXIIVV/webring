@@ -12,13 +12,16 @@ function Portal (sites) {
   }
 
   function _buttons () {
-    return `<p class='buttons'><a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon'  href='#random' onClick="portal.reload('random')"></a> | <a href="hallway.html">The Hallway</a>  | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>`
+    return `<p class='buttons'><a href='#random' onClick="portal.reload('random')">Random</a> | <a href='https://github.com/XXIIVV/webring'>Information</a> <a id='icon' href='#random' onClick="portal.reload('random')"></a> | <a href="hallway.html">The Hallway</a> | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>`
   }
 
   function _directory (sites) {
     const siteTypesArray = [...new Set(sites.map(site => site.type).filter(Boolean))]
-    const siteTypes = siteTypesArray.reduce((output, siteType) => `${output}<a data-type='${siteType}' href='#' onclick='event.preventDefault(); toggleType(event)'>&lt;${siteType}&gt;</a>`, `<a class='current' href='#' onclick='event.preventDefault(); toggleType(event)'>&lt;all&gt;</a>`)
-    const listItems = sites.reduce((acc, site, id) => `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
+    const siteTypes = siteTypesArray.reduce((output, siteType) =>
+      `${output}<a data-type='${siteType}' href='#' onclick='toggleType(event)'>&lt;${siteType}&gt;</a>`,
+      `<a class='current' href='#' onclick='toggleType(event)'>&lt;all&gt;</a>`)
+    const listItems = sites.reduce((acc, site, id) =>
+      `${acc}<li ${_type(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
     return `<nav>${siteTypes}</nav><main><ul>${listItems}</ul></main><footer>${_readme()}${_buttons()}</footer>`
   }
 
@@ -67,5 +70,18 @@ function Portal (sites) {
 
   this.next = function (loc = this.locate()) {
     return loc == this.sites.length - 1 ? this.sites[0] : this.sites[loc + 1]
+  }
+
+}
+
+function toggleType (e) {
+  e.preventDefault()
+  const navLink = e.target
+  const selectedType = navLink.dataset.type
+  document.querySelector(`nav a.current`).classList.remove('current')
+  navLink.classList.add('current')
+  document.querySelectorAll(`main li`).forEach(el => el.style.display = 'block')
+  if(selectedType) {
+    document.querySelectorAll(`main li:not([data-type='${selectedType}'])`).forEach(el => el.style.display = 'none')
   }
 }
