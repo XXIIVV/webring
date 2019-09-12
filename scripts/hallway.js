@@ -18,8 +18,8 @@ function Hallway (sites) {
   this._main.id = 'entries'
   this._footer = document.createElement('footer')
   this._footer.id = 'footer'
-  this.readme = `<p>The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.</p>`
-  this.nav = `<p class='buttons'><a href='https://github.com/XXIIVV/webring'>Information</a> | <a href="index.html">The Portal</a>  | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>`
+  this.readme = '<p>The <strong>Hallway</strong> is a decentralized forum, to join the conversation, add a <a href="https://github.com/XXIIVV/webring#joining-the-hallway">feed:</a> field to your entry in the <a href="https://github.com/XXIIVV/Webring/">webring</a>.</p>'
+  this.nav = '<p class="buttons"><a href="https://github.com/XXIIVV/webring">Information</a> | <a href="index.html">The Portal</a>  | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>'
   this._footer.innerHTML = `${this.readme}${this.nav}`
 
   this.install = function (host) {
@@ -118,10 +118,10 @@ function Hallway (sites) {
 
   this.templateEntry = function (entry) {
     entry.html = entry.body
-      .replace(reChannel, `$1<span class='channel'>/$2</span>`)
+      .replace(reChannel, '$1<span class="channel">/$2</span>')
       .replace(reUser, this.findMention)
       .replace(reTag, '$1<span class="tag">$2</span>')
-      .replace(reUrl, `<a target="_blank" href='$1'>$1</a>`)
+      .replace(reUrl, '<a target="_blank" href="$1">$1</a>')
 
     const filter = window.location.hash.substr(1).replace(/\+/g, ' ').toLowerCase()
     const highlight = filter === entry.author.toLowerCase()
