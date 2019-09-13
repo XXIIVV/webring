@@ -40,11 +40,12 @@ function Hallway (sites) {
     const channels = this.find(localEntries, 'channel')
     const users = this.find(localEntries, 'author')
     const tags = this.findTags(localEntries)
-    const relevantEntries = localEntries.filter(val => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter)))
+    const relevantEntries = localEntries
+      .filter(entry => !this.finder.filter || (entry.author === this.finder.filter || entry.channel === this.finder.filter || entry.tags.includes(this.finder.filter) || entry.body.includes(this.finder.filter)))
 
     const mainHtml = `
     <div><ul>
-        ${localEntries.filter((val) => !this.finder.filter || (val.author === this.finder.filter || val.channel === this.finder.filter || val.tags.includes(this.finder.filter))).filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
+        ${relevantEntries.filter((_, id) => id < Number(this.finder.page) * 20 && id >= (Number(this.finder.page) - 1) * 20).reduce((acc, val) => acc + this.templateEntry(val) + '\n', '')}
       </ul>
       <div id='pagination'>
         ${[...Array(Math.ceil(relevantEntries.length / 20)).keys()].reduce((acc, num) => `${acc}<span class='${Number(hallway.finder.page) === num + 1 ? 'selected' : ''}' onclick='filter("${this.finder.filter}^${num + 1}")'>${num + 1}</span>`, '')}
