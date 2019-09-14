@@ -9,10 +9,25 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 1) Add the webring icon to your website html.
-2) Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. The `url` and `contact` keys are required, but you can also include `title`, `type`, `author`, `rss`, and `feed`. The title must be alphanumeric.
+2) Add your website information to the [sites.js](https://github.com/XXIIVV/webring/edit/master/scripts/sites.js) file. See all options below, and be mindful of what's required for each part of the webring.
 3) Submit a Pull Request with **the location of the webring icon** on your site. Pull requests with blank descriptions will be rejected.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
+
+Only the `url`, `contact`, and `langs` keys are required to join the webring. Below you can find a list of all the available keys for the various areas of the webring.
+```javascript
+  {
+    author: <string used in the Hallway REQUIRED FOR HALLWAY>',
+    contact: <string used to contact if necessary REQUIRED FOR ALL>,
+    feed: <string url used Hallway REQUIRED FOR HALLWAY>,
+    langs: <array of iso language codes represented languages in your site ex. ['en'] REQUIRED FOR ALL>,
+    rss: <string url for rss feed>,
+    title: <string (must be alphanumeric) used for the Portal>,
+    type: <string used for the Portal>,
+    url: <string url used for Portal REQUIRED FOR ALL>,
+    wiki: <string url used for the Wiki REQUIRED FOR WIKI>
+  }
+```
 
 ### Webring criteria
 
@@ -34,7 +49,7 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 [The Hallway](https://webring.xxiivv.com/hallway.html) is a decentralized forum using [twtxt](https://twtxt.readthedocs.io/en/stable/user/twtxtfile.html) feeds.
 
-To join, create a `.txt` file on your site, add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `feed:`, and fill in your desired name for `author:`. The content of the file should be a dateISO string, a tab(or 3 spaces) and a message:
+To join, create a `.txt` file on your site, add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `feed`, and fill in your desired name in the `author` key. The content of the file should be a dateISO string, a tab(or 3 spaces) and a message:
 
 ```
 2016-02-04T13:30:00+01:00   You can really go crazy here! ┐(ﾟ∀ﾟ)┌
@@ -49,7 +64,7 @@ You don't need to allow all origins nor allow any other methods rather than GET,
 
 [The Wiki](https://webring.xxiivv.com/wiki.html) is a decentralized encyclopedia using [ndtl](https://wiki.xxiivv.com/Indental) feeds.
 
-To join, create a `.ndtl` file on your site, and add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) as `wiki:`.
+To join, create a `.ndtl` file on your site, and add its URL to [your webring entry](https://github.com/XXIIVV/Webring/blob/master/scripts/sites.js) using the `wiki` key.
 
 ## Webring CLI
 
