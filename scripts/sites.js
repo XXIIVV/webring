@@ -625,6 +625,11 @@ const sites = [
     author: 'DYM',
     contact: 're@dym.sh',
     rss: 'https://dym.sh/rss.xml' 
+  },
+
+  { 
+    url: 'https://patrick-is.cool/',
+    author: 'Patrick Monaghan',
   }
 
 ]
