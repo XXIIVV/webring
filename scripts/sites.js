@@ -630,6 +630,8 @@ const sites = [
   { 
     url: 'https://patrick-is.cool/',
     author: 'Patrick Monaghan',
+    contact: '0x5f.manpat@gmail.com',
+    type: 'portfolio'
   }
 
 ]
