@@ -627,13 +627,20 @@ const sites = [
     rss: 'https://dym.sh/rss.xml' 
   },
 
+  { 
+    url: 'https://patrick-is.cool/',
+    author: 'Patrick Monaghan',
+    contact: '0x5f.manpat@gmail.com',
+    type: 'portfolio'
+  },
+  
   {
     url: 'https://icyphox.sh',
-	type: 'hybrid',
-	author: 'icyphox',
-	contact: 'x@icyphox.sh',
-	rss: 'https://icyphox.sh/blog/feed.xml',
-	feed: 'https://icyphox.sh/twtxt.txt'
+	  type: 'hybrid',
+	  author: 'icyphox',
+	  contact: 'x@icyphox.sh',
+	  rss: 'https://icyphox.sh/blog/feed.xml',
+	  feed: 'https://icyphox.sh/twtxt.txt'
   }
 
 ]
