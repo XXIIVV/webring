@@ -625,6 +625,15 @@ const sites = [
     author: 'DYM',
     contact: 're@dym.sh',
     rss: 'https://dym.sh/rss.xml' 
+  },
+
+  {
+    url: 'https://icyphox.sh',
+	type: 'hybrid',
+	author: 'icyphox',
+	contact: 'x@icyphox.sh',
+	rss: 'https://icyphox.sh/blog/feed.xml',
+	feed: 'https://icyphox.sh/twtxt.txt'
   }
 
 ]
