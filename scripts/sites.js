@@ -632,6 +632,15 @@ const sites = [
     author: 'Patrick Monaghan',
     contact: '0x5f.manpat@gmail.com',
     type: 'portfolio'
+  },
+  
+  {
+    url: 'https://icyphox.sh',
+    type: 'hybrid',
+    author: 'icyphox',
+    contact: 'x@icyphox.sh',
+    rss: 'https://icyphox.sh/blog/feed.xml',
+    feed: 'https://icyphox.sh/twtxt.txt'
   }
 
 ]
