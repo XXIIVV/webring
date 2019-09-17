@@ -641,6 +641,14 @@ const sites = [
     contact: 'x@icyphox.sh',
     rss: 'https://icyphox.sh/blog/feed.xml',
     feed: 'https://icyphox.sh/twtxt.txt'
+  },
+  
+  {
+    url: 'https://www.arun.is/',
+    type: 'blog',
+    author: 'Arun Venkatesan',
+    contact: 'dallasarun@gmail.com',
+    rss: 'https://www.arun.is/rss.xml'
   }
 
 ]
