@@ -103,8 +103,8 @@ const sites = [
   },
 
   {
-    url: 'https://log.lectronice.com',
-    title: 'lectrolog.',
+    url: 'https://shards.lectronice.com',
+    title: 'shards',
     type: 'blog',
     author: 'lectronice',
     contact: 'i.love.spam@lectronice.com',
