@@ -261,11 +261,6 @@ const sites = [
   },
 
   {
-    url: 'https://neufv.systems',
-    author: 'neufv'
-  },
-
-  {
     url: 'https://ricky.codes'
   },
 
