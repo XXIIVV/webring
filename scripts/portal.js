@@ -13,8 +13,7 @@ function Portal (sites) {
   function _directory (sites) {
     const siteTypesArray = [...new Set(sites.map(site => site.type).filter(Boolean))]
     const siteLangsArray = [...new Set(sites
-      .map(site => site.langs)
-      .reduce((flattened, langs) => flattened.concat(langs), [])
+      .reduce((flattened, site) => flattened.concat(site.langs), [])
       .sort())]
 
     const siteTypes = siteTypesArray.reduce((output, siteType) =>
@@ -39,8 +38,7 @@ function Portal (sites) {
   }
 
   function _lang (site) {
-    const langs = site.langs.reduce((langs, lang) => `${langs} ${lang}`, '')
-    return `data-lang="${langs.trim()}"`
+    return `data-lang="${site.langs.join(' ').trim()}"`
   }
 
   function _redirectView (site) {
@@ -73,8 +71,7 @@ function Portal (sites) {
   }
 
   this.sitesMatchingLangs = this.sites
-    .filter(site => site.langs)
-    .filter(site => site.langs.some(lang => navigator.languages.includes(lang)))
+    .filter(site => site.langs && site.langs.some(lang => navigator.languages.includes(lang)))
 
   this.next = function () {
     const hash = window.location.hash.replace('#', '').trim()
