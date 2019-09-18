@@ -270,7 +270,11 @@ const sites = [
   },
 
   {
-    url: 'https://maxdeviant.com'
+    url: 'https://maxdeviant.com',
+    title: 'maxdeviant.com',
+    type: 'hybrid',
+    author: 'Marshall Bowers',
+    contact: 'elliott.codes@gmail.com'
   },
 
   {
