@@ -305,12 +305,6 @@ const sites = [
   },
 
   {
-    author: 'neufv',
-    langs: ['en'],
-    url: 'https://neufv.systems'
-  },
-
-  {
     langs: ['en'],
     url: 'https://ricky.codes'
   },
