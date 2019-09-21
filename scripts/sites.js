@@ -344,7 +344,9 @@ const sites = [
   },
 
   {
+    contact: 'ubuwaits@gmail.com',
     langs: ['en'],
+    rss: 'https://chad.is/rss.xml',
     url: 'https://chad.is'
   },
 
