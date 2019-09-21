@@ -15,18 +15,25 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
 
 Only the `url`, `contact`, and `langs` keys are required to join the webring. Below you can find a list of all the available keys for the various areas of the webring.
-```javascript
-  {
-    author: <string used in the Hallway REQUIRED FOR HALLWAY>,
-    contact: <string used to contact if necessary REQUIRED FOR ALL>,
-    feed: <string url used Hallway REQUIRED FOR HALLWAY>,
-    langs: <array of iso language codes represented languages in your site ex. ['en'] REQUIRED FOR ALL>,
-    rss: <string url for rss feed>,
-    title: <string (must be alphanumeric) used for the Portal>,
-    type: <string used for the Portal>,
-    url: <string url used for Portal REQUIRED FOR ALL>,
-    wiki: <string url used for the Wiki REQUIRED FOR WIKI>
-  }
+``` js
+{
+  /* REQUIRED */
+  url: <string url used for Portal>,
+  contact: <string used to contact if necessary>,
+  langs: <array of represented languages (iso codes) ex. ['en', 'fr']>,
+
+  /* also possible */
+  title: <string displayed alphanumeric name, used for the Portal>,
+  type: <string used for the Portal, ex. 'blog'>,
+  rss: <string url for rss or atom feed>,
+
+  /* for WIKI */
+  author: <string used in WIKI and HALLWAY>,
+  wiki: <string url for the .ndtl file>,
+
+  /* for HALLWAY */
+  feed: <string url for the .twtxt file>
+}
 ```
 
 ### Webring criteria
