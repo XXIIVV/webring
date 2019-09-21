@@ -30,7 +30,7 @@ function Portal (sites) {
   }
 
   function _name (site) {
-    return site.title || `${site.url.split('//')[1]}`
+    return site.title || `${site.url.split('//')[1].replace(/\/+$/,'')}`
   }
 
   function _type (site) {

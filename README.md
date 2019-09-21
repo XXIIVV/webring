@@ -17,7 +17,7 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 Only the `url`, `contact`, and `langs` keys are required to join the webring. Below you can find a list of all the available keys for the various areas of the webring.
 ```javascript
   {
-    author: <string used in the Hallway REQUIRED FOR HALLWAY>',
+    author: <string used in the Hallway REQUIRED FOR HALLWAY>,
     contact: <string used to contact if necessary REQUIRED FOR ALL>,
     feed: <string url used Hallway REQUIRED FOR HALLWAY>,
     langs: <array of iso language codes represented languages in your site ex. ['en'] REQUIRED FOR ALL>,

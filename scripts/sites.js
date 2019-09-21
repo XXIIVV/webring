@@ -662,7 +662,7 @@ const sites = [
   {
     contact: 'm@cass.si',
     langs: ['en'],
-    url: 'https://cass.si/'
+    url: 'https://cass.si'
   },
 
   {
@@ -726,14 +726,14 @@ const sites = [
     url: 'https://dym.sh'
   },
 
-  { 
+  {
     author: 'Patrick Monaghan',
     contact: '0x5f.manpat@gmail.com',
     langs: ['en'],
     type: 'portfolio',
-    url: 'https://patrick-is.cool/'
+    url: 'https://patrick-is.cool'
   },
-  
+
   {
     author: 'icyphox',
     contact: 'x@icyphox.sh',
