@@ -749,12 +749,12 @@ const sites = [
   {
     author: 'roy niang',
     contact: 'roy@royniang.com',
-    title:  'roy niang',
-    url: 'http://royniang.com',
-    type: 'portfolio',
-    feed: 'https://royniang.com/updates.txt'
-    wiki: 'https://royniang.com/usefulnotes.ndlt',
+    feed: 'https://royniang.com/updates.txt',
     langs: ['en', 'fr'],
+    title:  'roy niang',
+    type: 'portfolio',
+    url: 'http://royniang.com',
+    wiki: 'https://royniang.com/usefulnotes.ndlt'
   }
 
 ]
