@@ -753,8 +753,8 @@ const sites = [
     langs: ['en'],
     title:  'roy niang',
     type: 'portfolio',
-    url: 'http://royniang.com',
-    wiki: 'https://royniang.com/usefulnotes.ndlt'
+    url: 'https://royniang.com',
+    wiki: 'https://royniang.com/usefulnotes.ndtl'
   }
 
 ]
