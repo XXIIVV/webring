@@ -744,6 +744,17 @@ const sites = [
     rss: 'https://icyphox.sh/blog/feed.xml',
     type: 'hybrid',
     url: 'https://icyphox.sh'
+  },
+
+  {
+    author: 'roy niang',
+    contact: 'roy@royniang.com',
+    title:  'roy niang',
+    url: 'http://royniang.com',
+    type: 'portfolio',
+    feed: 'https://royniang.com/updates.txt'
+    wiki: 'https://royniang.com/usefulnotes.ndlt',
+    langs: ['en', 'fr'],
   }
 
 ]
