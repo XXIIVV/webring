@@ -10,8 +10,10 @@ body strong { font-weight: bold; }
 body .selected { background: white; color:black; }
 
 /* portal */
+body #portal { display: flex; flex-direction: column; }
+body #portal main { flex: 1 0 auto; }
 body #portal main,
-body #portal footer { max-width: 800px; }
+body #portal footer { max-width: 1080px; flex-shrink: 0 }
 body #portal #icon { display: block; width: 30px; height: 30px; background-image: url(../icon.white.svg); background-size: cover; background-repeat: no-repeat; position: absolute; bottom: 15px; right:15px; background-position: center; padding:0px }
 body #portal ul { columns:1;  }
 body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
@@ -92,5 +94,9 @@ body #progress { color: #777; }
   body #hallway #footer { max-width: calc(100% - 300px); }
   body #wiki main { max-width: calc(100% - 230px); }
   body #wiki footer { margin-right: 225px; max-width: calc(100% - 300px); }
+}
+
+@media (min-width: 992px) {
+  body #portal ul { columns: 4;}
 }
 
