@@ -755,7 +755,7 @@ const sites = [
     type: 'portfolio',
     url: 'https://royniang.com',
     wiki: 'https://telecom.royniang.com/usefulnotes.ndtl'
-  }
+  },
   
   {
     author: 'raul altosaar',
