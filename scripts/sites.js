@@ -756,5 +756,14 @@ const sites = [
     url: 'https://royniang.com',
     wiki: 'https://telecom.royniang.com/usefulnotes.ndtl'
   }
+  
+  {
+    author: 'raul altosaar',
+    contact: 'raul.altosaar@gmail.com',
+    langs: ['en'],
+    title:  'raul altosaar',
+    type: 'portfolio',
+    url: 'https://www.raul.earth/'
+  }
 
 ]
