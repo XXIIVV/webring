@@ -74,11 +74,6 @@ const sites = [
 
   {
     langs: ['en'],
-    url: 'https://wichniow.ski'
-  },
-
-  {
-    langs: ['en'],
     url: 'https://hraew.autophagy.io'
   },
 
