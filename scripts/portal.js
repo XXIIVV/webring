@@ -53,8 +53,9 @@ function Portal (sites) {
   }
 
   this.start = function () {
-    if (window.location.hash && window.location.hash.length > 4) {
-      const site = this.next()
+    const hash = window.location.hash
+    if (hash && hash.length > 4) {
+      const site = this.getSite(hash.replace('#', '').trim())
       this.el.innerHTML = _redirectView(site)
       setTimeout(() => { window.location = site.url }, 3000)
     } else {
@@ -73,15 +74,17 @@ function Portal (sites) {
   this.sitesMatchingLangs = this.sites
     .filter(site => site.langs && site.langs.some(lang => navigator.languages.includes(lang)))
 
-  this.next = function () {
-    const hash = window.location.hash.replace('#', '').trim()
+  this.nextSiteIndex = (ceiling, index) => index === ceiling ? 0 : index + 1
+  this.randomSite = this.sitesMatchingLangs[Math.floor(Math.random() * this.sitesMatchingLangs.length)]
 
+  this.getSite = function (hash) {
     if (hash === 'random') {
-      return this.sitesMatchingLangs[Math.floor(Math.random() * this.sitesMatchingLangs.length)]
+      return this.randomSite
     } else {
-      return sites.find(site => site.url.includes(hash))
-        ? sites.find(site => site.url.includes(hash))
-        : this.sitesMatchingLangs[Math.floor(Math.random() * this.sitesMatchingLangs.length)]
+      const index = this.sitesMatchingLangs.findIndex(site => site.url.includes(hash))
+      return (index > -1)
+        ? this.sitesMatchingLangs[this.nextSiteIndex(this.sitesMatchingLangs.length, index)]
+        : this.randomSite
     }
   }
 }
