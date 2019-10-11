@@ -763,10 +763,10 @@ const sites = [
 
   {
     author: 'Cristi Constantin',
-    url: 'https://crlf.site',
     langs: ['en'],
     rss: 'https://crlf.site/feed.xml',
-    title: 'CrLf',
-    type: 'hybrid'
+    title: 'Cr;Lf;',
+    type: 'hybrid',
+    url: 'https://crlf.site'
   }
 ]
