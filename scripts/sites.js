@@ -759,6 +759,14 @@ const sites = [
     title:  'raul altosaar',
     type: 'portfolio',
     url: 'https://www.raul.earth/'
-  }
+  },
 
+  {
+    author: 'Cristi Constantin',
+    langs: ['en'],
+    rss: 'https://crlf.site/feed.xml',
+    title: 'Cr;Lf;',
+    type: 'hybrid',
+    url: 'https://crlf.site'
+  }
 ]
