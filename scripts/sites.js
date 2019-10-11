@@ -766,7 +766,7 @@ const sites = [
     url: 'https://crlf.site',
     langs: ['en'],
     rss: 'https://crlf.site/feed.xml',
-    title: 'Cr;Lf;',
+    title: 'CrLf',
     type: 'hybrid'
   }
 ]
