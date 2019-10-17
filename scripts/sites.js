@@ -776,6 +776,5 @@ const sites = [
     langs: ['en'],
     title: 'Jóhannes Gunnar Þorsteinsson',
     type: 'hybrid'
-
   }
 ]
