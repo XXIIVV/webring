@@ -768,5 +768,14 @@ const sites = [
     title: 'Cr;Lf;',
     type: 'hybrid',
     url: 'https://crlf.site'
+  },
+
+  {
+    url: 'https://www.johannesg.com',
+    contact: 'johannesg@johannesg.com',
+    langs: ['en'],
+    title: 'Jóhannes Gunnar Þorsteinsson',
+    type: 'hybrid'
+
   }
 ]
