@@ -18,14 +18,14 @@ Only the `url`, `contact`, and `langs` keys are required to join the webring. Be
 ``` js
 {
   /* REQUIRED */
-  url: <string url used for Portal>,
   contact: <string used to contact if necessary>,
   langs: <array of represented languages (iso codes) ex. ['en', 'fr']>,
+  url: <string url used for Portal>,
 
   /* also possible */
+  rss: <string url for rss or atom feed>,
   title: <string displayed alphanumeric name, used for the Portal>,
   type: <string used for the Portal, ex. 'blog'>,
-  rss: <string url for rss or atom feed>,
 
   /* for WIKI */
   author: <string used in WIKI and HALLWAY>,
@@ -82,7 +82,6 @@ If you'd prefer to interact with the webring through your terminal, you can clon
 This repository does not contain mature API capabilities, but there are a couple ways to request a list of sites and other information currently in the webring.
 
 - Request [sites.js on xxiivv](https://webring.xxiivv.com/scripts/sites.js) or [sites.js on github](https://raw.githubusercontent.com/XXIIVV/webring/master/scripts/sites.js) and parse it. An example can be seen [here](https://gist.github.com/ckipp01/2ab7ac42e2837b4359efeb76eb49bb54).
-- If you'd like a already parsed list, [webring-checker.now.sh/sites](https://webring-checker.now.sh/sites) will return an json array of the site objects in the webring. See [webring-checker.now.sh](https://webring-checker.now.sh) for more info on what else is available.
 
 ## Need Help?
 
