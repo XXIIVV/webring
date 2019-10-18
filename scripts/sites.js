@@ -1,8 +1,5 @@
 'use strict'
 
-// Don't forget the comma! No trailing slashes
-// protocol://url.domain.ext
-
 const sites = [
   {
     author: 'neauoire',
@@ -751,7 +748,7 @@ const sites = [
     url: 'https://royniang.com',
     wiki: 'https://telecom.royniang.com/usefulnotes.ndtl'
   },
-  
+
   {
     author: 'raul altosaar',
     contact: 'raul.altosaar@gmail.com',
@@ -771,10 +768,17 @@ const sites = [
   },
 
   {
-    url: 'https://www.johannesg.com',
     contact: 'johannesg@johannesg.com',
     langs: ['en'],
     title: 'Jóhannes Gunnar Þorsteinsson',
-    type: 'hybrid'
+    type: 'hybrid',
+    url: 'https://www.johannesg.com'
   }
+
+  // Make sure you've read the README!
+  // Don't forget the comma on the previous entry!
+  // No trailing slashes or commas!
+  // Alphabetize your keys!
+  // protocol://url.domain.ext
+
 ]
