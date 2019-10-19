@@ -775,10 +775,12 @@ const sites = [
     url: 'https://www.johannesg.com'
   }
 
-  // Make sure you've read the README!
-  // Don't forget the comma on the previous entry!
-  // No trailing slashes or commas!
-  // Alphabetize your keys!
-  // protocol://url.domain.ext
-
 ]
+
+/* 
+Make sure you've read the README!
+Don't forget the comma on the previous entry!
+No trailing slashes or commas!
+Alphabetize your keys!
+protocol://url.domain.ext
+*/
