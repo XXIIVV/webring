@@ -773,6 +773,15 @@ const sites = [
     title: 'Jóhannes Gunnar Þorsteinsson',
     type: 'hybrid',
     url: 'https://www.johannesg.com'
+  },
+
+  {
+    author: 'Michael Rupert',
+    contact: 'michaelrupert@fastmail.com',
+    langs: ['en'],
+    title: 'Provoke Analog',
+    type: 'hybrid',
+    url: 'https://provokeanalog.com',
   }
 
   // Make sure you've read the README!
