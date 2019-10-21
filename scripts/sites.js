@@ -773,6 +773,14 @@ const sites = [
     title: 'Jóhannes Gunnar Þorsteinsson',
     type: 'hybrid',
     url: 'https://www.johannesg.com'
+  },
+  
+  {
+    author: 'eti',
+    contact: 'eti@eti.tf',
+    langs: ['en'],
+    url: 'https://eti.tf',
+    feed: 'https://eti.tf/twtxt.txt'
   }
 
 ]
