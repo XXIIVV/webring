@@ -781,7 +781,7 @@ const sites = [
     langs: ['en'],
     title: 'Provoke Analog',
     type: 'hybrid',
-    url: 'https://provokeanalog.com',
+    url: 'https://provokeanalog.com'
   }
 
   // Make sure you've read the README!
