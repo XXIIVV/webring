@@ -778,9 +778,18 @@ const sites = [
   {
     author: 'eti',
     contact: 'eti@eti.tf',
+    feed: 'https://eti.tf/twtxt.txt',
     langs: ['en'],
-    url: 'https://eti.tf',
-    feed: 'https://eti.tf/twtxt.txt'
+    url: 'https://eti.tf'
+  },
+
+  {
+    author: 'Michael Rupert',
+    contact: 'michaelrupert@fastmail.com',
+    langs: ['en'],
+    title: 'Provoke Analog',
+    type: 'hybrid',
+    url: 'https://provokeanalog.com'
   }
 
 ]
