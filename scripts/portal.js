@@ -71,9 +71,10 @@ function Portal (sites) {
     setTimeout(() => { window.location.href = target }, 3000)
   }
 
-  const simplifiedCodes = Array.from(new Set([].concat.apply([], navigator.languages.map(code => [code, code.split('-').shift()]))))
+  this.navLangs = [... new Set(navigator.languages.map(lang => lang.split('-').shift()))]
+
   this.sitesMatchingLangs = this.sites
-    .filter(site => site.langs && site.langs.some(lang => simplifiedCodes.includes(lang)))
+    .filter(site => site.langs && site.langs.some(lang => this.navLangs.includes(lang)))
 
   this.nextSiteIndex = (ceiling, index) => index === ceiling ? 0 : index + 1
   this.randomSite = this.sitesMatchingLangs[Math.floor(Math.random() * this.sitesMatchingLangs.length)]
