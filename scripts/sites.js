@@ -787,7 +787,7 @@ const sites = [
   {
     author: 'eti',
     contact: 'eti@eti.tf',
-    feed: 'https://eti.tf/twtxt.txt',
+    feed: 'https://y.eti.tf/twtxt.txt',
     langs: ['en'],
     url: 'https://eti.tf'
   }
