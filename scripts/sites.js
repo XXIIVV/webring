@@ -381,10 +381,10 @@ const sites = [
   },
 
   {
+    author: 'rosano',
     langs: ['en'],
     url: 'https://rosano.ca',
     wiki: 'https://rosano.ca/wiki.ndtl',
-    author: 'rosano'
   },
 
   {
@@ -585,17 +585,6 @@ const sites = [
     title: 'Gueorgui Tcherednitchenko',
     type: 'portfolio',
     url: 'https://gueorgui.net'
-  },
-
-  {
-    author: 'Leo',
-    contact: 'webring@gkbrk.com',
-    feed: 'https://www.gkbrk.com/twtxt.txt',
-    langs: ['en'],
-    rss: 'https://www.gkbrk.com/feed.xml',
-    title: 'Leo',
-    type: 'blog',
-    url: 'https://www.gkbrk.com'
   },
 
   {
