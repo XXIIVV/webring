@@ -384,7 +384,7 @@ const sites = [
     author: 'rosano',
     langs: ['en'],
     url: 'https://rosano.ca',
-    wiki: 'https://rosano.ca/wiki.ndtl',
+    wiki: 'https://rosano.ca/wiki.ndtl'
   },
 
   {
