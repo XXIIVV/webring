@@ -781,11 +781,20 @@ const sites = [
     feed: 'https://y.eti.tf/twtxt.txt',
     langs: ['en'],
     url: 'https://eti.tf'
+  },
+
+  {
+    author: 'rezmason',
+    contact: 'jeremysachs@rezmason.net',
+    langs: ['en'],
+    title: 'rezmason.net',
+    type: 'hybrid',
+    url: 'https://rezmason.net'
   }
 
 ]
 
-/* 
+/*
 Make sure you've read the README!
 Don't forget the comma on the previous entry!
 No trailing slashes or commas!
