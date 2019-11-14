@@ -781,6 +781,14 @@ const sites = [
     feed: 'https://y.eti.tf/twtxt.txt',
     langs: ['en'],
     url: 'https://eti.tf'
+  },
+  
+  {
+    author: 'Payson Wallach',
+    contact: 'payson@paysonwallach.com',
+    feed: 'https://paysonwallach.com/blog/feed.xml',
+    langs: ['en'],
+    url: 'https://paysonwallach.com'
   }
 
 ]
