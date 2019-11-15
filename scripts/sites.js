@@ -790,8 +790,16 @@ const sites = [
     title: 'rezmason.net',
     type: 'hybrid',
     url: 'https://rezmason.net'
-  }
+  },
 
+  {
+    contact: 'email@estfyr.net',
+    langs: ['en', 'cz'],
+    title: 'estfyr.net',
+    type: 'hybrid',
+    url: 'https://estfyr.net'
+  }
+  
 ]
 
 /*
