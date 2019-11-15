@@ -790,8 +790,16 @@ const sites = [
     title: 'rezmason.net',
     type: 'hybrid',
     url: 'https://rezmason.net'
+  },
+  
+  {
+    author: 'Payson Wallach',
+    contact: 'payson@paysonwallach.com',
+    feed: 'https://paysonwallach.com/blog/feed.xml',
+    langs: ['en'],
+    url: 'https://paysonwallach.com'
   }
-
+  
 ]
 
 /*
