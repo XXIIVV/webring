@@ -782,6 +782,15 @@ const sites = [
     langs: ['en'],
     url: 'https://eti.tf'
   },
+
+  {
+    author: 'rezmason',
+    contact: 'jeremysachs@rezmason.net',
+    langs: ['en'],
+    title: 'rezmason.net',
+    type: 'hybrid',
+    url: 'https://rezmason.net'
+  },
   
   {
     author: 'Payson Wallach',
@@ -790,10 +799,10 @@ const sites = [
     langs: ['en'],
     url: 'https://paysonwallach.com'
   }
-
+  
 ]
 
-/* 
+/*
 Make sure you've read the README!
 Don't forget the comma on the previous entry!
 No trailing slashes or commas!
