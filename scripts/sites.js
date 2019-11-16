@@ -88,9 +88,10 @@ const sites = [
     author: 'xvw',
     contact: 'xaviervdw@gmail.com',
     langs: ['fr'],
+    feed: 'https://xvw.github.io/twtxt/hallway.txt',
     rss: 'https://xvw.github.io/atom.xml',
-    title: 'xvw.github.io',
-    type: 'blog',
+    title: 'planet',
+    type: 'hybrid',
     url: 'https://xvw.github.io'
   },
 
