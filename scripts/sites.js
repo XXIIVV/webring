@@ -807,8 +807,16 @@ const sites = [
     feed: 'https://paysonwallach.com/blog/feed.xml',
     langs: ['en'],
     url: 'https://paysonwallach.com'
-  }
+  },
   
+  {
+    author: 'icco',
+    contact: 'nat@natwelch.com',
+    feed: 'https://writing.natwelch.com/feed.atom',
+    langs: ['en'],
+    type: 'portfolio',
+    url: 'https://natwelch.com'
+  }
 ]
 
 /*
