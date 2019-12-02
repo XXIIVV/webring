@@ -704,15 +704,6 @@ const sites = [
   },
 
   {
-    author: 'DYM',
-    contact: 're@dym.sh',
-    langs: ['en', 'ru'],
-    rss: 'https://dym.sh/rss.xml',
-    type: 'hybrid',
-    url: 'https://dym.sh'
-  },
-
-  {
     author: 'Patrick Monaghan',
     contact: '0x5f.manpat@gmail.com',
     langs: ['en'],
