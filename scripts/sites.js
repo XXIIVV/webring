@@ -791,7 +791,7 @@ const sites = [
     type: 'hybrid',
     url: 'https://estfyr.net'
   },
-  
+
   {
     author: 'Payson Wallach',
     contact: 'payson@paysonwallach.com',
@@ -799,7 +799,7 @@ const sites = [
     langs: ['en'],
     url: 'https://paysonwallach.com'
   },
-  
+
   {
     author: 'icco',
     contact: 'nat@natwelch.com',
@@ -807,6 +807,14 @@ const sites = [
     langs: ['en'],
     type: 'portfolio',
     url: 'https://natwelch.com'
+  },
+  {
+    author: 'Adam Fuhrer',
+    contact: 'adamfuhrer@gmail.com',
+    langs: ['en'],
+    title:  'Adam Fuhrer',
+    type: 'portfolio',
+    url: 'https://adamfuhrer.com/'
   }
 ]
 
