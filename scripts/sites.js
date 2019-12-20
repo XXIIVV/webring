@@ -807,6 +807,13 @@ const sites = [
     langs: ['en'],
     type: 'portfolio',
     url: 'https://natwelch.com'
+  },
+  
+  {
+    author: 'aklsh',
+    langs: ['en'],
+    url: 'https://aklsh.github.io',
+    type: 'hybrid'
   }
 ]
 
