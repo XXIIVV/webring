@@ -816,6 +816,14 @@ const sites = [
     title: 'Park Imminent',
     type: 'hybrid',
     url: 'https://parkimminent.com',
+  },
+  
+  {
+    author: 'hxii',
+    contact: 'paul@glushak.net',
+    langs: ['en'],
+    type: 'hybrid',
+    url: 'https://paulglushak.com'
   }
 ]
 
