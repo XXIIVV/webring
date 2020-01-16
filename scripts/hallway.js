@@ -171,8 +171,8 @@ function Hallway (sites) {
       const parts = line.replace('  ', '\t').split('\t')
       const date = parts[0].trim()
       const body = escapeHtml(parts[1].trim()).trim()
-      const channel = body.substr(0, 1) === '/' ? body.split(' ')[0].substr(1).toLowerCase() : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
-      const tags = (body.match(reTag) || []).map(a => a.substr(a.indexOf('#') + 1).toLowerCase())
+      const channel = body.substr(0, 1) === '/' ? cleanTags(body.split(' ')[0].substr(1).toLowerCase()) : body.substr(0, 1) === '@' ? 'veranda' : 'lobby'
+      const tags = (body.match(reTag) || []).map(a => cleanTags(a.substr(a.indexOf('#') + 1).toLowerCase()))
       const offset = new Date() - new Date(date)
       entries.push({ date, body, author, offset, channel, tags })
     }
@@ -213,6 +213,10 @@ function toggleVisibility (id) {
 
 function escapeHtml (unsafe) {
   return unsafe.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
+}
+
+function cleanTags (unsafe){
+  return unsafe.replace(/([^a-z0-9]+)/gi, '-')
 }
 
 function stripHash (hash) {
