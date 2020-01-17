@@ -164,7 +164,11 @@ const sites = [
   },
 
   {
+    author: 'Paloma Kop',
+    contact: 'doubleobelisk@gmail.com',
     langs: ['en'],
+    title: 'palomakop.tv',
+    type: 'portfolio',
     url: 'https://palomakop.tv'
   },
 
@@ -791,7 +795,7 @@ const sites = [
     type: 'hybrid',
     url: 'https://estfyr.net'
   },
-  
+
   {
     author: 'Payson Wallach',
     contact: 'payson@paysonwallach.com',
@@ -799,7 +803,7 @@ const sites = [
     langs: ['en'],
     url: 'https://paysonwallach.com'
   },
-  
+
   {
     author: 'icco',
     contact: 'nat@natwelch.com',
@@ -808,7 +812,7 @@ const sites = [
     type: 'portfolio',
     url: 'https://natwelch.com'
   },
-  
+
   {
     author: 'whtrbt',
     contact: 'pi@benjamin.gray.land',
@@ -817,7 +821,7 @@ const sites = [
     type: 'hybrid',
     url: 'https://parkimminent.com',
   },
-  
+
   {
     author: 'hxii',
     contact: 'paul@glushak.net',
