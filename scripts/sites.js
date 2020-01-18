@@ -806,6 +806,14 @@ const sites = [
     type: 'hybrid',
     url: 'https://parkimminent.com',
   },
+  
+  {
+    author: 'aklsh',
+    contact:'akileshkannan@gmail.com',
+    langs: ['en'],
+    url: 'https://aklsh.github.io',
+    type: 'hybrid'
+  },
 
   {
     author: 'hxii',
