@@ -60,16 +60,6 @@ const sites = [
   },
 
   {
-    author: 'electricgecko',
-    contact: 'desk@electricgecko.de',
-    langs: ['de', 'en'],
-    title: 'electricgecko',
-    rss: 'https://electricgecko.de/feed',
-    type: 'blog',
-    url: 'https://electricgecko.de'
-  },
-
-  {
     langs: ['en'],
     url: 'https://hraew.autophagy.io'
   },
@@ -98,11 +88,6 @@ const sites = [
   {
     langs: ['en', 'el'],
     url: 'https://heracl.es'
-  },
-
-  {
-    langs: ['en'],
-    url: 'http://luminghao.com'
   },
 
   {
