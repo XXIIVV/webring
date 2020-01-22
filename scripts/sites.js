@@ -818,8 +818,8 @@ const sites = [
   {
     author: 'clic',
     contact: 'https://t.me/clic_gbacaba',
-	  title: 'CLiC - Colectivo de Live Coders | nodo GBA - CABA',
-	  langs: ['es'],
+    title: 'CLiC - Colectivo de Live Coders | nodo GBA - CABA',
+    langs: ['es'],
     url: 'https://clic-gba-caba.gitlab.io/'
   },
 
