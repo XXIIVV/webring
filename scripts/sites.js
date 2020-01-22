@@ -539,6 +539,15 @@ const sites = [
     url: 'https://kor.nz',
     wiki: 'https://kor.nz/db/glossary.ndtl'
   },
+  
+  {
+    author: 'syx',
+    contact: 'hello@simone.computer',
+    langs: ['en', 'ita'],
+    title: 'Simone\'s Computer',
+    type: 'portfolio',
+    url: 'https://simone.computer'
+  },
 
   {
     author: 'quite',
