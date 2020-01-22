@@ -814,6 +814,14 @@ const sites = [
     url: 'https://aklsh.github.io',
     type: 'hybrid'
   },
+  
+  {
+    author: 'clic',
+    contact: 'https://t.me/clic_gbacaba',
+	  title: 'CLiC - Colectivo de Live Coders | nodo GBA - CABA',
+	  langs: ['es'],
+    url: 'https://clic-gba-caba.gitlab.io/'
+  },
 
   {
     author: 'hxii',
