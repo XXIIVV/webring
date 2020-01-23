@@ -828,7 +828,7 @@ const sites = [
     contact: 'xj9@sunshinegardens.org',
     feed: 'https://xj9.io/.well-known/webring/tw.txt',
     langs: ['en'],
-    title: '災害の̴女王dreamspace',
+    title: 'dreamspace',
     type: 'blog',
     rss: 'https://xj9.io/rss.xml',
     url: 'https://xj9.io',
