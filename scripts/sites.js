@@ -821,6 +821,15 @@ const sites = [
     langs: ['en'],
     type: 'hybrid',
     url: 'https://paulglushak.com'
+  },
+  
+  {
+    author: 'syx',
+    contact: 'hello@simone.computer',
+    langs: ['en', 'ita'],
+    title: 'Simone\'s Computer',
+    type: 'portfolio',
+    url: 'https://simone.computer'
   }
 ]
 
