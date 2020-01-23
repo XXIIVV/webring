@@ -821,6 +821,15 @@ const sites = [
     langs: ['en'],
     type: 'hybrid',
     url: 'https://paulglushak.com'
+  },
+  
+  {
+    author: 'dfr',
+    contact: 'daniel.fdez@pm.me',
+    langs: ['en', 'es'],
+    title: '▲ dfr',
+    type: 'hybrid',
+    url: 'https://dfr.now.sh'
   }
 ]
 
