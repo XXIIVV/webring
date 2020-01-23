@@ -822,8 +822,17 @@ const sites = [
     type: 'hybrid',
     url: 'https://paulglushak.com'
   },
+
+  {
+    author: 'syx',
+    contact: 'hello@simone.computer',
+    langs: ['en', 'ita'],
+    title: 'Simone\'s Computer',
+    type: 'portfolio',
+    url: 'https://simone.computer'
+  },
   
-   {
+  {
     author: 'xj9',
     contact: 'xj9@sunshinegardens.org',
     feed: 'https://xj9.io/.well-known/webring/tw.txt',
