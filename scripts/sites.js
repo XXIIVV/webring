@@ -459,6 +459,7 @@ const sites = [
     title: 'Tom Hackshaw',
     type: 'portfolio',
     url: 'https://tom.org.nz',
+    feed: 'https://a.tom.org.nz/twtxt.txt',
     wiki: 'https://a.tom.org.nz/glossary.ndtl'
   },
 
