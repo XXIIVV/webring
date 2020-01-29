@@ -463,8 +463,13 @@ const sites = [
   },
 
   {
+    title: 'Teknari',
     langs: ['en'],
-    url: 'https://teknari.com'
+    url: 'https://teknari.com',
+    author: 'teknari',
+    contact: 'teknari@teknari.com',
+    feed: 'https://teknari.com/feed.xml',
+    rss: 'https://teknari.com/feed.xml'
   },
 
   {
