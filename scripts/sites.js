@@ -848,6 +848,15 @@ const sites = [
     rss: 'https://xj9.io/rss.xml',
     url: 'https://xj9.io',
     wiki: 'https://xj9.io/.well-known/webring/wiki.ndtl'
+  },
+  
+  {
+    contact: 'joe.jenett@jenett.org',
+    langs: ['en'],
+    rss: 'https://simply.personal.jenett.org/feed',
+    title: 'jenett. simply. personal.',
+    type: 'blog',
+    url: 'https://simply.personal.jenett.org',
   }
 ]
 
