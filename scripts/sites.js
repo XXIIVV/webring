@@ -857,6 +857,13 @@ const sites = [
     title: 'jenett. simply. personal.',
     type: 'blog',
     url: 'https://simply.personal.jenett.org',
+  },
+  
+  {
+    contact: 'michael@novia.studio',
+    langs: ['en'],
+    type: 'portfolio',
+    url: 'https://www.novia.studio',
   }
 ]
 
