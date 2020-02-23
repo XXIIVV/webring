@@ -808,7 +808,7 @@ const sites = [
     langs: ['en'],
     title: 'Park Imminent',
     type: 'hybrid',
-    url: 'https://parkimminent.com',
+    url: 'https://parkimminent.com'
   },
   
   {
@@ -854,7 +854,7 @@ const sites = [
     rss: 'https://simply.personal.jenett.org/feed',
     title: 'jenett. simply. personal.',
     type: 'blog',
-    url: 'https://simply.personal.jenett.org',
+    url: 'https://simply.personal.jenett.org'
   }
 ]
 
