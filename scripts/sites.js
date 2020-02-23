@@ -400,12 +400,10 @@ const sites = [
   {
     author: 'ckipp',
     contact: 'ckipp@pm.me',
-    feed: 'https://chronica.xyz/hallway.txt',
     langs: ['en'],
     title: 'chronica',
-    type: 'wiki',
-    url: 'https://wiki.chronica.xyz',
-    wiki: 'https://chronica.xyz/glossary.ndtl'
+    type: 'hybrid',
+    url: 'https://chronica.xyz'
   },
 
   {
