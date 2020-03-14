@@ -856,6 +856,13 @@ const sites = [
     type: 'blog',
     url: 'https://simply.personal.jenett.org'
   }
+  {
+    author: 'Imperial Industries',
+    contact: 's201g@outlook.com',
+    langs: ['en'],
+    title: 'OVERLORD',
+    url: 'http://96.245.180.111:8887/'
+  },
 ]
 
 /*
