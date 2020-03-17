@@ -649,7 +649,7 @@ const sites = [
     contact: 'dotcomboom@somnolescent.net',
     feed: 'https://dotcomboom.somnolescent.net/twtxt.txt',
     langs: ['en'],
-    title: 'dotcomboom.somnolescent.net',
+    title: 'somnolescent.net',
     url: 'https://dotcomboom.somnolescent.net/'
   },
 
@@ -855,6 +855,15 @@ const sites = [
     title: 'jenett. simply. personal.',
     type: 'blog',
     url: 'https://simply.personal.jenett.org'
+  },
+  
+  {
+    author: 'Wally',
+    contact: 'qpfiffer+xxiivvwebring@gmail.com',
+    langs: ['en'],
+    rss: 'http://q.pfiffer.org/feed.xml',
+    type: 'blog',
+    url: 'http://q.pfiffer.org/'
   },
   
   {
