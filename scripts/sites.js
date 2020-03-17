@@ -855,6 +855,16 @@ const sites = [
     title: 'jenett. simply. personal.',
     type: 'blog',
     url: 'https://simply.personal.jenett.org'
+  },
+
+  
+  {
+    author: 'Wally',
+    contact: 'qpfiffer+xxiivvwebring@gmail.com',
+    langs: ['en'],
+    rss: 'http://q.pfiffer.org/feed.xml',
+    type: 'blog',
+    url: 'http://q.pfiffer.org/'
   }
 ]
 
