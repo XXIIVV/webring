@@ -856,7 +856,6 @@ const sites = [
     type: 'blog',
     url: 'https://simply.personal.jenett.org'
   },
-
   
   {
     author: 'Wally',
@@ -865,6 +864,15 @@ const sites = [
     rss: 'http://q.pfiffer.org/feed.xml',
     type: 'blog',
     url: 'http://q.pfiffer.org/'
+  },
+  
+  {
+    author: 'ashpex',
+    contact: 'ashpex@dismail.de',
+    langs: ['en'],
+    title: 'ashpex',
+    type: 'blog',
+    url: 'https://ashpex.neocities.org'
   }
 ]
 
