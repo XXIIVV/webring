@@ -649,7 +649,7 @@ const sites = [
     contact: 'dotcomboom@somnolescent.net',
     feed: 'https://dotcomboom.somnolescent.net/twtxt.txt',
     langs: ['en'],
-    title: 'dotcomboom.somnolescent.net',
+    title: 'somnolescent.net',
     url: 'https://dotcomboom.somnolescent.net/'
   },
 
