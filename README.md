@@ -65,7 +65,7 @@ To join, create a `.txt` file on your site, add its URL to [your webring entry](
 2015-12-12T12:00:00+01:00   Fiat lux!
 ```
 
-You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated.
+You don't need to allow all origins nor allow any other methods rather than GET, doing so can harm the security of your website, please read about [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) if you intend to do anything more complicated. If you're looking for client, we recommend using [twtxtc](https://hub.darcs.net/dertuxmalwieder/twtxtc/changes).
 
 ### Joining the wiki
 
