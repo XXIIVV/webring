@@ -467,7 +467,6 @@ const sites = [
     url: 'https://teknari.com',
     author: 'teknari',
     contact: 'teknari@teknari.com',
-    feed: 'https://teknari.com/feed.xml',
     rss: 'https://teknari.com/feed.xml'
   },
 
@@ -707,7 +706,6 @@ const sites = [
   {
     author: 'icyphox',
     contact: 'x@icyphox.sh',
-    feed: 'https://icyphox.sh/twtxt.txt',
     langs: ['en'],
     rss: 'https://icyphox.sh/blog/feed.xml',
     type: 'hybrid',
@@ -763,7 +761,6 @@ const sites = [
   {
     author: 'eti',
     contact: 'eti@eti.tf',
-    feed: 'https://y.eti.tf/twtxt.txt',
     langs: ['en'],
     url: 'https://eti.tf'
   },
@@ -788,7 +785,6 @@ const sites = [
   {
     author: 'Payson Wallach',
     contact: 'payson@paysonwallach.com',
-    feed: 'https://paysonwallach.com/blog/feed.xml',
     langs: ['en'],
     url: 'https://paysonwallach.com'
   },
@@ -796,7 +792,6 @@ const sites = [
   {
     author: 'icco',
     contact: 'nat@natwelch.com',
-    feed: 'https://writing.natwelch.com/feed.atom',
     langs: ['en'],
     type: 'portfolio',
     url: 'https://natwelch.com'
