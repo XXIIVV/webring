@@ -719,7 +719,7 @@ const sites = [
     contact: 'roy@royniang.com',
     feed: 'https://telecom.royniang.com/updates.txt',
     langs: ['en'],
-    title:  'roy niang',
+    title: 'roy niang',
     type: 'portfolio',
     url: 'https://royniang.com',
     wiki: 'https://telecom.royniang.com/usefulnotes.ndtl'
@@ -729,7 +729,7 @@ const sites = [
     author: 'raul altosaar',
     contact: 'raul.altosaar@gmail.com',
     langs: ['en'],
-    title:  'raul altosaar',
+    title: 'raul altosaar',
     type: 'portfolio',
     url: 'https://www.raul.earth/'
   },
@@ -810,10 +810,10 @@ const sites = [
     type: 'hybrid',
     url: 'https://parkimminent.com'
   },
-  
+
   {
     author: 'aklsh',
-    contact:'akileshkannan@gmail.com',
+    contact: 'akileshkannan@gmail.com',
     langs: ['en'],
     url: 'https://aklsh.github.io',
     type: 'hybrid'
@@ -835,7 +835,7 @@ const sites = [
     type: 'portfolio',
     url: 'https://simone.computer'
   },
-  
+
   {
     author: 'xj9',
     contact: 'xj9@sunshinegardens.org',
@@ -847,7 +847,7 @@ const sites = [
     url: 'https://xj9.io',
     wiki: 'https://xj9.io/.well-known/webring/wiki.ndtl'
   },
-  
+
   {
     contact: 'joe.jenett@jenett.org',
     langs: ['en'],
@@ -856,7 +856,7 @@ const sites = [
     type: 'blog',
     url: 'https://simply.personal.jenett.org'
   },
-  
+
   {
     author: 'Wally',
     contact: 'qpfiffer+xxiivvwebring@gmail.com',
@@ -865,7 +865,7 @@ const sites = [
     type: 'blog',
     url: 'http://q.pfiffer.org/'
   },
-  
+
   {
     author: 'ashpex',
     contact: 'ashpex@dismail.de',
@@ -883,3 +883,7 @@ No trailing slashes or commas!
 Alphabetize your keys!
 protocol://url.domain.ext
 */
+
+if (module && module.exports) {
+  module.exports = sites
+}

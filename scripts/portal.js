@@ -18,11 +18,11 @@ function Portal (sites) {
 
     const siteTypes = siteTypesArray.reduce((output, siteType) =>
       `${output}<a data-type="${siteType}" href="#" onclick="filterSites(event)">&lt;${siteType}&gt;</a>`,
-      '<a class="currentType" data-type="all" href="#" onclick="filterSites(event)">&lt;all&gt;</a>')
+    '<a class="currentType" data-type="all" href="#" onclick="filterSites(event)">&lt;all&gt;</a>')
 
     const siteLangs = siteLangsArray.reduce((output, siteLang) =>
       `${output}<a data-lang="${siteLang}" href="#" onclick="filterSites(event)">&lt;${siteLang}&gt;</a>`,
-      '<a class="currentLang" data-lang="all" href="#" onclick="filterSites(event)">&lt;all&gt;</a>')
+    '<a class="currentLang" data-lang="all" href="#" onclick="filterSites(event)">&lt;all&gt;</a>')
 
     const listItems = sites.reduce((acc, site, id) =>
       `${acc}<li ${_type(site)} ${_lang(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
@@ -30,7 +30,7 @@ function Portal (sites) {
   }
 
   function _name (site) {
-    return site.title || `${site.url.split('//')[1].replace(/\/+$/,'')}`
+    return site.title || `${site.url.split('//')[1].replace(/\/+$/, '')}`
   }
 
   function _type (site) {
@@ -71,7 +71,7 @@ function Portal (sites) {
     setTimeout(() => { window.location.href = target }, 3000)
   }
 
-  this.navLangs = [... new Set(navigator.languages.map(lang => lang.split('-').shift()))]
+  this.navLangs = [...new Set(navigator.languages.map(lang => lang.split('-').shift()))]
 
   this.sitesMatchingLangs = this.sites
     .filter(site => site.langs && site.langs.some(lang => this.navLangs.includes(lang)))
