@@ -830,7 +830,16 @@ const sites = [
     type: 'portfolio',
     url: 'https://simone.computer'
   },
-
+ 
+  {
+    author: 'merristasis',
+    contact: 'me@ethereal.pw',
+    langs: ['en'],
+    title: 'Merristasis Endpoint',
+    type: 'wiki',
+    url: 'https://ethereal.pw/wiki'
+  },
+  
   {
     author: 'xj9',
     contact: 'xj9@sunshinegardens.org',
