@@ -401,9 +401,9 @@ const sites = [
     author: 'ckipp',
     contact: 'ckipp@pm.me',
     langs: ['en'],
-    title: 'chronica',
+    title: 'chris-kipp.io',
     type: 'hybrid',
-    url: 'https://chronica.xyz'
+    url: 'https://chris-kipp.io'
   },
 
   {
