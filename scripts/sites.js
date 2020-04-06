@@ -868,6 +868,15 @@ const sites = [
     title: 'ashpex',
     type: 'blog',
     url: 'https://ashpex.neocities.org'
+  },
+  
+  {
+    author: 'zvava',
+    contact: 'notminin@pm.me',
+    langs: ['en'],
+    title: 'zvava',
+    type: 'blog',
+    url: 'https://zvava.org/'
   }
 ]
 
