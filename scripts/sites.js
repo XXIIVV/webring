@@ -869,7 +869,6 @@ const sites = [
     type: 'blog',
     url: 'https://ashpex.neocities.org'
   },
-  
   {
     author: 'zvava',
     contact: 'notminin@pm.me',
@@ -877,6 +876,14 @@ const sites = [
     title: 'zvava',
     type: 'blog',
     url: 'https://zvava.org/'
+  },
+  {
+    author: 'greg',
+    contact: 'gregwwolff@gmail.com',
+    langs: ['en'],
+    title: 'reach',
+    type: 'hybrid',
+    url: 'https://greg-wolff.com/reach',
   }
 ]
 
