@@ -877,6 +877,15 @@ const sites = [
     title: 'zvava',
     type: 'blog',
     url: 'https://zvava.org/'
+  },
+  
+  {
+    author: 'Diego',
+    contact: 'diego3893@outlook.com',
+    langs: ['en'],
+    title: 'Diego-Blog',
+    type: 'blog',
+    url: 'http://blog.diego.plus:5800'
   }
 ]
 
