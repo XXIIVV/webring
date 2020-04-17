@@ -877,6 +877,13 @@ const sites = [
     title: 'zvava',
     type: 'blog',
     url: 'https://zvava.org/'
+  },
+
+  {
+    author: 'Amorphous',
+    contact: 'dl.amorphous@gmail.com',
+    langs: ['en'],
+    url: 'https://amorphic.space'
   }
 ]
 
