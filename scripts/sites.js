@@ -168,11 +168,6 @@ const sites = [
   },
 
   {
-    langs: ['en'],
-    url: 'https://systems.ws'
-  },
-
-  {
     author: 'jda0',
     contact: 'hi@2d4.dev',
     feed: 'https://2d4.dev/tw.txt',
