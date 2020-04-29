@@ -10,7 +10,7 @@ const sites = [
     title: 'xxiivv',
     type: 'wiki',
     url: 'https://wiki.xxiivv.com',
-    wiki: 'https://wiki.xxiivv.com/scripts/database/glossary.ndtl'
+    wiki: 'https://wiki.xxiivv.com/src/database/glossary.ndtl'
   },
 
   {
