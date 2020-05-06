@@ -879,7 +879,16 @@ const sites = [
     contact: 'dl.amorphous@gmail.com',
     langs: ['en'],
     url: 'https://amorphic.space'
-  }
+  },
+  {
+    author: 'UserUnknownX',
+    contact: 'userunknownx@protonmail.com',
+    langs: ['blog zh en'],
+    title: 'UserUnknownX QwQ',
+    type: 'hybrid',
+    rss: 'https://userunknownx.github.io//atom.xml',
+    url: 'https://userunknownx.github.io/',
+  },
 ]
 
 /*
