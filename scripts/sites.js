@@ -879,9 +879,17 @@ const sites = [
     contact: 'dl.amorphous@gmail.com',
     langs: ['en'],
     url: 'https://amorphic.space'
+  },
+  
+  {
+    author: 'b-liew',
+    contact: 'contact@b-liew.com',
+    langs: ['en'],
+    title: 'b-liew',
+    type: 'portfolio',
+    url: 'https://www.b-liew.com'
   }
-]
-
+] 
 /*
 Make sure you've read the README!
 Don't forget the comma on the previous entry!
