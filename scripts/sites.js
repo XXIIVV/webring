@@ -879,6 +879,13 @@ const sites = [
     contact: 'dl.amorphous@gmail.com',
     langs: ['en'],
     url: 'https://amorphic.space'
+  },
+  
+    {
+    author: 'Nithin',
+    contact: 'webofnithin@gmail.com',
+    langs: ['en'],
+    url: 'https://nithindavid.me'
   }
 ]
 
