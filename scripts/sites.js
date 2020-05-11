@@ -879,6 +879,16 @@ const sites = [
     contact: 'dl.amorphous@gmail.com',
     langs: ['en'],
     url: 'https://amorphic.space'
+  },
+  
+  {
+    author: 'Edwin Wenink',
+    contact: 'edwinwenink@hotmail.com',
+    langs: ['en', 'nl'],
+    rss: 'https://www.edwinwenink.xyz/index.xml',
+    title: 'Archive Fever',
+    type: 'blog',
+    url: 'https://www.edwinwenink.xyz/'
   }
 ]
 
