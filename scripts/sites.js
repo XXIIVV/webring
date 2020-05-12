@@ -889,6 +889,16 @@ const sites = [
     title: 'Archive Fever',
     type: 'blog',
     url: 'https://www.edwinwenink.xyz/'
+  },
+  
+    {
+    author: 'Anne-Laure Le Cunff',
+    contact: 'alecunff@gmail.com',
+    langs: ['en', 'fr'],
+    rss: 'https://www.mentalnodes.com/sitemap.xml',
+    title: 'Mental Nodes',
+    type: 'hybrid',
+    url: 'https://www.mentalnodes.com'
   }
 ]
 
