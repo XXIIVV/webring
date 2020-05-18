@@ -34,7 +34,7 @@ function Portal (sites) {
   }
 
   function _type (site) {
-    return site.type ? `data-type="${site.type} "` : ''
+    return site.type ? `data-type="${site.type}"` : ''
   }
 
   function _lang (site) {
