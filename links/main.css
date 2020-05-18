@@ -1,7 +1,7 @@
 * { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 
 body { background: #f4f4f4; padding: 0px; margin: 0px; font-family: 'input_mono', 'Monospaced', 'Courier New', 'Courier', monospace; }
-body > div { background: #111; min-height: calc(100vh - 60px); width: calc(100vw - 60px); margin: 15px; padding: 15px; font-size:11px; color:white; position: relative; }
+body > div { background: #111; min-height: calc(100vh - 30px); width: calc(100vw - 30px); padding: 15px; font-size:11px; color:white; position: relative; }
 body > div > ul { padding-bottom: 15px; margin-bottom:15px; }
 body div p { display:block; padding:0px 5px; line-height: 20px;}
 body footer { border-top: 2px solid white; padding-top: 15px; margin-top: 15px;}

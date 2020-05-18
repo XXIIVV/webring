@@ -2,903 +2,419 @@
 
 const sites = [
   {
-    author: 'neauoire',
-    contact: 'aliceffekt@gmail.com',
-    feed: 'https://wiki.xxiivv.com/twtxt.txt',
-    langs: ['en'],
-    rss: 'https://wiki.xxiivv.com/links/rss.xml',
-    title: 'xxiivv',
-    type: 'wiki',
-    url: 'https://wiki.xxiivv.com',
-    wiki: 'https://wiki.xxiivv.com/src/database/glossary.ndtl'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Audacity",
+    url: "https://www.audacityteam.org"
   },
 
   {
-    langs: ['en'],
-    url: 'http://estevancarlos.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "bookmark",
+    title: "Wallabag",
+    url: "https://www.wallabag.org/en"
   },
 
   {
-    author: 'rho',
-    feed: 'https://electro.pizza/twtxt.txt',
-    langs: ['en'],
-    title: 'electro pizza',
-    type: 'blog',
-    rss: 'https://electro.pizza/feed.xml',
-    url: 'https://electro.pizza'
+    contact: "placeholder",
+    langs: [''],
+    type: "bookmark",
+    title: "Polar",
+    url: "https://getpolarized.io/"
   },
 
   {
-    author: 'joshavanier',
-    contact: 'joshavanier@protonmail.com',
-    feed: 'https://avanier.now.sh/tw.txt',
-    langs: ['en'],
-    title: 'Arachne',
-    type: 'wiki',
-    url: 'https://avanier.now.sh'
+    contact: "placeholder",
+    langs: [''],
+    type: "bookmark",
+    title: "Memex",
+    url: "https://getmemex.com/"
   },
 
   {
-    author: 'kaemura',
-    contact: 'chimera1190@gmail.com',
-    feed: 'https://kaemura.com/twttxt.txt',
-    langs: ['en'],
-    title: 'kaemura.com',
-    type: 'blog',
-    url: 'http://kaemura.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "browser",
+    title: "Firefox",
+    url: "https://www.mozilla.org/en-US/firefox/new/"
   },
 
   {
-    author: 'slisne',
-    contact: '@slisne@merveilles.town',
-    feed: 'https://liamcooke.com/merveilles/tw.txt',
-    langs: ['en'],
-    title: 'liamcooke.com',
-    rss: 'https://liamcooke.com/feed.xml',
-    url: 'https://liamcooke.com',
-    wiki: 'https://liamcooke.com/merveilles/wiki.ndtl'
+    contact: "placeholder",
+    langs: [''],
+    type: "browser",
+    title: "Brave",
+    url: "https://brave.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://hraew.autophagy.io'
+    contact: "placeholder",
+    langs: [''],
+    type: "browser",
+    title: "Vivaldi",
+    url: "https://vivaldi.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://evenunto.net'
+    contact: "placeholder",
+    langs: [''],
+    type: "browser",
+    title: "Chromium (ungoogled)",
+    url: "https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://anxl.faith'
+    contact: "placeholder",
+    langs: [''],
+    type: "browser",
+    title: "Ferdi",
+    url: "https://getferdi.com/"
   },
 
   {
-    author: 'xvw',
-    contact: 'xaviervdw@gmail.com',
-    langs: ['fr'],
-    feed: 'https://xvw.github.io/twtxt/hallway.txt',
-    rss: 'https://xvw.github.io/atom.xml',
-    title: 'planet',
-    type: 'hybrid',
-    url: 'https://xvw.github.io'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Thunderbird",
+    url: "https://www.thunderbird.net/"
   },
 
   {
-    langs: ['en', 'el'],
-    url: 'https://heracl.es'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "NextCloud",
+    url: "https://nextcloud.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://turelio.github.io'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Keys.pub",
+    url: "https://keys.pub"
   },
 
   {
-    author: 'lectronice',
-    contact: 'i.love.spam@lectronice.com',
-    feed: 'https://lectronice.com/hallway/twtxt.txt',
-    langs: ['en'],
-    title: 'shards',
-    type: 'blog',
-    url: 'https://shards.lectronice.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "email",
+    title: "Thunderbird",
+    url: "https://www.thunderbird.net/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://craze.co.uk'
+    contact: "placeholder",
+    langs: [''],
+    type: "email",
+    title: "Kanmail",
+    url: "https://kanmail.io/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://shaneckel.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "email",
+    title: "MailDrop",
+    url: "https://maildrop.cc/"
   },
 
   {
-    author: 'cblgh',
-    contact: 'cabal://cblgh.org',
-    feed: 'https://cblgh.org/twtxt.txt',
-    langs: ['en'],
-    title: 'cblgh.org',
-    url: 'https://cblgh.org'
+    contact: "placeholder",
+    langs: [''],
+    type: "email",
+    title: "ProtonMail",
+    url: "https://protonmail.com/"
   },
 
   {
-    author: 'afk',
-    contact: 'afk@ellugar.co',
-    langs: ['en'],
-    rss: 'http://feeds.ellugar.co/ellugar-logs',
-    title: 'ellugar',
-    type: 'wiki',
-    url: 'https://ellugar.co'
+    contact: "placeholder",
+    langs: [''],
+    type: "email",
+    title: "Tutanota",
+    url: "https://www.tutanota.com/"
   },
 
   {
-    author: 'Cameron Higby-Naquin',
-    contact: 'me@chigby.org',
-    langs: ['en'],
-    title: 'chigby.org',
-    type: 'portfolio',
-    url: 'http://chigby.org'
+    contact: "placeholder",
+    langs: [''],
+    type: "email",
+    title: "FastMail",
+    url: "https://www.fastmail.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://longest.voyage'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Firefox Send",
+    url: "https://send.firefox.com"
   },
 
   {
-    author: 'Paloma Kop',
-    contact: 'doubleobelisk@gmail.com',
-    langs: ['en'],
-    title: 'palomakop.tv',
-    type: 'portfolio',
-    url: 'https://palomakop.tv'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Open Street Map",
+    url: "https://www.openstreetmap.org"
   },
 
   {
-    langs: ['en'],
-    url: 'https://v-os.ca'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "VLC",
+    url: "https://www.videolan.org/vlc/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://jmandel.xyz'
+    contact: "placeholder",
+    langs: [''],
+    type: "instant messaging",
+    title: "Riot",
+    url: "https://about.riot.im/"
   },
 
   {
-    author: 'jda0',
-    contact: 'hi@2d4.dev',
-    feed: 'https://2d4.dev/tw.txt',
-    langs: ['en'],
-    title: '2d4.dev',
-    url: 'https://2d4.dev',
-    wiki: 'https://2d4.dev/wiki.ndtl'
+    contact: "placeholder",
+    langs: [''],
+    type: "instant messaging",
+    title: "Signal",
+    url: "https://www.signal.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://nathanwentworth.co'
+    contact: "placeholder",
+    langs: [''],
+    type: "note taking",
+    title: "Standard Notes",
+    url: "https://standardnotes.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://uonai.space'
+    contact: "placeholder",
+    langs: [''],
+    type: "note taking",
+    title: "Simplenote",
+    url: "https://simplenote.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://controls.ee'
+    contact: "placeholder",
+    langs: [''],
+    type: "note taking",
+    title: "Joplin",
+    url: "https://joplinapp.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://wasin.io'
+    contact: "placeholder",
+    langs: [''],
+    type: "note taking",
+    title: "Mak mini",
+    url: "https://mak.ink/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://inns.studio'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Keepass",
+    url: "https://keepass.info/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://kokorobot.ca'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Bitwarden",
+    url: "https://bitwarden.com/"
   },
 
   {
-    author: 'jrc03c',
-    contact: 'josh@ameyama.com',
-    langs: ['en'],
-    title: 'ameyama',
-    type: 'blog',
-    rss: 'https://ameyama.com/blog/rss.xml',
-    url: 'https://ameyama.com',
-    wiki: 'https://ameyama.com/data/wiki.ndtl'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Firefox Lockwise",
+    url: "https://www.mozilla.org/en-US/firefox/lockwise/"
   },
 
   {
-    author: 'wakest',
-    contact: '@liaizon@wake.st',
-    feed: 'https://wake.st/twtxt.txt',
-    langs: ['en'],
-    title: 'wake.st',
-    url: 'https://wake.st'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Bitwarden",
+    url: "https://bitwarden.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://xarene.la'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Leepass",
+    url: "https://lesspass.com/#/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://alex.zyzhang.me'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Butter cup",
+    url: "https://buttercup.pw/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://bildwissenschaft.vortok.info'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Keeweb",
+    url: "https://keeweb.info/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://jakofranko.github.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "KeepassX",
+    url: "https://www.keepassx.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://aeriform.io'
+    contact: "placeholder",
+    langs: [''],
+    type: "password manager",
+    title: "Psono",
+    url: "https://psono.com/"
   },
 
   {
-    langs: ['en', 'de'],
-    url: 'http://blog.lucasdidthis.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Kap",
+    url: "https://getkap.co"
   },
 
   {
-    author: 'npisanti',
-    contact: 'nicola@npisanti.com',
-    langs: ['en'],
-    rss: 'http://npisanti.com/journal/rss.xml',
-    title: 'npisanti.com',
-    url: 'http://npisanti.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "search engine",
+    title: "DuckDuckGo",
+    url: "https://duckduckgo.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://underscorediscovery.ca'
+    contact: "placeholder",
+    langs: [''],
+    type: "search engine",
+    title: "StartPage",
+    url: "https://www.startpage.com/"
   },
 
   {
-    author: 'drisc',
-    contact: 'cory@drisc.io',
-    feed: 'https://drisc.io/hallway/twtxt.txt',
-    langs: ['en'],
-    title: 'drisc.io',
-    type: 'wiki',
-    url: 'https://drisc.io'
+    contact: "placeholder",
+    langs: [''],
+    type: "search engine",
+    title: "Searx",
+    url: "https://searx.me/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://ricky.codes'
+    contact: "placeholder",
+    langs: [''],
+    type: "social network",
+    title: "Diaspora",
+    url: "https://diasporafoundation.org/"
   },
 
   {
-    author: 'Marshall Bowers',
-    contact: 'elliott.codes@gmail.com',
-    langs: ['en'],
-    title: 'maxdeviant.com',
-    type: 'hybrid',
-    url: 'https://maxdeviant.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "social network",
+    title: "Aether",
+    url: "https://getaether.net/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://tynandebold.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "social network",
+    title: "Tildes",
+    url: "https://tildes.net/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://gytis.co'
+    contact: "placeholder",
+    langs: [''],
+    type: "social network",
+    title: "Mastodon",
+    url: "https://joinmastodon.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://nomand.co'
+    contact: "placeholder",
+    langs: [''],
+    type: "social network",
+    title: "Plemora",
+    url: "https://pleroma.social/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://memoriata.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "social network",
+    title: "Pixelfed",
+    url: "https://pixelfed.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://mmm.s-ol.nu'
+    contact: "placeholder",
+    langs: [''],
+    type: "spreadsheet",
+    title: "LibreOffice Calc",
+    url: "https://www.libreoffice.org/discover/calc/"
   },
 
   {
-    contact: 'ubuwaits@gmail.com',
-    langs: ['en'],
-    rss: 'https://chad.is/rss.xml',
-    url: 'https://chad.is'
+    contact: "placeholder",
+    langs: [''],
+    type: "text editor",
+    title: "MacDown",
+    url: "https://macdown.uranusjr.com/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://smidgeo.com/bots'
+    contact: "placeholder",
+    langs: [''],
+    type: "text editor",
+    title: "Vim",
+    url: "https://www.vim.org/"
   },
 
   {
-    langs: ['en', 'ru'],
-    url: 'https://iko.soy'
+    contact: "placeholder",
+    langs: [''],
+    type: "text editor",
+    title: "LibreOffice Writer",
+    url: "https://www.libreoffice.org/discover/writer/"
   },
 
   {
-    langs: ['en'],
-    url: 'http://atelieroilandsugar.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Jitsi",
+    url: "https://jitsi.org/"
   },
 
   {
-    langs: ['en'],
-    url: 'https://magoz.is'
-  },
-
-  {
-    author: 'Szymon Kaliski',
-    langs: ['en'],
-    rss: 'https://szymonkaliski.com/feed.xml',
-    type: 'hybrid',
-    url: 'https://szymonkaliski.com'
-  },
-
-  {
-    author: 'setphen',
-    feed: 'https://phse.net/twtxt/merv.txt',
-    langs: ['en'],
-    rss: 'https://phse.net/post/index.xml',
-    title: 'phse.net',
-    type: 'blog',
-    url: 'https://phse.net'
-  },
-
-  {
-    author: 'rosano',
-    langs: ['en'],
-    url: 'https://rosano.ca',
-    wiki: 'https://rosano.ca/wiki.ndtl'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://soyboysky.github.io'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://gndclouds.cc'
-  },
-
-  {
-    langs: ['en', 'fr'],
-    url: 'https://xuv.be'
-  },
-
-  {
-    langs: ['en', 'zh'],
-    url: 'https://dsdshcym.github.io'
-  },
-
-  {
-    author: 'ckipp',
-    contact: 'ckipp@pm.me',
-    langs: ['en'],
-    title: 'chris-kipp.io',
-    type: 'hybrid',
-    url: 'https://chris-kipp.io'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://boffosocko.com'
-  },
-
-  {
-    author: 'kodedninja',
-    contact: 'karamanhunor@pm.me',
-    feed: 'https://t.seed.hex22.org/twtxt.txt',
-    langs: ['en'],
-    title: 'hex22',
-    url: 'https://hex22.org'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://patrikarvidsson.com'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://sophieleetmaa.com'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://xinniw.github.io'
-  },
-
-  {
-    author: 'm',
-    contact: 'mboxxed@gmail.com',
-    feed: 'https://mboxed.github.io/sodatsu/tw.txt',
-    langs: ['en'],
-    title: 'sodatsu',
-    type: 'wiki',
-    url: 'https://mboxed.github.io/sodatsu'
-  },
-
-  {
-    langs: ['en'],
-    url: 'https://letters.vexingworkshop.com'
-  },
-
-  {
-    author: 'tomupom',
-    contact: 'tom@tomhackshaw.com',
-    langs: ['en'],
-    title: 'Tom Hackshaw',
-    type: 'portfolio',
-    url: 'https://tom.org.nz',
-    feed: 'https://a.tom.org.nz/twtxt.txt',
-    wiki: 'https://a.tom.org.nz/glossary.ndtl'
-  },
-
-  {
-    title: 'Teknari',
-    langs: ['en'],
-    url: 'https://teknari.com',
-    author: 'teknari',
-    contact: 'teknari@teknari.com',
-    rss: 'https://teknari.com/feed.xml'
-  },
-
-  {
-    author: 'clic',
-    contact: 'https://t.me/clic_laplata',
-    langs: ['es'],
-    title: 'Colectivo de Livecoders',
-    type: 'blog',
-    url: 'https://colectivo-de-livecoders.gitlab.io'
-  },
-
-  {
-    langs: ['es'],
-    title: 'madewithtea.com',
-    type: 'blog',
-    url: 'https://www.madewithtea.com'
-  },
-
-  {
-    author: 'amorris',
-    feed: 'https://feed.amorris.ca/hallway.txt',
-    langs: ['en'],
-    title: 'amorris',
-    type: 'blog',
-    url: 'https://amorris.ca',
-    wiki: 'https://wiki.amorris.ca/glossary.ndtl'
-  },
-
-  {
-    langs: ['en'],
-    title: 'miha-co',
-    type: 'portfolio',
-    url: 'http://www.miha-co.ca'
-  },
-
-  {
-    author: 'buzzert',
-    langs: ['en'],
-    title: 'buzzert.net',
-    type: 'blog',
-    url: 'https://buzzert.net'
-  },
-
-  {
-    author: 'stuartpb',
-    contact: 's@stuartpb.com',
-    feed: 'https://twtxt.stuartpb.com/xxiivv.txt',
-    langs: ['en'],
-    title: 'notes.stuartpb.com',
-    type: 'wiki',
-    url: 'https://notes.stuartpb.com/'
-  },
-
-  {
-    author: 'serocell',
-    contact: 'psignal@s900.net',
-    feed: 'https://xxiii.co/twtxt.txt',
-    langs: ['en'],
-    rss: 'https://serocell.com/feeds/serocell.xml',
-    title: 'xxiii',
-    type: 'portfolio',
-    url: 'https://xxiii.co'
-  },
-
-  {
-    author: 'kormyen',
-    contact: 'h@kor.nz',
-    feed: 'https://kor.nz/twtxt.txt',
-    langs: ['en'],
-    title: 'kor',
-    type: 'wiki',
-    url: 'https://kor.nz',
-    wiki: 'https://kor.nz/db/glossary.ndtl'
-  },
-
-  {
-    author: 'quite',
-    contact: 'quite@hack.org',
-    feed: 'https://lublin.se/twtxt.txt',
-    langs: ['en'],
-    url: 'https://lublin.se'
-  },
-
-  {
-    author: 'zanneth',
-    contact: 'root@zanneth.com',
-    langs: ['en'],
-    title: 'zanneth.com',
-    type: 'blog',
-    url: 'https://zanneth.com'
-  },
-
-  {
-    author: 'eli_oat',
-    contact: 'hi@eli.li',
-    feed: 'https://txt.eli.li/twtxt/twtxt.txt',
-    langs: ['en'],
-    rss: 'https://eli.li/feed.rss',
-    title: 'eli.li',
-    type: 'blog',
-    url: 'https://eli.li'
-  },
-
-  {
-    author: 'gueorgui',
-    contact: 'hello@gueorgui.net',
-    langs: ['en'],
-    title: 'Gueorgui Tcherednitchenko',
-    type: 'portfolio',
-    url: 'https://gueorgui.net'
-  },
-
-  {
-    author: 'Tate Carson',
-    contact: 'tatecarson@gmail.com',
-    langs: ['en'],
-    title: 'Tate Carson',
-    type: 'portfolio',
-    url: 'https://www.tatecarson.com'
-  },
-
-  {
-    author: 'azlen',
-    contact: 'webring@azlen.me',
-    feed: 'https://azlen.me/twtxt.txt',
-    langs: ['en'],
-    title: 'azlen.me',
-    type: 'wiki',
-    url: 'https://azlen.me',
-    wiki: 'https://azlen.me/glossary.ndtl'
-  },
-
-  {
-    author: 'vega',
-    contact: 'vegac@protonmail.com',
-    feed: 'https://opinionatedguide.github.io/twtxt.txt',
-    langs: ['en'],
-    title: 'OpGuides',
-    url: 'https://opinionatedguide.github.io/'
-  },
-
-  {
-    author: 'cmaughan',
-    contact: 'mornymorny@gmail.com',
-    feed: 'https://chrismaughan.com/twtxt.txt',
-    langs: ['en'],
-    title: 'CMaughan',
-    url: 'https://chrismaughan.com/'
-  },
-
-  {
-    author: 'RaelZero',
-    contact: 'gaz.gong@gmail.com',
-    title: 'oddworlds soliloquy',
-    langs: ['en', 'es'],
-    type: 'blog',
-    url: 'https://oddworlds.org/'
-  },
-
-  {
-    author: 'Fundor 333',
-    contact: 'blog@fundor333.com',
-    feed: 'https://fundor333.com/twtxt.txt',
-    langs: ['en'],
-    title: 'Fundor333',
-    type: 'blog',
-    url: 'https://fundor333.com/'
-  },
-
-  {
-    contact: 'm@cass.si',
-    langs: ['en'],
-    url: 'https://cass.si'
-  },
-
-  {
-    author: 'dcb',
-    contact: 'dotcomboom@somnolescent.net',
-    feed: 'https://dotcomboom.somnolescent.net/twtxt.txt',
-    langs: ['en'],
-    title: 'somnolescent.net',
-    url: 'https://dotcomboom.somnolescent.net/'
-  },
-
-  {
-    author: 'Nihiltarier',
-    contact: 'arachi@airmail.cc',
-    langs: ['en'],
-    title: 'cadmican',
-    url: 'https://cadmican.neocities.org/'
-  },
-
-  {
-    author: 'Jonathan Skjøtt',
-    contact: 'jonathan@jskjott.com',
-    langs: ['en'],
-    title: 'jskjott',
-    url: 'https://jskjott.com'
-  },
-
-  {
-    author: 'sixeyes',
-    contact: 'elmusho@gmail.com',
-    langs: ['en'],
-    title: 'sixey.es',
-    type: 'portfolio',
-    url: 'https://sixey.es/'
-  },
-
-  {
-    author: '0xdstn',
-    contact: '0xdstn@protonmail.com',
-    langs: ['en'],
-    title: '0xdstn',
-    type: 'wiki',
-    url: 'https://tilde.town/~dustin/'
-  },
-
-  {
-    author: 'James',
-    contact: 'henderson.j@protonmail.com',
-    langs: ['en'],
-    rss: 'https://jameschip.io/index.xml',
-    title: 'James Chip',
-    url: 'https://jameschip.io/'
-  },
-
-  {
-    author: 'Patrick Monaghan',
-    contact: '0x5f.manpat@gmail.com',
-    langs: ['en'],
-    type: 'portfolio',
-    url: 'https://patrick-is.cool'
-  },
-
-  {
-    author: 'icyphox',
-    contact: 'x@icyphox.sh',
-    langs: ['en'],
-    rss: 'https://icyphox.sh/blog/feed.xml',
-    type: 'hybrid',
-    url: 'https://icyphox.sh'
-  },
-
-  {
-    author: 'roy niang',
-    contact: 'roy@royniang.com',
-    feed: 'https://telecom.royniang.com/updates.txt',
-    langs: ['en'],
-    title: 'roy niang',
-    type: 'portfolio',
-    url: 'https://royniang.com',
-    wiki: 'https://telecom.royniang.com/usefulnotes.ndtl'
-  },
-
-  {
-    author: 'raul altosaar',
-    contact: 'raul.altosaar@gmail.com',
-    langs: ['en'],
-    title: 'raul altosaar',
-    type: 'portfolio',
-    url: 'https://www.raul.earth/'
-  },
-
-  {
-    author: 'Cristi Constantin',
-    langs: ['en'],
-    rss: 'https://crlf.site/feed.xml',
-    title: 'Cr;Lf;',
-    type: 'hybrid',
-    url: 'https://crlf.site'
-  },
-
-  {
-    contact: 'johannesg@johannesg.com',
-    langs: ['en'],
-    title: 'Jóhannes Gunnar Þorsteinsson',
-    type: 'hybrid',
-    url: 'https://www.johannesg.com'
-  },
-
-  {
-    author: 'Michael Rupert',
-    contact: 'michaelrupert@fastmail.com',
-    langs: ['en'],
-    title: 'Provoke Analog',
-    type: 'hybrid',
-    url: 'https://provokeanalog.com'
-  },
-
-  {
-    author: 'eti',
-    contact: 'eti@eti.tf',
-    langs: ['en'],
-    url: 'https://eti.tf'
-  },
-
-  {
-    author: 'rezmason',
-    contact: 'jeremysachs@rezmason.net',
-    langs: ['en'],
-    title: 'rezmason.net',
-    type: 'hybrid',
-    url: 'https://rezmason.net'
-  },
-
-  {
-    contact: 'email@estfyr.net',
-    langs: ['en', 'cz'],
-    title: 'estfyr.net',
-    type: 'hybrid',
-    url: 'https://estfyr.net'
-  },
-
-  {
-    author: 'Payson Wallach',
-    contact: 'payson@paysonwallach.com',
-    langs: ['en'],
-    url: 'https://paysonwallach.com'
-  },
-
-  {
-    author: 'icco',
-    contact: 'nat@natwelch.com',
-    langs: ['en'],
-    type: 'portfolio',
-    url: 'https://natwelch.com'
-  },
-
-  {
-    author: 'whtrbt',
-    contact: 'pi@benjamin.gray.land',
-    langs: ['en'],
-    title: 'Park Imminent',
-    type: 'hybrid',
-    url: 'https://parkimminent.com'
-  },
-
-  {
-    author: 'aklsh',
-    contact: 'akileshkannan@gmail.com',
-    langs: ['en'],
-    url: 'https://aklsh.github.io',
-    type: 'hybrid'
-  },
-
-  {
-    author: 'hxii',
-    contact: 'paul@glushak.net',
-    langs: ['en'],
-    type: 'hybrid',
-    url: 'https://paulglushak.com'
-  },
-
-  {
-    author: 'syx',
-    contact: 'hello@simone.computer',
-    langs: ['en', 'ita'],
-    title: 'Simone\'s Computer',
-    type: 'portfolio',
-    url: 'https://simone.computer'
-  },
-
-  {
-    author: 'xj9',
-    contact: 'xj9@sunshinegardens.org',
-    feed: 'https://xj9.io/.well-known/webring/tw.txt',
-    langs: ['en'],
-    title: 'dreamspace',
-    type: 'blog',
-    rss: 'https://xj9.io/rss.xml',
-    url: 'https://xj9.io',
-    wiki: 'https://xj9.io/.well-known/webring/wiki.ndtl'
-  },
-
-  {
-    contact: 'joe.jenett@jenett.org',
-    langs: ['en'],
-    rss: 'https://simply.personal.jenett.org/feed',
-    title: 'jenett. simply. personal.',
-    type: 'blog',
-    url: 'https://simply.personal.jenett.org'
-  },
-
-  {
-    author: 'Wally',
-    contact: 'qpfiffer+xxiivvwebring@gmail.com',
-    langs: ['en'],
-    rss: 'http://q.pfiffer.org/feed.xml',
-    type: 'blog',
-    url: 'http://q.pfiffer.org/'
-  },
-
-  {
-    author: 'ashpex',
-    contact: 'ashpex@dismail.de',
-    langs: ['en'],
-    title: 'ashpex',
-    type: 'blog',
-    url: 'https://ashpex.neocities.org'
-  },
-  
-  {
-    author: 'zvava',
-    contact: 'notminin@pm.me',
-    langs: ['en'],
-    title: 'zvava',
-    type: 'blog',
-    url: 'https://zvava.org/'
-  },
-
-  {
-    author: 'Amorphous',
-    contact: 'dl.amorphous@gmail.com',
-    langs: ['en'],
-    url: 'https://amorphic.space'
-  },
-  
-  {
-    author: 'Edwin Wenink',
-    contact: 'edwinwenink@hotmail.com',
-    langs: ['en', 'nl'],
-    rss: 'https://www.edwinwenink.xyz/index.xml',
-    title: 'Archive Fever',
-    type: 'blog',
-    url: 'https://www.edwinwenink.xyz/'
-  },
-  
-    {
-    author: 'Anne-Laure Le Cunff',
-    contact: 'alecunff@gmail.com',
-    langs: ['en', 'fr'],
-    rss: 'https://www.mentalnodes.com/sitemap.xml',
-    title: 'Mental Nodes',
-    type: 'hybrid',
-    url: 'https://www.mentalnodes.com'
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "PeerTube",
+    url: "https://joinpeertube.org/"
   }
 ]
 

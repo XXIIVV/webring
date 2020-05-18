@@ -1,14 +1,12 @@
 ---
 name: add.site
-about: Submitting a new site to the webring
+about: Submitting a new site 
 title: ''
 labels: ''
-assignees: neauoire, kodedninja, joshavanier, ckipp01
+assignees: yourcontact
 
 ---
 
-**Position of webring icon on site:**
+**Name of the site**
 
-ex: footer, header
-
-**Make sure the contact key is also filled out in case we need to contact you**
+**URL of the site**

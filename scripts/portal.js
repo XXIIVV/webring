@@ -7,8 +7,8 @@ function Portal (sites) {
 
   // Templates
 
-  const _readme = '<p class="readme">This webring is an attempt to inspire artists & developers to build their own website and share traffic among each other. The ring welcomes personalized websites such as <b>diaries, wikis & portfolios</b>.</p><p>To add yourself to the ring, submit a <a href="https://github.com/XXIIVV/webring/edit/master/scripts/sites.js" target="_blank">Pull Request</a>.<br />If you found a broken link, please <a href="https://github.com/XXIIVV/webring/issues/new" target="_blank">report it</a>.</p>'
-  const _buttons = '<p class="buttons"><a href="#random" onClick="portal.reload()">Random</a> | <a href="https://github.com/XXIIVV/webring">Information</a> <a id="icon" href="#random" onClick="portal.reload()"></a> | <a href="hallway.html">The Hallway</a> | <a href="wiki.html">The Wiki</a> | <a id="opml">OPML</a></p>'
+  const _readme = '<p class="readme">This is a list of privacy-friendly software products. Products that respect people&#39;s data.</p><p>To add your product, submit an <a href="https://github.com/yourcontact/webring/issues/new/choose" target="_blank">Issue</a>.<br />If you found a broken link, please <a href="https://github.com/yourcontact/webring/issues/new" target="_blank">report it</a>.</p>'
+  const _buttons = '<p class="buttons"> <a href="#random" onClick="portal.reload()">Random</a>  |  <a href="https://github.com/yourcontact/webring">Information</a> <a id="icon" href="https://webring.xxiivv.com/#random"></a> </p>'
 
   function _directory (sites) {
     const siteTypesArray = [...new Set(sites.map(site => site.type).filter(Boolean))]
@@ -21,8 +21,8 @@ function Portal (sites) {
     '<a class="currentType" data-type="all" href="#" onclick="filterSites(event)">&lt;all&gt;</a>')
 
     const siteLangs = siteLangsArray.reduce((output, siteLang) =>
-      `${output}<a data-lang="${siteLang}" href="#" onclick="filterSites(event)">&lt;${siteLang}&gt;</a>`,
-    '<a class="currentLang" data-lang="all" href="#" onclick="filterSites(event)">&lt;all&gt;</a>')
+      `${output}<a data-lang="${siteLang}" href="#" onclick="filterSites(event)"></a>`, // >&lt;${siteLang}&gt;</a>`
+    '<a class="currentLang" data-lang="all" href="#" onclick="filterSites(event)"></a>') // >&lt;all&gt;</a>'
 
     const listItems = sites.reduce((acc, site, id) =>
       `${acc}<li ${_type(site)} ${_lang(site)} id='${id}'><a href='${site.url}'>${_name(site)}</a></li>`, '')
