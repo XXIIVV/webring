@@ -1,1 +1,1 @@
-This is a website to share a list of privacy-friendly apps that respect people's data.
+This is a website to share a list of privacy-friendly software products. Products that respect people's data.
