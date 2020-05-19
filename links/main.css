@@ -1,102 +1,12 @@
-* { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
-
-body { background: #f4f4f4; padding: 0px; margin: 0px; font-family: 'input_mono', 'Monospaced', 'Courier New', 'Courier', monospace; }
-body > div { background: #111; min-height: calc(100vh - 60px); width: calc(100vw - 60px); margin: 15px; padding: 15px; font-size:11px; color:white; position: relative; }
-body > div > ul { padding-bottom: 15px; margin-bottom:15px; }
-body div p { display:block; padding:0px 5px; line-height: 20px;}
-body footer { border-top: 2px solid white; padding-top: 15px; margin-top: 15px;}
-body footer a { text-decoration: underline; }
-body strong { font-weight: bold; }
-body .selected { background: white; color:black; }
-
-/* portal */
-body #portal { display: flex; flex-direction: column; }
-body #portal main { flex: 1 0 auto; }
-body #portal main,
-body #portal footer { max-width: 1080px; flex-shrink: 0 }
-body #portal #icon { display: block; width: 30px; height: 30px; background-image: url(../icon.white.svg); background-size: cover; background-repeat: no-repeat; position: absolute; bottom: 15px; right:15px; background-position: center; padding:0px }
-body #portal ul { columns:1;  }
-body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
-body #portal ul li:before { content: attr(id) ")"; }
-body #portal ul li::after { content:"<" attr(data-type) attr(data-lang) ">"; color:#555; }
-body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
-body #portal ul li a:visited { color:#ccc; text-decoration: none;}
-body #portal a:active,
-body #portal a:focus,
-body #portal a:hover { text-decoration: underline; }
-
-body #portal nav { display: flex; flex-direction: row; margin-bottom: 15px }
-body #portal nav a { margin: 0 5px; color: gray }
-body #portal nav a.currentType,
-body #portal nav a.currentLang { color: white }
-
-body aside { min-width: 200px; padding: 0 15px; line-height: 16px; display: none; }
-body aside ul { margin-bottom: 15px; }
-body aside #channels li:before, body #sidebar #categories li:before { content:'/'; }
-body aside #users li:before { content:'@'; }
-body aside span.right { color: #555; float: right; }
-body aside li { text-transform: lowercase; cursor: pointer; }
-
-/* hallway */
-body #hallway #entries { display: flex; margin-top: 35px; }
-body #hallway #entries > div { flex-grow: 1; }
-body #hallway #showbar { position: absolute;top: 0px;width: 92%;height: 50px;  background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M11,4 L11,18 M4,4 L 4,18 M18,4 L18,18' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round'/></svg>");background-repeat: no-repeat;background-position: right;background-size: 25px; }
-body #hallway #hidebar { position: absolute;top: 0px;width: 100%;height: 50px;background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><path d='M5,5 L17,17 M17,5 L5,17' stroke='%23555' fill='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat: no-repeat;background-position: left;background-size: 25px; }
-body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:100px; }
-body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px; padding-bottom: 16px;}
-body #hallway .entry .author { font-weight: bold; position: absolute; left: 0px; }
-body #hallway .entry .body { display: block;border-bottom: 1px solid #333;padding-bottom: 10px;margin-bottom: 10px; }
-body #hallway .entry .body a { text-decoration: underline; }
-body #hallway .entry .body .channel { display: inline-block; border-radius: 1px; font-weight: bold; color: #777; }
-body #hallway .entry .body .user { display: inline-block; border-radius: 1px; font-weight: bold; color: #777; }
-body #hallway .entry .body .user.local::before { content:'@';color: #777; }
-body #hallway .entry .body .user.external::before { content:'^';color: #777; }
-body #hallway .entry .body .tag { display: inline-block; border-radius: 1px; font-weight: bold; color: #777; }
-body #hallway .entry.highlight .author { color:#555; }
-body #hallway .entry:hover .author { color:#ccc; }
-body #hallway .entry:hover .date { color:#ccc; }
-body #hallway .entry:hover .body { color:#ccc; border-bottom-color: #555 }
-body #hallway #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 20px; border-top: 2px solid white; padding-top: 20px; margin-top: 15px; min-height: 45px; line-height: 15px;}
-
-body #hallway #pagination { margin: 10px; text-align: center; }
-body #hallway #pagination span { padding: 3px; margin: 2px; cursor: pointer; }
-
-/* wiki */
-body #wiki { background: #ccc; color:#333; }
-body #wiki main { display: flex; }
-body #wiki main { flex: 1; }
-body #wiki main h1 { font-size: 1.3em; margin: 5px 0; font-weight: bold; }
-body #wiki main div.related { border-bottom: 1px solid white; margin-bottom: 10px; }
-body #wiki #main { width: 100%; }
-body #wiki #main > a { text-decoration: underline; }
-body #wiki #main a:hover { text-decoration: underline; }
-body #wiki #main ul li { line-height: 15px; }
-body #wiki aside { min-width: 220px; }
-body #wiki aside  { overflow-y: scroll; height: calc(100% - 15px); position: absolute; right: 0;}
-body #wiki aside a { display: inline-block; width: 135px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding: 7px; }
-body #wiki aside li { line-height: 7px; }
-body #wiki aside li:before { display: none; }
-body #wiki aside a:before { content: '/'; }
-body #wiki aside a:after { content: attr(data-msgs) " msgs"; position: absolute; right: 20px; color:#555; }
-body #wiki ul.term { margin-bottom: 15px; }
-body #wiki ul.term li.name { margin-bottom: 5px; }
-body #wiki #footer { padding-left: 60px; background-image: url(../icon.white.svg); background-size: 40px; background-repeat: no-repeat; background-position: 0px 18px; border-top: 2px solid white; padding-top: 12px; margin-top: 15px; min-height: 45px; line-height: 15px;}
-
-/* progress indicator */
-body #progress { color: #777; }
-
-@media (min-width: 630px) {
-  body aside { display: block; }
-  body #portal ul { columns: 3;}
-  body #hallway #entries { margin-top: 0; }
-  body #hallway #showbar { display: none; }
-  body #hallway #hidebar { display: none; }
-  body #hallway #footer { max-width: calc(100% - 300px); }
-  body #wiki main { max-width: calc(100% - 230px); }
-  body #wiki footer { margin-right: 225px; max-width: calc(100% - 300px); }
-}
-
-@media (min-width: 992px) {
-  body #portal ul { columns: 4;}
-}
-
+body { padding: 0; margin: 0 0 0 0; font-family: serif; max-width: 900px }
+body a { color: black; text-decoration: none }
+body a:hover { background-color: black; color: white }
+body a:before { content:'{' }
+body a:after { content:'}' }
+body > ol { margin: 30px; padding: 0px 30px 30px; column-count: 3; display: block; border-bottom:2px solid black }
+body > ol > li { padding-right: 30px; margin-right:30px }
+body > ol > li:target { background:black }
+body > ol > li:target a { color: white }
+body > footer { margin:30px }
+body > footer > p { max-width: 600px }
+body > footer > img { display: inline-block; width:100px; margin-bottom: -5px; margin-bottom:30px; }
