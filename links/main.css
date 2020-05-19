@@ -10,3 +10,5 @@ body > ol > li:target a { color: white }
 body > footer { margin:30px }
 body > footer > p { max-width: 600px }
 body > footer > img { display: inline-block; width:100px; margin-bottom: -5px; margin-bottom:30px; }
+@media screen and (max-width: 800px) { body > ol { column-count: 2; } } 
+@media screen and (max-width: 600px) { body > ol { column-count: 1; } }
