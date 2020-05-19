@@ -9,6 +9,9 @@ body footer a { text-decoration: underline; }
 body strong { font-weight: bold; }
 body .selected { background: white; color:black; }
 
+/* manifesto */
+body > div { text-align: justify; width: 80vh;}
+
 /* portal */
 body #portal { display: flex; flex-direction: column; }
 body #portal main { flex: 1 0 auto; }
