@@ -9,7 +9,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ```
 
 1) Add the webring icon to your website html.
-2) Add your website information to the [index.html](https://github.com/XXIIVV/webring/edit/master/index.html) file. Keep your link name short, and don't leave a trailing `/` in the href attribute. Use a sensible alphanumeric value for the id.
+2) Add your website information to the [index.html](https://github.com/XXIIVV/webring/edit/master/index.html) file. Keep your link name short, and don't leave a trailing `/` in the `href` attribute. Use a sensible alphanumeric value for the id.
 3) Submit a Pull Request with **the location of the webring icon** on your site. Pull requests with blank descriptions will be rejected.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
@@ -34,4 +34,4 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 ## Help
 
-The ring is managed by [@neauoire](https://twitter.com/neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more about the webring [here](https://wiki.xxiivv.com/webring).
+The ring is managed by [@neauoire](https://merveilles.town/@neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more about the webring [here](https://wiki.xxiivv.com/webring).

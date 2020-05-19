@@ -6,13 +6,6 @@ permalink: /404.html
 <head>
   <meta charset="utf-8">
   <title>Loading..</title>
+  <meta http-equiv='refresh' content='0; url=index.html' />
 </head>
-<body style='background:black'>
-  <script>
-    const parts = window.location.pathname.split("/")
-    const target = parts.slice(-1);
-    parts.splice(-1)
-    document.location.href = parts.join("/")+"/#"+target
-  </script>
-</body>
 </html>
