@@ -10,7 +10,7 @@ body strong { font-weight: bold; }
 body .selected { background: white; color:black; }
 
 /* manifesto */
-body > div { text-align: justify; width: 80vh;}
+body #manifesto { text-align: justify; max-width: 65vh;}
 
 /* portal */
 body #portal { display: flex; flex-direction: column; }
@@ -28,7 +28,7 @@ body #portal a:active,
 body #portal a:focus,
 body #portal a:hover { text-decoration: underline; }
 
-body #portal nav { row; margin-bottom: 15px }
+body #portal nav { margin-bottom: 15px }
 body #portal nav a { margin: 0 5px; color: #555555 }
 body #portal nav a.currentType,
 body #portal nav a.currentLang { color: #0247FE }
