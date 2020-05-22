@@ -36,7 +36,7 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
 </li>
 ```
 
-[twtxt](https://twtxt.readthedocs.io/en/stable/) is a decentralized, minimalist microblogging service for hackers. You're welcome to add your twtxt feed alongside your RSS feed.
+[twtxt](https://twtxt.readthedocs.io/en/stable/) is a decentralized, minimalist microblogging service for hackers. You're welcome to add your twtxt feed alongside your RSS feed. If you're looking a minimal C99 client for twtxt, try [this](https://github.com/neauoire/twtxtc).
 
 ### Circular Linking
 
