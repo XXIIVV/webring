@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="rss">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <title>Webring</title>
   </head>
   <body id="twtxt">
-    <ol id="rss">
+    <ol>
       <li data-lang="en" id="xxiivv">
         <a href="https://wiki.xxiivv.com">xxiivv</a>
         <a href="https://wiki.xxiivv.com/twtxt.txt" class="twtxt">twtxt</a>
@@ -438,8 +438,8 @@ body > footer { margin:30px }
 body > footer > p { max-width: 600px }
 body > footer > p span.hide { display: none; }
 body > footer > img { display: inline-block; width:100px; margin-bottom: -5px; margin-bottom:30px; }
-body:target > ol li a.twtxt, ol:target li a.rss { background:black; color: white; display: inline }
-body:target > footer > p > span.hide { display: inline; }
+body:target > ol li a.twtxt, html:target li a.rss { background:black; color: white; display: inline }
+body:target > footer > p > span.hide, html:target footer > p > span.hide { display: inline; }
 @media screen and (max-width: 800px) { body > ol { column-count: 2; } } 
 @media screen and (max-width: 600px) { body > ol { column-count: 1; } }
     </style>
