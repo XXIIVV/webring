@@ -20,9 +20,23 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 
 The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual or written work. Your business site is probably not the best fit for the webring, and will be rejected.
 
-If your website requires Javascript to display the majority of its content or to navigate, it will be rejected.
+If your website requires Javascript to display the majority of its content or to navigate, it will be rejected. Your website needs its own domain, we do not accept `github.io` domains anymore.
 
 If it's seen that your website is in violation to any of these rules your site will be removed from the webring. If you fix the issues, feel free to submit another PR to join back in.
+
+#### Adding your RSS/TWTXT
+
+To add an extra feed to your entry, add them within your `<li>` tag as follow:
+
+```
+<li data-lang="en" id="xxiivv">
+  <a href="https://wiki.xxiivv.com">xxiivv</a>
+  <a href="https://wiki.xxiivv.com/twtxt.txt" class="twtxt">twtxt</a>
+  <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
+</li>
+```
+
+[twtxt](https://twtxt.readthedocs.io/en/stable/) is a decentralized, minimalist microblogging service for hackers. You're welcome to add your twtxt feed alongside your RSS feed. If you're looking a minimal C99 client for twtxt, try [this](https://github.com/neauoire/twtxtc).
 
 ### Circular Linking
 
