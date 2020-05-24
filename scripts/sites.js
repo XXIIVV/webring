@@ -415,6 +415,14 @@ const sites = [
     type: "other",
     title: "PeerTube",
     url: "https://joinpeertube.org/"
+  },
+
+  {
+    contact: "placeholder",
+    langs: [''],
+    type: "other",
+    title: "Indico",
+    url: "https://getindico.io/"
   }
 ]
 
