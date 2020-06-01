@@ -213,8 +213,8 @@ const sites = [
     contact: "placeholder",
     langs: [''],
     type: "note taking",
-    title: "Mak mini",
-    url: "https://mak.ink/"
+    title: "Mak",
+    url: "https://inns.studio/mak"
   },
 
   {
@@ -423,6 +423,14 @@ const sites = [
     type: "other",
     title: "Indico",
     url: "https://getindico.io/"
+  },
+
+  {
+    contact: "placeholder",
+    langs: [''],
+    type: "note taking",
+    title: "Left",
+    url: "https://hundredrabbits.itch.io/left"
   }
 ]
 
