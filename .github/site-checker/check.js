@@ -28,17 +28,18 @@ const validStatusCode = (code) => code >= 200 && code < 400;
 
 async function getStatusTotals(links) {
     const total = links.length;
+    const errorMessages = [];
     const getStatus = async (link) => {
         try {
             const res = await axios.get(link);
             const valid = validStatusCode(res.status);
             if (!valid) {
-                console.log(`${link} does not have a valid status code`);
+                errorMessages.push(`${link} does not have a valid status code`);
                 return false;
             }
             return true;
         } catch {
-            console.log(`${link} cound not be reached`);
+            errorMessages.push(`${link} cound not be reached`);
             return false;
         }
     }
@@ -46,7 +47,8 @@ async function getStatusTotals(links) {
     const alive = status.filter(status => status).length;
     return {
         alive,
-        total
+        total,
+        errorMessages
     }
 }
 
@@ -67,19 +69,21 @@ async function getBadge(alive, total) {
 (async function() {
     const html = await getIndexHTML();
     const links = await getLinks(html);
-    const {alive, total} = await getStatusTotals(links);
+    const {alive, total, errorMessages} = await getStatusTotals(links);
     const badgeSvg = await getBadge(alive, total);
 
     const badgePath = '../../_badges/reachable-site.svg';
-    console.log('badgeSvg', badgeSvg);
+    const errorFilePath = '../../_badges/reachable-site-errors.txt';
+    const errorMessage = errorMessages.join('/n');
+    console.log('errorMessage', errorMessage);
     const writeFileAsync = promisify(fs.writeFile);
     const mkdirAsync = promisify(fs.mkdir);
     await mkdirAsync(path.dirname(badgePath), { recursive: true });
     await writeFileAsync(badgePath, badgeSvg);
+    await writeFileAsync(errorFilePath, errorMessage);
     process.exit(0);
 })()
 .catch(e => {
     console.log(`Error: ${e.message}`);
     process.exit(1);
 });
-
