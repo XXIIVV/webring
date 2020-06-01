@@ -26,7 +26,7 @@ jobs:
     - name: Deploy to image-data branch
       uses: peaceiris/actions-gh-pages@v3
       with:
-        publish_dir: ./_ci
+        publish_dir: ./_badges
         publish_branch: image-data
         github_token: ${{ secrets.GITHUB_TOKEN }}
         user_name: 'github-actions[bot]'
