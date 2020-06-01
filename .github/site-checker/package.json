@@ -1,0 +1,15 @@
+{
+  "name": "site-checker",
+  "version": "0.0.1",
+  "description": "script to check sites if webring sites are reachable",
+  "main": "check.js",
+  "scripts": {
+    "ci": "node check.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "jsdom": "^16.2.2"
+  }
+}
