@@ -74,7 +74,7 @@ async function getBadge(alive, total) {
 
     const badgePath = '../../_badges/reachable-site.svg';
     const errorFilePath = '../../_badges/reachable-site-errors.txt';
-    const errorMessage = errorMessages.join('/n');
+    const errorMessage = errorMessages.join('\r\n');
     console.log('errorMessage', errorMessage);
     const writeFileAsync = promisify(fs.writeFile);
     const mkdirAsync = promisify(fs.mkdir);
