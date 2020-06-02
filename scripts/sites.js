@@ -431,6 +431,14 @@ const sites = [
     type: "note taking",
     title: "Left",
     url: "https://hundredrabbits.itch.io/left"
+  },
+
+  {
+    contact: "placeholder",
+    langs: [''],
+    type: "note taking",
+    title: "Zettlr",
+    url: "https://www.zettlr.com/"
   }
 ]
 
