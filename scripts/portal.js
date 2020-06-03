@@ -7,7 +7,7 @@ function Portal (sites) {
 
   // Templates
 
-  const _readme = '<p class="readme">This is a list of privacy-friendly software products. Products that respect people&#39;s data.</p><p>To add your product, submit an <a href="https://github.com/yourcontact/list/issues/new/choose" target="_blank">Issue</a>.<br />If you found a broken link, please <a href="https://github.com/yourcontact/list/issues/new" target="_blank">report it</a>.</p>'
+  const _readme = '<p class="readme">This is a list of privacy-friendly software products. Products that respect people&#39;s data.</p><p>To add your product, submit an <a href="https://github.com/yourcontact/list/issues/new/" target="_blank">Issue</a>.<br />If you found a broken link, please <a href="https://github.com/yourcontact/list/issues/new" target="_blank">report it</a>.</p>'
   const _buttons = '<p class="buttons"> <a href="/manifesto.html">Manifesto</a> | <a href="#random" onClick="portal.reload()">Random</a>  |  <a href="https://github.com/yourcontact/list">Information</a> |  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> <a id="icon" href="https://webring.xxiivv.com/#random"></a> </p>'
 
   function _directory (sites) {
