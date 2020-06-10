@@ -1,4 +1,4 @@
-This is a website with a list of privacy-friendly products.
+A list of privacy-friendly products.
 
 https://www.list.yctct.com/
 
