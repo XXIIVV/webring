@@ -76,7 +76,7 @@ const sites = [
   {
     contact: "placeholder",
     langs: [''],
-    type: "other",
+    type: "email",
     title: "Thunderbird",
     url: "https://www.thunderbird.net/"
   },
@@ -404,7 +404,7 @@ const sites = [
   {
     contact: "placeholder",
     langs: [''],
-    type: "other",
+    type: "voip",
     title: "Jitsi",
     url: "https://jitsi.org/"
   },
@@ -439,8 +439,18 @@ const sites = [
     type: "note taking",
     title: "Zettlr",
     url: "https://www.zettlr.com/"
+  },
+
+  {
+    contact: "placeholder",
+    langs: [''],
+    type: "phone",
+    title: "The Light Phone",
+    url: "https://www.thelightphone.com"
   }
 ]
+
+
 
 /*
 Make sure you've read the README!
