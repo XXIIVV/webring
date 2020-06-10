@@ -1,1 +1,5 @@
-This is a website to share a list of privacy-friendly software products. Products that respect people's data.
+This is a list of privacy-friendly products.
+
+### Add a product
+
+If you will like to add a product, let me know in an [Issue](https://github.com/yourcontact/list/issues/new)
