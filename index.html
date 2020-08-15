@@ -471,27 +471,32 @@
         If you found a broken link, please <a href="https://github.com/XXIIVV/webring/issues/new" target="_blank">report it</a>.<br />
         Learn <a href="https://github.com/XXIIVV/webring" target="_blank">more</a> | <a href="#twtxt">Show twtxt</a> | <a href="#rss">Show rss</a><span class='hide'> | <a href='#'>Hide Feeds</a></span>
       </p>
-      <img src="icon.black.large.svg" alt="icon"/>
+      <img id="icon" src="icon.black.large.svg" alt="icon"/>
     </footer>
     <style>
-body { padding: 0; margin: 0 0 0 0; font-family: serif; max-width: 900px; }
-body a { color: black; text-decoration: none; }
-body a:hover { background-color: black; color: white; }
+:root { --color-alpha: white; --color-beta: black; }
+body { padding: 0; margin: 0 0 0 0; background-color: var(--color-alpha); color: var(--color-beta); font-family: serif; max-width: 900px; }
+body a { color: var(--color-beta); text-decoration: none; }
+body a:hover { background-color: var(--color-beta); color: var(--color-alpha); }
 body a:before { content: '{'; }
 body a:after { content: '}'; }
-body > ol { margin: 30px; padding: 0px 30px 30px; column-count: 3; display: block; border-bottom: 2px solid black; }
+body > ol { margin: 30px; padding: 0px 30px 30px; column-count: 3; display: block; border-bottom: 2px solid var(--color-beta); }
 body > ol > li { padding-right: 30px; }
-body > ol > li:target { background: black; }
+body > ol > li:target { background: var(--color-beta); }
 body > ol > li a.rss, body > ol > li a.twtxt { display: none; }
-body > ol > li:target a { color: white; }
+body > ol > li:target a { color: var(--color-alpha); }
 body > footer { margin: 30px; }
 body > footer > p { max-width: 600px; }
 body > footer > p span.hide { display: none; }
 body > footer > img { display: inline-block; width: 100px; margin-bottom: -5px; margin-bottom: 30px; }
-body:target > ol li a.twtxt, html:target li a.rss { background: black; color: white; display: inline; }
+body:target > ol li a.twtxt, html:target li a.rss { background: var(--color-beta); color: var(--color-alpha); display: inline; }
 body:target > footer > p > span.hide, html:target footer > p > span.hide { display: inline; }
 @media screen and (max-width: 800px) { body > ol { column-count: 2; } }
 @media screen and (max-width: 600px) { body > ol { column-count: 1; } }
+@media (prefers-color-scheme: dark) {
+  :root { --color-alpha: black; --color-beta: white; }
+  #icon { filter: invert(100%); }
+}
     </style>
   </body>
 </html>
