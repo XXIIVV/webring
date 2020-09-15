@@ -31,7 +31,7 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
 ```
 <li data-lang="en" id="xxiivv">
   <a href="https://wiki.xxiivv.com">xxiivv</a>
-  <a href="https://wiki.xxiivv.com/twtxt.txt" class="twtxt">twtxt</a>
+  <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
   <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
 </li>
 ```
