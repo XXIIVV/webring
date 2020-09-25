@@ -18,9 +18,9 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 
 **Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected**.
 
-The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual or written work. Your business site is probably not the best fit for the webring, and will be rejected.
+The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual or written works. Your business site is probably not the best fit for the webring, and will be rejected. 
 
-If your website requires Javascript to display the majority of its content or to navigate, it will be rejected. Your website needs its own domain, we do not accept `github.io` domains anymore.
+If your website requires Javascript to display the majority of its content or to navigate, it will be rejected. Your website must count at least 10 pages and include and about page. You must have your own domain name, we do not accept `github.io` subdomains. 
 
 If it's seen that your website is in violation to any of these rules your site will be removed from the webring. If you fix the issues, feel free to submit another PR to join back in.
 
