@@ -46,6 +46,6 @@ Instead of linking to the directory, you can also link to the next link in the r
 <a href='https://webring.xxiivv.com/#xxiivv' target='_blank' rel="noopener noreferrer"><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
-## Help
+## contribution 
 
 The ring is managed by [@neauoire](https://merveilles.town/@neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more about the webring [here](https://wiki.xxiivv.com/webring).
