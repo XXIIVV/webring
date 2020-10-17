@@ -14,7 +14,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
 
-### Webring criteria
+### Webring Terms & Conditions
 
 **Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected**.
 
@@ -46,6 +46,6 @@ Instead of linking to the directory, you can also link to the next link in the r
 <a href='https://webring.xxiivv.com/#xxiivv' target='_blank' rel="noopener noreferrer"><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
-## Help
+## Help 24x7
 
 The ring is managed by [@neauoire](https://merveilles.town/@neauoire), but any member of the network is also welcome to join this repository as a collaborator to help manage new links and Pull Requests. Read more about the webring [here](https://wiki.xxiivv.com/webring).
