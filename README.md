@@ -33,10 +33,11 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
   <a href="https://wiki.xxiivv.com">xxiivv</a>
   <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
   <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
+  <img src='https://wiki.xxiivv.com/media/services/button.gif'/>
 </li>
 ```
 
-[twtxt](https://twtxt.readthedocs.io/en/stable/) is a decentralized, minimalist microblogging service for hackers. You're welcome to add your twtxt feed alongside your RSS feed. If you're looking a minimal C99 client for twtxt, try [this](https://github.com/neauoire/twtxtc).
+[twtxt](https://twtxt.readthedocs.io/en/stable/) is a decentralized, minimalist microblogging service for hackers. You're welcome to add your twtxt feed alongside your RSS feed. If you're looking a minimal C99 client for twtxt, try [this](https://github.com/neauoire/twtxtc). The `button.gif` is a 88x31 icon hosted on your server.
 
 ### Circular Linking
 

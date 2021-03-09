@@ -8,11 +8,12 @@
     <title>Webring</title>
   </head>
   <body id="twtxt">
-    <ol>
+    <ol id="icons">
       <li data-lang="en" id="xxiivv">
         <a href="https://wiki.xxiivv.com">xxiivv</a>
         <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
         <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
+        <img src='https://wiki.xxiivv.com/media/services/button.gif' />
       </li>
       <li data-lang="en" id="1">
         <a href="http://estevancarlos.com">estevancarlos</a>
@@ -579,7 +580,7 @@
         To add yourself to the ring, submit a <a href="https://github.com/XXIIVV/webring#join-the-webring" target="_blank">pull request</a>.<br />
         Looking for something specific, use the <a href="https://lieu.cblgh.org" target="_blank">search</a>.<br />
         Found a broken link, please <a href="https://github.com/XXIIVV/webring/issues/new" target="_blank">report it</a>.<br /><br />
-        <a href="#twtxt">Show twtxt</a> | <a href="#rss">Show rss</a><span class="hide"> | <a href="#">Hide Feeds</a></span> | <a href="https://lieu.cblgh.org/random" target="_blank">Random</a>
+        <a href="#icons">Show icons</a> | <a href="#twtxt">Show twtxt</a> | <a href="#rss">Show rss</a><span class="hide"> | <a href="#">Hide Feeds</a></span> | <a href="https://lieu.cblgh.org/random" target="_blank">Random</a>
       </p>
       <img id="icon" src="icon.black.large.svg" alt="icon"/>
     </footer>
@@ -592,9 +593,8 @@ body a:before { content: '{'; }
 body a:after { content: '}'; }
 body > ol { margin: 30px; padding: 0px 30px 30px; column-count: 3; display: block; border-bottom: 2px solid var(--color-beta); }
 body > ol > li { padding-right: 30px; }
-body > ol > li:target { background: var(--color-beta); }
+body > ol > li img { display: none; margin:5px; }
 body > ol > li a.rss, body > ol > li a.twtxt { display: none; }
-body > ol > li:target a { color: var(--color-alpha); }
 body > ol > li a:visited:before, body > ol > li a:visited:after { color: var(--color-alpha); }
 body > footer { margin: 30px; }
 body > footer > p { max-width: 600px; }
@@ -602,6 +602,9 @@ body > footer > p span.hide { display: none; }
 body > footer > img { display: inline-block; width: 100px; margin-bottom: -5px; margin-bottom: 30px; }
 body:target > ol li a.twtxt, html:target li a.rss { background: var(--color-beta); color: var(--color-alpha); display: inline; }
 body:target > footer > p > span.hide, html:target footer > p > span.hide { display: inline; }
+body > ol:target > li > img { display:block; }
+body > ol > li:target a { color: var(--color-alpha); }
+body > ol > li:target { background: var(--color-beta); }
 @media screen and (max-width: 800px) { body > ol { column-count: 2; } }
 @media screen and (max-width: 600px) { body > ol { column-count: 1; } }
 @media (prefers-color-scheme: dark) {
