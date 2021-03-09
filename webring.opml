@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.1">
+	<head>
+		<title>webring.opml</title>
+	</head>
+<body>
+	<outline text="webring" title="webring">
+		<outline text="&amp;Cr; &amp;Lf;" title="&amp;Cr; &amp;Lf;" description="" type="rss" version="RSS" htmlUrl="https://crlf.site/" xmlUrl="https://crlf.site/feed.xml"/>
+		<outline text="0xFF" title="0xFF" description="" type="rss" version="RSS" htmlUrl="http://0xff.nu/" xmlUrl="https://0xff.nu/feed.xml"/>
+		<outline text="Bismuth Garden" title="Bismuth Garden" description="" type="rss" version="RSS" htmlUrl="https://bismuth.garden/" xmlUrl="https://bismuth.garden/feed.xml"/>
+		<outline text="Blog on Stephen Lindberg" title="Blog on Stephen Lindberg" description="" type="rss" version="RSS" htmlUrl="http://phse.net/post/" xmlUrl="https://phse.net/post/index.xml"/>
+		<outline text="Chad Mazzola" title="Chad Mazzola" description="" type="rss" version="RSS" htmlUrl="https://chad.is/" xmlUrl="https://chad.is/rss.xml"/>
+		<outline text="Dampfkraft" title="Dampfkraft" description="" type="rss" version="RSS" htmlUrl="https://dampfkraft.com/" xmlUrl="https://www.dampfkraft.com/index.rss"/>
+		<outline text="dreamspace" title="dreamspace" description="" type="rss" version="RSS" htmlUrl="https://sunshinegardens.org/~xj9/feed.atom" xmlUrl="https://sunshinegardens.org/~xj9/rss.xml"/>
+		<outline text="Edwin Wenink" title="Edwin Wenink" description="" type="rss" version="RSS" htmlUrl="https://www.edwinwenink.xyz/" xmlUrl="https://www.edwinwenink.xyz/index.xml"/>
+		<outline text="electro·pizza" title="electro·pizza" description="" type="rss" version="RSS" htmlUrl="https://electro.pizza/" xmlUrl="https://electro.pizza/feed.xml"/>
+		<outline text="ellugar Logs" title="ellugar Logs" description="" type="rss" version="RSS" htmlUrl="https://ellugar.co/logs" xmlUrl="http://feeds.ellugar.co/ellugar-logs"/>
+		<outline text="ƒdisk.space" title="ƒdisk.space" description="" type="rss" version="RSS" htmlUrl="https://fdisk.space/" xmlUrl="https://fdisk.space/rss.xml"/>
+		<outline text="icyphox's blog" title="icyphox's blog" description="" type="rss" version="RSS" htmlUrl="https://icyphox.sh/" xmlUrl="https://icyphox.sh/blog/feed.xml"/>
+		<outline text="inqlab" title="inqlab" description="" type="rss" version="RSS" htmlUrl="http://inqlab.net/" xmlUrl="https://inqlab.net/posts.xml"/>
+		<outline text="Julien Desrosiers" title="Julien Desrosiers" description="" type="rss" version="RSS" htmlUrl="https://www.juliendesrosiers.com/" xmlUrl="https://www.juliendesrosiers.com/feed.xml"/>
+		<outline text="koikoi" title="koikoi" description="" type="rss" version="RSS" htmlUrl="https://royniang.com/Journal" xmlUrl="https://royniang.com/rss.xml"/>
+		<outline text="Longest Voyage" title="Longest Voyage" description="" type="rss" version="RSS" htmlUrl="https://longest.voyage/" xmlUrl="https://longest.voyage/index.xml"/>
+		<outline text="nchrs.xyz" title="nchrs.xyz" description="" type="rss" version="RSS" htmlUrl="https://nchrs.xyz/" xmlUrl="https://nchrs.xyz/rss.xml"/>
+		<outline text="Nicola Pisanti's Journal" title="Nicola Pisanti's Journal" description="" type="rss" version="RSS" htmlUrl="http://npisanti.com/journal/" xmlUrl="http://npisanti.com/journal/rss.xml"/>
+		<outline text="Northern Information" title="Northern Information" description="" type="rss" version="RSS" htmlUrl="https://nor.the-rn.info/" xmlUrl="https://nor.the-rn.info/feed.xml"/>
+		<outline text="Quinlan Pfiffer's Site" title="Quinlan Pfiffer's Site" description="" type="rss" version="RSS" htmlUrl="http://q.pfiffer.org/" xmlUrl="https://q.pfiffer.org/feed.xml"/>
+		<outline text="Resevoir" title="Resevoir" description="" type="rss" version="RSS" htmlUrl="https://resevoir.net/" xmlUrl="https://resevoir.net/rss.xml"/>
+		<outline text="romainaubert" title="romainaubert" description="" type="rss" version="RSS" htmlUrl="https://romainaubert.com/" xmlUrl="https://romainaubert.com/feed.rss"/>
+		<outline text="Roy Tang::All Content" title="Roy Tang::All Content" description="" type="rss" version="RSS" htmlUrl="https://roytang.net/" xmlUrl="https://roytang.net/index.xml"/>
+		<outline text="serocell - media feed" title="serocell - media feed" description="" type="rss" version="RSS" htmlUrl="http://serocell.com/" xmlUrl="https://serocell.com/feeds/serocell.xml"/>
+		<outline text="simply. personal." title="simply. personal." description="" type="rss" version="RSS" htmlUrl="https://simply.personal.jenett.org/" xmlUrl="https://simply.personal.jenett.org/feed/"/>
+		<outline text="Szymon Kaliski" title="Szymon Kaliski" description="" type="rss" version="RSS" htmlUrl="http://github.com/dylang/node-rss" xmlUrl="https://szymonkaliski.com/feed.xml"/>
+		<outline text="Teknari Blog" title="Teknari Blog" description="" type="rss" version="RSS" htmlUrl="https://www.teknari.com/blog" xmlUrl="https://teknari.com/feed.xml"/>
+		<outline text="The James Chip RSS" title="The James Chip RSS" description="" type="rss" version="RSS" htmlUrl="https://www.jameschip.io/" xmlUrl="http://www.jameschip.io/index.xml"/>
+		<outline text="Thoughts · Felix Elsner" title="Thoughts · Felix Elsner" description="" type="rss" version="RSS" htmlUrl="https://ix5.org/thoughts/" xmlUrl="https://ix5.org/thoughts/feeds/all.atom.xml"/>
+		<outline text="Travis Shears Personal Site" title="Travis Shears Personal Site" description="" type="rss" version="RSS" htmlUrl="https://travisshears.com/" xmlUrl="https://travisshears.com/index.xml"/>
+		<outline text="XXIIVV" title="XXIIVV" description="" type="rss" version="RSS" htmlUrl="https://wiki.xxiivv.com/ Journal" xmlUrl="https://wiki.xxiivv.com/links/rss.xml"/>
+		<outline text="雨山" title="雨山" description="" type="rss" version="RSS" htmlUrl="http://ameyama.com/" xmlUrl="https://ameyama.com/blog/rss.xml"/>
+	</outline>
+	</body>
+</opml>

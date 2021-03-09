@@ -1,50 +1,14 @@
-* { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:collapse;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
-
-body { background:#f4f4f4; padding:0px; margin:0px; }
-body div { display:block; background: #111;min-height: calc(100vh - 60px);width: calc(100vw - 60px);margin: 15px;color: #333;padding: 15px;font-family:'input_mono_regular', 'Monospaced','Courier New',courier;font-size:11px; position: relative; border-radius: 2px; color:white;}
-body div ul { max-width: 800px; border-bottom: 2px solid white;padding-bottom: 15px;margin-bottom:15px; overflow: hidden;}
-body div p { display:block; padding:0px 5px; line-height: 20px; max-width: 600px}
-body div p a { text-decoration: underline;}
-body div p a:hover { text-decoration: underline; }
-body div p b { font-weight: normal; font-family: 'input_mono_medium' }
-body div p.readme { max-width:500px; }
-
-/* Hallway */
-
-body #hallway .entry { line-height: 16px; display: block; position: relative; padding-left:140px; margin-bottom: 5px;border-bottom: 1px solid #333;padding-bottom: 5px; }
-body #hallway .entry .date { color: #555;display: block;float:right; margin-left:20px;}
-body #hallway .entry .author { font-family: 'input_mono_medium'; position: absolute;left: 0px;  }
-body #hallway .entry .author:after { content:":"; }
-body #hallway .entry .body { max-width: 400px;  }
-body #hallway .entry .body a { text-decoration: underline; }
-body #hallway .entry .body .channel { background: white;color: black;display: inline-block;padding: 0px 5px;line-height: 20px;border-radius: 2px; font-family: 'input_mono_medium'; }
-body #hallway .entry.highlight .author { color:#555; }
-body #hallway .entry:hover .author { color:#ccc; }
-body #hallway .entry:hover .date { color:#ccc; }
-body #hallway .entry:hover .body { color:#ccc; }
-body #hallway p { padding-left: 60px;background-image: url(../icon.white.svg);background-size: 40px;background-repeat: no-repeat;background-position: 0px 0px; }
-body #hallway ul { max-width: 100%; }
-body #hallway ul li:last-child { border-bottom:0px; }
-
-/* Portal */
-
-body #portal #icon { display: block;width: 30px;height: 30px;background-image: url(../icon.white.svg);background-size: cover;background-repeat: no-repeat;position: absolute;bottom: 15px;right:15px;background-position: center;padding:0px }
-body #portal ul { columns:3;  }
-body #portal ul li { display:block; padding-left:5px; text-overflow: ellipsis; text-transform: lowercase;}
-body #portal ul li.wiki::after { content:"<wiki>"; color:#555; }
-body #portal ul li.blog::after { content:"<blog>"; color:#555; }
-body #portal ul li a { line-height: 20px; padding:0px 5px; text-decoration: none;}
-body #portal ul li a:visited { color:#ccc; text-decoration: none;}
-body #portal ul li a:hover { text-decoration: underline; }
-
-@media (max-width: 730px) {
-  body #portal ul li span.counter { display: none }
-}
-@media (max-width: 630px) {
-  body #portal ul { columns: 2 !important; }
-  body #portal ul li span.counter { display: none }
-}
-@media (max-width: 530px) {
-  body #portal ul { columns: 1 !important; }
-  body #portal ul li span.counter { display: inline }
-}
+body { padding: 0; margin: 0 0 0 0; font-family: serif; max-width: 900px }
+body a { color: black; text-decoration: none }
+body a:hover { background-color: black; color: white }
+body a:before { content:'{' }
+body a:after { content:'}' }
+body > ol { margin: 30px; padding: 0px 30px 30px; column-count: 3; display: block; border-bottom:2px solid black }
+body > ol > li { padding-right: 30px; margin-right:30px }
+body > ol > li:target { background:black }
+body > ol > li:target a { color: white }
+body > footer { margin:30px }
+body > footer > p { max-width: 600px }
+body > footer > img { display: inline-block; width:100px; margin-bottom: -5px; margin-bottom:30px; }
+@media screen and (max-width: 800px) { body > ol { column-count: 2; } } 
+@media screen and (max-width: 600px) { body > ol { column-count: 1; } }
