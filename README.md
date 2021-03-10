@@ -4,7 +4,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 
 ## Join the webring
 
-```
+```html
 <a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
@@ -28,7 +28,7 @@ If it's seen that your website is in violation to any of these rules your site w
 
 To add an extra feed to your entry, add them within your `<li>` tag as follow:
 
-```
+```html
 <li data-lang="en" id="xxiivv">
   <a href="https://wiki.xxiivv.com">xxiivv</a>
   <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
@@ -43,7 +43,7 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
 
 Instead of linking to the directory, you can also link to the next link in the ring by adding parts of your site or domain in the hash of the request url:
 
-```
+```html
 <a href='https://webring.xxiivv.com/#xxiivv' target='_blank' rel="noopener noreferrer"><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
