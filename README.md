@@ -1,5 +1,7 @@
 # Webring
 
+[![Generated reachable sites badge](https://raw.githubusercontent.com/XXIIVV/webring/reachable-sites/reachable-site.svg)](https://raw.githubusercontent.com/XXIIVV/webring/reachable-sites/reachable-site-errors.txt)
+
 This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share rich hand-crafted websites such as **diaries, wikis & portfolios**.
 
 ## Join the webring

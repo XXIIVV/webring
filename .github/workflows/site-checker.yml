@@ -1,0 +1,31 @@
+# This workflow will check to see if if sites in the webring are reachable
+
+name: Reachable Sites Check
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron:  '0 0/4 * * *' #every 4 hours
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - name: install deps
+      run: (cd .github/site-checker && npm i)
+    - name: check sites
+      run: (cd .github/site-checker && npm run ci)
+    - name: Deploy to reachable-sites branch
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_dir: ./_badges
+        publish_branch: reachable-sites
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
