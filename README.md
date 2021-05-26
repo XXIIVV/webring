@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share rich hand-crafted websites such as **diaries, wikis & portfolios**.
+This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own personal websites, and share traffic among each other. The webring's aim is to share rich hand-crafted websites such as **diaries, wikis & portfolios**.
 
 ## Join the webring
 
@@ -16,7 +16,7 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 
 ### Webring criteria
 
-The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual and written works. Your website must count at least 10 content pages and include an about page, blog posts are not counted as content pages. You must have your own domain name, we do not accept `github.io` subdomains. 
+Your website must count at least 10 content pages and include an about page, blog posts are not counted as content pages. You must have your own domain name, we do not accept `github.io` subdomains. 
 
 Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected.  If your website requires Javascript/CSS3 to display the majority of its content or to navigate, it will be rejected. Your business homepage is not a good candidate for the webring, and will be rejected. 
 
