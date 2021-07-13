@@ -37,6 +37,7 @@
 		<outline text="Travis Shears Personal Site" title="Travis Shears Personal Site" description="" type="rss" version="RSS" htmlUrl="https://travisshears.com/" xmlUrl="https://travisshears.com/index.xml"/>
 		<outline text="XXIIVV" title="XXIIVV" description="" type="rss" version="RSS" htmlUrl="https://wiki.xxiivv.com/ Journal" xmlUrl="https://wiki.xxiivv.com/links/rss.xml"/>
 		<outline text="雨山" title="雨山" description="" type="rss" version="RSS" htmlUrl="http://ameyama.com/" xmlUrl="https://ameyama.com/blog/rss.xml"/>
+		<outline text="embyr.sh" title="embyr.sh" description="" type="rss" version="RSS" htmlUrl="https://embyr.sh/" xmlUrl="https://embyr.sh/index.xml"/>
 	</outline>
 	</body>
 </opml>
