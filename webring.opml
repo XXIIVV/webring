@@ -38,6 +38,7 @@
 		<outline text="XXIIVV" title="XXIIVV" description="" type="rss" version="RSS" htmlUrl="https://wiki.xxiivv.com/ Journal" xmlUrl="https://wiki.xxiivv.com/links/rss.xml"/>
 		<outline text="雨山" title="雨山" description="" type="rss" version="RSS" htmlUrl="http://ameyama.com/" xmlUrl="https://ameyama.com/blog/rss.xml"/>
 		<outline text="embyr.sh" title="embyr.sh" description="" type="rss" version="RSS" htmlUrl="https://embyr.sh/" xmlUrl="https://embyr.sh/index.xml"/>
+		<outline text="cblgh.org" title="cblgh.org" description="" type="rss" version="RSS" htmlUrl="https://cblgh.org" xmlUrl="https://cblgh.org/all.xml"/>
 	</outline>
 	</body>
 </opml>
