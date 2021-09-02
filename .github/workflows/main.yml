@@ -2,7 +2,7 @@ name: OPML
 
 on:
   push:
-    branches: [ main ]
+    branches: [ feat-generate-opml ]
   pull_request:
     branches: [ main ]
 
