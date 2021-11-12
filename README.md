@@ -5,7 +5,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ## Join the webring
 
 ```html
-<a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg' alt='XXIIVV webring'/></a>
+<a href='https://webring.xxiivv.com/#your-id-here' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg' alt='XXIIVV webring'/></a>
 ```
 
 1) Add the webring icon to your website HTML.
