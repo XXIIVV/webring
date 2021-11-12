@@ -5,7 +5,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ## Join the webring
 
 ```html
-<a href='https://webring.xxiivv.com/#your-id-here' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg' alt='XXIIVV webring'/></a>
+<a href="https://webring.xxiivv.com/#your-id-here" target="_blank"><img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring"/></a>
 ```
 
 1) Add the webring icon to your website HTML.
@@ -31,7 +31,7 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
   <a href="https://wiki.xxiivv.com">xxiivv</a>
   <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
   <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
-  <img src='https://wiki.xxiivv.com/media/services/button.gif'/>
+  <img src="https://wiki.xxiivv.com/media/services/button.gif"/>
 </li>
 ```
 
@@ -42,7 +42,7 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
 Instead of linking to the directory, you can also link to the next link in the ring by adding parts of your site or domain in the hash of the request url:
 
 ```html
-<a href='https://webring.xxiivv.com/#xxiivv' target='_blank' rel="noopener noreferrer"><img src='https://webring.xxiivv.com/icon.black.svg' alt='XXIIVV webring'/></a>
+<a href="https://webring.xxiivv.com/#xxiivv" target="_blank" rel="noopener noreferrer"><img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring"/></a>
 ```
 
 ## Help
