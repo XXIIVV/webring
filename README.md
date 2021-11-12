@@ -8,8 +8,8 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 <a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a>
 ```
 
-1) Add the webring icon to your website html.
-2) Add your website information to the [index.html](index.html) file. Keep your link name short, and don't leave a trailing `/` in the `href` attribute. Use a sensible alphanumeric value for the id.
+1) Add the webring icon to your website HTML.
+2) Add your website information to the [index.html](index.html) file. Keep your link name short, and don't leave a trailing `/` in the `href` attribute. Use a sensible alphanumeric value for the `id` attribute.
 3) Submit a Pull Request with **the location of the webring icon** on your site. Pull requests with blank descriptions will be rejected.
 
 Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
