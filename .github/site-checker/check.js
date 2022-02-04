@@ -44,7 +44,7 @@ const validateLink = async (link) => {
     return {
       link,
       valid,
-      reason: res.status,
+      reason: `site responded with ${res.status}`,
     };
   } catch (e) {
     return {
@@ -83,7 +83,7 @@ const getErrorText = (linkStatus) => {
 const badgePath = "../../_badges/reachable-site.svg";
 const errorFilePath = "../../_badges/reachable-site-errors.txt";
 
-(async function () {
+(async function main () {
   const webringHTML = await readWebringHTMLFromFileSystem();
   const links = extractLinkFromWebringHTML(webringHTML);
   console.log(`found ${links.length} webring links`);
