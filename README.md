@@ -3,7 +3,9 @@ LostMpodis Webring
 
 ## Πώς να γίνεις μέρος:
 
-Fork, στο αρχείο index.html:
+Βάζεις κάτι να ["ακούγεται"](https://www.youtube.com/watch?v=R7x9VPxAyUc) (Προαιρετικό, αλλά ενθαρρύνεται),
+
+Fork, προσθήκη στο αρχείο index.html:
 
 ```html
 <li data-lang="en" id="#ena_id">
