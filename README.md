@@ -5,7 +5,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 ## Join the webring
 
 ```html
-<a href="https://webring.xxiivv.com/#your-id-here" target="_blank">
+<a href="https://webring.xxiivv.com/#your-id-here" target="_blank" rel="noopener">
   <img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring"/>
 </a>
 ```
