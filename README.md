@@ -22,7 +22,7 @@ Your website must count at least 10 content pages and include an about page, blo
 
 Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected.  If your website requires Javascript/CSS3 to display the majority of its content or to navigate, it will be rejected. Your business homepage is not a good candidate for the webring, and will be rejected.
 
-If it found that a website is in violation to any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed.
+If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed.
 
 #### Adding your RSS/TWTXT
 
