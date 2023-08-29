@@ -1,6 +1,6 @@
 # Webring
 
-This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own website and share traffic among each other. The webring's aim is to share rich hand-crafted websites such as **diaries, wikis & portfolios**.
+This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists & developers to create and maintain their own personal websites, and share traffic among each other. The webring's aim is to share rich hand-crafted websites such as **diaries, wikis & portfolios**.
 
 ## Join the webring
 
@@ -16,13 +16,11 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 
 ### Webring criteria
 
-**Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected**.
+Your website must count at least 10 content pages and include an about page, blog posts are not counted as content pages. You must have your own domain name, we do not accept `github.io` subdomains. 
 
-The aim of the webring is to display **hand-crafted personal** websites showcasing the creator's audio, visual or written works. Your business site is probably not the best fit for the webring, and will be rejected. 
+Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected.  If your website requires Javascript/CSS3 to display the majority of its content or to navigate, it will be rejected. Your business homepage is not a good candidate for the webring, and will be rejected. 
 
-If your website requires Javascript to display the majority of its content or to navigate, it will be rejected. Your website must count at least 10 pages and include an about page. You must have your own domain name, we do not accept `github.io` subdomains. 
-
-If it's seen that your website is in violation to any of these rules your site will be removed from the webring. If you fix the issues, feel free to submit another PR to join back in.
+If it found that a website is in violation to any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed.
 
 #### Adding your RSS/TWTXT
 
