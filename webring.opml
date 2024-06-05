@@ -39,6 +39,7 @@
 		<outline text="雨山" title="雨山" description="" type="rss" version="RSS" htmlUrl="http://ameyama.com/" xmlUrl="https://ameyama.com/blog/rss.xml"/>
 		<outline text="embyr.sh" title="embyr.sh" description="" type="rss" version="RSS" htmlUrl="https://embyr.sh/" xmlUrl="https://embyr.sh/index.xml"/>
 		<outline text="cblgh.org" title="cblgh.org" description="" type="rss" version="RSS" htmlUrl="https://cblgh.org" xmlUrl="https://cblgh.org/all.xml"/>
+		<outline text="ryanbrewer.dev" title="ryanbrewer.dev" description="" type="rss" version="RSS" htmlUrl="https://ryanbrewer.dev" xmlUrl="https://ryanbrewer.dev/feed.rss"/>
 	</outline>
 	</body>
 </opml>
