@@ -33,7 +33,12 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
   <a href="https://wiki.xxiivv.com">xxiivv</a>
   <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
   <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
-  <img src="https://wiki.xxiivv.com/media/services/button.gif"/>
+  <img
+    src="https://wiki.xxiivv.com/media/services/button.gif"
+    alt="xxiivv webring icon"
+    width="88"
+    height="31"
+  >
 </li>
 ```
 
@@ -45,7 +50,7 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 ```html
 <a href="https://webring.xxiivv.com/#xxiivv" target="_blank" rel="noopener noreferrer">
-  <img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring"/>
+  <img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring" width="300" height="300">
 </a>
 ```
 
