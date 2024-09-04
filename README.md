@@ -22,7 +22,7 @@ Your website must count at least 10 content pages and include an about page, blo
 
 Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected.  If your website requires Javascript/CSS3 to display the majority of its content or to navigate, it will be rejected. Your business homepage is not a good candidate for the webring, and will be rejected.
 
-If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed.
+If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed. The webring will never exceed 256 entries, new entries will take place of websites that go dark.
 
 #### Adding your RSS/TWTXT
 
@@ -33,7 +33,12 @@ To add an extra feed to your entry, add them within your `<li>` tag as follow:
   <a href="https://wiki.xxiivv.com">xxiivv</a>
   <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
   <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
-  <img src="https://wiki.xxiivv.com/media/services/button.gif"/>
+  <img
+    src="https://wiki.xxiivv.com/media/services/button.gif"
+    alt="xxiivv webring icon"
+    width="88"
+    height="31"
+  >
 </li>
 ```
 
@@ -45,7 +50,7 @@ Instead of linking to the directory, you can also link to the next link in the r
 
 ```html
 <a href="https://webring.xxiivv.com/#xxiivv" target="_blank" rel="noopener noreferrer">
-  <img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring"/>
+  <img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV webring" width="300" height="300">
 </a>
 ```
 
