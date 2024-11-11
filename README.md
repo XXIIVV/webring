@@ -18,31 +18,25 @@ Alternatively, if you your website has a dark background, use `icon.white.svg`. 
 
 ### Webring criteria
 
-Your website must count at least 10 content pages and include an about page, blog posts are not counted as content pages. You must have your own domain name, we do not accept `github.io` subdomains.
+Your website must count at least 10 content pages and include an about page, blog posts are not counted as content pages. You must have your own domain name, we do not accept `github.io` subdomains. 
 
 Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected.  If your website requires Javascript/CSS3 to display the majority of its content or to navigate, it will be rejected. Your business homepage is not a good candidate for the webring, and will be rejected.
 
-If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed. The webring will never exceed 256 entries, new entries will take place of websites that go dark.
+If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed. The webring will never exceed 256 entries, new entries will take place of websites that go dark. 
 
 #### Adding your RSS/TWTXT
 
 To add an extra feed to your entry, add them within your `<li>` tag as follow:
 
-```html
-<li data-lang="en" id="xxiivv">
-  <a href="https://wiki.xxiivv.com">xxiivv</a>
-  <a href="https://wiki.xxiivv.com/links/tw.txt" class="twtxt">twtxt</a>
-  <a href="https://wiki.xxiivv.com/links/rss.xml" class="rss">rss</a>
-  <img
-    src="https://wiki.xxiivv.com/media/services/button.gif"
-    alt="xxiivv webring icon"
-    width="88"
-    height="31"
-  >
+```
+<li data-lang="en" id="WEBSITE_NAME">
+	<a href="https://WEBSITE_URL">WEBSITE NAME</a>
+	<a href="https://WEBSITE_URL/atom.xml" class="rss">rss</a>
+	<img loading="lazy" src='https://WEBSITE_URL/button.gif' width="88" height="31">
 </li>
 ```
 
-[twtxt](https://twtxt.readthedocs.io/en/stable/) is a decentralized, minimalist microblogging service for hackers. You're welcome to add your twtxt feed alongside your RSS feed. If you're looking a minimal C99 client for twtxt, try [this](https://github.com/neauoire/twtxtc). The `button.gif` is a 88x31 icon hosted on your server.
+As of 2025, all websites in the webring will need to have a 88x31 banner image hosted on your server.
 
 ### Circular Linking
 
