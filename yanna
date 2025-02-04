@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine?</title>
+  <style>
+    /* Basic Reset */
+    body, h1, p, button {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Background */
+    body {
+      background-color: #f9f3f7;
+      color: #4c4c4c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+      background-repeat: repeat;
+    }
+
+    /* Title Style */
+    h1 {
+      font-size: 3em;
+      color: #ff4d88;
+      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive;
+      animation: bounce 1s infinite alternate;
+    }
+
+    /* Message Style */
+    p {
+      font-size: 1.5em;
+      margin: 10px 0 30px;
+      color: #ff6f61;
+    }
+
+    /* Button Styles */
+    .btn {
+      background-color: #ff4d88;
+      color: white;
+      font-size: 1.2em;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 10px;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      background-color: #ff1c58;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hover effect animation */
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #ff6f61;
+    }
+
+    /* Heart Animation */
+    .heart {
+      font-size: 3em;
+      color: #ff4d88;
+      animation: heartBeat 1s infinite alternate;
+    }
+
+    @keyframes heartBeat {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will You Be My Valentine? 💌</h1>
+
+  <p>Hey Alyanna,  
+   I want you to be my valentine date again, Will you be my valentine? 💖</p>
+
+  <!-- Heart Animation -->
+  <div class="heart">❤️</div>
+
+  <!-- Buttons -->
+  <div>
+    <button class="btn" onclick="handleYes()">Yes, I’d love to!💖</button>
+    <button class="btn" onclick="handleNo()">No! </button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Thank you for  my day better! 💐✨
+  </footer>
+
+  <script>
+    function handleYes() {
+      alert("Yay! Let’s make this Valentine’s Day extra special! 💖");
+    }
+
+    function handleNo() {
+      alert("Thank you for accepting my invitation! 💐✨");
+    }
+  </script>
+  
+</body>
+</html>
