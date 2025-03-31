@@ -24,15 +24,15 @@ Single page websites, websites acting only as portals to other social platforms,
 
 If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed. The webring will never exceed 256 entries, new entries will take place of websites that go dark.
 
-#### Adding your RSS/TWTXT
+#### Adding your RSS/TWTXT/Banner
 
-To add an extra feed to your entry, add them within your `<li>` tag as follow:
+To add an extra metadata to your entry, add them within your `<li>` tag as follow:
 
-```
+```html
 <li data-lang="en" id="WEBSITE_NAME">
 	<a href="https://WEBSITE_URL">WEBSITE NAME</a>
-	<a href="https://WEBSITE_URL/atom.xml" class="rss">rss</a>
-	<img loading="lazy" src='https://WEBSITE_URL/button.gif' width="88" height="31">
+	<a href="https://WEBSITE_URL/feed.xml" class="rss">rss</a>
+	<img loading="lazy" src="https://WEBSITE_URL/button.gif" alt="WEBSITE NAME" width="88" height="31">
 </li>
 ```
 
