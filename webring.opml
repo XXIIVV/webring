@@ -93,5 +93,6 @@
     <outline type="rss" text="proto.garden" title="proto.garden" description="" version="RSS" htmlUrl="https://proto.garden" xmlUrl="https://proto.garden/rss/notes.xml"/>
     <outline type="rss" text="kjelsrud.dev" title="kjelsrud.dev" description="" version="RSS" htmlUrl="https://kjelsrud.dev" xmlUrl="https://kjelsrud.dev/rss.xml"/>
     <outline type="rss" text="beespace" title="beespace" description="" version="RSS" htmlUrl="https://lunabee.space/extraspace/port.html" xmlUrl="https://lunabee.space/beespace.atom"/>
+    <outline type="rss" text="drkhsh" title="drkhsh" description="" version="RSS" htmlUrl="https://drkhsh.at" xmlUrl="https://drkhsh.at/atom_content.xml"/>
   </body>
 </opml>
