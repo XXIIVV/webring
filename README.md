@@ -14,7 +14,7 @@ This [webring](https://wiki.xxiivv.com/webring) is an attempt to inspire artists
 2) Add your website information to the [index.html](index.html) file. Keep your link name short, and don't leave a trailing `/` in the `href` attribute. Use a sensible alphanumeric value for the `id` attribute.
 3) Submit a Pull Request with **the location of the webring icon** on your site. Pull requests with blank descriptions will be rejected.
 
-Alternatively, if you your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
+Alternatively, if your website has a dark background, use `icon.white.svg`. If your website is complaining about *https*, go ahead and host the icon yourself.
 
 ### Webring criteria
 
@@ -22,7 +22,7 @@ Your website must count at least 10 content pages and include an about page, blo
 
 Single page websites, websites acting only as portals to other social platforms, or websites with violent, racist, sexist or speciesist content will be rejected.  If your website requires Javascript/CSS3 to display the majority of its content or to navigate, it will be rejected. Your business homepage is not a good candidate for the webring, and will be rejected.
 
-If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over 2 years might also be periodically removed. The webring will never exceed 256 entries, new entries will take place of websites that go dark.
+If it's found that a website is in violation of any of these rules it will be removed from the webring. Websites without activity for over two years might also be periodically removed. The webring will never exceed 256 entries, new entries will take place of websites that go dark.
 
 #### Adding your RSS/TWTXT/Banner
 
