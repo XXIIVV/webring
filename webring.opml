@@ -109,5 +109,6 @@
     <outline type="rss" text="Andie Keller" title="Andie Keller" description="" version="RSS" htmlUrl="https://bugwhisperer.dev" xmlUrl="https://bugwhisperer.dev/atom.xml"/>
     <outline type="rss" text="stage7" title="stage7" description="" version="RSS" htmlUrl="https://stage7.net" xmlUrl="https://stage7.net/rss/rss.xml"/>
     <outline type="rss" text="Idiomdrottning" title="Idiomdrottning" description="" version="RSS" htmlUrl="https://idiomdrottning.org" xmlUrl="https://idiomdrottning.org/blog"/>
+    <outline type="rss" text="krzysckh.org" title="krzysckh.org" description="" version="RSS" htmlUrl="https://krzysckh.org" xmlUrl="https://krzysckh.org/posts.rss"/>
   </body>
 </opml>
