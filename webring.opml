@@ -110,5 +110,6 @@
     <outline type="rss" text="stage7" title="stage7" description="" version="RSS" htmlUrl="https://stage7.net" xmlUrl="https://stage7.net/rss/rss.xml"/>
     <outline type="rss" text="Idiomdrottning" title="Idiomdrottning" description="" version="RSS" htmlUrl="https://idiomdrottning.org" xmlUrl="https://idiomdrottning.org/blog"/>
     <outline type="rss" text="krzysckh.org" title="krzysckh.org" description="" version="RSS" htmlUrl="https://krzysckh.org" xmlUrl="https://krzysckh.org/posts.rss"/>
+    <outline type="rss" text="dalem.foo" title="dalem.foo" description="" version="RSS" htmlUrl="https://blog.dalem.foo" xmlUrl="https://blog.dalem.foo/index.rss"/>
   </body>
 </opml>
