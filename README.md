@@ -36,7 +36,7 @@ To add an extra metadata to your entry, add them within your `<li>` tag as follo
 </li>
 ```
 
-As of 2025, all websites in the webring will need to have a 88x31 banner image hosted on your server.
+As of 2026, all websites in the webring will need to have a 88x31 banner image hosted on your server. Only gif/png please, no webp.
 
 ### Circular Linking
 
