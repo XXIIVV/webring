@@ -26,7 +26,7 @@ If it's found that a website is in violation of any of these rules it will be re
 
 As of 2026, **every website will need to have a 88x31 banner**.
 
-#### Adding your RSS/TWTXT/Banner
+#### Adding your RSS/Banner
 
 To add an extra metadata to your entry, add them within your `<li>` tag as follow:
 
